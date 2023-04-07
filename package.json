@@ -30,6 +30,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "release": "turbo run release",
     "lint": "turbo run lint",
     "lint:eslint": "turbo run lint:eslint",
     "lint:prettier": "turbo run lint:prettier",

@@ -1,6 +1,6 @@
 {
-  "name": "@handpear/tsconfig",
-  "version": "5.0.0",
+  "name": "@everqin/tsconfig",
+  "version": "0.0.0",
   "author": "handpear<handpear@outlook.com>",
   "private": true,
   "files": [

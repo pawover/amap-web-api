@@ -1,5 +1,5 @@
 {
-  "name": "@handpear/react-amap-web",
+  "name": "@everqin/react-amap-web",
   "version": "0.0.1",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "author": "handpear<handpear@outlook.com>",
@@ -34,8 +34,12 @@
   "bugs": {
     "url": "https://github.com/Handpear/amap-web-api/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "unbuild",
+    "release": "pnpm publish --no-git-checks",
     "type:check": "tsc --noEmit --skipLibCheck",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:eslint": "eslint --fix \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}\"",
