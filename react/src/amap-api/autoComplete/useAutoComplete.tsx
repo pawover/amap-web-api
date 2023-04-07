@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useMapContext } from '../index';
 import type { AutoCompleteProps } from '.';
 import { useEventProperties, useSetProperties } from '../utils';

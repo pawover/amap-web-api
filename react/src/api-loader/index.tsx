@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { createElement, Fragment, useEffect, useState } from 'react';
 import { load } from '@amap/amap-jsapi-loader';
 
 export interface APILoaderOptions {
@@ -51,7 +51,7 @@ export interface APILoaderOptions {
     /**
      * 预加载一个或者多个 AMapUI 插件
      *
-     * @example ["ui/misc/PathSimplifier", "ui/misc/PointSimplifier"]
+     * @example ["misc/PathSimplifier", "misc/PointSimplifier"]
      */
     plugins?: (keyof AMapUI.PluginMaps)[];
   };
@@ -131,6 +131,5 @@ export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (p
     return () => {};
   }, [aKey, sKey]);
 
-  // eslint-disable-next-line react/jsx-no-useless-fragment
-  return loaded ? <>{children}</> : null;
+  return loaded ? createElement(Fragment, null, children) : null;
 };

@@ -1,4 +1,5 @@
-import { type ReactPortal, useEffect, useState, useCallback } from 'react';
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React, { type ReactPortal, useEffect, useState, useCallback } from 'react';
 import { createPortal, unmountComponentAtNode } from 'react-dom';
 
 interface State {

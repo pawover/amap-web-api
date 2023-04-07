@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import { usePointLight } from './usePointLight';
 
 export * from './usePointLight';

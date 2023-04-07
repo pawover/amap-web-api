@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
 import type { MapTypeProps } from '.';
 import { useVisible } from '../utils';

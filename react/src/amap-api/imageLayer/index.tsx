@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import type { CommonProps } from '../map';
 import { useImageLayer } from './useImageLayer';
 

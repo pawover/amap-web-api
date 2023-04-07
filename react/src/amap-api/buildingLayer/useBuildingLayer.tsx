@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
 import type { BuildingLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';

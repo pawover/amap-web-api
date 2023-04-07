@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import { useLegend } from './useLegend';
 
 export * from './useLegend';

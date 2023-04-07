@@ -1,4 +1,4 @@
-import { type Dispatch, createContext, useContext } from 'react';
+import React, { type Dispatch, createContext, useContext } from 'react';
 
 export interface LocaContextState extends LocaContext {
   map: MapContext['map'];

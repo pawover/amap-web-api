@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import { useAmbientLight } from './useAmbientLight';
 
 export * from './useAmbientLight';

@@ -1,5 +1,3 @@
-import type { L, S } from 'ts-toolbelt';
-
 export * from './api-loader';
 export * from './amap-api';
 export * from './amapUI-api';
@@ -24,12 +22,5 @@ declare global {
     Loca?: typeof Loca | undefined;
     /** Loca 的核心控制实例 */
     locaContainer?: Loca.Container | undefined;
-  }
-
-  /** AMapUI 插件 */
-  namespace AMapUIRecord {
-    let plugin: {
-      [K in keyof AMapUI.PluginMaps as Capitalize<L.Last<S.Split<string & K, '/'>>>]?: AMapUI.PluginMaps[K];
-    };
   }
 }

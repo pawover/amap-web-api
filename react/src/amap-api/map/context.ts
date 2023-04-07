@@ -1,4 +1,4 @@
-import { type Dispatch, createContext, useContext } from 'react';
+import React, { type Dispatch, createContext, useContext } from 'react';
 
 export interface MapContextState extends MapContext {}
 export interface MapContextValue {

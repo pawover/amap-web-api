@@ -1,4 +1,4 @@
-import { forwardRef, isValidElement, useImperativeHandle, cloneElement } from 'react';
+import React, { forwardRef, isValidElement, useImperativeHandle, cloneElement } from 'react';
 import type { CommonProps } from '../map';
 import { useEllipse } from './useEllipse';
 

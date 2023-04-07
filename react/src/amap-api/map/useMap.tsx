@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { MapCtx } from './context';
 import type { MapProps } from '.';
 import { useEventProperties, useSetProperties, useSetStatus } from '../utils';

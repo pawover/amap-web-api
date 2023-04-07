@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useImperativeHandle } from 'react';
 import { usePointLayer } from './usePointLayer';
 
 export * from './usePointLayer';

@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import { useMapContext } from '../index';
 import type { RectangleRef } from '../rectangle';
 import { useEventProperties } from '../utils';

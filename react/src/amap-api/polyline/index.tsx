@@ -1,4 +1,4 @@
-import { cloneElement, forwardRef, isValidElement, useImperativeHandle } from 'react';
+import React, { cloneElement, forwardRef, isValidElement, useImperativeHandle } from 'react';
 import type { CommonProps } from '../map';
 import { usePolyline } from './usePolyline';
 
