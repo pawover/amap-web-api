@@ -1,6 +1,6 @@
 {
   "name": "@everqin/react-amap-web",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "author": "handpear<handpear@outlook.com>",
   "type": "module",
@@ -46,21 +46,23 @@
     "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\""
   },
   "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1"
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@everqin/types": "^0.0.2"
   },
   "devDependencies": {
-    "@handpear/tsconfig": "workspace:*",
-    "@handpear/amap-types": "workspace:*",
+    "@everqin/amap-web-types": "workspace:*",
+    "@everqin/tsconfig": "workspace:*",
     "@types/react": "~18.0.0",
-    "@types/react-dom": "~18.0.0"
+    "@types/react-dom": "~18.0.0",
+    "ts-toolbelt": "^9.6.0"
   },
   "peerDependencies": {
-    "@handpear/amap-types": "workspace:*",
     "react": ">=16.14.0",
-    "react-dom": ">=16.14.0"
+    "react-dom": ">=16.14.0",
+    "ts-toolbelt": ">=9.6.0"
   },
   "peerDependenciesMeta": {
-    "@handpear/amap-types": {
+    "ts-toolbelt": {
       "optional": true
     }
   }

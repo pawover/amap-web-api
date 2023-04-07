@@ -1,5 +1,5 @@
 {
-  "extends": "@handpear/tsconfig/base.json",
+  "extends": "@everqin/tsconfig/base.json",
   "include": ["src"],
   "compilerOptions": {
     "baseUrl": ".",
@@ -7,6 +7,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": ["DOM", "ESNext"]
+    "lib": ["DOM", "ESNext"],
+    "types": ["@everqin/types"]
   }
 }

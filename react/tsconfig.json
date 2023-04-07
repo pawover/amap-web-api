@@ -1,9 +1,9 @@
 {
-  "extends": "@handpear/tsconfig/react-lib.json",
+  "extends": "@everqin/tsconfig/react-lib.json",
   "include": ["src"],
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "cjs",
-    "types": ["@handpear/amap-types"]
+    "types": ["@everqin/types", "@everqin/amap-web-types"]
   }
 }

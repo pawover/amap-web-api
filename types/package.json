@@ -1,6 +1,6 @@
 {
-  "name": "@everqin/amap-web-api",
-  "version": "0.0.2",
+  "name": "@everqin/amap-web-types",
+  "version": "0.0.4",
   "description": "Typescript definitions for amap-web-api. 高德地图 AMap Web Api Typescript 类型定义。",
   "author": "handpear<handpear@outlook.com>",
   "type": "module",
@@ -44,7 +44,11 @@
     "lint:eslint": "eslint --fix \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}\"",
     "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\""
   },
+  "dependencies": {
+    "@everqin/types": "^0.0.2"
+  },
   "devDependencies": {
-    "@handpear/tsconfig": "workspace:*"
+    "@everqin/tsconfig": "workspace:*",
+    "@everqin/types": "^0.0.2"
   }
 }
