@@ -2,40 +2,43 @@ declare namespace AMapUI {
   /** 高德地图 AMapUI API 组件类型 */
   interface PluginMaps {
     'lib/$': unknown;
-    'ui/control/BasicControl': unknown;
-    'ui/geo/DistrictCluster': unknown;
-    'ui/geo/DistrictExplorer': unknown;
-    'ui/misc/MarkerList': unknown;
-    'ui/misc/MobiCityPicker': unknown;
-    'ui/misc/PathSimplifier': typeof AMapUI.PathSimplifier;
-    'ui/misc/PoiPicker': unknown;
-    'ui/misc/PointSimplifier': typeof AMapUI.PointSimplifier;
-    'ui/misc/PointSimplifr': unknown;
-    'ui/misc/PositionPicker': unknown;
-    'ui/overlay/AwesomeMarker': unknown;
-    'ui/overlay/SimpleInfoWindow': unknown;
-    'ui/overlay/SimpleMarker': unknown;
-    'ui/overlay/SvgMarker': unknown;
+    'control/BasicControl': unknown;
+    'geo/DistrictCluster': unknown;
+    'geo/DistrictExplorer': unknown;
+    'misc/MarkerList': unknown;
+    'misc/MobiCityPicker': unknown;
+    'misc/PathSimplifier': typeof AMapUI.PathSimplifier;
+    'misc/PoiPicker': unknown;
+    'misc/PointSimplifier': typeof AMapUI.PointSimplifier;
+    'misc/PointSimplifr': unknown;
+    'misc/PositionPicker': unknown;
+    'overlay/AwesomeMarker': unknown;
+    'overlay/SimpleInfoWindow': unknown;
+    'overlay/SimpleMarker': unknown;
+    'overlay/SvgMarker': unknown;
   }
   /** UI 组件列表 */
-  const uiMods: (keyof PluginMaps)[];
+  const uiMods: (keyof Omit<PluginMaps, 'lib/$'>)[];
   /** AMapUI API 版本号 */
   const version: string;
   /** 协议类型 */
   const docProtocol: 'http:' | 'https:';
   /**
-   * 加载 UI 组件
+   * 加载 AMapUI 组件
    *
-   * @template P extends keyof Plugin
-   * @param {P[]} plugin UI 组件名
+   * @template P
+   * @param {P[]} plugin AMapUI 组件名
    * @param {?(...args: PluginMaps[P][]) => void} [callback] 回调函数
    */
-  function loadUI<P extends keyof PluginMaps>(plugin: P[], callback?: (...args: PluginMaps[P][]) => void): void;
+  function loadUI<P extends keyof Omit<PluginMaps, 'lib/$'>>(
+    plugin: P[],
+    callback?: (...args: PluginMaps[P][]) => void,
+  ): void;
   /**
-   * 加载 UI 组件
+   * 加载 AMapUI 插件
    *
    * @template P extends keyof Plugin
-   * @param {P[]} plugin UI 组件名
+   * @param {P[]} plugin UI 插件名
    * @param {?(...args: PluginMaps[P][]) => void} [callback] 回调函数
    * @param {?unknown} [Options] 配置参数
    */
