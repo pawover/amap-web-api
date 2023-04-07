@@ -1,0 +1,12 @@
+{
+  "extends": "@handpear/tsconfig/base.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "cjs",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["DOM", "ESNext"]
+  }
+}

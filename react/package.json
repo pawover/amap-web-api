@@ -1,0 +1,63 @@
+{
+  "name": "@handpear/react-amap-web",
+  "version": "0.0.1",
+  "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
+  "author": "handpear<handpear@outlook.com>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "amap",
+    "amap-web",
+    "react-amap",
+    "react-amap-js",
+    "react-amap-web",
+    "高德",
+    "地图",
+    "高德地图"
+  ],
+  "homepage": "https://github.com/Handpear/amap-web-api.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Handpear/amap-web-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Handpear/amap-web-api/issues"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "type:check": "tsc --noEmit --skipLibCheck",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:eslint": "eslint --fix \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}\"",
+    "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\""
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1"
+  },
+  "devDependencies": {
+    "@handpear/tsconfig": "workspace:*",
+    "@handpear/amap-types": "workspace:*",
+    "@types/react": "~18.0.0",
+    "@types/react-dom": "~18.0.0"
+  },
+  "peerDependencies": {
+    "@handpear/amap-types": "workspace:*",
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
+  },
+  "peerDependenciesMeta": {
+    "@handpear/amap-types": {
+      "optional": true
+    }
+  }
+}

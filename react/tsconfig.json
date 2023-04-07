@@ -1,0 +1,9 @@
+{
+  "extends": "@handpear/tsconfig/react-lib.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "cjs",
+    "types": ["@handpear/amap-types"]
+  }
+}

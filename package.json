@@ -1,0 +1,72 @@
+{
+  "name": "amap-web-api",
+  "description": "高德地图 AMap Web Api 组件库",
+  "author": "handpear<handpear@outlook.com>",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "amap",
+    "amap-web",
+    "react-amap",
+    "react-amap-js",
+    "react-amap-web",
+    "vue-amap",
+    "vue-amap-js",
+    "vue-amap-web",
+    "高德",
+    "地图",
+    "高德地图"
+  ],
+  "packageManager": "pnpm@8.1.0",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=8"
+  },
+  "workspaces": [
+    "react/**",
+    "vue/**",
+    "types",
+    "tsconfig"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "lint:eslint": "turbo run lint:eslint",
+    "lint:prettier": "turbo run lint:prettier",
+    "clean": "pnpm clean:build & pnpm clean:turbo & pnpm clean:lib",
+    "clean:build": "rimraf -g **/dist",
+    "clean:lib": "rimraf -g **/node_modules",
+    "clean:turbo": "rimraf -g **/.turbo",
+    "type:check": "turbo run type:check",
+    "lib:up": "taze major -I -r --exclude pnpm --exclude typescript",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "commit": "turbo run type:check && git-cz"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.5.1",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.37.0",
+    "eslint-config-everqin": "^0.0.3",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
+    "prettier": "^2.8.7",
+    "rimraf": "^4.4.1",
+    "taze": "^0.9.1",
+    "turbo": "^1.8.8",
+    "typescript": "^5.0.3",
+    "unbuild": "^1.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  }
+}

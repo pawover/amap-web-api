@@ -1,0 +1,13 @@
+LICENSE
+
+node_modules
+build
+dist
+cjs
+esm
+public
+
+*.html
+*.md
+*.json
+*.min.{js,mjs,cjs,ts,mts,cts}

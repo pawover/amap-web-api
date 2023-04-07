@@ -1,0 +1,10 @@
+{
+  "name": "@handpear/tsconfig",
+  "version": "5.0.0",
+  "author": "handpear<handpear@outlook.com>",
+  "private": true,
+  "files": [
+    "base.json",
+    "react-lib.json"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@handpear/amap-types",
+  "version": "0.0.1",
+  "description": "Typescript definitions for amap-web-api. 高德地图 AMap Web Api Typescript 类型定义。",
+  "author": "handpear<handpear@outlook.com>",
+  "type": "module",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "src"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "types",
+    "amap-types",
+    "amap-api-types",
+    "amap",
+    "amap-web",
+    "react-amap",
+    "react-amap-js",
+    "react-amap-web",
+    "vue-amap",
+    "vue-amap-js",
+    "vue-amap-web",
+    "高德",
+    "地图",
+    "高德地图"
+  ],
+  "homepage": "https://github.com/Handpear/amap-web-api.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Handpear/amap-web-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Handpear/amap-web-api/issues"
+  },
+  "scripts": {
+    "publish": "pnpm publish",
+    "type:check": "tsc --noEmit --skipLibCheck",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:eslint": "eslint --fix \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}\"",
+    "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\""
+  },
+  "devDependencies": {
+    "@handpear/tsconfig": "workspace:*"
+  }
+}

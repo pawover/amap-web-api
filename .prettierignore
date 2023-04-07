@@ -1,0 +1,11 @@
+LICENSE
+
+node_modules
+dist
+build
+cjs
+esm
+public
+
+*.svg
+*.min.{js,mjs,cjs,ts,mts,cts}

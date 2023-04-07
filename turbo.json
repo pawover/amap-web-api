@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "publish": {
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "lint:eslint": {
+      "outputs": []
+    },
+    "lint:prettier": {
+      "outputs": []
+    },
+    "type:check": {
+      "outputs": []
+    }
+  }
+}

@@ -1,0 +1,56 @@
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Output
+build
+dist
+dist-ssr
+cjs
+esm
+
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+
+# Directories and files
+node_modules
+.pnp
+.pnp.js
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
+*.tgz
+
+# misc
+.DS_Store
+*.pem
+
+# testing
+coverage
+
+# turbo
+.turbo
