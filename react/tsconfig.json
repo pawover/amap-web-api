@@ -2,6 +2,7 @@
   "extends": "@everqin/tsconfig/react-lib.json",
   "include": ["src"],
   "compilerOptions": {
+    "noUnusedLocals": false,
     "baseUrl": ".",
     "outDir": "cjs",
     "types": ["@everqin/types", "@everqin/amap-web-types"]

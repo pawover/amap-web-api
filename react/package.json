@@ -1,6 +1,6 @@
 {
   "name": "@everqin/react-amap-web",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "author": "handpear<handpear@outlook.com>",
   "type": "module",
@@ -47,13 +47,13 @@
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
-    "@everqin/types": "^0.0.2"
+    "@everqin/types": "^0.0.3"
   },
   "devDependencies": {
     "@everqin/amap-web-types": "workspace:*",
     "@everqin/tsconfig": "workspace:*",
-    "@types/react": "~18.0.0",
-    "@types/react-dom": "~18.0.0"
+    "@types/react": "~18.0.38",
+    "@types/react-dom": "~18.0.11"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
