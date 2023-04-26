@@ -52,8 +52,8 @@
   "devDependencies": {
     "@everqin/amap-web-types": "workspace:*",
     "@everqin/tsconfig": "workspace:*",
-    "@types/react": "~18.0.38",
-    "@types/react-dom": "~18.0.11"
+    "@types/react": "~18.2.0",
+    "@types/react-dom": "~18.2.1"
   },
   "peerDependencies": {
     "react": ">=16.14.0",

@@ -49,6 +49,9 @@
   },
   "devDependencies": {
     "@everqin/tsconfig": "workspace:*",
-    "@everqin/types": "^0.0.3"
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.7.4"
   }
 }

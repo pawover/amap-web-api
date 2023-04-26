@@ -1,5 +1,5 @@
 packages:
-  - 'react/**'
-  - 'vue/**'
+  - 'react'
+  - 'vue'
   - 'types'
   - 'tsconfig'
