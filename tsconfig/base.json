@@ -10,7 +10,6 @@
     "declaration": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
-    "importHelpers": true,
     "inlineSources": false,
     "isolatedModules": true,
     "noImplicitOverride": true,
