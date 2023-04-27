@@ -31,6 +31,7 @@
   "scripts": {
     "build": "turbo run build",
     "release": "turbo run release",
+    "type:check": "turbo run type:check",
     "lint": "turbo run lint",
     "lint:eslint": "turbo run lint:eslint",
     "lint:prettier": "turbo run lint:prettier",
@@ -38,7 +39,6 @@
     "clean:build": "rimraf -g **/dist",
     "clean:lib": "rimraf -g **/node_modules",
     "clean:turbo": "rimraf -g **/.turbo",
-    "type:check": "turbo run type:check",
     "lib:up": "taze -I -r --exclude pnpm",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
