@@ -47,13 +47,13 @@
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
-    "@everqin/types": "^0.0.3"
+    "@everqin/types": "^0.1.1"
   },
   "devDependencies": {
     "@everqin/amap-web-types": "workspace:*",
     "@everqin/tsconfig": "workspace:*",
-    "@types/react": "~18.2.0",
-    "@types/react-dom": "~18.2.1"
+    "@types/react": "~18.2.7",
+    "@types/react-dom": "~18.2.4"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
