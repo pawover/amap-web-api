@@ -1,3 +1,6 @@
+type Key = string | number | symbol;
+type Recordable = Record<Key, unknown>;
+
 interface Window {
   AMap: typeof AMap;
   Loca: typeof Loca;

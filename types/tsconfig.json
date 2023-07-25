@@ -7,7 +7,6 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "lib": ["DOM", "ESNext"],
-    "types": ["@everqin/types"]
+    "lib": ["DOM", "ESNext"]
   }
 }
