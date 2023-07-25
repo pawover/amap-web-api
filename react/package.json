@@ -1,6 +1,6 @@
 {
   "name": "@everqin/react-amap-web",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "author": "handpear<handpear@outlook.com>",
   "type": "module",
