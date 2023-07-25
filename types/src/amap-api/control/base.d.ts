@@ -14,6 +14,8 @@ declare namespace AMap {
           };
       /**
        * 相对于地图容器左上角的偏移量，正数代表向右下偏移
+       *
+       * @default [10, 10]
        */
       offset?: PixelLike;
     }

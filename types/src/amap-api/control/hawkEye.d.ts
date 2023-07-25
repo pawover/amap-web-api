@@ -47,6 +47,8 @@ declare namespace AMap {
       height?: string;
       /**
        * 缩略图距离地图右下角的像素距离，如 [2,2]
+       *
+       * @default [0, 0]
        */
       offset?: [number, number];
       /**
