@@ -40,7 +40,6 @@
     "clean:lib": "rimraf -g **/node_modules",
     "clean:turbo": "rimraf -g **/.turbo",
     "lib:up": "taze -I -r --exclude pnpm",
-    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "commit": "turbo run type:check && git-cz"
   },
