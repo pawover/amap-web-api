@@ -2,17 +2,19 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "allowUmdGlobalAccess": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "declaration": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
-    "newLine": "lf",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -21,7 +23,13 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "useDefineForClassFields": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx"
   },
-  "exclude": ["build", "dist", "cjs", "esm", "node_modules"]
+  "exclude": ["build", "dist", "node_modules"]
 }
