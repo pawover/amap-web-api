@@ -1,10 +1,10 @@
 {
-  "extends": "@everqin/tsconfig/react-lib.json",
+  "extends": "@everqin/tsconfig/react-library.json",
   "include": ["src"],
   "compilerOptions": {
     "noUnusedLocals": false,
     "baseUrl": ".",
     "outDir": "cjs",
-    "types": ["@everqin/types", "@everqin/amap-web-types"]
+    "types": ["@everqin/amap-web-types"]
   }
 }

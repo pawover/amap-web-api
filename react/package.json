@@ -1,11 +1,12 @@
 {
   "name": "@everqin/react-amap-web",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "author": "handpear<handpear@outlook.com>",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -46,14 +47,13 @@
     "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\""
   },
   "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1",
-    "@everqin/types": "^0.1.1"
+    "@amap/amap-jsapi-loader": "^1.0.1"
   },
   "devDependencies": {
     "@everqin/amap-web-types": "workspace:*",
     "@everqin/tsconfig": "workspace:*",
-    "@types/react": "~18.2.7",
-    "@types/react-dom": "~18.2.4"
+    "@types/react": "~18.2.16",
+    "@types/react-dom": "~18.2.7"
   },
   "peerDependencies": {
     "react": ">=16.14.0",
