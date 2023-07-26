@@ -17,7 +17,7 @@ declare namespace AMap {
      * @public
      * @param {Layers[]} options 构造参数
      */
-    public constructor(options: Layers[]);
+    public constructor(options?: Layers[]);
 
     /** 添加单个图层到集合中，不支持添加重复的图层 */
     public addLayer(layer: Layers): this;

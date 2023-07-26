@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { VectorLayerProps } from '.';
 import { useSetProperties, useVisible } from '../utils';
+import type { VectorLayerProps } from './';
 
 interface useVectorLayer extends VectorLayerProps {}
 
@@ -24,6 +24,7 @@ export const useVectorLayer = (props: useVectorLayer) => {
       }
     };
   }, [map, vectorLayer]);
+
   useEffect(() => {
     if (!vectorLayer) return;
     if (layers.length) vectorLayer.add(layers);

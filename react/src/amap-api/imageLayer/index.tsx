@@ -15,7 +15,7 @@ export interface ImageLayerProps extends CommonProps, AMap.ImageLayer.Events, AM
 export const ImageLayer = forwardRef<ImageLayerProps & { imageLayer: AMap.ImageLayer | undefined }, ImageLayerProps>(
   (props, ref) => {
     const { imageLayer } = useImageLayer(props);
-    useImperativeHandle(ref, () => ({ ...props, imageLayer }), [imageLayer]);
+    useImperativeHandle(ref, () => ({ ...props, imageLayer }), [props, imageLayer]);
 
     return null;
   },

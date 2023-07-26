@@ -31,7 +31,7 @@ declare namespace AMapUI {
        *
        * @default 100
        */
-      maxChildrenOfQuadNode?: Number;
+      maxChildrenOfQuadNode?: number;
       /**
        * 四叉树的最大高度
        * - 超过该高度，即使数量超过 `maxChildrenOfQuadNode` 的限制，也不再分叉
@@ -273,8 +273,8 @@ declare namespace AMapUI {
         GroupStyleRender: PointSimplifier.GroupStyleRender<unknown>;
         getImageContent: (
           imageSrc: string,
-          onLoad?: Function,
-          onError?: Function,
+          onLoad?: Fn,
+          onError?: Fn,
         ) => NonNullable<PointSimplifier.PointStyle['content']>;
       };
     };
@@ -286,7 +286,7 @@ declare namespace AMapUI {
      * @public
      * @param {PointSimplifier.Options<DataItem>} options 构造参数
      */
-    public constructor(options: PointSimplifier.Options<DataItem>);
+    public constructor(options?: PointSimplifier.Options<DataItem>);
 
     /** 重新绘制 */
     public render(): void;
@@ -317,7 +317,7 @@ declare namespace AMapUI {
      */
     public _buildData(data: DataItem[]): void;
     /** 渲染数据准备完毕，开始渲染前触发 */
-    public onRenderReady(callback: (...args: any[]) => void): void;
+    public onRenderReady(callback: Fn): void;
     /** 判断图层是否处于隐藏状态 */
     public isHidden(): boolean;
 

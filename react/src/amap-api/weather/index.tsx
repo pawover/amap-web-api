@@ -27,7 +27,7 @@ export interface WeatherProps extends CommonProps {
 
 export const Weather = forwardRef<WeatherProps & { weather: AMap.Weather | undefined }, WeatherProps>((props, ref) => {
   const { weather } = useWeather(props);
-  useImperativeHandle(ref, () => ({ ...props, weather }), [weather]);
+  useImperativeHandle(ref, () => ({ ...props, weather }), [props, weather]);
 
   return null;
 });

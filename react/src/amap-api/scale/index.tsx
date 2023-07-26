@@ -14,7 +14,7 @@ export interface ScaleProps extends CommonProps, AMap.Scale.Options {
 
 export const Scale = forwardRef<ScaleProps & { scale: AMap.Scale | undefined }, ScaleProps>((props, ref) => {
   const { scale } = useScale(props);
-  useImperativeHandle(ref, () => ({ ...props, scale }), [scale]);
+  useImperativeHandle(ref, () => ({ ...props, scale }), [props, scale]);
 
   return null;
 });

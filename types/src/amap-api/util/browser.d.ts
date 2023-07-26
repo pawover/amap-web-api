@@ -190,8 +190,8 @@ declare namespace AMap {
     const isWebsocket: boolean;
     /**
      * 是否支持 WebGL
-     * - AMap Web API 1.0 中为 `function` 类型
-     * - AMap Web API 2.0 中为 `boolean` 类型
+     * - AMap Web API 1.x 中为 `function` 类型
+     * - AMap Web API 2.x 中为 `boolean` 类型
      */
     const isWebGL: boolean | (() => boolean);
     /**

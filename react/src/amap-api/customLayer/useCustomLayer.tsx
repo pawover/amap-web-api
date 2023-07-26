@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { CustomLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { CustomLayerProps } from './';
 
 interface useCustomLayer extends CustomLayerProps {}
 

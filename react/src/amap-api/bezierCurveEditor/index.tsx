@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
-import { useMapContext } from '../index';
 import type { BezierCurveRef } from '../bezierCurve';
+import { useMapContext } from '../index';
 import { useEventProperties } from '../utils';
 
 export interface BezierCurveEditorProps

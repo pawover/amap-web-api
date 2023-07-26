@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { LayerGroupProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { LayerGroupProps } from './';
 
 interface useLayerGroup extends LayerGroupProps {}
 

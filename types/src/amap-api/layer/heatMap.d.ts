@@ -94,7 +94,7 @@ declare namespace AMap {
   /**
    * 图层 - 热力图
    *
-   * @deprecated AMap Web API 2.0 中已废弃
+   * @deprecated AMap Web API 2.x 中已废弃
    * @class Heatmap
    * @implements {GetSet.Maps} 所属地图
    * @implements {GetSet.Options<Heatmap.Options>} 属性配置

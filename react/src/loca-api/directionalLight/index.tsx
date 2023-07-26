@@ -9,7 +9,7 @@ export const DirectionalLight = forwardRef<
   DirectionalLightProps
 >((props, ref) => {
   const { directionalLight } = useDirectionalLight(props);
-  useImperativeHandle(ref, () => ({ ...props, directionalLight }), [directionalLight]);
+  useImperativeHandle(ref, () => ({ ...props, directionalLight }), [props, directionalLight]);
 
   return null;
 });

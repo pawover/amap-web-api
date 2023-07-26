@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useMapContext } from '../index';
-import type { GeolocationProps } from '.';
+import type { GeolocationProps } from './';
 
 interface UseGeolocation extends GeolocationProps {}
 
@@ -8,10 +8,11 @@ export const useGeolocation = (props: UseGeolocation) => {
   const { type = 'position', onComplete, onError, ...rest } = props;
   const { AMap, map } = useMapContext();
   const [geolocation, setGeolocation] = useState<AMap.Geolocation>();
-  const callback: AMap.Geolocation.Callback = useCallback((status, result) => {
+
+  const callback: AMap.Geolocation.Callback = (status, result) => {
     if (status === 'complete' && onComplete) onComplete(result as AMap.Geolocation.Result);
     else if (onError) onError(result as AMap.Geolocation.Error);
-  }, []);
+  };
 
   useEffect(() => {
     if (AMap && map && !geolocation) {

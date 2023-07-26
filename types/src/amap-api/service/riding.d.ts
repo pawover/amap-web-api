@@ -14,7 +14,7 @@ declare namespace AMap {
     interface Callback {
       (status: 'complete', result: Result): void;
       (status: 'error', result: string): void;
-      (status: 'no_data', result: {}): void;
+      (status: 'no_data', result: Obj): void;
     }
     interface Result {
       /** 规划路线列表 */

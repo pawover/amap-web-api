@@ -21,7 +21,7 @@ export const CustomLayer = forwardRef<
   CustomLayerProps
 >((props, ref) => {
   const { customLayer } = useCustomLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, customLayer }), [customLayer]);
+  useImperativeHandle(ref, () => ({ ...props, customLayer }), [props, customLayer]);
 
   return null;
 });

@@ -51,7 +51,7 @@ declare namespace Loca {
      * @public
      * @param {Container.Options} options 数据可视化组件初始化参数
      */
-    public constructor(options: Container.Options);
+    public constructor(options?: Container.Options);
 
     /** 将一个图层添加到地图上 */
     public add(layer: Layer): void;

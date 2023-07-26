@@ -9,7 +9,7 @@ declare namespace AMap {
        * 设置曲线是否离地绘制
        * - 等于 `0` 时贴地绘制
        * - 大于 `0` 时离地绘制，此时曲线高度等于 `height` 值加曲线起点高程值，可以通过 `getPolylineHeight` 获取当前曲线高度值
-       * - AMap Web API 2.0 新增属性，目前只适用于 2.0 版本
+       * - AMap Web API 2.x 新增属性，目前只适用于 2.x 版本
        *
        * @default 0.0
        */
@@ -56,9 +56,9 @@ declare namespace AMap {
     public getOptions: () => Polyline.Options;
     public setOptions: (options: Polyline.Options) => void;
 
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public getzIndex: () => number;
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public setzIndex: (zIndex: number) => void;
 
     /**
@@ -68,7 +68,7 @@ declare namespace AMap {
      * @public
      * @param {Polyline.Options} options 构造参数
      */
-    public constructor(options: Polyline.Options);
+    public constructor(options?: Polyline.Options);
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;
@@ -78,7 +78,7 @@ declare namespace AMap {
     public toGeometry(): GeoJSON | undefined;
     /**
      * 返回 GeoJSON 形式的数据
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public toGeoJSON(): GeoJSON | undefined;
     /**

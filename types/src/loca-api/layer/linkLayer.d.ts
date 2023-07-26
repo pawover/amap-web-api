@@ -1,7 +1,7 @@
 declare namespace Loca {
   namespace LinkLayer {
     interface Options extends Layer.Options {}
-    interface StyleOptions<ExtraData extends {} = {}> extends LineLayer.StyleOptions<ExtraData> {
+    interface StyleOptions<ExtraData extends Obj = Obj> extends LineLayer.StyleOptions<ExtraData> {
       /**
        * 链接线颜色
        * - 可设置颜色渐变，`color[0]`为起始色，`color[color.length-1]`为终止色，中间为过渡色
@@ -31,10 +31,10 @@ declare namespace Loca {
    * 图层 - 图标
    *
    * @class LinkLayer
-   * @template ExtraData extends {} = {}
+   * @template ExtraData extends Obj = Obj
    * @extends {Layer<LinkLayer.StyleOptions<ExtraData>>} 抽象类 - 图层
    */
-  class LinkLayer<ExtraData extends {} = {}> extends Layer<LinkLayer.StyleOptions<ExtraData>> {
+  class LinkLayer<ExtraData extends Obj = Obj> extends Layer<LinkLayer.StyleOptions<ExtraData>> {
     /**
      * 构造函数
      *

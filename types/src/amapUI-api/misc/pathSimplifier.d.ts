@@ -251,7 +251,7 @@ declare namespace AMapUI {
      * @public
      * @param {PathSimplifier.Options<DataItem>} options 构造参数
      */
-    public constructor(options: PathSimplifier.Options<DataItem>);
+    public constructor(options?: PathSimplifier.Options<DataItem>);
 
     /** 重新绘制 */
     public render(): void;
@@ -282,7 +282,7 @@ declare namespace AMapUI {
      */
     public setFitView(pathIndex: number): void;
     /** 渲染数据准备完毕，开始渲染前触发 */
-    public onRenderReady(callback: (...args: any[]) => void): void;
+    public onRenderReady(callback: Fn): void;
     /** 判断图层是否处于隐藏状态 */
     public isHidden(): boolean;
 

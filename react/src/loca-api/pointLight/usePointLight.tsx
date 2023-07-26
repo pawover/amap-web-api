@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocaContext } from '../index';
-import type { PointLightProps } from '.';
+import type { PointLightProps } from './';
 
 interface UsePointLight extends PointLightProps {}
 
 export const usePointLight = (props: UsePointLight = {}) => {
   const { locaContainer } = useLocaContext();
   const [pointLight, setPointLight] = useState<Loca.PointLight>();
+
   useEffect(() => {
     if (locaContainer && !pointLight) {
       const instance = new Loca.DirectionalLight(props, props.locaContainer || locaContainer);
@@ -18,7 +19,7 @@ export const usePointLight = (props: UsePointLight = {}) => {
         setPointLight(undefined);
       }
     };
-  }, [locaContainer, pointLight]);
+  }, [locaContainer, pointLight, props]);
 
   return {
     pointLight,

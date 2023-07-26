@@ -20,7 +20,7 @@ export interface MapTypeProps extends CommonProps, Omit<AMap.MapType.Options, 'p
 
 export const MapType = forwardRef<MapTypeProps & { mapType: AMap.MapType | undefined }, MapTypeProps>((props, ref) => {
   const { mapType } = useMapType(props);
-  useImperativeHandle(ref, () => ({ ...props, mapType }), [mapType]);
+  useImperativeHandle(ref, () => ({ ...props, mapType }), [props, mapType]);
 
   return null;
 });

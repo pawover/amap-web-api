@@ -15,7 +15,7 @@ export interface ControlBarProps extends CommonProps, AMap.ControlBar.Options {
 export const ControlBar = forwardRef<ControlBarProps & { controlBar: AMap.ControlBar | undefined }, ControlBarProps>(
   (props, ref) => {
     const { controlBar } = useControlBar(props);
-    useImperativeHandle(ref, () => ({ ...props, controlBar }), [controlBar]);
+    useImperativeHandle(ref, () => ({ ...props, controlBar }), [props, controlBar]);
 
     return null;
   },

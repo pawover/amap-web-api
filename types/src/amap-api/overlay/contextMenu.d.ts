@@ -30,7 +30,7 @@ declare namespace AMap {
      * @public
      * @param {ContextMenu.Options} options 构造参数
      */
-    public constructor(options: ContextMenu.Options);
+    public constructor(options?: ContextMenu.Options);
 
     /** 打开右键菜单 */
     public open(map: Map, position: LngLatLike): void;

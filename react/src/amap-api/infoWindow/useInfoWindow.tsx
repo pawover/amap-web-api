@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useMapContext } from '../index';
-import type { InfoWindowProps } from '.';
-import { useEventProperties, useWrapper, useSetProperties } from '../utils';
+import { useEventProperties, useSetProperties, useWrapper } from '../utils';
+import type { InfoWindowProps } from './';
 
 interface UseInfoWindow extends InfoWindowProps {}
 
@@ -28,11 +28,13 @@ export const useInfoWindow = (props: UseInfoWindow) => {
       }
     };
   }, [map, infoWindow]);
+
   useEffect(() => {
     if (infoWindow) {
       infoWindow.setContent(props.children ? container : rest.content || '');
     }
   }, [props.children, container, rest.content, infoWindow]);
+
   useEffect(() => {
     if (!map || !infoWindow || !visible) return;
     const positionCenter = map.getCenter();

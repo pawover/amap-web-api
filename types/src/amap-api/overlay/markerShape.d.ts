@@ -24,7 +24,7 @@ declare namespace AMap {
    * - 自定义区域和 Marker 重叠的部分，可以触发 Marker 的点击事件
    * - 在 IE浏览器 中图标透明区域默认为不触发事件，因此 MarkerShape 在 IE 中不起作用
    *
-   * @deprecated AMap Web API 2.0 中已废弃
+   * @deprecated AMap Web API 2.x 中已废弃
    * @class MarkerShape
    */
   class MarkerShape {
@@ -35,6 +35,6 @@ declare namespace AMap {
      * @public
      * @param {MarkerShape.Options} options 构造参数
      */
-    public constructor(options: MarkerShape.Options);
+    public constructor(options?: MarkerShape.Options);
   }
 }

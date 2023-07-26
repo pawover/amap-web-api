@@ -5,7 +5,7 @@ declare namespace AMap {
     | 'AMap.AdvancedInfoWindow'
     | 'AMap.ArrivalRange'
     | 'AMap.Autocomplete' // AMap Web API 1.4.x
-    | 'AMap.AutoComplete' // AMap Web API 2.0
+    | 'AMap.AutoComplete' // AMap Web API 2.x
     | 'AMap.CloudDataLayer'
     | 'AMap.CloudDataSearch'
     | 'AMap.CircleEditor'
@@ -20,7 +20,7 @@ declare namespace AMap {
     | 'AMap.Geolocation'
     | 'AMap.HawkEye'
     | 'AMap.Heatmap' // AMap Web API 1.4.x
-    | 'AMap.HeatMap' // AMap Web API 2.0
+    | 'AMap.HeatMap' // AMap Web API 2.x
     | 'AMap.LineSearch'
     | 'AMap.IndoorMap'
     | 'AMap.MapType'

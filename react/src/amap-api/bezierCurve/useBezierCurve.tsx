@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { BezierCurveProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { BezierCurveProps } from './';
 
 interface UseBezierCurve extends BezierCurveProps {}
 

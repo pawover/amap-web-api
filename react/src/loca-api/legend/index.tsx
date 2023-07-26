@@ -6,7 +6,7 @@ export interface LegendProps extends LocaContext, Loca.Legend.Options {}
 
 export const Legend = forwardRef<LegendProps & { legend: Loca.Legend | undefined }, LegendProps>((props, ref) => {
   const { legend } = useLegend(props);
-  useImperativeHandle(ref, () => ({ ...props, legend }), [legend]);
+  useImperativeHandle(ref, () => ({ ...props, legend }), [props, legend]);
 
   return null;
 });

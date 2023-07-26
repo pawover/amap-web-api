@@ -1,4 +1,4 @@
-import React, { cloneElement, forwardRef, isValidElement, useImperativeHandle, memo } from 'react';
+import React, { cloneElement, forwardRef, isValidElement, memo, useImperativeHandle } from 'react';
 import type { CommonProps } from '../map';
 import { usePolygon } from './usePolygon';
 

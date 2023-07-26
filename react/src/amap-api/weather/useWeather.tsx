@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useMapContext } from '../index';
-import type { WeatherProps } from '.';
+import type { WeatherProps } from './';
 
 interface UseWeather extends WeatherProps {}
 
@@ -39,7 +39,7 @@ export const useWeather = (props: UseWeather = {}) => {
         });
       }
     }
-  }, [weather, city, type]);
+  }, [weather, city, type, onComplete, onError]);
 
   return {
     weather,

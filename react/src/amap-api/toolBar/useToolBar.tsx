@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { ToolBarProps } from '.';
 import { useVisible } from '../utils';
+import type { ToolBarProps } from './';
 
 interface UseToolBar extends ToolBarProps {}
 

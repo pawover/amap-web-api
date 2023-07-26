@@ -1,7 +1,7 @@
 declare namespace Loca {
   namespace LineLayer {
     interface Options extends Layer.Options {}
-    interface StyleOptions<ExtraData extends {} = {}> {
+    interface StyleOptions<ExtraData extends Obj = Obj> {
       /**
        * 线的颜色
        *
@@ -44,10 +44,10 @@ declare namespace Loca {
    * 图层 - 线
    *
    * @class LineLayer
-   * @template ExtraData extends {} = {}
+   * @template ExtraData extends Obj = Obj
    * @extends {Layer<LineLayer.StyleOptions<ExtraData>>} 抽象类 - 图层
    */
-  class LineLayer<ExtraData extends {} = {}> extends Layer<LineLayer.StyleOptions<ExtraData>> {
+  class LineLayer<ExtraData extends Obj = Obj> extends Layer<LineLayer.StyleOptions<ExtraData>> {
     /**
      * 构造函数
      *

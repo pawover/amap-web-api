@@ -65,19 +65,19 @@ declare namespace AMap {
       /**
        * 标记阴影，不设置该属性则标记无阴影
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       shadow?: Icon;
       /**
        * 设置 Marker 的可点击区域，在定义的区域内可触发 Marker 的鼠标点击事件
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       shape?: MarkerShape;
       /**
        * 设置拖拽标记时是否开启标记离开地图的效果
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       raiseOnDrag?: boolean;
       /**
@@ -85,7 +85,7 @@ declare namespace AMap {
        * - `angle` 属性使用 CSS3 实现，仅支持 IE9 及以上版本
        *
        * @default 0
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       angle?: number;
       /**
@@ -94,7 +94,7 @@ declare namespace AMap {
        * - `autoRotation` 属性仅支持 IE9 及以上版本
        *
        * @default false
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       autoRotation?: boolean;
       /**
@@ -104,7 +104,7 @@ declare namespace AMap {
        * - `AMAP_ANIMATION_BOUNCE` 点标弹跳效果
        *
        * @default "AMAP_ANIMATION_NONE"
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       animation?: Animation;
     }
@@ -199,21 +199,21 @@ declare namespace AMap {
      * @public
      * @param {Marker.Options} options 构造参数
      */
-    public constructor(options: Marker.Options);
+    public constructor(options?: Marker.Options);
 
     public startMove(): void;
     public stopMove(): void;
     public resumeMove(): void;
     /**
      * 暂停标记动画
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public pauseMove(): void;
     public moveTo(lnglat: LngLatLike, options: MoveAnimation.MoveToOptions): void;
     /**
      * 标记动画 - 标记移动到指定位置
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @param {LngLatLike} lnglat 指定位置
      * @param {number} speed 速度（千米/小时）
@@ -224,7 +224,7 @@ declare namespace AMap {
     /**
      * 标记动画 - 标记沿指定路径移动
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @param {LngLatLike[]} path 指定路径
      * @param {number} speed 速度（千米/小时）
@@ -244,19 +244,19 @@ declare namespace AMap {
     public toGeometry(): GeoJSON | undefined;
     /**
      * 返回 GeoJSON 形式的数据
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public toGeoJSON(): GeoJSON | undefined;
     /**
      * 唤起高德地图客户端标注页
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public markOnAMAP(params: Recordable<'position', LngLatLike>): void;
     /** 获取标记的 DOM 容器 */
     public getContentDom(): HTMLDivElement;
     /**
      * 获取标记的 amap id
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getId(): number;
 
@@ -302,45 +302,45 @@ declare namespace AMap {
 
     /**
      * 获取标记的动画效果
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getAnimation(): Animation;
     /**
      * 设置标记的动画效果
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setAnimation(animation: Animation): void;
 
     /**
      * 获取标记的文本标注方位
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getTextAlign(): Direction;
     /**
      * 设置标记的文本标注方位
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setTextAlign(direction: Direction): void;
 
     /**
      * 获取可点击区域
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getShape(): MarkerShape;
     /**
      * 设置可点击区域
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setShape(shape: MarkerShape): void;
 
     /**
      * 获取阴影图标
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getShadow(): Icon;
     /**
      * 设置阴影图标
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setShadow(icon: Icon): void;
   }

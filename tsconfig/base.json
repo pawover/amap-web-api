@@ -31,5 +31,5 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx"
   },
-  "exclude": ["build", "dist", "node_modules"]
+  "exclude": ["build", "dist", "cjs", "esm", "node_modules"]
 }

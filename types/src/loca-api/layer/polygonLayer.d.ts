@@ -15,7 +15,7 @@ declare namespace Loca {
        */
       blockHide?: boolean;
     }
-    interface StyleOptions<ExtraData extends {} = {}> {
+    interface StyleOptions<ExtraData extends Obj = Obj> {
       /**
        * 线的颜色
        *
@@ -100,10 +100,10 @@ declare namespace Loca {
    * - 支持多边形、复杂多边形、带洞多边形的绘制
    *
    * @class PolygonLayer
-   * @template ExtraData extends {} = {}
+   * @template ExtraData extends Obj = Obj
    * @extends {Layer<PolygonLayer.StyleOptions<ExtraData>>} 抽象类 - 图层
    */
-  class PolygonLayer<ExtraData extends {} = {}> extends Layer<PolygonLayer.StyleOptions<ExtraData>> {
+  class PolygonLayer<ExtraData extends Obj = Obj> extends Layer<PolygonLayer.StyleOptions<ExtraData>> {
     /**
      * 构造函数
      *

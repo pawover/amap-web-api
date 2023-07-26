@@ -1,8 +1,3 @@
 {
-  "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}": ["eslint --fix", "prettier --write"],
-  "*.{css,scss,less,postcss,styl}": ["stylelint --fix --allow-empty-input", "prettier --write"],
-  "*.vue": ["eslint --fix", "prettier --write", "stylelint --fix --custom-syntax postcss-html"],
-  "*.html": ["stylelint --fix --custom-syntax postcss-html", "prettier --write"],
-  "*.md": ["prettier --write"],
-  "package.json": ["prettier --write"]
+  "*": ["prettier --write"]
 }

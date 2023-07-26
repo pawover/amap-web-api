@@ -14,7 +14,7 @@ export interface TrafficProps extends CommonProps, AMap.Traffic.Events, AMap.Tra
 
 export const Traffic = forwardRef<TrafficProps & { traffic: AMap.Traffic | undefined }, TrafficProps>((props, ref) => {
   const { traffic } = useTraffic(props);
-  useImperativeHandle(ref, () => ({ ...props, traffic }), [traffic]);
+  useImperativeHandle(ref, () => ({ ...props, traffic }), [props, traffic]);
 
   return null;
 });

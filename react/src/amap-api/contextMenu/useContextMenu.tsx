@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { ContextMenuProps } from '.';
 import { useEventProperties } from '../utils';
+import type { ContextMenuProps } from './';
 
 interface UseContextMenu extends ContextMenuProps {}
 
@@ -26,6 +26,7 @@ export const useContextMenu = (props: UseContextMenu) => {
       }
     };
   }, [map, contextMenu]);
+
   useEffect(() => {
     contextMenu?.close();
   }, [disabled]);

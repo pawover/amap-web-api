@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { CitySearchProps } from '.';
 import { useEventProperties, useSetProperties } from '../utils';
+import type { CitySearchProps } from './';
 
 interface useCitySearch extends CitySearchProps {}
 
@@ -24,6 +24,7 @@ export const useCitySearch = (props: useCitySearch) => {
       }
     };
   }, [map, citySearch]);
+
   useEffect(() => {
     if (!citySearch) return;
     if (typeof ip === 'string') citySearch.getCityByIp(ip);

@@ -143,7 +143,7 @@ declare namespace Loca {
      * @public
      * @param {?Legend.Options} [options] 构造参数
      */
-    public constructor(options: Legend.Options);
+    public constructor(options?: Legend.Options);
     /**
      * 设置图例样式
      *

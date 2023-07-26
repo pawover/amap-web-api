@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { TextProps } from '.';
-import { useEventProperties, useWrapper, useSetProperties, useVisible } from '../utils';
+import { useEventProperties, useSetProperties, useVisible, useWrapper } from '../utils';
+import type { TextProps } from './';
 
 interface UseText extends TextProps {}
 
@@ -25,6 +25,7 @@ export const useText = (props: UseText) => {
       }
     };
   }, [map, text]);
+
   useEffect(() => {
     if (text) text.setText(props.children ? container.innerHTML : props.text || '');
   }, [props.children, props.text, container, text]);

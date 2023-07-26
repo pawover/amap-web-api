@@ -15,7 +15,7 @@ export interface FlexibleProps extends CommonProps, AMap.Flexible.Events, AMap.F
 export const Flexible = forwardRef<FlexibleProps & { flexible: AMap.Flexible | undefined }, FlexibleProps>(
   (props, ref) => {
     const { flexible } = useFlexible(props);
-    useImperativeHandle(ref, () => ({ ...props, flexible }), [flexible]);
+    useImperativeHandle(ref, () => ({ ...props, flexible }), [props, flexible]);
 
     return null;
   },

@@ -17,7 +17,7 @@ declare namespace Loca {
        * @unit 角度
        * @default 0
        */
-      rotation?: number | Function;
+      rotation?: number | Fn;
       /**
        * 是否让每个 `Marker` 总是朝向视角方向
        *
@@ -31,7 +31,7 @@ declare namespace Loca {
        * @unit 米
        * @default 0
        */
-      altitude?: number | Function;
+      altitude?: number | Fn;
     }
   }
 

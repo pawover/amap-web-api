@@ -40,7 +40,7 @@ declare namespace AMap {
 
     /**
      * 停止自动更新数据
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public stopFresh(): void;
   }

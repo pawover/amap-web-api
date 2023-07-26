@@ -10,7 +10,7 @@ export interface CitySearchProps extends AMap.CitySearch.Events, AMap.CitySearch
 export const CitySearch = forwardRef<CitySearchProps & { citySearch: AMap.CitySearch | undefined }, CitySearchProps>(
   (props, ref) => {
     const { citySearch } = useCitySearch(props);
-    useImperativeHandle(ref, () => ({ ...props, citySearch }), [citySearch]);
+    useImperativeHandle(ref, () => ({ ...props, citySearch }), [props, citySearch]);
 
     return null;
   },

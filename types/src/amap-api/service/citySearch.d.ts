@@ -12,6 +12,7 @@ declare namespace AMap {
     interface Result {
       /** 查询的成功状态说明 */
       info: string;
+      /** 查询的成功状态码 */
       infocode: string;
       /** 所在省 */
       province: string;

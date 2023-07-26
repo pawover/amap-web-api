@@ -1,7 +1,0 @@
-{
-  "root": true,
-  "extends": ["everqin/typescript"],
-  "rules": {
-    "@typescript-eslint/triple-slash-reference": ["off"]
-  }
-}

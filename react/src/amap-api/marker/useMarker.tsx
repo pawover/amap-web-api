@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { MarkerProps } from '.';
-import { useEventProperties, useWrapper, useSetProperties, useVisible } from '../utils';
+import { useEventProperties, useSetProperties, useVisible, useWrapper } from '../utils';
+import type { MarkerProps } from './';
 
 interface UseMarker extends MarkerProps {}
 
@@ -25,6 +25,7 @@ export const useMarker = (props: UseMarker) => {
       }
     };
   }, [map, marker]);
+
   useVisible(marker!, visible);
   useSetProperties<AMap.Marker, UseMarker>(marker!, props, Object.keys(props) as (keyof typeof props)[]);
   useEventProperties<AMap.Marker, UseMarker, AMap.Marker.Events>(marker!, props, [

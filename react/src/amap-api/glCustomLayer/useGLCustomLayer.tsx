@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { GLCustomLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { GLCustomLayerProps } from './';
 
 interface useGLCustomLayer extends GLCustomLayerProps {}
 

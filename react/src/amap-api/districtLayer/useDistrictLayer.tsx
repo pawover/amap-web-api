@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { DistrictLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { DistrictLayerProps } from './';
 
 interface useDistrictLayer extends DistrictLayerProps {}
 
@@ -31,6 +31,7 @@ export const useDistrictLayer = (props: useDistrictLayer) => {
       }
     };
   }, [map, districtLayer]);
+
   useVisible(districtLayer!, visible);
   useSetProperties<AMap.DistrictLayer, useDistrictLayer>(
     districtLayer!,

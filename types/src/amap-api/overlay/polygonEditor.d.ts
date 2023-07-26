@@ -70,7 +70,7 @@ declare namespace AMap {
 
     /** 停止添加多边形 */
     public clearAddingPolygon(): void;
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public clearTipMarkers(): void;
     public createMarker(marker: Marker.Options): void;
     /** 停止添加多边形 */

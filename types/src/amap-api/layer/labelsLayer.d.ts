@@ -8,6 +8,13 @@ declare namespace AMap {
        */
       collision?: boolean;
       /**
+       * 是否开启动画效果
+       *
+       * @default true
+       * @deprecated AMap Web API 2.x 中已废弃
+       */
+      animation?: boolean;
+      /**
        * 标注层内的标注是否允许其它标注层对它避让，开启该功能可实现地图标注对 `LabelMarker` 的避让
        *
        * @default false
@@ -34,7 +41,7 @@ declare namespace AMap {
      * @public
      * @param {LabelsLayer.Options} options 构造参数
      */
-    public constructor(options: LabelsLayer.Options);
+    public constructor(options?: LabelsLayer.Options);
 
     /** 将 labelMarker 添加到标注层上 */
     public add(labelMarkers: LabelsLayer[]): void;

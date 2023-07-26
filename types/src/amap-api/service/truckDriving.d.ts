@@ -90,7 +90,7 @@ declare namespace AMap {
     interface Callback {
       (status: 'complete', result: Result): void;
       (status: 'error', result: string): void;
-      (status: 'no_data', result: {}): void;
+      (status: 'no_data', result: Obj): void;
     }
     interface Result extends Omit<Driving.Result, 'taxi_cost'> {}
     interface Events {
@@ -118,7 +118,7 @@ declare namespace AMap {
      * @public
      * @param {TruckDriving.Options} options 构造参数
      */
-    public constructor(options: TruckDriving.Options);
+    public constructor(options?: TruckDriving.Options);
 
     /**
      * 通过起点、终点、途经点坐标或名称规划驾车路线

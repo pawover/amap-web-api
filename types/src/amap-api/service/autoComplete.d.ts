@@ -84,7 +84,7 @@ declare namespace AMap {
     interface Callback {
       (status: 'complete', result: Result): void;
       (status: 'error', result: string): void;
-      (status: 'no_data', result: {}): void;
+      (status: 'no_data', result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -140,7 +140,7 @@ declare namespace AMap {
    * - 可将 Poi 类型和城市类型作为查询范围的限制条件
    * - 用户可以通过自定义回调函数取回查询结果并显示
    *
-   * @deprecated AMap Web API 2.0 中已废弃
+   * @deprecated AMap Web API 2.x 中已废弃
    * @class Autocomplete
    * @extends {Event<ServiceEventList>} 类 - 地图事件
    */

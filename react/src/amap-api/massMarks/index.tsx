@@ -16,7 +16,7 @@ export interface MassMarksProps extends CommonProps, AMap.MassMarks.Events, AMap
 export const MassMarks = forwardRef<MassMarksProps & { massMarks: AMap.MassMarks | undefined }, MassMarksProps>(
   (props, ref) => {
     const { massMarks } = useMassMarks(props);
-    useImperativeHandle(ref, () => ({ ...props, massMarks }), [massMarks, props]);
+    useImperativeHandle(ref, () => ({ ...props, massMarks }), [props, massMarks]);
 
     return null;
   },

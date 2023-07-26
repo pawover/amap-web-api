@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { ImageLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { ImageLayerProps } from './';
 
 interface useImageLayer extends ImageLayerProps {}
 

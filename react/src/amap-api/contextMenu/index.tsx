@@ -15,7 +15,7 @@ export const ContextMenu = forwardRef<
 >((props, ref) => {
   const { disabled = false } = props;
   const { contextMenu } = useContextMenu(props);
-  useImperativeHandle(ref, () => ({ ...props, contextMenu }), [contextMenu]);
+  useImperativeHandle(ref, () => ({ ...props, contextMenu }), [props, contextMenu]);
   const childList = Children.toArray(props.children);
 
   return (

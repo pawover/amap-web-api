@@ -134,7 +134,7 @@ declare namespace AMap {
      * @public
      * @param {DistrictLayer.Options} options 构造参数
      */
-    public constructor(options: DistrictLayer.Options);
+    public constructor(options?: DistrictLayer.Options);
 
     /** 设定显示的国家 SOC */
     public setSOC(SOC: string): void;

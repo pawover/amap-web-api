@@ -110,7 +110,7 @@ declare namespace AMap {
     }
     /**
      * 高度
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     interface Height {
       /** 获取高度 */

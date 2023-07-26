@@ -17,7 +17,7 @@ export const GLCustomLayer = forwardRef<
   GLCustomLayerProps
 >((props, ref) => {
   const { glCustomLayer } = useGLCustomLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, glCustomLayer }), [glCustomLayer]);
+  useImperativeHandle(ref, () => ({ ...props, glCustomLayer }), [props, glCustomLayer]);
 
   return null;
 });

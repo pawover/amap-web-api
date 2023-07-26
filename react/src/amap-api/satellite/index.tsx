@@ -15,7 +15,7 @@ export interface SatelliteProps extends CommonProps, AMap.Satellite.Events, AMap
 export const Satellite = forwardRef<SatelliteProps & { satellite: AMap.Satellite | undefined }, SatelliteProps>(
   (props, ref) => {
     const { satellite } = useSatellite(props);
-    useImperativeHandle(ref, () => ({ ...props, satellite }), [satellite]);
+    useImperativeHandle(ref, () => ({ ...props, satellite }), [props, satellite]);
 
     return null;
   },

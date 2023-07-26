@@ -14,7 +14,7 @@ export interface ToolBarProps extends CommonProps, AMap.ToolBar.Options {
 
 export const ToolBar = forwardRef<ToolBarProps & { toolBar: AMap.ToolBar | undefined }, ToolBarProps>((props, ref) => {
   const { toolBar } = useToolBar(props);
-  useImperativeHandle(ref, () => ({ ...props, toolBar }), [toolBar]);
+  useImperativeHandle(ref, () => ({ ...props, toolBar }), [props, toolBar]);
 
   return null;
 });

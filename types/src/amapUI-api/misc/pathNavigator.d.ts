@@ -161,8 +161,8 @@ declare namespace AMapUI {
      *
      * @public
      * @param {(PathNavigatorEventList)} eventName 事件名称
-     * @param {(...args: any[]) => void} callback 回调函数
+     * @param {Fn} callback 回调函数
      */
-    public off(eventName: PathNavigatorEventList, callback: (...args: any[]) => void): void;
+    public off(eventName: PathNavigatorEventList, callback: Fn): void;
   }
 }

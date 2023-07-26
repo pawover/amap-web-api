@@ -247,6 +247,8 @@ declare namespace AMap {
 
   /** 地图对象类，封装了地图的属性设置、图层变更、事件交互等接口的类 */
   class Map extends Event<MapEventList> {
+    public labelMarkersLayer: { add: Fn };
+
     /**
      * 构造函数
      *
@@ -258,7 +260,7 @@ declare namespace AMap {
     public constructor(container: string | HTMLDivElement, options: Map.Options);
 
     /** 添加图片 */
-    public addImage(text: string, options: { url: string; callback: (...args: any[]) => void }): void;
+    public addImage(text: string, options: { url: string; callback: Fn }): void;
     /** 获取图片 */
     public getImage(): unknown;
     /** 取消过渡动画 */
@@ -269,7 +271,7 @@ declare namespace AMap {
     public clearMap(): void;
     /**
      * 清除 Map 的限制区域
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public clearLimitBounds(): void;
     /** 销毁地图实例，并清空地图容器 */
@@ -606,13 +608,13 @@ declare namespace AMap {
 
     /**
      * 获取 Map 的限制区域
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getLimitBounds(): Bounds;
     /**
      * 设置 Map 的限制区域
      * - 设定区域限制后，传入参数为限制的 Bounds，地图仅在区域内可拖拽
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setLimitBounds(bounds: Bounds): void;
 

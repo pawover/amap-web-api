@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { HeatMapProps } from '.';
 import { useSetProperties, useVisible } from '../utils';
+import type { HeatMapProps } from './';
 
 interface useHeatMap extends HeatMapProps {}
 
@@ -32,12 +32,13 @@ export const useHeatMap = (props: useHeatMap) => {
   };
 };
 /**
- * @deprecated — AMap Web API 2.0 中已废弃
+ * @deprecated AMap Web API 2.x 中已废弃
  */
 export const useHeatmap = (props: useHeatMap) => {
   const { visible = true, ...rest } = props;
   const { AMap, map } = useMapContext();
   const [heatmap, setHeatmap] = useState<AMap.Heatmap>();
+
   useEffect(() => {
     if (AMap && map && !heatmap) {
       const instance = new AMap.Heatmap(map, rest);
@@ -49,7 +50,8 @@ export const useHeatmap = (props: useHeatMap) => {
         setHeatmap(undefined);
       }
     };
-  }, [map]);
+  }, [map, heatmap]);
+
   useVisible(heatmap!, visible);
   useSetProperties<AMap.Heatmap, useHeatMap>(heatmap!, props, Object.keys(props) as (keyof typeof props)[]);
 

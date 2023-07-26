@@ -1,4 +1,4 @@
-import React, { forwardRef, isValidElement, useImperativeHandle, cloneElement } from 'react';
+import React, { cloneElement, forwardRef, isValidElement, useImperativeHandle } from 'react';
 import type { CommonProps } from '../map';
 import { useCircle } from './useCircle';
 

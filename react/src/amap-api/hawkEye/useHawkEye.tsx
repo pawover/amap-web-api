@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { HawkEyeProps } from '.';
 import { useVisible } from '../utils';
+import type { HawkEyeProps } from './';
 
 interface UseHawkEye extends HawkEyeProps {}
 
@@ -25,7 +25,7 @@ export function useHawkEye(props: UseHawkEye) {
         setHawkEye(undefined);
       }
     };
-  }, [map, hawkEye, JSON.stringify(offset), JSON.stringify(rest.mapStyle)]);
+  }, [map, hawkEye, JSON.stringify([offset, rest.mapStyle])]);
 
   useVisible(hawkEye!, visible);
 

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { AutoCompleteProps } from '.';
 import { useEventProperties, useSetProperties } from '../utils';
+import type { AutoCompleteProps } from './';
 
 interface UseAutoComplete extends AutoCompleteProps {}
 
@@ -9,10 +9,11 @@ export const useAutoComplete = (props: UseAutoComplete) => {
   const { keyword, onComplete, onError, ...rest } = props;
   const { AMap, map } = useMapContext();
   const [autoComplete, setAutoComplete] = useState<AMap.AutoComplete>();
-  const callback: AMap.AutoComplete.Callback = useCallback((status, result) => {
+
+  const callback: AMap.AutoComplete.Callback = (status, result) => {
     if (status === 'complete' && onComplete) onComplete(result as AMap.AutoComplete.Result);
     else if (onError) onError(result as string);
-  }, []);
+  };
 
   useEffect(() => {
     if (AMap && map && !autoComplete) {
@@ -28,6 +29,7 @@ export const useAutoComplete = (props: UseAutoComplete) => {
       }
     };
   }, [map, autoComplete]);
+
   useEffect(() => {
     if (typeof keyword === 'string' && autoComplete) {
       autoComplete.search(keyword, callback);
@@ -50,16 +52,12 @@ export const useAutoComplete = (props: UseAutoComplete) => {
   };
 };
 /**
- * @deprecated — AMap Web API 2.0 中已废弃
+ * @deprecated AMap Web API 2.x 中已废弃
  */
 export const useAutocomplete = (props: UseAutoComplete) => {
   const { keyword, onComplete, onError, ...rest } = props;
   const { AMap, map } = useMapContext();
   const [autocomplete, setAutocomplete] = useState<AMap.Autocomplete>();
-  const callback: AMap.Autocomplete.Callback = useCallback((status, result) => {
-    if (status === 'complete' && onComplete) onComplete(result as AMap.Autocomplete.Result);
-    else if (onError) onError(result as string);
-  }, []);
 
   useEffect(() => {
     if (AMap && map && !autocomplete) {
@@ -74,12 +72,16 @@ export const useAutocomplete = (props: UseAutoComplete) => {
         setAutocomplete(undefined);
       }
     };
-  }, [map]);
+  }, [map, autocomplete]);
+
   useEffect(() => {
     if (typeof keyword === 'string' && autocomplete) {
-      autocomplete.search(keyword, callback);
+      autocomplete.search(keyword, (status, result) => {
+        if (status === 'complete' && onComplete) onComplete(result as AMap.Autocomplete.Result);
+        else if (onError) onError(result as string);
+      });
     }
-  }, [keyword, autocomplete]);
+  }, [keyword, autocomplete, onComplete, onError]);
 
   useSetProperties<AMap.Autocomplete, UseAutoComplete>(
     autocomplete!,

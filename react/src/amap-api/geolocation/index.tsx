@@ -19,7 +19,7 @@ export const Geolocation = forwardRef<
   GeolocationProps
 >((props, ref) => {
   const { geolocation } = useGeolocation(props);
-  useImperativeHandle(ref, () => ({ ...props, geolocation }), [geolocation]);
+  useImperativeHandle(ref, () => ({ ...props, geolocation }), [props, geolocation]);
 
   return null;
 });

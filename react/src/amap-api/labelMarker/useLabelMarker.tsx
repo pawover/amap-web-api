@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { LabelMarkerProps } from '.';
-import { useEventProperties, useSetProperties } from '../utils';
+import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { LabelMarkerProps } from './';
 
 interface useLabelMarker extends LabelMarkerProps {}
 
 export const useLabelMarker = (props: useLabelMarker) => {
+  const { visible = true, ...rest } = props;
   const { AMap, map } = useMapContext();
   const [labelMarker, setLabelMarker] = useState<AMap.LabelMarker>();
 
   useEffect(() => {
     if (AMap && map && !labelMarker) {
-      const instance = new AMap.LabelMarker(props);
-      map.add(instance);
+      const instance = new AMap.LabelMarker(rest);
+
       setLabelMarker(instance);
+
+      if (AMap.v?.indexOf('1.4') === 0) {
+        let labelMarkersLayer;
+        if (map.labelMarkersLayer) {
+          labelMarkersLayer = map.labelMarkersLayer;
+        } else {
+          map.labelMarkersLayer = labelMarkersLayer = new AMap.LabelsLayer();
+          map.add(labelMarkersLayer);
+        }
+        labelMarkersLayer.add(instance);
+      }
+
+      map.add(instance);
     }
     return () => {
       if (labelMarker) {
@@ -24,6 +38,7 @@ export const useLabelMarker = (props: useLabelMarker) => {
     };
   }, [map, labelMarker]);
 
+  useVisible(labelMarker!, visible);
   useSetProperties<AMap.LabelMarker, useLabelMarker>(labelMarker!, props, Object.keys(props) as (keyof typeof props)[]);
   useEventProperties<AMap.LabelMarker, useLabelMarker, AMap.LabelMarker.Events>(labelMarker!, props, [
     'onClick',

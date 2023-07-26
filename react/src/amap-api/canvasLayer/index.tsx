@@ -17,7 +17,7 @@ export const CanvasLayer = forwardRef<
   CanvasLayerProps
 >((props, ref) => {
   const { canvasLayer } = useCanvasLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, canvasLayer }), [canvasLayer]);
+  useImperativeHandle(ref, () => ({ ...props, canvasLayer }), [props, canvasLayer]);
 
   return null;
 });

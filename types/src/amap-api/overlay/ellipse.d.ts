@@ -62,9 +62,9 @@ declare namespace AMap {
     public getRadius: () => number;
     public setRadius: (radius: number) => void;
 
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public getzIndex: () => number;
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public setzIndex: (zIndex: number) => void;
 
     /**
@@ -74,7 +74,7 @@ declare namespace AMap {
      * @public
      * @param {Ellipse.Options} options 构造参数
      */
-    public constructor(options: Ellipse.Options);
+    public constructor(options?: Ellipse.Options);
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;
@@ -84,7 +84,7 @@ declare namespace AMap {
     public toGeometry(): GeoJSON | undefined;
     /**
      * 返回 GeoJSON 形式的数据
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public toGeoJSON(): GeoJSON | undefined;
 
@@ -98,12 +98,12 @@ declare namespace AMap {
     public setCenterAndRadius(center: LngLatLike, radius: number): void;
     /**
      * 获取路径的节点数组
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getPath(): ControlPath[];
     /**
      * 设置组成该折线的节点数组
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setPath(path: LngLatLike[] | LngLatLike[][]): void;
   }

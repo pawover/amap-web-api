@@ -8,8 +8,7 @@ import React, {
   useReducer,
   useRef,
 } from 'react';
-import { MapCtx, mapContextState, mapReducer } from './context';
-
+import { mapContextState, MapCtx, mapReducer } from './context';
 import { useMap } from './useMap';
 
 export * from './context';
@@ -33,11 +32,11 @@ interface RenderProps {
 }
 
 export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProps & RenderProps>((props, ref) => {
-  const { className = '', style = {}, children, customAttribute, ...rest } = props;
+  const { container, className = '', style = {}, children, customAttribute, ...rest } = props;
   const [state, dispatch] = useReducer(mapReducer, mapContextState);
-  const elmRef = useRef<HTMLDivElement>(null);
+  const elmRef = useRef<HTMLDivElement>(container || null);
   const value = useMemo(() => ({ ...state, state, dispatch }), [state]);
-  const { map, container, setContainer } = useMap({ container: rest.container || elmRef.current, ...rest });
+  const { map } = useMap({ container: elmRef.current, ...rest });
 
   const childrenFnList: RenderFn[] = [];
   const childrenElementList: React.ReactElement<MapContext, React.FC<MapContext> | string>[] = [];
@@ -52,13 +51,13 @@ export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProp
     if (typeof children === 'function') childrenFnList.push(children);
     else childrenElementList.push(children as ReactAMapElement);
   }
-  useEffect(() => setContainer(elmRef.current || null), [elmRef.current]);
+
   useEffect(() => map && dispatch({ AMap, map, container: elmRef.current }), [map]);
-  useImperativeHandle(ref, () => ({ ...rest, AMap, map, container: rest.container || elmRef.current }), [map]);
+  useImperativeHandle(ref, () => ({ ...rest, AMap, map, container: elmRef.current }), [map]);
 
   return (
     <MapCtx.Provider value={value}>
-      {!rest.container && (
+      {!elmRef.current && (
         <div
           ref={elmRef}
           className={`react-amap-wrapper ${className}`}
@@ -66,7 +65,7 @@ export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProp
           {...customAttribute}
         />
       )}
-      {map && childrenFnList.map((f) => f({ AMap, map, container }))}
+      {map && childrenFnList.map((f) => f({ AMap, map, container: elmRef.current }))}
       {map &&
         childrenElementList.map((child, key) => {
           if (!isValidElement(child)) return null;
@@ -76,7 +75,7 @@ export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProp
             key,
             AMap,
             map,
-            container,
+            container: elmRef.current,
           });
         })}
     </MapCtx.Provider>

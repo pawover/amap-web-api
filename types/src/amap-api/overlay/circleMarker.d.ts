@@ -64,9 +64,9 @@ declare namespace AMap {
     public getDraggable: () => boolean;
     public setDraggable: (draggable: boolean) => void;
 
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public getzIndex: () => number;
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public setzIndex: (zIndex: number) => void;
 
     /**
@@ -76,7 +76,7 @@ declare namespace AMap {
      * @public
      * @param {CircleMarker.Options} options 构造参数
      */
-    public constructor(options: CircleMarker.Options);
+    public constructor(options?: CircleMarker.Options);
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;
@@ -87,7 +87,7 @@ declare namespace AMap {
 
     /**
      * 获取路径的节点数组
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getPath(): ControlPath[];
   }

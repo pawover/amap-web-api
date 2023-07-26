@@ -35,7 +35,7 @@ declare namespace Loca {
        */
       labelsLayerOptions?: AMap.LabelsLayer.Options;
     }
-    interface StyleOptions<ExtraData extends {} = {}> {
+    interface StyleOptions<ExtraData extends Obj = Obj> {
       /**
        * 半径，支持动画过渡效果
        *
@@ -123,7 +123,7 @@ declare namespace Loca {
    * @class PrismLayer
    * @extends {Layer<PrismLayer.StyleOptions>} 抽象类 - 图层
    */
-  class PrismLayer<ExtraData extends {} = {}> extends Layer<PrismLayer.StyleOptions<ExtraData>> {
+  class PrismLayer<ExtraData extends Obj = Obj> extends Layer<PrismLayer.StyleOptions<ExtraData>> {
     /**
      * 构造函数
      *

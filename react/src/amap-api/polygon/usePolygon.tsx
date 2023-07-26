@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { PolygonProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { PolygonProps } from './';
 
 interface UsePolygon extends PolygonProps {}
 

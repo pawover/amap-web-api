@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { MassMarksProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { MassMarksProps } from './';
 
 interface UseMassMarks extends MassMarksProps {}
 
@@ -15,7 +15,7 @@ export const useMassMarks = (props: UseMassMarks) => {
     if (AMap && map && !massMarks) {
       let initStyle = style;
       if (!initStyle) {
-        // AMap Web API 2.0 支持显示设置 `zIndex`, `zIndex` 越大约靠前，默认按顺序排列
+        // AMap Web API 2.x 支持显示设置 `zIndex`, `zIndex` 越大约靠前，默认按顺序排列
         initStyle = [
           {
             url: 'https://webapi.amap.com/images/mass/mass0.png',

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { CircleProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { CircleProps } from './';
 
 interface UseCircle extends CircleProps {}
 

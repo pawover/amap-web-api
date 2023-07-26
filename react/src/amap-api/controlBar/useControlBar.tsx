@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { ControlBarProps } from '.';
 import { useVisible } from '../utils';
+import type { ControlBarProps } from './';
 
 interface UseControlBar extends ControlBarProps {}
 

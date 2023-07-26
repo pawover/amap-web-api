@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { ScaleProps } from '.';
 import { useVisible } from '../utils';
+import type { ScaleProps } from './';
 
 interface UseScale extends ScaleProps {}
 

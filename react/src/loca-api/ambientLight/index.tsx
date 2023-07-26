@@ -9,7 +9,7 @@ export const AmbientLight = forwardRef<
   AmbientLightProps
 >((props, ref) => {
   const { ambientLight } = useAmbientLight(props);
-  useImperativeHandle(ref, () => ({ ...props, ambientLight }), [ambientLight]);
+  useImperativeHandle(ref, () => ({ ...props, ambientLight }), [props, ambientLight]);
 
   return null;
 });

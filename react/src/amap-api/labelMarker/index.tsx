@@ -10,7 +10,7 @@ export const LabelMarker = forwardRef<
   LabelMarkerProps
 >((props, ref) => {
   const { labelMarker } = useLabelMarker(props);
-  useImperativeHandle(ref, () => ({ ...props, labelMarker }), [labelMarker]);
+  useImperativeHandle(ref, () => ({ ...props, labelMarker }), [props, labelMarker]);
 
   return null;
 });

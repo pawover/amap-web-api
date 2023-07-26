@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { PolylineProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { PolylineProps } from './';
 
 interface UsePolyline extends PolylineProps {}
 

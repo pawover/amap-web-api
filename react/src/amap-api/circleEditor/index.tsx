@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
-import { useMapContext } from '../index';
 import type { CircleRef } from '../circle';
+import { useMapContext } from '../index';
 import { useEventProperties } from '../utils';
 
 export interface CircleEditorProps extends AMap.CircleEditor.Events, AMap.CircleEditor.Options, Partial<CircleRef> {

@@ -62,7 +62,7 @@ declare namespace AMap {
      * @public
      * @param {Icon.Options} options 构造参数
      */
-    public constructor(options: Icon.Options);
+    public constructor(options?: Icon.Options);
 
     /** 获取图标尺寸 */
     public getSize(): Vector;

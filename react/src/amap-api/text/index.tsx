@@ -15,7 +15,7 @@ export interface TextProps extends CommonProps, AMap.Text.Events, AMap.Text.Opti
 
 export const Text = forwardRef<Omit<TextProps, 'text'> & { text: AMap.Text | undefined }, TextProps>((props, ref) => {
   const { text, TextWrapper } = useText(props);
-  useImperativeHandle(ref, () => ({ ...props, text }), [text]);
+  useImperativeHandle(ref, () => ({ ...props, text }), [props, text]);
 
   if (!props.children) return null;
   return <TextWrapper>{props.children}</TextWrapper>;

@@ -17,7 +17,7 @@ export const LabelsLayer = forwardRef<
   LabelsLayerProps
 >((props, ref) => {
   const { labelsLayer } = useLabelsLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, labelsLayer }), [labelsLayer]);
+  useImperativeHandle(ref, () => ({ ...props, labelsLayer }), [props, labelsLayer]);
 
   return null;
 });

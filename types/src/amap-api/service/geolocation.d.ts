@@ -112,14 +112,14 @@ declare namespace AMap {
       /**
        * 定位按钮的停靠位置
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        * @default "RB"
        */
       buttonPosition?: 'RT' | 'RB' | 'LT' | 'LB';
       /**
        * 定位按钮与设置的停靠位置的偏移量
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        * @default Pixel(10,20)
        */
       buttonOffset?: Pixel;
@@ -130,7 +130,7 @@ declare namespace AMap {
        * 错误信息
        * - 参考 [错误信息列表](https://lbs.amap.com/api/javascript-api/reference/location#m_ErrorinformationList)
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       info: string;
       /**
@@ -167,7 +167,7 @@ declare namespace AMap {
       /**
        * 定位的类型
        * - 可能的值：
-       *   - `"html5"` AMap Web API 2.0 中已废弃
+       *   - `"html5"` AMap Web API 2.x 中已废弃
        *   - `"h5"`
        *   - `"ip"`
        *   - `"ipcity"`
@@ -233,7 +233,7 @@ declare namespace AMap {
      * @public
      * @param {Geolocation.Options} options 构造参数
      */
-    public constructor(options: Geolocation.Options);
+    public constructor(options?: Geolocation.Options);
 
     /** 添加地理定位 */
     public addTo(map: Map): void;

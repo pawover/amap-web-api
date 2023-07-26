@@ -95,9 +95,9 @@ declare namespace AMap {
     | ToolEventList;
 
   interface EventLike {
-    on: (...arg: any[]) => void;
-    off: (...arg: any[]) => void;
-    emit: (...arg: any[]) => void;
+    on: Fn;
+    off: Fn;
+    emit: Fn;
   }
 
   /**
@@ -125,7 +125,7 @@ declare namespace AMap {
     /** 数据 */
     data?: unknown;
     /** 鼠标工具创建的对象 */
-    obj: T extends 'draw' ? I : never;
+    obj?: T extends 'draw' ? I : never;
   }
 
   /** 共同部分事件定义 */
@@ -187,7 +187,7 @@ declare namespace AMap {
   /**
    * 抽象类 - 事件发射器
    *
-   * @deprecated AMap Web API 2.0 中已废弃
+   * @deprecated AMap Web API 2.x 中已废弃
    * @abstract
    * @class EventEmitter
    */
@@ -351,7 +351,7 @@ declare namespace AMap {
   /**
    * 类 - 地图事件
    *
-   * @deprecated AMap Web API 2.0 中已废弃
+   * @deprecated AMap Web API 2.x 中已废弃
    * @class event
    */
   class event {
@@ -360,7 +360,7 @@ declare namespace AMap {
      * - 给 DOM 对象注册事件，并返回 `eventListener`
      * - 运行 `AMap.event.removeListener(eventListener)` 可以删除该事件的监听器
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @template N extends keyof HTMLElementTagNameMap
      * @template E extends keyof HTMLElementEventMap
@@ -386,7 +386,7 @@ declare namespace AMap {
      * - 给 DOM 对象注册一次性事件，并返回 `eventListener`
      * - 运行 `AMap.event.removeListener(eventListener)` 可以删除该事件的监听器
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @template N extends keyof HTMLElementTagNameMap
      * @template E extends keyof HTMLElementEventMap
@@ -412,7 +412,7 @@ declare namespace AMap {
      * - 给对象注册一次性事件，并返回 `eventListener`
      * - 运行 `AMap.event.removeListener(eventListener)` 可以删除该事件的监听器
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @template I extends EventEmitter
      * @template C = I
@@ -433,7 +433,7 @@ declare namespace AMap {
      * - 给对象注册一次性事件，并返回 `eventListener`
      * - 运行 `AMap.event.removeListener(eventListener)` 可以删除该事件的监听器
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @template I extends EventEmitter
      * @template C = I
@@ -453,7 +453,7 @@ declare namespace AMap {
      * 移除事件绑定
      * - 删除由 event.addDomListener 和 event.addListener 传回的指定侦听器
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @param {(EventListener & { type: 0 | 1 })} listener
      */
@@ -461,14 +461,14 @@ declare namespace AMap {
     /**
      * 清除事件
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      */
     public clearListeners(...args: any[]): void;
     /**
      * 清除事件
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      */
     public clearInstanceListeners(...args: any[]): void;
@@ -477,7 +477,7 @@ declare namespace AMap {
      * - 触发非 DOM 事件 eventName，data 将扩展到事件监听函数 `callback` 接受到的 event 参数中
      * - 如传入 `data: {m:10,p:2}` 时，eventName 监听函数 `callback` 可以接收到包含 m,p 两个 key 值的 event 对象
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @param {EventEmitter} instance 触发对象
      * @param {EventList} type 事件名称

@@ -84,7 +84,7 @@ declare namespace AMap {
      * - 参数请勿以 `#` 开头
      * - 例如将 `ffff0000` 转换为 `rgba(255,0,0,1.00)`
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @template HEX extends string
      * @template R extends HEX extends `#` ? never : HEX['length'] extends 8 ? RGBA : `rgba(${string})`
      * @param {HEX} hex 16进制8位 的 RGB 颜色值
@@ -97,11 +97,11 @@ declare namespace AMap {
     /**
      * 判断对象或数组是否为空
      *
-     * @template T extends {} | unknown[]
+     * @template T extends Obj | unknown[]
      * @param {T} target 目标对象或数组
      * @returns {boolean} 是否为空
      */
-    function isEmpty<T extends {} | unknown[]>(target: T): boolean;
+    function isEmpty<T extends Obj | unknown[]>(target: T): boolean;
     /**
      * 从目标数组中删除指定项
      *
@@ -177,10 +177,7 @@ declare namespace AMap {
     /**
      * 同原生 requestIdleCallback
      */
-    function requestIdleCallback(
-      callback: (...args: any[]) => unknown,
-      options?: { timeout?: number | undefined },
-    ): number;
+    function requestIdleCallback(callback: Fn, options?: { timeout?: number | undefined }): number;
     /**
      * 同原生 cancelIdleCallback
      */

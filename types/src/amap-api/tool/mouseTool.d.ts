@@ -8,7 +8,7 @@ declare namespace AMap {
   class MouseTool extends Event<ToolEventList> {
     /** 所属地图实例 */
     public _map: Map;
-    /** 仅 AMap Web API 2.0 */
+    /** 仅 AMap Web API 2.x */
     public overlays: {
       circle: Circle[];
       marker: Marker[];

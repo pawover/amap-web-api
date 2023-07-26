@@ -17,14 +17,15 @@ export const BuildingLayer = forwardRef<
   BuildingLayerProps
 >((props, ref) => {
   const { buildingLayer } = useBuildingLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, buildingLayer }), [buildingLayer]);
+  useImperativeHandle(ref, () => ({ ...props, buildingLayer }), [props, buildingLayer]);
 
   return null;
 });
+
 export const Buildings = forwardRef<BuildingLayerProps & { buildings: AMap.Buildings | undefined }, BuildingLayerProps>(
   (props, ref) => {
     const { buildings } = useBuildings(props);
-    useImperativeHandle(ref, () => ({ ...props, buildings }), [buildings]);
+    useImperativeHandle(ref, () => ({ ...props, buildings }), [props, buildings]);
 
     return null;
   },

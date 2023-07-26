@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
-import { useMapContext } from '../index';
 import type { EllipseRef } from '../ellipse';
+import { useMapContext } from '../index';
 import { useEventProperties } from '../utils';
 
 export interface EllipseEditorProps extends AMap.EllipseEditor.Events, AMap.EllipseEditor.Options, Partial<EllipseRef> {
@@ -18,7 +18,7 @@ export const EllipseEditor = forwardRef<EllipseEditorRef, EllipseEditorProps>((p
   const [visible, setVisible] = useState<boolean>(true);
   const [editor, setEditor] = useState<AMap.EllipseEditor>();
 
-  useImperativeHandle(ref, () => ({ ...props, editor }));
+  useImperativeHandle(ref, () => ({ ...props, editor }), [props, editor]);
 
   useEffect(() => {
     if (AMap && map && AMap.EllipseEditor && ellipse && !editor) {

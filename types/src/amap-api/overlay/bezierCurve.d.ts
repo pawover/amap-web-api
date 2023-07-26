@@ -35,7 +35,7 @@ declare namespace AMap {
        * 设置曲线是否离地绘制
        * - 等于 `0` 时贴地绘制
        * - 大于 `0` 时离地绘制，此时曲线高度等于 `height` 值加曲线起点高程值，可以通过 `getPolylineHeight` 获取当前曲线高度值
-       * - AMap Web API 2.0 新增属性，目前只适用于 2.0 版本
+       * - AMap Web API 2.x 新增属性，目前只适用于 2.x 版本
        *
        * @default 0.0
        */
@@ -81,9 +81,9 @@ declare namespace AMap {
     public getExtData: () => unknown;
     public setExtData: <D>(extraData: D) => void;
 
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public getzIndex: () => number;
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public setzIndex: (zIndex: number) => void;
 
     /**
@@ -93,7 +93,7 @@ declare namespace AMap {
      * @public
      * @param {BezierCurve.Options} options 构造参数
      */
-    public constructor(options: BezierCurve.Options);
+    public constructor(options?: BezierCurve.Options);
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;
@@ -103,7 +103,7 @@ declare namespace AMap {
     public toGeometry(): GeoJSON | undefined;
     /**
      * 返回 GeoJSON 形式的数据
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public toGeoJSON(): GeoJSON | undefined;
 
@@ -111,17 +111,17 @@ declare namespace AMap {
      * 获取曲线的总长度
      * @unit 米
      * @unitSymbol m
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getLength(): number;
     /**
      * 返回构成曲线的所有控制点信息
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getInterpolateLngLats(): ControlPoint[];
     /**
      * 将 曲线 以格式如 `[[lng, lat, lng, lat]]` 的 JSON 形式返回
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getSerializedPath(): number[] | number[][];
 
@@ -129,7 +129,7 @@ declare namespace AMap {
     public getPath(): [number, number] | [number, number][];
     /**
      * 获取路径的节点数组
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getPath(): ControlPath[];
     /** 设置组成该折线的节点数组 */

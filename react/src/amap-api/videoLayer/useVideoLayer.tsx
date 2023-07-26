@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { VideoLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { VideoLayerProps } from './';
 
 interface useVideoLayer extends VideoLayerProps {}
 

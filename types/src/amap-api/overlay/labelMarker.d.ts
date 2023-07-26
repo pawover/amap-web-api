@@ -153,21 +153,21 @@ declare namespace AMap {
      * @public
      * @param {LabelMarker.Options} options 构造参数
      */
-    public constructor(options: LabelMarker.Options);
+    public constructor(options?: LabelMarker.Options);
 
     public startMove(): void;
     public stopMove(): void;
     public resumeMove(): void;
     /**
      * 暂停标记动画
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public pauseMove(): void;
     public moveTo(lnglat: LngLatLike, options: MoveAnimation.MoveToOptions): void;
     /**
      * 标记动画 - 标记移动到指定位置
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @param {LngLatLike} lnglat 指定位置
      * @param {number} speed 速度（千米/小时）
@@ -178,7 +178,7 @@ declare namespace AMap {
     /**
      * 标记动画 - 标记沿指定路径移动
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @public
      * @param {LngLatLike[]} path 指定路径
      * @param {number} speed 速度（千米/小时）

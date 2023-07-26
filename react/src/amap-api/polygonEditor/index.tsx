@@ -35,10 +35,14 @@ export const PolygonEditor = forwardRef<PolygonEditorRef, PolygonEditorProps>((p
       if (editor) setEditor(undefined);
     };
   }, [map, polygon]);
+
   useEffect(() => {
     if (!editor) return;
     if (visible) editable ? editor.open() : editor.close();
-    else editor.close();
+    else {
+      editor.close();
+      restProps.onEnd && restProps.onEnd({ type: 'end', target: editor.getTarget()! });
+    }
   }, [editable, visible]);
 
   useEventProperties<AMap.PolygonEditor, PolygonEditorProps, AMap.PolygonEditor.Events>(editor!, props, [

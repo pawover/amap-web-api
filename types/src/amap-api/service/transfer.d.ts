@@ -28,7 +28,7 @@ declare namespace AMap {
     interface Callback {
       (status: 'complete', result: Result): void;
       (status: 'error', result: string): void;
-      (status: 'no_data', result: {}): void;
+      (status: 'no_data', result: Obj): void;
     }
     interface Result extends Service.ResultBase {
       /** 查询的结果数量 */
@@ -127,7 +127,7 @@ declare namespace AMap {
      * @public
      * @param {Transfer.Options} options 构造参数
      */
-    public constructor(options: Transfer.Options);
+    public constructor(options?: Transfer.Options);
 
     /**
      * 通过起点、终点、途经点坐标规划公交路线

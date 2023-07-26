@@ -69,7 +69,7 @@ declare namespace AMap {
     interface Callback {
       (status: 'complete', result: Result): void;
       (status: 'error', result: string): void;
-      (status: 'no_data', result: {}): void;
+      (status: 'no_data', result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -88,7 +88,7 @@ declare namespace AMap {
       /** 发生事件且查无此关键字时，返回建议关键字列表，可根据建议关键字查询 */
       keywordList?: string[];
       /** 发生事件且查无此关键字且 city 为 `"全国"` 时，返回城市建议列表，该列表中每个城市包含一个或多个相关 Poi 点信息 */
-      cityList?: string[];
+      cityList?: Poi[];
     }
     interface OnPoiParams {
       /** 地点位置 */

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useRef, useState } from 'react';
 
 export * from './usePortal';
@@ -10,7 +11,7 @@ export * from './usePortal';
  */
 export const useSetStatus = <
   I extends { getStatus: () => AMap.Map.States; setStatus: (opt: AMap.Map.States) => void },
-  P extends {} = {},
+  P extends Obj = Obj,
   N extends string[] = string[],
 >(
   instance: I,
@@ -18,15 +19,14 @@ export const useSetStatus = <
   propsName: N,
 ) => {
   propsName.forEach((n) => {
-    const name = n as keyof P;
-    const [state, setState] = useState(props[name]);
+    const [state, setState] = useState(props[n]);
     useEffect(() => {
-      if (instance && name in props && props[name] !== state) {
+      if (instance && n in props && props[n] !== state) {
         const status = instance.getStatus() || {};
-        instance.setStatus({ ...status, [name]: props[name] });
-        setState(props[name]);
+        instance.setStatus({ ...status, [n]: props[n] });
+        setState(props[n]);
       }
-    }, [instance, props[name]]);
+    }, [instance, props[n]]);
   });
 };
 
@@ -113,7 +113,7 @@ export const useEventProperties = <I extends AMap.Event<AMap.EventList>, P, E ex
     useSetProperties<AMap.Polyline, UsePolyline>(polyline!, props, Object.keys(props) as (keyof typeof props)[]);
   ```
  */
-export const useSetProperties = <I extends {}, P extends {} = {}>(
+export const useSetProperties = <I extends Obj | AMap.GetSet.Options<unknown>, P extends Obj = Obj>(
   instance: I,
   props: P,
   propNames: (string & keyof P)[] = [],
@@ -125,15 +125,14 @@ export const useSetProperties = <I extends {}, P extends {} = {}>(
       if (instance && props[name] !== undefined) {
         if (instance[fnName]) {
           if (props[name] !== state && instance[fnName] && typeof instance[fnName] === 'function') {
-            (instance[fnName] as unknown as (...args: any[]) => void)?.(props[name]);
+            (instance[fnName] as unknown as Fn)?.(props[name]);
             setState(props[name]);
           }
         } else if ('getOptions' in instance && 'setOptions' in instance) {
-          const thisInstance = instance as AMap.GetSet.Options<Recordable>;
-          const options = thisInstance.getOptions?.();
+          const options = instance.getOptions?.();
           if (options) {
             if (props[name] !== state) {
-              thisInstance.setOptions?.({ ...options, [name]: props[name] });
+              instance.setOptions?.({ ...options, [name]: props[name] });
               setState(props[name]);
             }
           }

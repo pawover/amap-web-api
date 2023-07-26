@@ -45,7 +45,7 @@ export interface APILoaderOptions {
     /**
      * AMapUI API 版本号
      * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 AMapUI API 版本号。
-     * - AMap Web API 2.0 版本需要使用 AMapUI API 1.1 以上版本。
+     * - AMap Web API 2.x 版本需要使用 AMapUI API 1.1 以上版本。
      */
     version: 'auto' | `${string}.${string}`;
     /**
@@ -62,8 +62,8 @@ export interface APILoaderOptions {
     /**
      * Loca API 版本号
      * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 Loca API 版本号。
-     * - Loca API 2.0 版本和 Loca API 1.3.x 版本不兼容，它们是针对不同的 AMap Web API 版本进行的封装。
-     * - 如果您需要使用 AMap Web API 1.4.x，那么只能使用 Loca API 1.3.x；如果您需要使用 AMap Web API 2.0，那么只能使用 Loca API 2.0。
+     * - Loca API 2.x 版本和 Loca API 1.3.x 版本不兼容，它们是针对不同的 AMap Web API 版本进行的封装。
+     * - 如果您需要使用 AMap Web API 1.4.x，那么只能使用 Loca API 1.3.x；如果您需要使用 AMap Web API 2.x，那么只能使用 Loca API 2.x。
      */
     version: 'auto' | `${string}.${string}`;
   };
@@ -78,13 +78,13 @@ export interface APILoaderOptions {
   /**
    * Loader 执行完成时的回调
    */
-  onFinally?: (...args: any[]) => unknown;
+  onFinally?: Fn;
 }
 
 /**
  * 高德地图 APILoader 加载组件
- * - 默认使用 AMap Web API 2.0 版本
- * - TypeScript 类型定义支持 AMap Web API 2.0 版本，如使用低版本时遇到 API 定义冲突、丢失、不存在等，请手动补全类型定义
+ * - 默认使用 AMap Web API 2.x 版本
+ * - TypeScript 类型定义支持 AMap Web API 2.x 版本，如使用低版本时遇到 API 定义冲突、丢失、不存在等，请手动补全类型定义
  */
 export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (props) => {
   const { children, aKey, sKey, ...options } = props;
@@ -129,7 +129,7 @@ export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (p
       }
     }
     return () => {};
-  }, [aKey, sKey]);
+  }, [options, aKey, sKey]);
 
   return loaded ? createElement(Fragment, null, children) : null;
 };

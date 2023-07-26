@@ -41,12 +41,12 @@ declare namespace AMap {
     /** 地理编码回调函数 */
     type GeocoderCallback = <S extends 'complete' | 'error' | 'no_data'>(
       status: S,
-      result: S extends 'complete' ? Geocoder.GeocoderResult : S extends 'error' ? Geocoder.Error : {},
+      result: S extends 'complete' ? Geocoder.GeocoderResult : S extends 'error' ? Geocoder.Error : Obj,
     ) => void;
     /** 逆地理编码回调函数 */
     type ReGeocoderCallback = <S extends 'complete' | 'error' | 'no_data'>(
       status: S,
-      result: S extends 'complete' ? Geocoder.GeocoderResult : S extends 'error' ? Geocoder.Error : {},
+      result: S extends 'complete' ? Geocoder.GeocoderResult : S extends 'error' ? Geocoder.Error : Obj,
     ) => void;
     type Error = string;
     interface GeocoderResult {

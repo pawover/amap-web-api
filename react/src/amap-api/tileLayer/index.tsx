@@ -15,7 +15,7 @@ export interface TileLayerProps extends CommonProps, AMap.TileLayer.Events, AMap
 export const TileLayer = forwardRef<TileLayerProps & { tileLayer: AMap.TileLayer | undefined }, TileLayerProps>(
   (props, ref) => {
     const { tileLayer } = useTileLayer(props);
-    useImperativeHandle(ref, () => ({ ...props, tileLayer }), [tileLayer]);
+    useImperativeHandle(ref, () => ({ ...props, tileLayer }), [props, tileLayer]);
 
     return null;
   },

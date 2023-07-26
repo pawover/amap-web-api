@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { MapCtx } from './context';
-import type { MapProps } from '.';
 import { useEventProperties, useSetProperties, useSetStatus } from '../utils';
+import type { MapProps } from './';
+import { MapCtx } from './context';
 
 /** `<Map>` 组件传递给子组件 (如 `<Marker>`) 的 props */
 export interface MapChildProps {
@@ -19,10 +19,10 @@ interface UseMap extends MapProps, MapChildProps {
 }
 
 export const useMap = (props: UseMap) => {
+  const { container } = props;
   const { dispatch } = useContext(MapCtx);
   const [map, setMap] = useState<AMap.Map>();
   const [zoom, setZoom] = useState(props.zoom || 15);
-  const [container, setContainer] = useState<HTMLDivElement | null>(props.container || null);
 
   useEffect(() => {
     if (container && !map && AMap) {
@@ -34,11 +34,13 @@ export const useMap = (props: UseMap) => {
       if (map) {
         map?.clearInfoWindow();
         map?.clearLimitBounds();
+        map?.clearMap();
         map?.destroy();
         setMap(undefined);
       }
     };
   }, [map, container]);
+
   useEffect(() => {
     map && container && dispatch({ map, container, AMap });
     return () => {
@@ -52,9 +54,11 @@ export const useMap = (props: UseMap) => {
       map.setZoom(props.zoom);
     }
   }, [zoom, props.zoom]);
+
   useMemo(() => {
     props.center && map?.setCenter(props.center);
   }, [map, props.center]);
+
   useSetStatus<AMap.Map, UseMap>(map!, props, [
     'dragEnable',
     'zoomEnable',
@@ -102,7 +106,5 @@ export const useMap = (props: UseMap) => {
     setMap,
     zoom,
     setZoom,
-    container,
-    setContainer,
   };
 };

@@ -1,4 +1,30 @@
 {
   "root": true,
-  "extends": ["everqin", "everqin/typescript"]
+  "extends": ["everqin", "everqin/typescript"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["react/**"],
+      "extends": ["everqin", "everqin/react", "everqin/typescript", "plugin:react-hooks/recommended"],
+      "rules": {
+        "no-undef": ["off"],
+        "@typescript-eslint/no-unused-vars": ["off"]
+      }
+    },
+    {
+      "files": ["types/**"],
+      "rules": {
+        "no-undef": ["off"],
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "@typescript-eslint/triple-slash-reference": ["off"]
+      }
+    }
+  ]
 }

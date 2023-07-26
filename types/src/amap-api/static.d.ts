@@ -1,4 +1,10 @@
 declare namespace AMap {
+  /** AMap Web API 1.x 版本号 */
+  const v: string;
+
+  /** AMap Web API 2.x 版本号 */
+  const version: string;
+
   /** 创建默认底图图层 */
   function createDefaultLayer(): NebulaLayer | TileLayer;
 

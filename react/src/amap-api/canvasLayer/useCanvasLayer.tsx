@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { CanvasLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { CanvasLayerProps } from './';
 
 interface useCanvasLayer extends CanvasLayerProps {}
 

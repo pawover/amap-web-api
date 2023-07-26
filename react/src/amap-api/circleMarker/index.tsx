@@ -17,7 +17,7 @@ export const CircleMarker = forwardRef<
   CircleMarkerProps
 >((props, ref) => {
   const { circleMarker } = useCircleMarker(props);
-  useImperativeHandle(ref, () => ({ ...props, circleMarker }), [circleMarker]);
+  useImperativeHandle(ref, () => ({ ...props, circleMarker }), [props, circleMarker]);
 
   return null;
 });

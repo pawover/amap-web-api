@@ -1,6 +1,6 @@
 import React, { forwardRef, useImperativeHandle } from 'react';
 import type { CommonProps } from '../map';
-import { useAutoComplete, useAutocomplete } from './useAutoComplete';
+import { useAutocomplete, useAutoComplete } from './useAutoComplete';
 
 export * from './useAutoComplete';
 export interface AutoCompleteProps extends CommonProps, AMap.AutoComplete.Events, AMap.AutoComplete.Options {
@@ -17,19 +17,19 @@ export const AutoComplete = forwardRef<
   AutoCompleteProps
 >((props, ref) => {
   const { autoComplete } = useAutoComplete(props);
-  useImperativeHandle(ref, () => ({ ...props, autoComplete }), [autoComplete]);
+  useImperativeHandle(ref, () => ({ ...props, autoComplete }), [props, autoComplete]);
 
   return null;
 });
 /**
- * @deprecated — AMap Web API 2.0 中已废弃
+ * @deprecated AMap Web API 2.x 中已废弃
  */
 export const Autocomplete = forwardRef<
   AutoCompleteProps & { autocomplete: AMap.Autocomplete | undefined },
   AutoCompleteProps
 >((props, ref) => {
   const { autocomplete } = useAutocomplete(props);
-  useImperativeHandle(ref, () => ({ ...props, autocomplete }), [autocomplete]);
+  useImperativeHandle(ref, () => ({ ...props, autocomplete }), [props, autocomplete]);
 
   return null;
 });

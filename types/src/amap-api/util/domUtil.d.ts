@@ -11,19 +11,19 @@ declare namespace AMap {
     function getStyle<K extends keyof CSSStyleDeclaration>(element: HTMLElement, key: K): CSSStyleDeclaration[K];
     /**
      * 获取 DOM 元素的大小
-     * - AMap Web API 1.0 中参数为 `HTMLElement | string` 类型，支持传入元素 ID，返回 `AMap.Size`
-     * - AMap Web API 2.0 中参数为 `HTMLElement` 类型，返回宽高组成的数组 `[width, height]`
+     * - AMap Web API 1.x 中参数为 `HTMLElement | string` 类型，支持传入元素 ID，返回 `AMap.Size`
+     * - AMap Web API 2.x 中参数为 `HTMLElement` 类型，返回宽高组成的数组 `[width, height]`
      */
     const getViewport: ((element: HTMLElement | string) => Size) | ((element: HTMLElement) => [number, number]);
     /**
      * 获取 DOM 元素距离窗口左上角的距离
-     * - AMap Web API 1.0 中返回 `AMap.Pixel`
-     * - AMap Web API 2.0 中返回距离组成的数组 `[x, y]`
+     * - AMap Web API 1.x 中返回 `AMap.Pixel`
+     * - AMap Web API 2.x 中返回距离组成的数组 `[x, y]`
      */
     const getViewportOffset: ((element: HTMLElement) => Pixel) | ((element: HTMLElement) => [number, number]);
     /**
      * 在 父元素 `parent` 内部创建一个类名为 `className` 的标签类型为 `tagName` 的元素
-     * - AMap Web API 2.0 中支持参数 `position` 设置插入位置
+     * - AMap Web API 2.x 中支持参数 `position` 设置插入位置
      */
     const create:
       | (<K extends keyof HTMLElementTagNameMap>(

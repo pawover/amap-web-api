@@ -1,6 +1,8 @@
 declare namespace AMap {
   namespace StationSearch {
     interface Options {
+      /** 地图实例 */
+      map?: AMap.Map;
       /**
        * 查询城市
        * - 可选值：城市名（中文或中文全拼）、citycode、adcode
@@ -27,7 +29,7 @@ declare namespace AMap {
     interface Callback {
       (status: 'complete', result: Result): void;
       (status: 'error', result: string): void;
-      (status: 'no_data', result: {}): void;
+      (status: 'no_data', result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */

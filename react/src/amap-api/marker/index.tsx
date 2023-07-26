@@ -17,7 +17,7 @@ export interface MarkerProps extends CommonProps, AMap.Marker.Events, AMap.Marke
 
 export const Marker = forwardRef<MarkerProps & { marker: AMap.Marker | undefined }, MarkerProps>((props, ref) => {
   const { marker, MarkerWrapper } = useMarker(props);
-  useImperativeHandle(ref, () => ({ ...props, marker }), [marker]);
+  useImperativeHandle(ref, () => ({ ...props, marker }), [props, marker]);
 
   return <MarkerWrapper>{props.children}</MarkerWrapper>;
 });

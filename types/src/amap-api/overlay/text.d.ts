@@ -28,7 +28,7 @@ declare namespace AMap {
      * @public
      * @param {Text.Options} options 构造参数
      */
-    public constructor(options: Text.Options);
+    public constructor(options?: Text.Options);
 
     /** 获取标记内容 */
     public getText(): string | undefined;

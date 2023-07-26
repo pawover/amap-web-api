@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { EllipseProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { EllipseProps } from './';
 
 interface UseEllipse extends EllipseProps {}
 

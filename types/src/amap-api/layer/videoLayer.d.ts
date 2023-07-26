@@ -17,7 +17,7 @@ declare namespace AMap {
   /**
    * 视频图层
    *
-   * @deprecated AMap Web API 2.0 中已废弃
+   * @deprecated AMap Web API 2.x 中已废弃
    * @class VideoLayer
    * @extends {MediaLayer<VideoLayer.Options, HTMLVideoElement>} 抽象类 - 媒体图层
    */
@@ -33,12 +33,12 @@ declare namespace AMap {
 
     /**
      * 获取 Video 的 Url
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getVideoUrl(): string | string[] | undefined;
     /**
      * 设置 Video 的 Url
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public setVideoUrl(Url: string | string[]): void;
   }

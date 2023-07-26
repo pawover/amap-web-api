@@ -15,7 +15,7 @@ export interface IndoorMapProps extends CommonProps, AMap.IndoorMap.Events, AMap
 export const IndoorMap = forwardRef<IndoorMapProps & { indoorMap: AMap.IndoorMap | undefined }, IndoorMapProps>(
   (props, ref) => {
     const { indoorMap } = useIndoorMap(props);
-    useImperativeHandle(ref, () => ({ ...props, indoorMap }), [indoorMap]);
+    useImperativeHandle(ref, () => ({ ...props, indoorMap }), [props, indoorMap]);
 
     return null;
   },

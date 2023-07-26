@@ -24,7 +24,7 @@ declare namespace AMap {
      * @public
      * @param {ImageLayer.Options} options 构造参数
      */
-    public constructor(options: ImageLayer.Options);
+    public constructor(options?: ImageLayer.Options);
 
     /** 获取 Image 的 url  */
     public getImageUrl(): string;

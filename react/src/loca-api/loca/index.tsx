@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useReducer,
 } from 'react';
-import { LocaCtx, locaContextState, locaReducer } from './context';
+import { locaContextState, LocaCtx, locaReducer } from './context';
 import { useLoca } from './useLoca';
 
 export * from './context';
@@ -43,8 +43,8 @@ export const LocaContainer = forwardRef<LocaProps, LocaProps & RenderProps>((pro
     if (typeof children === 'function') childrenFnList.push(children);
     else childrenElementList.push(children as React.ReactElement<LocaContext, React.FC<LocaContext>>);
   }
-  useEffect(() => props.map && dispatch({ map: props.map, Loca, locaContainer }), [locaContainer]);
-  useImperativeHandle(ref, () => ({ map: props.map, Loca, locaContainer }));
+  useEffect(() => props.map && dispatch({ map: props.map, Loca, locaContainer }), [props.map, locaContainer]);
+  useImperativeHandle(ref, () => ({ map: props.map, Loca, locaContainer }), [props.map, locaContainer]);
 
   return (
     <LocaCtx.Provider value={value}>

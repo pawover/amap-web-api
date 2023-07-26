@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { LabelsLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { LabelsLayerProps } from './';
 
 interface useLabelsLayer extends LabelsLayerProps {}
 

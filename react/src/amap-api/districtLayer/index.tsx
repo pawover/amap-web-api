@@ -24,7 +24,7 @@ export const DistrictLayer = forwardRef<
   DistrictLayerProps
 >((props, ref) => {
   const { districtLayer } = useDistrictLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, districtLayer }), [districtLayer]);
+  useImperativeHandle(ref, () => ({ ...props, districtLayer }), [props, districtLayer]);
 
   return null;
 });

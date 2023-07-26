@@ -16,7 +16,7 @@ export interface InfoWindowProps extends CommonProps, AMap.InfoWindow.Events, AM
 export const InfoWindow = forwardRef<InfoWindowProps & { infoWindow: AMap.InfoWindow | undefined }, InfoWindowProps>(
   (props, ref) => {
     const { infoWindow, InfoWindowWrapper } = useInfoWindow(props);
-    useImperativeHandle(ref, () => ({ ...props, infoWindow }), [infoWindow]);
+    useImperativeHandle(ref, () => ({ ...props, infoWindow }), [props, infoWindow]);
 
     return <InfoWindowWrapper>{props.children}</InfoWindowWrapper>;
   },

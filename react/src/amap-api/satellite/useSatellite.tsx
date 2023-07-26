@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { SatelliteProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { SatelliteProps } from './';
 
 interface useSatellite extends SatelliteProps {}
 

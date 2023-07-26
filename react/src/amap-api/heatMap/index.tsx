@@ -14,16 +14,16 @@ export interface HeatMapProps extends CommonProps, AMap.HeatMap.Options {
 
 export const HeatMap = forwardRef<HeatMapProps & { heatMap: AMap.HeatMap | undefined }, HeatMapProps>((props, ref) => {
   const { heatMap } = useHeatMap(props);
-  useImperativeHandle(ref, () => ({ ...props, heatMap }), [heatMap]);
+  useImperativeHandle(ref, () => ({ ...props, heatMap }), [props, heatMap]);
 
   return null;
 });
 /**
- * @deprecated AMap Web API 2.0 中已废弃
+ * @deprecated AMap Web API 2.x 中已废弃
  */
 export const Heatmap = forwardRef<HeatMapProps & { heatMap: AMap.Heatmap | undefined }, HeatMapProps>((props, ref) => {
   const { heatMap } = useHeatMap(props);
-  useImperativeHandle(ref, () => ({ ...props, heatMap }), [heatMap]);
+  useImperativeHandle(ref, () => ({ ...props, heatMap }), [props, heatMap]);
 
   return null;
 });

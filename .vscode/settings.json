@@ -1,0 +1,27 @@
+{
+  "files.eol": "\n",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.organizeImports": false
+  },
+  "eslint.workingDirectories": ["./types", "./react", "./vue"],
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 120,
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.vueIndentScriptAndStyle": true,
+  "tsImportSorter.configuration.keepUnused": [".*"],
+  "markdownlint.config": {
+    "default": true,
+    "MD033": false
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

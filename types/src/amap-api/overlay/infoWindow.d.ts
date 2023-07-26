@@ -81,7 +81,7 @@ declare namespace AMap {
      * @public
      * @param {InfoWindow.Options} options 构造参数
      */
-    public constructor(options: InfoWindow.Options);
+    public constructor(options?: InfoWindow.Options);
 
     /** 打开信息窗体 */
     public open(map: Map, pos: LngLatLike, height?: number): void;

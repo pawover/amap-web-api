@@ -4,7 +4,7 @@ declare namespace AMap {
       /**
        * 所属地图
        *
-       * @deprecated AMap Web API 2.0 中已废弃
+       * @deprecated AMap Web API 2.x 中已废弃
        */
       map?: Map;
       /**
@@ -158,9 +158,9 @@ declare namespace AMap {
     public getMap: () => Map | null;
     public setMap: (map: Map | null) => void;
 
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public getHeight: () => number | string;
-    /** @deprecated AMap Web API 2.0 中已废弃 */
+    /** @deprecated AMap Web API 2.x 中已废弃 */
     public setHeight: (height?: number | string) => void;
 
     /**
@@ -170,7 +170,7 @@ declare namespace AMap {
     public init: ((path?: LngLatLike[] | LngLatLike[][]) => void) | undefined;
     /**
      * 重置覆盖物
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public reset: (() => void) | undefined;
 
@@ -186,7 +186,7 @@ declare namespace AMap {
 
     /**
      * 获取显示状态
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getVisible(): boolean;
   }

@@ -19,7 +19,7 @@ export const VectorLayer = forwardRef<
   VectorLayerProps
 >((props, ref) => {
   const { vectorLayer } = useVectorLayer(props);
-  useImperativeHandle(ref, () => ({ ...props, vectorLayer }), [vectorLayer]);
+  useImperativeHandle(ref, () => ({ ...props, vectorLayer }), [props, vectorLayer]);
 
   return null;
 });

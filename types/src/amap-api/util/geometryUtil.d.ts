@@ -218,7 +218,7 @@ declare namespace AMap {
     /**
      * 判断 `组合区域RS1` 和另一个 `组合区域RS2` 是否相交
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @param {LngLatLike[]} rs1 组合区域RS1
      * @param {LngLatLike[]} rs2 组合区域RS2
      * @returns {boolean} 是否相交
@@ -227,7 +227,7 @@ declare namespace AMap {
     /**
      * 计算 `点P` 到 `区域R` 的实际距离
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @param {LngLatLike} p 点P
      * @param {LngLatLike[]} r 区域R
      * @returns {number} 实际距离，单位：米
@@ -236,7 +236,7 @@ declare namespace AMap {
     /**
      *
      *
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      * @param {(LngLatLike[] | PixelLike[])} shape1
      * @param {(LngLatLike[] | PixelLike[])} shape2
      * @returns {number[]}

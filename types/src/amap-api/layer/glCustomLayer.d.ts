@@ -24,6 +24,6 @@ declare namespace AMap {
      * @public
      * @param {GLCustomLayer.Options} options 构造参数
      */
-    public constructor(options: GLCustomLayer.Options);
+    public constructor(options?: GLCustomLayer.Options);
   }
 }

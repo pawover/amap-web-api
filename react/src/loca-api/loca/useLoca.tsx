@@ -18,7 +18,7 @@ export const useLoca = (props: UseLoca = {}) => {
         locaContainer.destroy();
       }
     };
-  }, [map, locaContainer]);
+  }, [props.map, map, locaContainer]);
 
   return { locaContainer, setLocaContainer };
 };

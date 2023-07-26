@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { MapTypeProps } from '.';
 import { useVisible } from '../utils';
+import type { MapTypeProps } from './';
 
 interface UseMapType extends MapTypeProps {}
 
@@ -37,6 +37,7 @@ export const useMapType = (props: UseMapType) => {
       }
     };
   }, [map, mapType, position, JSON.stringify([offset, rest.showRoad, rest.showTraffic])]);
+
   useVisible(mapType!, visible);
 
   return {

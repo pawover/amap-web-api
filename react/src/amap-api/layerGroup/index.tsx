@@ -17,7 +17,7 @@ export interface LayerGroupProps extends CommonProps, AMap.LayerGroup.Events {
 export const LayerGroup = forwardRef<LayerGroupProps & { layerGroup: AMap.LayerGroup | undefined }, LayerGroupProps>(
   (props, ref) => {
     const { layerGroup } = useLayerGroup(props);
-    useImperativeHandle(ref, () => ({ ...props, layerGroup }), [layerGroup]);
+    useImperativeHandle(ref, () => ({ ...props, layerGroup }), [props, layerGroup]);
 
     return null;
   },

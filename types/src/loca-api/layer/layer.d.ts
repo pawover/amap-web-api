@@ -58,7 +58,7 @@ declare namespace Loca {
       /** 随机动画的动画执行时间，单位毫秒，random 为 true 时生效 */
       transform?: number;
     }
-    type StyleRender<T, G extends GeoJSON.Geometry, O extends {} = {}> = T | ((index: number, item: G & O) => T);
+    type StyleRender<T, G extends GeoJSON.Geometry, O extends Obj = Obj> = T | ((index: number, item: G & O) => T);
   }
 
   /**
@@ -67,10 +67,10 @@ declare namespace Loca {
    *
    * @abstract
    * @class Layer
-   * @template StyleOptions extends {} = {}
+   * @template StyleOptions extends Obj = Obj
    * @extends {AMap.Event<'add'>}
    */
-  abstract class Layer<StyleOptions extends {} = {}> extends AMap.Event<'add'> {
+  abstract class Layer<StyleOptions extends Obj = Obj> extends AMap.Event<'add'> {
     public readonly map: AMap.Map | null;
     public readonly loca: Container | null;
     public readonly customCenter: AMap.Vector;
@@ -88,7 +88,7 @@ declare namespace Loca {
      * @protected
      * @param {?Layer.Options} [options] 构造参数
      */
-    protected constructor(options: Layer.Options);
+    protected constructor(options?: Layer.Options);
 
     /** 从 Loca 上移除图层 */
     public remove(): void;

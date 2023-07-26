@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { BuildingLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { BuildingLayerProps } from './';
 
 interface useBuildingLayer extends BuildingLayerProps {}
 
@@ -16,8 +16,6 @@ export const useBuildingLayer = (props: useBuildingLayer) => {
       map.add(instance);
       setBuildingLayer(instance);
     }
-  }, [map]);
-  useEffect(() => {
     return () => {
       if (buildingLayer) {
         buildingLayer.clearEvents();
@@ -25,7 +23,7 @@ export const useBuildingLayer = (props: useBuildingLayer) => {
         setBuildingLayer(undefined);
       }
     };
-  }, [buildingLayer]);
+  }, [map, buildingLayer]);
 
   useVisible(buildingLayer!, visible);
   useSetProperties<AMap.BuildingLayer, useBuildingLayer>(
@@ -42,10 +40,12 @@ export const useBuildingLayer = (props: useBuildingLayer) => {
     setBuildingLayer,
   };
 };
+
 export const useBuildings = (props: useBuildingLayer) => {
   const { visible = true, ...rest } = props;
   const { AMap, map } = useMapContext();
   const [buildings, setBuildings] = useState<AMap.Buildings>();
+
   useEffect(() => {
     if (AMap && map && !buildings) {
       const instance = new AMap.Buildings(rest);
@@ -59,7 +59,8 @@ export const useBuildings = (props: useBuildingLayer) => {
         setBuildings(undefined);
       }
     };
-  }, [map]);
+  }, [map, buildings]);
+
   useVisible(buildings!, visible);
   useSetProperties<AMap.Buildings, useBuildingLayer>(buildings!, props, Object.keys(props) as (keyof typeof props)[]);
   useEventProperties<AMap.Buildings, useBuildingLayer, AMap.Buildings.Events>(buildings!, props, ['onComplete']);

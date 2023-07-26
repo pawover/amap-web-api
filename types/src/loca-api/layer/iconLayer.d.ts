@@ -8,13 +8,13 @@ declare namespace Loca {
        * @example 'https://a.amap.com/test_cms/static/kwt/yinhang3.png'
        *
        */
-      icon?: string | Function;
+      icon?: string | Fn;
       /**
        * 图标大小，影响宽高。支持动画过渡效果，动画 `key` 字段名称为 `iconSize`
        *
        * @default [20,20]
        */
-      iconSize?: string | Function;
+      iconSize?: string | Fn;
       /**
        * 点的单位，会影响半径和边宽度
        * - `px` 像素
@@ -29,13 +29,13 @@ declare namespace Loca {
        * @unit 角度
        * @default 0
        */
-      rotation?: number | Function;
+      rotation?: number | Fn;
       /**
        * 透明度，支持通过回调函数为每个点设置不同的透明度
        *
        * @default 1
        */
-      opacity?: number | Function;
+      opacity?: number | Fn;
       /**
        * 图标偏移的位置大小，右上方为正方向
        * - 单位取决于 `unit` 的值

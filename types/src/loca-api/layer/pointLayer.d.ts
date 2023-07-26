@@ -9,7 +9,7 @@ declare namespace Loca {
        */
       blend?: 'normal' | 'lighter';
     }
-    interface StyleOptions<ExtraData extends {} = {}> {
+    interface StyleOptions<ExtraData extends Obj = Obj> {
       /**
        * 半径，支持动画过渡效果
        *
@@ -61,11 +61,11 @@ declare namespace Loca {
    * - 支持对每个圆点的半径、颜色、描边信息单独设置
    *
    * @class PointLayer
-   * @template ExtraData extends {} = {}
+   * @template ExtraData extends Obj = Obj
    * @extends {Layer<PointLayer.StyleOptions<ExtraData>>} 抽象类 - 图层
    */
 
-  class PointLayer<ExtraData extends {} = {}> extends Layer<PointLayer.StyleOptions<ExtraData>> {
+  class PointLayer<ExtraData extends Obj = Obj> extends Layer<PointLayer.StyleOptions<ExtraData>> {
     /**
      * 构造函数
      *

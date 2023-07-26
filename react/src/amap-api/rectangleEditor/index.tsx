@@ -38,6 +38,7 @@ export const RectangleEditor = forwardRef<RectangleEditorRef, RectangleEditorPro
       if (editor) setEditor(undefined);
     };
   }, [map, rectangle]);
+
   useEffect(() => {
     if (!editor) return;
     if (visible) editable ? editor.open() : editor.close();

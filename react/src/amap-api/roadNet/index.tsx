@@ -14,7 +14,7 @@ export interface RoadNetProps extends CommonProps, AMap.RoadNet.Events, AMap.Roa
 
 export const RoadNet = forwardRef<RoadNetProps & { roadNet: AMap.RoadNet | undefined }, RoadNetProps>((props, ref) => {
   const { roadNet } = useRoadNet(props);
-  useImperativeHandle(ref, () => ({ ...props, roadNet }), [roadNet]);
+  useImperativeHandle(ref, () => ({ ...props, roadNet }), [props, roadNet]);
 
   return null;
 });

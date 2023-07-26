@@ -11,7 +11,7 @@ declare namespace AMap {
        * 自定义 canvas 绘制函数
        * - 初始化完成时候，开发者需要给该图层设定 render 方法，该方法需要实现图层的绘制，API 会在合适的时机自动调用该方法
        */
-      render?: (...args: any[]) => void;
+      render?: Fn;
     }
     interface Events {
       /** 加载完成事件 */

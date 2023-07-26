@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMapContext } from '../index';
-import type { TileLayerProps } from '.';
 import { useEventProperties, useSetProperties, useVisible } from '../utils';
+import type { TileLayerProps } from './';
 
 interface useTileLayer extends TileLayerProps {}
 

@@ -19,7 +19,7 @@ declare namespace AMap {
      * @public
      * @param {WMTS.Options} options 构造参数
      */
-    public constructor(options: WMTS.Options);
+    public constructor(options?: WMTS.Options);
 
     /** 获取图层构造参数 */
     public getLayerConfig(): WMTS.Options;

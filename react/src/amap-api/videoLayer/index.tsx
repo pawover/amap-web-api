@@ -15,7 +15,7 @@ export interface VideoLayerProps extends CommonProps, AMap.VideoLayer.Events, AM
 export const VideoLayer = forwardRef<VideoLayerProps & { videoLayer: AMap.VideoLayer | undefined }, VideoLayerProps>(
   (props, ref) => {
     const { videoLayer } = useVideoLayer(props);
-    useImperativeHandle(ref, () => ({ ...props, videoLayer }), [videoLayer]);
+    useImperativeHandle(ref, () => ({ ...props, videoLayer }), [props, videoLayer]);
 
     return null;
   },

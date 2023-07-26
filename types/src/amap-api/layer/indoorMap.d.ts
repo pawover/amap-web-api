@@ -46,7 +46,7 @@ declare namespace AMap {
      * @public
      * @param {IndoorMap.Options} options 构造参数
      */
-    public constructor(options: IndoorMap.Options);
+    public constructor(options?: IndoorMap.Options);
 
     /**
      * 显示指定 POI 的室内地图

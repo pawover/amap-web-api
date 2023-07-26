@@ -102,7 +102,7 @@ declare namespace AMap {
     /**
      * 获取海量点的显示样式
      * - rotation_: 旋转角度
-     * @deprecated AMap Web API 2.0 中已废弃
+     * @deprecated AMap Web API 2.x 中已废弃
      */
     public getStyle(): (MassMarks.StyleOptions & { rotation_: number })[];
     /** 设置海量点的显示样式，可设置单个或多个样式，每条数据通过设置的样式索引值获取对应样式 */
