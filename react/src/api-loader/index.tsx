@@ -1,4 +1,4 @@
-import { createElement, Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDebounceFn } from 'ahooks';
 import { load } from '@amap/amap-jsapi-loader';
 
@@ -123,7 +123,7 @@ export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (p
         if (props.Loca) {
           loadOptions.Loca = props.Loca;
           if (props.Loca.version === 'auto') {
-            loadOptions.Loca.version = loadOptions.version.startsWith('1.') ? '1.3.2' : '2.0';
+            loadOptions.Loca.version = loadOptions.version.startsWith('1.') ? '1.4.22' : '2.0';
           }
         }
         load(loadOptions).then(onSuccess).catch(onError);
@@ -134,7 +134,7 @@ export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (p
         props.onError?.(error);
       }
     }
-  }, [props]);
+  }, [isLoaded, props]);
 
-  return isLoaded ? createElement(Fragment, null, props.children) : null;
+  return isLoaded ? props.children : null;
 };
