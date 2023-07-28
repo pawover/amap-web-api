@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useEventProperties, useSetProperties, useSetStatus } from '../utils';
 import type { MapProps } from './';
 import { MapCtx } from './context';
@@ -15,49 +15,27 @@ export interface CommonProps extends MapChildProps {}
 /** 地图 Map 组件 */
 interface UseMap extends MapProps, MapChildProps {
   /** 指定的容器 */
-  container?: HTMLDivElement | null;
+  container?: HTMLDivElement | undefined;
 }
 
 export const useMap = (props: UseMap) => {
-  const { container } = props;
   const { dispatch } = useContext(MapCtx);
   const [map, setMap] = useState<AMap.Map>();
-  const [zoom, setZoom] = useState(props.zoom || 15);
 
   useEffect(() => {
-    if (container && !map && AMap) {
-      container.className = (container.className || '') + ' react-amap-wrapper';
-      const instance = new AMap.Map(container, { zoom, ...props });
+    if (AMap && !map && props.container) {
+      props.container.className = (props.container.className || '') + ' react-amap-wrapper';
+      const instance = new AMap.Map(props.container, props);
       setMap(instance);
     }
-    return () => {
-      if (map) {
-        map?.clearInfoWindow();
-        map?.clearLimitBounds();
-        map?.clearMap();
-        map?.destroy();
-        setMap(undefined);
-      }
-    };
-  }, [map, container]);
+  }, [map, props]);
 
   useEffect(() => {
-    map && container && dispatch({ map, container, AMap });
+    map && dispatch({ AMap, map, container: map.getContainer() });
     return () => {
-      dispatch({ map: undefined, container: null, AMap: undefined });
+      !map && dispatch({ AMap: undefined, map: undefined, container: undefined });
     };
-  }, [map, container]);
-
-  useMemo(() => {
-    if (map && typeof props.zoom === 'number' && zoom !== props.zoom && props.zoom >= 2 && props.zoom <= 20) {
-      setZoom(props.zoom);
-      map.setZoom(props.zoom);
-    }
-  }, [zoom, props.zoom]);
-
-  useMemo(() => {
-    props.center && map?.setCenter(props.center);
-  }, [map, props.center]);
+  }, [map]);
 
   useSetStatus<AMap.Map, UseMap>(map!, props, [
     'dragEnable',
@@ -104,7 +82,5 @@ export const useMap = (props: UseMap) => {
   return {
     map,
     setMap,
-    zoom,
-    setZoom,
   };
 };

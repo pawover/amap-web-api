@@ -6,7 +6,7 @@ import React, {
   useImperativeHandle,
   useMemo,
   useReducer,
-  useRef,
+  useState,
 } from 'react';
 import { mapContextState, MapCtx, mapReducer } from './context';
 import { useMap } from './useMap';
@@ -17,7 +17,7 @@ export * from './useMap';
 export interface MapProps extends AMap.Map.Events, AMap.Map.Options {
   className?: React.HTMLAttributes<HTMLDivElement>['className'];
   style?: React.HTMLAttributes<HTMLDivElement>['style'];
-  container?: HTMLDivElement | null;
+  container?: HTMLDivElement | undefined;
   customAttribute?: Recordable;
 }
 
@@ -32,11 +32,11 @@ interface RenderProps {
 }
 
 export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProps & RenderProps>((props, ref) => {
-  const { container, className = '', style = {}, children, customAttribute, ...rest } = props;
+  const { children, className, style, customAttribute, ...rest } = props;
   const [state, dispatch] = useReducer(mapReducer, mapContextState);
-  const elmRef = useRef<HTMLDivElement>(container || null);
+  const [container, setContainer] = useState(props.container);
   const value = useMemo(() => ({ ...state, state, dispatch }), [state]);
-  const { map } = useMap({ container: elmRef.current, ...rest });
+  const { map } = useMap({ container, ...rest });
 
   const childrenFnList: RenderFn[] = [];
   const childrenElementList: React.ReactElement<MapContext, React.FC<MapContext> | string>[] = [];
@@ -52,20 +52,20 @@ export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProp
     else childrenElementList.push(children as ReactAMapElement);
   }
 
-  useEffect(() => map && dispatch({ AMap, map, container: elmRef.current }), [map]);
-  useImperativeHandle(ref, () => ({ ...rest, AMap, map, container: elmRef.current }), [map]);
+  useEffect(() => map && dispatch({ AMap, map, container }), [map]);
+  useImperativeHandle(ref, () => ({ ...rest, AMap, map, container }), [map]);
 
   return (
     <MapCtx.Provider value={value}>
-      {!elmRef.current && (
-        <div
-          ref={elmRef}
-          className={`react-amap-wrapper ${className}`}
-          style={{ width: '100%', height: '100%', ...style }}
-          {...customAttribute}
-        />
-      )}
-      {map && childrenFnList.map((f) => f({ AMap, map, container: elmRef.current }))}
+      <div
+        ref={(element) => {
+          !container && element && setContainer(element);
+        }}
+        className={className}
+        style={{ width: '100%', height: '100%', ...style }}
+        {...customAttribute}
+      />
+      {map && childrenFnList.map((f) => f({ AMap, map, container }))}
       {map &&
         childrenElementList.map((child, key) => {
           if (!isValidElement(child)) return null;
@@ -75,7 +75,7 @@ export const Map = forwardRef<MapProps & { map?: AMap.Map | undefined }, MapProp
             key,
             AMap,
             map,
-            container: elmRef.current,
+            container,
           });
         })}
     </MapCtx.Provider>

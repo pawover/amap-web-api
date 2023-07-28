@@ -1,4 +1,5 @@
 import { createElement, Fragment, useEffect, useState } from 'react';
+import { useDebounceFn } from 'ahooks';
 import { load } from '@amap/amap-jsapi-loader';
 
 export interface APILoaderOptions {
@@ -70,11 +71,11 @@ export interface APILoaderOptions {
   /**
    * Loader resolve 时的回调
    */
-  onSuccess?: (amap: typeof AMap) => unknown;
+  onSuccess?: (amap: typeof AMap) => void;
   /**
    * Loader reject 时的回调
    */
-  onError?: (error: Error) => unknown;
+  onError?: (error: Error) => void;
   /**
    * Loader 执行完成时的回调
    */
@@ -87,49 +88,53 @@ export interface APILoaderOptions {
  * - TypeScript 类型定义支持 AMap Web API 2.x 版本，如使用低版本时遇到 API 定义冲突、丢失、不存在等，请手动补全类型定义
  */
 export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (props) => {
-  const { children, aKey, sKey, ...options } = props;
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const [loaded, setLoaded] = useState(false);
+  const { run: onSuccess } = useDebounceFn(
+    (amap: typeof AMap) => {
+      props.onSuccess?.(amap);
+      setIsLoaded(true);
+    },
+    { wait: 150 },
+  );
+  const { run: onError } = useDebounceFn(
+    (error) => {
+      props.onError?.(error);
+      setIsLoaded(false);
+    },
+    { wait: 150 },
+  );
 
   useEffect(() => {
-    if (aKey) {
-      window._AMapSecurityConfig = { securityJsCode: sKey, serviceHost: options.serviceHost };
-      const loadOptions: Parameters<typeof load>[0] = {
-        key: aKey,
-        version: options.version || '2.0',
-        plugins: options.plugins || [],
-      };
-      if (options.AMapUI) {
-        loadOptions.AMapUI = options.AMapUI;
-        if (options.AMapUI.version === 'auto') {
-          loadOptions.AMapUI.version = loadOptions.version.startsWith('1.') ? '1.0' : '1.1';
+    if (!isLoaded) {
+      if (props.aKey) {
+        window._AMapSecurityConfig = { securityJsCode: props.sKey, serviceHost: props.serviceHost };
+        const loadOptions: Parameters<typeof load>[0] = {
+          key: props.aKey,
+          version: props.version || '2.0',
+          plugins: props.plugins || [],
+        };
+        if (props.AMapUI) {
+          loadOptions.AMapUI = props.AMapUI;
+          if (props.AMapUI.version === 'auto') {
+            loadOptions.AMapUI.version = loadOptions.version.startsWith('1.') ? '1.0' : '1.1';
+          }
         }
-      }
-      if (options.Loca) {
-        loadOptions.Loca = options.Loca;
-        if (options.Loca.version === 'auto') {
-          loadOptions.Loca.version = loadOptions.version.startsWith('1.') ? '1.3.2' : '2.0';
+        if (props.Loca) {
+          loadOptions.Loca = props.Loca;
+          if (props.Loca.version === 'auto') {
+            loadOptions.Loca.version = loadOptions.version.startsWith('1.') ? '1.3.2' : '2.0';
+          }
         }
-      }
-      load(loadOptions)
-        .then((amap: typeof AMap) => {
-          options.onSuccess?.(amap);
-          setLoaded(true);
-        })
-        .catch((error) => {
-          options.onError?.(error);
-          setLoaded(false);
-        });
-    } else {
-      const error = new TypeError('Failed to load AMap: aKey is required');
-      if (options.onError) {
-        options.onError(error);
+        load(loadOptions).then(onSuccess).catch(onError);
       } else {
-        throw error;
+        const errorMsg = 'Failed to load AMap: aKey is required';
+        const error = new TypeError(errorMsg);
+        console.error(errorMsg);
+        props.onError?.(error);
       }
     }
-    return () => {};
-  }, [options, aKey, sKey]);
+  }, [props]);
 
-  return loaded ? createElement(Fragment, null, children) : null;
+  return isLoaded ? createElement(Fragment, null, props.children) : null;
 };

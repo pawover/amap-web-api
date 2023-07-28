@@ -9,7 +9,7 @@ export interface MapContextValue {
 export const mapContextState: MapContextState = {
   AMap: undefined,
   map: undefined,
-  container: null,
+  container: undefined,
 };
 export const mapReducer = (state: MapContextState, action: MapContextState) => ({ ...state, ...action });
 export const MapCtx = createContext<MapContextValue>({

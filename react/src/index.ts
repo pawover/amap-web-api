@@ -11,7 +11,7 @@ declare global {
     /** 地图实例 */
     map?: AMap.Map | undefined;
     /** 地图容器 */
-    container?: HTMLDivElement | null;
+    container?: HTMLDivElement | undefined;
   }
 
   /** Loca 容器上下文对象 */
