@@ -1,6 +1,12 @@
 declare namespace AMap {
   namespace Util {
     /**
+     * 类标识
+     *
+     * @deprecated AMap Web API 2.x 中已废弃
+     */
+    const CLASS_NAME: 'AMap.Util';
+    /**
      * 将颜色名转换为 16进制6位 的 RGB 颜色值
      * - 例如将 `red` 转换为 `#ff0000`
      *

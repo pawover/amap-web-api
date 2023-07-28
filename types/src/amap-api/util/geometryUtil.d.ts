@@ -1,6 +1,12 @@
 declare namespace AMap {
   namespace GeometryUtil {
     /**
+     * 类标识
+     *
+     * @deprecated AMap Web API 2.x 中已废弃
+     */
+    const CLASS_NAME: 'AMap.GeometryUtil';
+    /**
      * 计算 `点P1` 和 `点P2` 间的实际距离
      *
      * @param {LngLatLike} p1 点P1
@@ -115,6 +121,14 @@ declare namespace AMap {
      */
     function isRingInRing(r1: LngLatLike[], r2: LngLatLike[]): boolean;
     /**
+     * 判断 `点P` 是否在 `边界框` 内
+     *
+     * @param {LngLatLike} p 点P
+     * @param {LngLatLike[][]} Bbox 边界框Bbox
+     * @returns {boolean} 是否在内
+     */
+    function isPointInBbox(p: LngLatLike, Bbox: LngLatLike[][]): boolean;
+    /**
      * 判断 `点P` 是否在 `区域R` 内
      *
      * @param {LngLatLike} p 点P
@@ -122,6 +136,16 @@ declare namespace AMap {
      * @returns {boolean} 是否在内
      */
     function isPointInRing(p: LngLatLike, r: LngLatLike[]): boolean;
+    /**
+     * 判断 `点P` 是否在 `区域R` 内
+     *
+     * @version AMap Web API 2.x
+     * @param {LngLatLike} p 点P
+     * @param {LngLatLike[]} r 区域R
+     * @param {?number} [tolerance] 误差范围
+     * @returns {boolean} 是否在内
+     */
+    function pointInRing(p: LngLatLike, r: LngLatLike[], tolerance?: number): boolean;
     /**
      * 判断 `点P` 是否在 `组合区域RS` 内
      *
@@ -234,7 +258,7 @@ declare namespace AMap {
      */
     function distanceToPolygon(p: LngLatLike, r: LngLatLike[]): number;
     /**
-     *
+     * triangulateShape
      *
      * @deprecated AMap Web API 2.x 中已废弃
      * @param {(LngLatLike[] | PixelLike[])} shape1
@@ -242,5 +266,11 @@ declare namespace AMap {
      * @returns {number[]}
      */
     function triangulateShape(shape1: LngLatLike[] | PixelLike[], shape2: LngLatLike[] | PixelLike[]): number[];
+    /**
+     * 判断 Polygon 类型
+     *
+     * @version AMap Web API 2.x
+     */
+    function typePolygon(polygon: LngLatLike | LngLatLike[] | LngLatLike[][]): 'Polygon' | 'MultiPolygon' | 'never';
   }
 }

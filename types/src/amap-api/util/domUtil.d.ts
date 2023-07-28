@@ -1,8 +1,15 @@
 declare namespace AMap {
   namespace DomUtil {
     /**
+     * 类标识
+     *
+     * @deprecated AMap Web API 2.x 中已废弃
+     */
+    const CLASS_NAME: 'AMap.DomUtil';
+    /**
      * 获取 DOM 元素的样式 key 的值
      *
+     * @version AMap Web API 2.x
      * @template K extends keyof CSSStyleDeclaration
      * @param {HTMLElement} element DOM 元素
      * @param {K} key css 样式名称
@@ -54,6 +61,7 @@ declare namespace AMap {
     /**
      * 为 DOM 元素 添加/删除 类名
      *
+     * @version AMap Web API 2.x
      * @param {HTMLElement} element DOM 元素
      * @param {string} className 类名
      * @param {?boolean} [isAdd] 是否添加，默认 `false`
@@ -112,6 +120,7 @@ declare namespace AMap {
     /**
      * 为 DOM 元素设置文本内容
      *
+     * @version AMap Web API 2.x
      * @param {HTMLElement} element DOM 元素
      * @param {string} text 文本内容
      */
@@ -119,10 +128,23 @@ declare namespace AMap {
     /**
      * 获取距离 Dom 元素最近的具有指定类名的元素
      *
+     * @version AMap Web API 2.x
      * @param {HTMLElement} element DOM 元素
      * @param {string} className 类名
      * @returns {(HTMLElement | null)}
      */
     function closest(element: HTMLElement, className: string): HTMLElement | null;
+    /**
+     * @version AMap Web API 2.x
+     */
+    function mousePos(...args: any[]): any;
+    /**
+     * @version AMap Web API 2.x
+     */
+    function watchSize(...args: any[]): any;
+    /**
+     * @version AMap Web API 2.x
+     */
+    function watchSize2(...args: any[]): any;
   }
 }

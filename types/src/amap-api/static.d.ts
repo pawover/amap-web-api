@@ -1,9 +1,10 @@
 declare namespace AMap {
   /** AMap Web API 1.x 版本号 */
   const v: string;
-
   /** AMap Web API 2.x 版本号 */
   const version: string;
+  /** DOM */
+  const DOM: string;
 
   /** 创建默认底图图层 */
   function createDefaultLayer(): NebulaLayer | TileLayer;
@@ -34,4 +35,20 @@ declare namespace AMap {
     type: ConvertFrom.Type | null,
     callback: (status: ConvertFrom.SearchStatus, result: string | ConvertFrom.Result) => void,
   ): void;
+
+  /** 埋点方法 */
+  namespace BuryPoint {
+    /**
+     * 添加埋点
+     */
+    const add: Fn;
+    /**
+     * @deprecated AMap Web API 2.x 中已废弃
+     */
+    const addOptions: Fn;
+    /**
+     * @deprecated AMap Web API 2.x 中已废弃
+     */
+    const ya: Fn;
+  }
 }
