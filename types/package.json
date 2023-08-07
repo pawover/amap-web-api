@@ -1,6 +1,6 @@
 {
   "name": "@everqin/amap-web-types",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Typescript definitions for amap-web-api. 高德地图 AMap Web Api Typescript 类型定义。",
   "author": "handpear<handpear@outlook.com>",
   "type": "module",
@@ -8,7 +8,7 @@
   "typesVersions": {
     "./*": {
       "./*": [
-        "./src/*.d.ts"
+        "./src/*"
       ]
     }
   },
@@ -20,7 +20,7 @@
       "types": "./src/index.d.ts"
     },
     "./*": {
-      "types": "./src/*"
+      "types": "./src/*.d.ts"
     }
   },
   "license": "MIT",
