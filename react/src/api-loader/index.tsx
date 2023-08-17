@@ -2,6 +2,30 @@ import { useEffect, useState } from 'react';
 import { useDebounceFn } from 'ahooks';
 import { load } from '@amap/amap-jsapi-loader';
 
+interface AMapUILoader {
+  /**
+   * AMapUI API 版本号
+   * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 AMapUI API 版本号。
+   * - AMap Web API 2.x 版本需要使用 AMapUI API 1.1 以上版本。
+   */
+  version: 'auto' | `${string}.${string}`;
+  /**
+   * 预加载一个或者多个 AMapUI 插件
+   *
+   * @example ["misc/PathSimplifier", "misc/PointSimplifier"]
+   */
+  plugins?: (keyof AMapUI.PluginMaps)[];
+}
+interface LocaLoader {
+  /**
+   * Loca API 版本号
+   * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 Loca API 版本号。
+   * - Loca API 2.x 版本和 Loca API 1.3.x 版本不兼容，它们是针对不同的 AMap Web API 版本进行的封装。
+   * - 如果您需要使用 AMap Web API 1.4.x，那么只能使用 Loca API 1.3.x；如果您需要使用 AMap Web API 2.x，那么只能使用 Loca API 2.x。
+   */
+  version: 'auto' | `${string}.${string}`;
+}
+
 export interface APILoaderOptions {
   /**
    * 应用密钥
@@ -24,7 +48,7 @@ export interface APILoaderOptions {
   /**
    * 代理服务器的域名或地址
    */
-  serviceHost?: `http://${string}/_AMapService` | `https://${string}/_AMapService`;
+  serviceHost?: `http${string}://${string}/_AMapService`;
   /**
    * AMap Web API 版本号
    * - 默认为 `"2.0"`
@@ -42,32 +66,11 @@ export interface APILoaderOptions {
   /**
    * 是否加载 AMapUI 组件库 API
    */
-  AMapUI?: {
-    /**
-     * AMapUI API 版本号
-     * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 AMapUI API 版本号。
-     * - AMap Web API 2.x 版本需要使用 AMapUI API 1.1 以上版本。
-     */
-    version: 'auto' | `${string}.${string}`;
-    /**
-     * 预加载一个或者多个 AMapUI 插件
-     *
-     * @example ["misc/PathSimplifier", "misc/PointSimplifier"]
-     */
-    plugins?: (keyof AMapUI.PluginMaps)[];
-  };
+  AMapUI?: AMapUILoader;
   /**
    * 是否加载 Loca 数据可视化 API
    */
-  Loca?: {
-    /**
-     * Loca API 版本号
-     * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 Loca API 版本号。
-     * - Loca API 2.x 版本和 Loca API 1.3.x 版本不兼容，它们是针对不同的 AMap Web API 版本进行的封装。
-     * - 如果您需要使用 AMap Web API 1.4.x，那么只能使用 Loca API 1.3.x；如果您需要使用 AMap Web API 2.x，那么只能使用 Loca API 2.x。
-     */
-    version: 'auto' | `${string}.${string}`;
-  };
+  Loca?: LocaLoader;
   /**
    * Loader resolve 时的回调
    */

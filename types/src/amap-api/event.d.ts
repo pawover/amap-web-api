@@ -134,11 +134,11 @@ declare namespace AMap {
     onHide?: (event: { type: 'hide'; target: BezierCurve }) => void;
     /** 显示 */
     onShow?: (event: { type: 'show'; target: BezierCurve }) => void;
-    /** 鼠标左键单击事件 */
+    /** 鼠标左键单击 */
     onClick?: (event: MapsEvent<'click', I>) => void;
-    /** 鼠标左键双击事件 */
+    /** 鼠标左键双击 */
     onDblClick?: (event: MapsEvent<'dblclick', I>) => void;
-    /** 右键单击 */
+    /** 鼠标右键单击 */
     onRightClick?: (event: MapsEvent<'rightclick', I>) => void;
     /** 鼠标按下 */
     onMouseDown?: (event: MapsEvent<'mousedown', I>) => void;
@@ -150,11 +150,11 @@ declare namespace AMap {
     onMouseOut?: (event: MapsEvent<'mouseout', I>) => void;
     /** 鼠标移动 */
     onMouseMove?: (event: MapsEvent<'mousemove', I>) => void;
-    /** 触摸开始时触发事件，仅适用移动设备 */
+    /** 触摸开始，仅移动设备 */
     onTouchStart?: (event: MapsEvent<'touchstart', I>) => void;
-    /** 触摸移动进行中时触发事件，仅适用移动设备 */
+    /** 触摸移动中，仅移动设备 */
     onTouchMove?: (event: MapsEvent<'touchmove', I>) => void;
-    /** 触摸结束时触发事件，仅适用移动设备 */
+    /** 触摸结束，仅移动设备 */
     onTouchEnd?: (event: MapsEvent<'touchend', I>) => void;
   }
 
@@ -180,7 +180,7 @@ declare namespace AMap {
     onDragStart?: (event: MapsEvent<'dragstart', I>) => void;
     /** 拖拽停止 */
     onDragEnd?: (event: MapsEvent<'dragend', I>) => void;
-    /** 拖拽过程中触发 */
+    /** 拖拽中 */
     onDragging?: (event: MapsEvent<'dragging', I>) => void;
   }
 

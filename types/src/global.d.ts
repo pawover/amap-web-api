@@ -26,6 +26,6 @@ interface Window {
   AMapUI: typeof AMapUI;
   _AMapSecurityConfig: {
     securityJsCode: string | undefined;
-    serviceHost: `http://${string}/_AMapService` | `https://${string}/_AMapService` | undefined;
+    serviceHost: `http${string}://${string}/_AMapService` | undefined;
   };
 }

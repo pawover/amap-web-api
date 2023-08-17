@@ -3,14 +3,14 @@ declare namespace AMap {
     /** 地图内部状态 */
     interface States {
       /**
-       * 地图是否可通过双击鼠标放大地图。
+       * 地图是否可通过双击鼠标放大地图
        * - 此属性可被 setStatus/getStatus 方法控制
        *
        * @default true
        */
       doubleClickZoom?: boolean;
       /**
-       * 是否开启地图热点和标注的 hover 效果。
+       * 是否开启地图热点和标注的 hover 效果
        * - 桌面端默认 `true`, 移动端默认 `false`
        */
       isHotspot?: boolean;
@@ -28,9 +28,13 @@ declare namespace AMap {
        */
       scrollWheel?: boolean;
       /**
-       * 当 `touchZoomCenter = 1` 的时候，手机端双指缩放的以地图中心为中心，否则默认以双指中间点为中心。
+       * 是否开启触摸缩放
        */
       touchZoom?: boolean;
+      /**
+       * 当值为 `1` 时，移动端以地图中心为中心双指缩放，否则以双指中间点为中心
+       */
+      touchZoomCenter?: number;
       /**
        * 地图是否可通过鼠标拖拽平移
        * - 此属性可被 setStatus/getStatus 方法控制
@@ -72,7 +76,7 @@ declare namespace AMap {
       animateEnable?: boolean;
       /**
        * 地图是否可通过键盘控制
-       * - 方向键控制地图平移，"+"和"-"可以控制地图的缩放, Ctrl+“→”顺时针旋转，Ctrl+“←”逆时针旋转
+       * - 方向键控制地图平移，"+" 和 "-" 可以控制地图的缩放, ctrl + "→" 顺时针旋转，ctrl + "←" 逆时针旋转
        * - 此属性可被setStatus/getStatus 方法控制
        * @default true
        */
@@ -139,7 +143,7 @@ declare namespace AMap {
        */
       showLabel?: boolean;
       /**
-       * 地图默认鼠标样式。
+       * 地图默认鼠标样式
        * - 参数应符合 `CSS` 的 `cursor` 属性规范
        *
        * @default "default"
