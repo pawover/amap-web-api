@@ -1,0 +1,64 @@
+{
+  "name": "amap-web-vue",
+  "version": "0.0.0",
+  "description": "基于 Vue 封装的高德地图组件。AMap Component Based On Vue.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "typings": "./dist/index.d.ts",
+  "typesVersions": {
+    "./*": {
+      "./*": [
+        "./dist/*.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "amap",
+    "amap-web",
+    "amap-vue",
+    "amap-web-vue",
+    "高德",
+    "高德地图"
+  ],
+  "homepage": "https://github.com/Handpear/amap-web-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Handpear/amap-web-api"
+  },
+  "bugs": {
+    "url": "https://github.com/Handpear/amap-web-api/issues"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "release": "pnpm publish --no-git-checks"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@handpear/shared": "workspace:*",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "amap-web-types": "workspace:*",
+    "vue": "^3.3.4"
+  },
+  "peerDependencies": {
+    "vue": "3.x"
+  }
+}

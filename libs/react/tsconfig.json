@@ -1,8 +1,0 @@
-{
-  "extends": "@handpear/tsconfig/react-app.json",
-  "compilerOptions": {
-    "noUnusedLocals": false,
-    "baseUrl": ".",
-    "types": ["amap-web-types"]
-  }
-}

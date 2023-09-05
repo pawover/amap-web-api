@@ -1,5 +1,5 @@
 {
-  "extends": "@handpear/tsconfig/react-app.json",
+  "extends": "@handpear/tsconfig/base.json",
   "compilerOptions": {
     "composite": true
   },

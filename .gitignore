@@ -55,3 +55,6 @@ coverage
 
 # turbo
 .turbo
+
+# vitepress
+docs/**/.vitepress/cache

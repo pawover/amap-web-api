@@ -12,7 +12,6 @@
     {
       "files": ["libs/react/**"],
       "extends": ["everqin", "everqin/react", "everqin/typescript", "plugin:react-hooks/recommended"],
-
       "rules": {
         "no-undef": ["off"],
         "no-case-declarations": ["off"],
@@ -22,6 +21,22 @@
         "react-refresh/only-export-components": ["off"],
         "react/no-unknown-property": ["off"],
         "react/no-unstable-nested-components": ["off"]
+      }
+    },
+    {
+      "files": ["libs/vue/**"],
+      "extends": ["everqin", "everqin/vue", "everqin/typescript"],
+      "parser": "vue-eslint-parser",
+      "parserOptions": {
+        "parser": {
+          "js": "@babel/eslint-parser",
+          "jsx": "@babel/eslint-parser",
+          "ts": "@typescript-eslint/parser",
+          "tsx": "@typescript-eslint/parser"
+        }
+      },
+      "rules": {
+        "no-undef": ["off"]
       }
     },
     {
@@ -38,7 +53,7 @@
     },
     {
       "files": ["packages/**/**"],
-      "extends": ["everqin", "everqin/react", "everqin/typescript", "plugin:react-hooks/recommended"],
+      "extends": ["everqin", "everqin/typescript"],
       "rules": {
         "no-undef": ["off"]
       }

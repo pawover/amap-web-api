@@ -1,5 +1,9 @@
 {
   "extends": "@handpear/tsconfig/base.json",
   "include": [],
-  "references": [{ "path": "./tsconfig.package.json" }]
+  "references": [
+    { "path": "./tsconfig.package.json" },
+    { "path": "./tsconfig.react.json" },
+    { "path": "./tsconfig.vue.json" }
+  ]
 }

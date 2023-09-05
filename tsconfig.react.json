@@ -1,0 +1,7 @@
+{
+  "extends": "@handpear/tsconfig/react-app.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": ["packages/**/src", "libs/types", "libs/react"]
+}

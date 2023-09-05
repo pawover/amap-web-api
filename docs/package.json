@@ -1,0 +1,14 @@
+{
+  "name": "docs",
+  "description": "文档",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vite-plugin-vitepress-auto-sidebar": "^1.6.0",
+    "vitepress": "1.0.0-rc.10"
+  }
+}
