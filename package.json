@@ -1,27 +1,16 @@
 {
   "name": "amap-web-api",
   "description": "高德地图 AMap Web Api 组件库",
-  "author": "handpear<handpear@outlook.com>",
   "private": true,
   "license": "MIT",
   "keywords": [
     "amap",
+    "amap-react",
+    "amap-vue",
+    "amap-js",
     "amap-web",
-    "react-amap",
-    "react-amap-js",
-    "react-amap-web",
-    "vue-amap",
-    "vue-amap-js",
-    "vue-amap-web",
     "高德",
-    "地图",
-    "高德地图"
-  ],
-  "workspaces": [
-    "react/**",
-    "vue/**",
-    "types",
-    "tsconfig"
+    "地图"
   ],
   "engines": {
     "node": ">=v18.16.0",
@@ -29,48 +18,59 @@
   },
   "packageManager": "pnpm@8.6.5",
   "scripts": {
+    "dev:web": "turbo run dev --filter=web",
     "build": "turbo run build",
     "release": "turbo run release",
-    "type:check": "turbo run type:check",
-    "lint": "turbo run lint",
-    "lint:eslint": "turbo run lint:eslint",
-    "lint:prettier": "turbo run lint:prettier",
-    "clean": "pnpm clean:build & pnpm clean:turbo & pnpm clean:lib",
-    "clean:build": "rimraf -g **/dist",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
+    "lint:eslint": "eslint --fix \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}\"",
+    "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\"",
+    "type:check": "turbo run type:check & pnpm type:packages",
+    "type:packages": "tsc -p tsconfig.package.json --composite false",
+    "clean": "pnpm clean:lib & pnpm clean:turbo & pnpm clean:outdir",
     "clean:lib": "rimraf -g **/node_modules",
     "clean:turbo": "rimraf -g **/.turbo",
-    "lib:up": "taze -I -r --exclude pnpm",
+    "clean:outdir": "rimraf -g **/dist",
+    "reinstall": "pnpm clean & pnpm install",
+    "lib:up": "taze -I -r --exclude pnpm,typescript",
     "prepare": "husky install",
     "commit": "turbo run type:check && git-cz"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.7",
-    "@commitlint/config-conventional": "^17.6.7",
-    "@everqin/tsconfig": "workspace:*",
-    "@types/node": "^20.4.8",
-    "@typescript-eslint/eslint-plugin": "^6.2.1",
-    "@typescript-eslint/parser": "^6.2.1",
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@handpear/tsconfig": "workspace:*",
+    "@types/node": "^20.5.9",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
     "commitizen": "^4.3.0",
     "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.0.0",
-    "eslint": "^8.46.0",
+    "eslint": "^8.48.0",
     "eslint-config-everqin": "^0.2.1",
-    "eslint-config-turbo": "^1.10.12",
-    "eslint-plugin-react": "^7.33.1",
+    "eslint-config-turbo": "^1.10.13",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "prettier": "^3.0.1",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
     "taze": "^0.11.2",
-    "turbo": "^1.10.12",
-    "typescript": "^5.1.6",
-    "unbuild": "^1.2.1"
+    "turbo": "^1.10.13",
+    "typescript": "5.1.6",
+    "unbuild": "^2.0.0"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "lint-staged": {
+    "**/*.{css,less,scss,postcss,vue}": [
+      "stylelint --fix --allow-empty-input"
+    ],
+    "**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}": [
+      "prettier --write"
+    ]
   }
 }

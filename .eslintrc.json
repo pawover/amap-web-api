@@ -2,9 +2,7 @@
   "root": true,
   "extends": ["everqin", "everqin/typescript", "turbo"],
   "plugins": ["react-refresh"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
+  "ignorePatterns": "dist",
   "settings": {
     "react": {
       "version": "detect"
@@ -12,19 +10,37 @@
   },
   "overrides": [
     {
-      "files": ["react/**"],
+      "files": ["libs/react/**"],
       "extends": ["everqin", "everqin/react", "everqin/typescript", "plugin:react-hooks/recommended"],
+
       "rules": {
         "no-undef": ["off"],
-        "@typescript-eslint/no-unused-vars": ["off"]
+        "no-case-declarations": ["off"],
+        // typescript
+        "@typescript-eslint/no-explicit-any": ["off"],
+        // react
+        "react-refresh/only-export-components": ["off"],
+        "react/no-unknown-property": ["off"],
+        "react/no-unstable-nested-components": ["off"]
       }
     },
     {
-      "files": ["types/**"],
+      "files": ["libs/types/**"],
+      "extends": ["everqin", "everqin/typescript"],
+      "parserOptions": {
+        "project": "./libs/types/**/tsconfig.json"
+      },
       "rules": {
         "no-undef": ["off"],
         "@typescript-eslint/no-explicit-any": ["off"],
         "@typescript-eslint/triple-slash-reference": ["off"]
+      }
+    },
+    {
+      "files": ["packages/**/**"],
+      "extends": ["everqin", "everqin/react", "everqin/typescript", "plugin:react-hooks/recommended"],
+      "rules": {
+        "no-undef": ["off"]
       }
     }
   ]

@@ -18,7 +18,8 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "prettier.vueIndentScriptAndStyle": true,
-  "tsImportSorter.configuration.keepUnused": [".*"],
+  "tsImportSorter.configuration.emptyLinesBetweenGroups": 0,
+  "tsImportSorter.configuration.wrappingStyle": "prettier",
   "markdownlint.config": {
     "default": true,
     "MD033": false

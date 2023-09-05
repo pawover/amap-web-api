@@ -1,0 +1,67 @@
+{
+  "name": "amap-web-react",
+  "version": "1.0.0-alpha.1",
+  "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "typings": "./dist/index.d.ts",
+  "typesVersions": {
+    "./*": {
+      "./*": [
+        "./dist/*.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.cjs"
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "amap",
+    "amap-web",
+    "amap-react",
+    "amap-web-react",
+    "高德",
+    "高德地图"
+  ],
+  "homepage": "https://github.com/Handpear/amap-web-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Handpear/amap-web-api"
+  },
+  "bugs": {
+    "url": "https://github.com/Handpear/amap-web-api/issues"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "release": "pnpm publish --no-git-checks"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "@handpear/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "amap-web-types": "workspace:*",
+    "@types/react": "~18.2.21",
+    "@types/react-dom": "~18.2.7",
+    "ahooks": "^3.7.8"
+  },
+  "peerDependencies": {
+    "ahooks": "3.x",
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "amap-web-types",
+  "version": "1.0.0-alpha.1",
+  "description": "Typescript definitions for amap-web-api. 高德地图 AMap Web Api Typescript 类型定义。",
+  "type": "module",
+  "main": "./src/index.d.ts",
+  "typings": "./src/index.d.ts",
+  "typesVersions": {
+    "./*": {
+      "./*": [
+        "./src/*"
+      ]
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts"
+    },
+    "./*": {
+      "types": "./src/*.d.ts"
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "amap",
+    "amap-types",
+    "amap-web-types",
+    "高德",
+    "地图"
+  ],
+  "homepage": "https://github.com/Handpear/amap-web-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Handpear/amap-web-api"
+  },
+  "bugs": {
+    "url": "https://github.com/Handpear/amap-web-api/issues"
+  },
+  "scripts": {
+    "release": "pnpm publish --no-git-checks",
+    "type:check": "tsc"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.7.4"
+  }
+}
