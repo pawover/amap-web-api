@@ -20,7 +20,6 @@ export function ObjectValues<O extends Obj>(object: O): O[keyof O][] {
 
 /**
  * 返回对象的可枚举属性的键/值数组
- * - 与 `ObjectEntriesRecord` 方法仅返回类型具体程度的区别
  *
  * @param {O} object 对象
  */
