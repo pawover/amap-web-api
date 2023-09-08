@@ -46,8 +46,7 @@
     "url": "https://github.com/Handpear/amap-web-api/issues"
   },
   "scripts": {
-    "build": "unbuild",
-    "release": "pnpm publish --no-git-checks"
+    "build": "unbuild"
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
