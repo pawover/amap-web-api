@@ -67,6 +67,16 @@ declare namespace AMap {
    * @implements {Accessor.Zooms} 显示级别范围
    */
   class MassMarks extends Overlay implements Accessor.Cursor, Accessor.Opacity, Accessor.ZIndex, Accessor.Zooms {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {MassMarks.DataOptions[]} data 初始化数据
+     * @param {?(MassMarks.Options | MassMarks.Options[])} [options] 构造参数
+     */
+    public constructor(data: MassMarks.DataOptions[], options?: MassMarks.Options | MassMarks.Options[]);
+
     public getCursor: Required<Accessor.Cursor>['getCursor'];
 
     public getOpacity: Required<Accessor.Opacity>['getOpacity'];
@@ -77,16 +87,6 @@ declare namespace AMap {
 
     public getZooms: Required<Accessor.Zooms>['getZooms'];
     public setZooms: Required<Accessor.Zooms>['setZooms'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {MassMarks.DataOptions[]} data 初始化数据
-     * @param {?(MassMarks.Options | MassMarks.Options[])} [options] 构造参数
-     */
-    public constructor(data: MassMarks.DataOptions[], options?: MassMarks.Options | MassMarks.Options[]);
 
     /** 清除海量点 */
     public clear(): void;

@@ -102,9 +102,6 @@ declare namespace AMap {
    * @implements {Accessor.Map} 所属地图
    */
   class MarkerCluster extends Event<'click'> implements Accessor.Map {
-    public getMap: Required<Accessor.Map>['getMap'];
-    public setMap: Required<Accessor.Map>['setMap'];
-
     /**
      * 构造函数
      *
@@ -115,6 +112,9 @@ declare namespace AMap {
      * @param {MarkerCluster.Options} options 构造参数
      */
     public constructor(map: Map, dataOptions: MarkerCluster.DataOptions[], options: MarkerCluster.Options);
+
+    public getMap: Required<Accessor.Map>['getMap'];
+    public setMap: Required<Accessor.Map>['setMap'];
 
     /** 获取聚合点的总数量 */
     public getClustersCount(): number;

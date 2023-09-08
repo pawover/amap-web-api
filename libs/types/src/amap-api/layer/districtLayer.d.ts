@@ -123,10 +123,6 @@ declare namespace AMap {
    * @extends {Layer<DistrictLayer.Options, OverlayEventList>} 抽象类 - 图层
    */
   class DistrictLayer extends Layer<DistrictLayer.Options, OverlayEventList> {
-    public World: typeof DistrictLayer.World;
-    public Country: typeof DistrictLayer.Country;
-    public Province: typeof DistrictLayer.Province;
-
     /**
      * 构造函数
      *
@@ -135,6 +131,10 @@ declare namespace AMap {
      * @param {DistrictLayer.Options} options 构造参数
      */
     public constructor(options?: DistrictLayer.Options);
+
+    public World: typeof DistrictLayer.World;
+    public Country: typeof DistrictLayer.Country;
+    public Province: typeof DistrictLayer.Province;
 
     /** 设定显示的国家 SOC */
     public setSOC(SOC: string): void;

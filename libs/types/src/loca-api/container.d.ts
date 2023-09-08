@@ -31,19 +31,6 @@ declare namespace Loca {
    * @class Container
    */
   class Container {
-    /** 地图的视角控制器，支持连续的视角动画过渡控制 */
-    public viewControl: ViewControl;
-    /** 帧控制器，控制地图渲染 */
-    public animate: Animate;
-    /** 环境光属性 */
-    public readonly ambLight: AmbientLight.Options;
-    /** 平行光属性 */
-    public readonly dirLight: DirectionalLight.Options;
-    /** 点光源属性 */
-    public readonly pointLight: PointLight.Options;
-    /** 所有光源对象 */
-    public readonly lights: (AmbientLight | DirectionalLight | PointLight)[];
-
     /**
      * 构造函数
      *
@@ -52,6 +39,19 @@ declare namespace Loca {
      * @param {Container.Options} options 数据可视化组件初始化参数
      */
     public constructor(options?: Container.Options);
+
+    /** 地图的视角控制器，支持连续的视角动画过渡控制 */
+    public viewControl: ViewControl;
+    /** 帧控制器，控制地图渲染 */
+    public animate: Animate;
+    /** 环境光属性 */
+    public ambLight: AmbientLight.Options;
+    /** 平行光属性 */
+    public dirLight: DirectionalLight.Options;
+    /** 点光源属性 */
+    public pointLight: PointLight.Options;
+    /** 所有光源对象 */
+    public lights: (AmbientLight | DirectionalLight | PointLight)[];
 
     /** 将一个图层添加到地图上 */
     public add(layer: Layer): void;

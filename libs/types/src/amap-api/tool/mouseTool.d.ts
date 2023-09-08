@@ -6,6 +6,15 @@ declare namespace AMap {
    * @class MouseTool
    */
   class MouseTool extends Event<ToolEventList> {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {Map} map 地图实例
+     */
+    public constructor(map: Map);
+
     /** 所属地图实例 */
     public _map: Map;
     /** 仅 AMap Web API 2.x */
@@ -17,15 +26,6 @@ declare namespace AMap {
       polyline: Polyline[];
       rectangle: Rectangle[];
     };
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {Map} map 地图实例
-     */
-    public constructor(map: Map);
 
     /**
      * 关闭当前鼠标操作

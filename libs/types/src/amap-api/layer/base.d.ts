@@ -43,6 +43,19 @@ declare namespace AMap {
     extends Event<E>
     implements Accessor.Map, Accessor.Opacity, Accessor.ZIndex, Accessor.Zooms
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {?Layer.Options} [options] 构造参数
+     */
+    public constructor(options?: Layer.Options);
+
+    public CLASS_NAME: string;
+    public _zIndex: number;
+    public _opts: unknown;
+
     public getMap: Required<Accessor.Map>['getMap'];
     public setMap: Required<Accessor.Map>['setMap'];
 
@@ -54,19 +67,6 @@ declare namespace AMap {
 
     public getZooms: Required<Accessor.Zooms>['getZooms'];
     public setZooms: Required<Accessor.Zooms>['setZooms'];
-
-    private readonly CLASS_NAME: string;
-    private readonly _zIndex: number;
-    private readonly _opts: unknown;
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {?Layer.Options} [options] 构造参数
-     */
-    public constructor(options?: Layer.Options);
 
     /** 获取构造参数 */
     public getLayerConfig(): O;

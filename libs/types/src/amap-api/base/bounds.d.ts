@@ -15,12 +15,6 @@ declare namespace AMap {
     public static fromMultiPolyline(originPath?: LngLatLike[][]): Bounds | undefined;
     public static fromPolygon(originPath?: LngLatLike[] | LngLatLike[][]): Bounds | undefined;
     public static fromMultiPolygon(originPath?: LngLatLike[][][]): Bounds | undefined;
-    /** 类标识 */
-    public readonly className: 'AMap.Bounds';
-    /** 西南角经纬度 */
-    public northEast: PointLike;
-    /** 东北角经纬度 */
-    public southWest: PointLike;
 
     /**
      * 构造函数
@@ -31,6 +25,13 @@ declare namespace AMap {
      * @param {LngLatLike} northEast 东北角经纬度值
      */
     public constructor(southWest: LngLatLike, northEast: LngLatLike);
+
+    /** 类标识 */
+    public className: 'AMap.Bounds';
+    /** 西南角经纬度 */
+    public northEast: PointLike;
+    /** 东北角经纬度 */
+    public southWest: PointLike;
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(lnglat: LngLatLike): boolean;

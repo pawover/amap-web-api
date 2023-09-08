@@ -162,6 +162,15 @@ declare namespace AMap {
       Accessor.ZIndex,
       MoveAnimation
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {Marker.Options} options 构造参数
+     */
+    public constructor(options?: Marker.Options);
+
     public getAnchor: Required<Accessor.Anchor>['getAnchor'];
     public setAnchor: Required<Accessor.Anchor>['setAnchor'];
 
@@ -190,15 +199,6 @@ declare namespace AMap {
 
     public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
     public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {Marker.Options} options 构造参数
-     */
-    public constructor(options?: Marker.Options);
 
     public startMove(): void;
     public stopMove(): void;

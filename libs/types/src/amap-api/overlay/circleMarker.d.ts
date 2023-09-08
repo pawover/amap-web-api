@@ -43,6 +43,15 @@ declare namespace AMap {
       Accessor.Radius,
       Accessor.ZIndex
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {CircleMarker.Options} options 构造参数
+     */
+    public constructor(options?: CircleMarker.Options);
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCenter: Required<Accessor.MapCenter>['getCenter'];
@@ -66,15 +75,6 @@ declare namespace AMap {
     public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
     /** @deprecated AMap Web API 2.x 中已废弃 */
     public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {CircleMarker.Options} options 构造参数
-     */
-    public constructor(options?: CircleMarker.Options);
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;

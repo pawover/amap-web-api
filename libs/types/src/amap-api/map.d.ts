@@ -286,6 +286,16 @@ declare namespace AMap {
       Accessor.Zoom,
       Accessor.Zooms
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {(string | HTMLDivElement)} container 地图容器，可传入 id 属性值，地图容器在创建之前必须拥有实际大小，否则可能出现底图无法渲染的问题
+     * @param {Map.Options} [options] 地图构造参数
+     */
+    public constructor(container: string | HTMLDivElement, options: Map.Options);
+
     public labelMarkersLayer: { add: Fn };
 
     /** 获取当前地图视图范围/可视区域 */
@@ -330,16 +340,6 @@ declare namespace AMap {
 
     public getZooms: Required<Accessor.Zooms>['getZooms'];
     public setZooms: Required<Accessor.Zooms>['setZooms'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {(string | HTMLDivElement)} container 地图容器，可传入 id 属性值，地图容器在创建之前必须拥有实际大小，否则可能出现底图无法渲染的问题
-     * @param {Map.Options} [options] 地图构造参数
-     */
-    public constructor(container: string | HTMLDivElement, options: Map.Options);
 
     /** 添加图片 */
     public addImage(text: string, options: { url: string; callback: Fn }): void;

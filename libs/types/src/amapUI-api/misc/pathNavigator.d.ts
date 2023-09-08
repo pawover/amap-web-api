@@ -47,15 +47,6 @@ declare namespace AMapUI {
    * @template DataItem
    */
   class PathNavigator<DataItem> {
-    /** 巡航器编号 */
-    public id: number;
-    /** 巡航器状态 */
-    public type: PathNavigatorEventList;
-    /** 巡航光标状态 */
-    public cursor: { idx: number; tail: number };
-    /** 巡航器的路径节点索引范围 */
-    public idxRange: [number, number];
-
     /**
      * 构造函数
      *
@@ -64,6 +55,15 @@ declare namespace AMapUI {
      * @param {?PathNavigator.Options} [options] 构造参数
      */
     public constructor(options?: PathNavigator.Options);
+
+    /** 巡航器编号 */
+    public id: number;
+    /** 巡航器状态 */
+    public type: PathNavigatorEventList;
+    /** 巡航光标状态 */
+    public cursor: { idx: number; tail: number };
+    /** 巡航器的路径节点索引范围 */
+    public idxRange: [number, number];
 
     /**
      * 开始路径巡航

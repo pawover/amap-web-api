@@ -119,6 +119,15 @@ declare namespace AMap {
       Accessor.ZIndex,
       MoveAnimation
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {LabelMarker.Options} options 构造参数
+     */
+    public constructor(options?: LabelMarker.Options);
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCursor: Required<Accessor.Cursor>['getCursor'];
@@ -141,15 +150,6 @@ declare namespace AMap {
 
     public getZooms: Required<Accessor.Zooms>['getZooms'];
     public setZooms: Required<Accessor.Zooms>['setZooms'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {LabelMarker.Options} options 构造参数
-     */
-    public constructor(options?: LabelMarker.Options);
 
     public startMove(): void;
     public stopMove(): void;

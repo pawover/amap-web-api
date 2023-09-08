@@ -24,8 +24,6 @@ declare namespace AMap {
    * @extends {Event<EditorEventList>} 类 - 地图事件
    */
   class CircleEditor extends Event<EditorEventList> {
-    /** 编辑器的编辑状态 */
-    public _editing: boolean;
     /**
      * 构造函数
      *
@@ -36,6 +34,9 @@ declare namespace AMap {
      * @param {?CircleEditor.Options} [options] 构造参数
      */
     public constructor(map: AMap.Map, circle: Circle, options?: CircleEditor.Options);
+
+    /** 编辑器的编辑状态 */
+    public _editing: boolean;
 
     /** 开始编辑对象，如果当前编辑对象不存在，则开启新建编辑对象 */
     public open(): void;

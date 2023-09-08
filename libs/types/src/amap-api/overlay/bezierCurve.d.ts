@@ -66,6 +66,15 @@ declare namespace AMap {
       Accessor.Options<BezierCurve.Options>,
       Accessor.ZIndex
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {BezierCurve.Options} options 构造参数
+     */
+    public constructor(options?: BezierCurve.Options);
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCursor: Required<Accessor.Cursor>['getCursor'];
@@ -83,15 +92,6 @@ declare namespace AMap {
     public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
     /** @deprecated AMap Web API 2.x 中已废弃 */
     public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {BezierCurve.Options} options 构造参数
-     */
-    public constructor(options?: BezierCurve.Options);
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;

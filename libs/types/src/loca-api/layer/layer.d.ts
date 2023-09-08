@@ -71,16 +71,6 @@ declare namespace Loca {
    * @extends {AMap.Event<'add'>}
    */
   abstract class Layer<StyleOptions extends Obj = Obj> extends AMap.Event<'add'> {
-    public readonly map: AMap.Map | null;
-    public readonly loca: Container | null;
-    public readonly customCenter: AMap.Vector;
-    public readonly visible: boolean | undefined;
-    public readonly opacity: number | undefined;
-    public readonly zIndex: number | undefined;
-    public readonly zooms: [number, number] | undefined;
-    public readonly lights: Lights[];
-    public readonly styleOptions: StyleOptions;
-
     /**
      * 构造函数
      *
@@ -89,6 +79,16 @@ declare namespace Loca {
      * @param {?Layer.Options} [options] 构造参数
      */
     protected constructor(options?: Layer.Options);
+
+    public map: AMap.Map | null;
+    public loca: Container | null;
+    public customCenter: AMap.Vector;
+    public visible: boolean | undefined;
+    public opacity: number | undefined;
+    public zIndex: number | undefined;
+    public zooms: [number, number] | undefined;
+    public lights: Lights[];
+    public styleOptions: StyleOptions;
 
     /** 从 Loca 上移除图层 */
     public remove(): void;

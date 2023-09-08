@@ -198,7 +198,7 @@ declare namespace GeoJSON {
    */
   interface FeatureCollection<G extends Geometry | null = Geometry, P = Properties> extends GeoJSONObject {
     type: 'FeatureCollection';
-    features: Array<Feature<G, P>>;
+    features: Feature<G, P>[];
   }
 }
 

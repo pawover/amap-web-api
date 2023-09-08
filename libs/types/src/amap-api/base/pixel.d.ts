@@ -10,12 +10,6 @@ declare namespace AMap {
    * ```
    */
   class Pixel {
-    /** 类标识 */
-    public readonly className: 'AMap.Pixel';
-    /** 像素横坐标 */
-    public x: number;
-    /** 像素纵坐标 */
-    public y: number;
     /**
      * 构造函数
      *
@@ -26,6 +20,13 @@ declare namespace AMap {
      * @param {?boolean} [round] 是否将结果通过四舍五入取整，默认 `false`
      */
     public constructor(x: number, y: number, round?: boolean);
+
+    /** 类标识 */
+    public className: 'AMap.Pixel';
+    /** 像素横坐标 */
+    public x: number;
+    /** 像素纵坐标 */
+    public y: number;
 
     /** 获取像素横坐标 */
     public getX(): number;

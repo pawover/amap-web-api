@@ -84,6 +84,15 @@ declare namespace AMap {
       Accessor.Position,
       Accessor.ZIndex
   {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {InfoWindow.Options} options 构造参数
+     */
+    public constructor(options?: InfoWindow.Options);
+
     public getMap: Required<Accessor.Map>['getMap'];
     public setMap: Required<Accessor.Map>['setMap'];
 
@@ -107,15 +116,6 @@ declare namespace AMap {
 
     public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
     public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
-
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {InfoWindow.Options} options 构造参数
-     */
-    public constructor(options?: InfoWindow.Options);
 
     /** 销毁覆盖物 */
     public destroy(): void;

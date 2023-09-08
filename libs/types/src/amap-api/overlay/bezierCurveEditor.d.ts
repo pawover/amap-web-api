@@ -24,8 +24,6 @@ declare namespace AMap {
    * @extends {Event<EditorEventList>} 类 - 地图事件
    */
   class BezierCurveEditor extends Event<EditorEventList> {
-    /** 编辑器的构造参数 */
-    public opts: BezierCurveEditor.Options;
     /**
      * 构造函数
      *
@@ -36,6 +34,9 @@ declare namespace AMap {
      * @param {?BezierCurveEditor.Options} [options] 构造参数
      */
     public constructor(map: AMap.Map, bezierCurve: BezierCurve, options?: BezierCurveEditor.Options);
+
+    /** 编辑器的构造参数 */
+    public opts: BezierCurveEditor.Options;
 
     /** 获取控制点构造参数 */
     public getMarkerOptions(): Marker.Options;

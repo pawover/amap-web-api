@@ -11,16 +11,6 @@ declare namespace AMap {
    */
   class LngLat {
     public static from(point: LngLatLike): LngLat;
-    /** 类标识 */
-    public readonly className: 'AMap.LngLat';
-    /** 地理经度 */
-    public readonly lng: number;
-    /** 地理纬度 */
-    public readonly lat: number;
-    /** 墨卡托坐标 */
-    private readonly pos: [number, number];
-    private readonly KL: number;
-    private readonly KT: number;
 
     /**
      * 构造函数
@@ -32,6 +22,17 @@ declare namespace AMap {
      * @param {?boolean} [noFix] 是否禁止将结果修正到 [-180,180] 区间内，默认 `false`; noFix 为 false 时传入 [190,30] ，会被自动修正为 [-170,30] , noFix 为 true 时不会自动修正，可以用来进行跨日期限的覆盖物绘制
      */
     public constructor(lng: number, lat: number, noFix?: boolean);
+
+    /** 类标识 */
+    public className: 'AMap.LngLat';
+    /** 地理经度 */
+    public lng: number;
+    /** 地理纬度 */
+    public lat: number;
+    /** 墨卡托坐标 */
+    public pos: [number, number];
+    public KL: number;
+    public KT: number;
 
     /** 获取经度值 */
     public getLng(): number;

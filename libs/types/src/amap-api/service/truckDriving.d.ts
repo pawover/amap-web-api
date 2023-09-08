@@ -108,9 +108,6 @@ declare namespace AMap {
    * @extends {Event<ServiceEventList>} 类 - 地图事件
    */
   class TruckDriving extends Event<ServiceEventList> {
-    /** API URL */
-    public url: string;
-
     /**
      * 构造函数
      *
@@ -119,6 +116,9 @@ declare namespace AMap {
      * @param {TruckDriving.Options} options 构造参数
      */
     public constructor(options?: TruckDriving.Options);
+
+    /** API URL */
+    public url: string;
 
     /**
      * 通过起点、终点、途经点坐标或名称规划驾车路线

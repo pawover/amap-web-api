@@ -267,8 +267,8 @@ declare namespace AMapUI {
    */
   class PointSimplifier<DataItem> {
     /** 是否支持绘制 canvas */
-    public static readonly supportCanvas: boolean;
-    public static readonly Render: {
+    public static supportCanvas: boolean;
+    public static Render: {
       Canvas: {
         GroupStyleRender: PointSimplifier.GroupStyleRender<unknown>;
         getImageContent: (

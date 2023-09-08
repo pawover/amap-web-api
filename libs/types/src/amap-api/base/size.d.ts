@@ -9,12 +9,6 @@ declare namespace AMap {
    * ```
    */
   class Size {
-    /** 类标识 */
-    public readonly className: 'AMap.Size';
-    /** 像素宽度 */
-    public width: number;
-    /** 像素高度 */
-    public height: number;
     /**
      * 构造函数
      *
@@ -25,6 +19,13 @@ declare namespace AMap {
      * @param {?boolean} [round] 是否将结果通过四舍五入取整，默认 `false`
      */
     public constructor(width: number, height: number, round?: boolean);
+
+    /** 类标识 */
+    public className: 'AMap.Size';
+    /** 像素宽度 */
+    public width: number;
+    /** 像素高度 */
+    public height: number;
 
     /** 获取像素宽度 */
     public getWidth(): number;

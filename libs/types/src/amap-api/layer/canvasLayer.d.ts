@@ -23,15 +23,6 @@ declare namespace AMap {
     extends MediaLayer<CanvasLayer.Options, HTMLCanvasElement>
     implements Accessor.Bounds, Accessor.Options<CanvasLayer.Options>
   {
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
-    public setBounds: Required<Accessor.Bounds>['setBounds'];
-
-    /**
-     * 获取图层配置参数
-     * - 相比 `getLayerConfig` 更完整
-     */
-    public getOptions: Required<Accessor.Options<CanvasLayer.Options>>['getOptions'];
-
     /**
      * 构造函数
      *
@@ -40,6 +31,15 @@ declare namespace AMap {
      * @param {?CanvasLayer.Options} [options] 构造参数
      */
     public constructor(options?: CanvasLayer.Options);
+
+    public getBounds: Required<Accessor.Bounds>['getBounds'];
+    public setBounds: Required<Accessor.Bounds>['setBounds'];
+
+    /**
+     * 获取图层配置参数
+     * - 相比 `getLayerConfig` 更完整
+     */
+    public getOptions: Required<Accessor.Options<CanvasLayer.Options>>['getOptions'];
 
     /** 获取图层构造参数 */
     public getLayerConfig(): CanvasLayer.Options;

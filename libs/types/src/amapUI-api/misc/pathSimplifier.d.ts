@@ -240,9 +240,7 @@ declare namespace AMapUI {
    */
   class PathSimplifier<DataItem> {
     /** 是否支持绘制 canvas */
-    public static readonly supportCanvas: boolean;
-    /** 构造参数 */
-    public readonly _opts: PathSimplifier.Options<DataItem>;
+    public static supportCanvas: boolean;
 
     /**
      * 构造函数
@@ -252,6 +250,9 @@ declare namespace AMapUI {
      * @param {PathSimplifier.Options<DataItem>} options 构造参数
      */
     public constructor(options?: PathSimplifier.Options<DataItem>);
+
+    /** 构造参数 */
+    public _opts: PathSimplifier.Options<DataItem>;
 
     /** 重新绘制 */
     public render(): void;

@@ -28,6 +28,17 @@ declare namespace AMap {
    * @extends {Event<EditorEventList>} 类 - 地图事件
    */
   class PolygonEditor extends Event<EditorEventList> {
+    /**
+     * 构造函数
+     *
+     * @constructor
+     * @public
+     * @param {AMap.Map} map 地图实例
+     * @param {Polygon} polygon 多边形实例
+     * @param {?PolygonEditor.Options} [options] 构造参数
+     */
+    public constructor(map: AMap.Map, polygon: Polygon, options?: PolygonEditor.Options);
+
     /** 编辑器的编辑状态 */
     public _editing: boolean;
     /** 要显示编辑器的地图实例 */
@@ -42,16 +53,6 @@ declare namespace AMap {
     public adsorbPolygons: Polygon[];
     public defaultCursor: string;
     public defaultMarkerOpt: CircleMarker.Options;
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {AMap.Map} map 地图实例
-     * @param {Polygon} polygon 多边形实例
-     * @param {?PolygonEditor.Options} [options] 构造参数
-     */
-    public constructor(map: AMap.Map, polygon: Polygon, options?: PolygonEditor.Options);
 
     /** 开始编辑对象，如果当前编辑对象不存在，则开启新建编辑对象 */
     public open(): void;

@@ -100,12 +100,6 @@ declare namespace AMap {
    * @implements {Accessor.Options<Heatmap.Options>} 属性配置
    */
   class Heatmap implements Accessor.Map, Accessor.Options<Heatmap.Options> {
-    public getMap: Required<Accessor.Map>['getMap'];
-    public setMap: Required<Accessor.Map>['setMap'];
-
-    public getOptions: Required<Accessor.Options<Heatmap.Options>>['getOptions'];
-    public setOptions: Required<Accessor.Options<Heatmap.Options>>['setOptions'];
-
     /**
      * 构造函数
      *
@@ -115,6 +109,12 @@ declare namespace AMap {
      * @param {Heatmap.Options} options 构造参数
      */
     public constructor(map: Map, options: Heatmap.Options);
+
+    public getMap: Required<Accessor.Map>['getMap'];
+    public setMap: Required<Accessor.Map>['setMap'];
+
+    public getOptions: Required<Accessor.Options<Heatmap.Options>>['getOptions'];
+    public setOptions: Required<Accessor.Options<Heatmap.Options>>['setOptions'];
 
     /** 获取是否 3D 模式 */
     public is3DMode(): boolean;

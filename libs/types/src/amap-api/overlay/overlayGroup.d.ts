@@ -7,13 +7,6 @@ declare namespace AMap {
    * @implements {Accessor.Map} 所属地图
    */
   class OverlayGroup<T extends OverlayEventList> implements Accessor.Map {
-    public setMap: Required<Accessor.Map>['setMap'];
-
-    /** 要显示群组的地图实例 */
-    private readonly _map: Map;
-    /** 群组中的覆盖物列表 */
-    private readonly _overlays: OverlayType[];
-
     /**
      * 构造函数
      *
@@ -22,6 +15,13 @@ declare namespace AMap {
      * @param {OverlayType[]} overlays 覆盖物集合
      */
     public constructor(overlays: OverlayType[]);
+
+    /** 要显示群组的地图实例 */
+    public _map: Map;
+    /** 群组中的覆盖物列表 */
+    public _overlays: OverlayType[];
+
+    public setMap: Required<Accessor.Map>['setMap'];
 
     /** 添加单个覆盖物到集合中，不支持添加重复的覆盖物 */
     public addOverlay(overlay: OverlayType): void;
