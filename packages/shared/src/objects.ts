@@ -24,6 +24,6 @@ export function ObjectValues<O extends Obj>(object: O): O[keyof O][] {
  * @param {O} object 对象
  */
 export function ObjectEntries<O extends Obj>(object: { [K in keyof O]: O[K] }): [keyof O, O[keyof O]][];
-export function ObjectEntries<O extends Obj>(object: O) {
-  return Object.entries(object) as [keyof O, O[keyof O]][];
+export function ObjectEntries<O extends Obj>(object: O): [keyof O, O[keyof O]][] {
+  return Object.entries(object);
 }

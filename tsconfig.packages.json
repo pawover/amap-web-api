@@ -3,5 +3,5 @@
   "compilerOptions": {
     "composite": true
   },
-  "include": ["packages/**/src", "libs/types"]
+  "include": ["packages", "libs/types"]
 }

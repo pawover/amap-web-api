@@ -1,6 +1,6 @@
 declare namespace TypeUtil {
   interface DataType {
-    array: Array<unknown>;
+    array: unknown[];
     bigInt: bigint;
     boolean: boolean;
     date: Date;
