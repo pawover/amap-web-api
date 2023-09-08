@@ -25,8 +25,9 @@
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
     "lint:eslint": "eslint --fix \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue}\"",
     "lint:prettier": "prettier --write \"**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,css,less,scss,json,vue,html,md}\"",
-    "type:check": "pnpm type:check:packages & pnpm type:check:react & pnpm type:check:vue",
-    "type:check:packages": "tsc -p tsconfig.package.json --composite false",
+    "type:check": "pnpm type:check:packages & pnpm type:check:types & pnpm type:check:react & pnpm type:check:vue",
+    "type:check:packages": "tsc -p tsconfig.packages.json --composite false",
+    "type:check:types": "tsc -p tsconfig.types.json --composite false",
     "type:check:react": "vue-tsc -p tsconfig.react.json --composite false",
     "type:check:vue": "vue-tsc -p tsconfig.vue.json --composite false",
     "clean": "pnpm clean:lib & pnpm clean:turbo & pnpm clean:outdir",
@@ -36,7 +37,7 @@
     "reinstall": "pnpm clean & pnpm install",
     "lib:up": "taze -I -r --exclude pnpm,typescript",
     "prepare": "husky install",
-    "commit": "pnpm type:check && git-cz"
+    "commit": "git-cz"
   },
   "devDependencies": {
     "@babel/core": "^7.22.15",
@@ -52,7 +53,7 @@
     "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.0.0",
     "eslint": "^8.48.0",
-    "eslint-config-everqin": "^0.2.1",
+    "eslint-config-handpear": "^1.0.3",
     "eslint-config-turbo": "^1.10.13",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",

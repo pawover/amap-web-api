@@ -16,7 +16,14 @@ module.exports = {
     value,
     name: `${name} (${value})`.padEnd(24) + description,
   })),
-  scopes: [{ name: 'docs' }, { name: 'amap-types' }, { name: 'react-amap' }, { name: 'vue-amap' }, { name: 'other' }],
+  scopes: [
+    { name: 'docs' },
+    { name: 'packages' },
+    { name: 'amap-types' },
+    { name: 'amap-react' },
+    { name: 'amap-vue' },
+    { name: 'other' },
+  ],
   messages: {
     type: '选择您要提交的类型：',
     scope: '选择一个提交范围：',

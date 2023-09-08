@@ -47,9 +47,9 @@ importers:
       eslint:
         specifier: ^8.48.0
         version: 8.48.0
-      eslint-config-everqin:
-        specifier: ^0.2.1
-        version: 0.2.1(@babel/eslint-parser@7.22.15)(@typescript-eslint/eslint-plugin@6.5.0)(@typescript-eslint/parser@6.5.0)(eslint-plugin-react@7.33.2)(eslint-plugin-vue@9.17.0)(eslint@8.48.0)(typescript@5.1.6)(vue-eslint-parser@9.3.1)
+      eslint-config-handpear:
+        specifier: ^1.0.3
+        version: 1.0.3(@babel/eslint-parser@7.22.15)(@typescript-eslint/eslint-plugin@6.5.0)(@typescript-eslint/parser@6.5.0)(eslint-plugin-react@7.33.2)(eslint-plugin-vue@9.17.0)(eslint@8.48.0)(typescript@5.1.6)(vue-eslint-parser@9.3.1)
       eslint-config-turbo:
         specifier: ^1.10.13
         version: 1.10.13(eslint@8.48.0)
@@ -3134,9 +3134,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-everqin@0.2.1(@babel/eslint-parser@7.22.15)(@typescript-eslint/eslint-plugin@6.5.0)(@typescript-eslint/parser@6.5.0)(eslint-plugin-react@7.33.2)(eslint-plugin-vue@9.17.0)(eslint@8.48.0)(typescript@5.1.6)(vue-eslint-parser@9.3.1):
-    resolution: {integrity: sha512-cpj1AB6Yj1CvRIOqREbLAwE9RHDbkxRNlBq/3O/+pvTNSWvs+O0MmZasSIc59kaOhLa7u0JFz5417efmyz9sKw==}
-    engines: {node: '>=16', pnpm: '>=8'}
+  /eslint-config-handpear@1.0.3(@babel/eslint-parser@7.22.15)(@typescript-eslint/eslint-plugin@6.5.0)(@typescript-eslint/parser@6.5.0)(eslint-plugin-react@7.33.2)(eslint-plugin-vue@9.17.0)(eslint@8.48.0)(typescript@5.1.6)(vue-eslint-parser@9.3.1):
+    resolution: {integrity: sha512-Z+qbPSfw97CcL0MMxlkrmtvVY7WHVRtuO9ghJlt49u1gCZCm6R2PRiFiM9QFkdiIOFn5Ts15wAAAueVh72gpCA==}
+    engines: {node: '>=16', pnpm: '>=8.6.5'}
     peerDependencies:
       '@babel/eslint-parser': 7.x
       '@babel/preset-react': 7.x
