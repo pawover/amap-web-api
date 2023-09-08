@@ -54,10 +54,10 @@
     "@handpear/shared": "workspace:*"
   },
   "devDependencies": {
-    "amap-web-types": "workspace:*",
     "@types/react": "~18.2.21",
     "@types/react-dom": "~18.2.7",
-    "ahooks": "^3.7.8"
+    "ahooks": "^3.7.8",
+    "amap-web-types": "workspace:*"
   },
   "peerDependencies": {
     "ahooks": "3.x",

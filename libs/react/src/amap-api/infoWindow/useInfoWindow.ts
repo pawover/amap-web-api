@@ -6,8 +6,8 @@ import type { InfoWindowProps } from './';
 
 interface UseInfoWindowProps extends InfoWindowProps {}
 
-const contentBoxClassName = 'amap-info-content';
-const contentBoxCloseClassName = 'amap-info-close';
+const contentBoxClassName = '.amap-info-content';
+const contentBoxCloseClassName = '.amap-info-close';
 
 export const useInfoWindow = (props: UseInfoWindowProps) => {
   const { visible = true, content, children, ...rest } = props;
@@ -18,8 +18,8 @@ export const useInfoWindow = (props: UseInfoWindowProps) => {
   const createWrapper = (infoWindow: AMap.InfoWindow) => {
     const dom = infoWindow.getContentDom();
     if (dom) {
-      const [contentBox] = dom.getElementsByClassName(contentBoxClassName);
-      const [contentBoxClose] = dom.getElementsByClassName(contentBoxCloseClassName);
+      const contentBox = dom.querySelector(contentBoxClassName);
+      const contentBoxClose = dom.querySelector(contentBoxCloseClassName);
       if (contentBoxClose) contentBoxClose.remove();
       const wrapper = createPortal(content || children, contentBox || dom);
       setWrapper(wrapper);

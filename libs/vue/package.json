@@ -45,9 +45,7 @@
   "bugs": {
     "url": "https://github.com/Handpear/amap-web-api/issues"
   },
-  "scripts": {
-    "build": "unbuild"
-  },
+  "scripts": {},
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@handpear/shared": "workspace:*",

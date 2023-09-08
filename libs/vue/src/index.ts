@@ -1,3 +1,5 @@
+/// <reference types="amap-web-types" />
+
 export * from './amap-api';
 
 declare global {

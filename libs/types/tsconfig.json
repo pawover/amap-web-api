@@ -1,7 +1,0 @@
-{
-  "extends": "@handpear/tsconfig/base.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "skipLibCheck": false
-  }
-}

@@ -1,3 +1,5 @@
+/// <reference types="amap-web-types" />
+
 export * from './api-loader';
 export * from './amap-api';
 export * from './amapUI-api';
