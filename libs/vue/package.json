@@ -47,11 +47,10 @@
   },
   "scripts": {},
   "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1",
-    "@handpear/shared": "workspace:*",
-    "vue": "^3.3.4"
+    "@amap/amap-jsapi-loader": "^1.0.1"
   },
   "devDependencies": {
+    "@handpear/shared": "workspace:*",
     "amap-web-types": "workspace:*",
     "vue": "^3.3.4"
   },
