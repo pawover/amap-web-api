@@ -49,6 +49,9 @@ declare namespace AMap {
      */
     public constructor(options?: Ellipse.Options);
 
+    public className: 'Overlay.Ellipse';
+    public type: 'AMap.Overlay';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCenter: Required<Accessor.MapCenter>['getCenter'];

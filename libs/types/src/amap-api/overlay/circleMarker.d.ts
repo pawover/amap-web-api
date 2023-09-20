@@ -52,6 +52,9 @@ declare namespace AMap {
      */
     public constructor(options?: CircleMarker.Options);
 
+    public className: 'Overlay.CircleMarker';
+    public type: 'AMap.Overlay';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCenter: Required<Accessor.MapCenter>['getCenter'];

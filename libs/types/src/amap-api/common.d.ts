@@ -23,8 +23,8 @@ declare namespace AMap {
     | Polyline
     | Polygon
     | Rectangle
-    | InfoWindow
-    | ContextMenu;
+    | InfoWindow;
+  // | ContextMenu;
   type LayerType =
     | MapLayerType
     | BuildingLayer

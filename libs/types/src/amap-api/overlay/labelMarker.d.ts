@@ -128,6 +128,9 @@ declare namespace AMap {
      */
     public constructor(options?: LabelMarker.Options);
 
+    public className: 'AMap.LabelMarker';
+    public type: 'AMap.LabelMarker';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCursor: Required<Accessor.Cursor>['getCursor'];

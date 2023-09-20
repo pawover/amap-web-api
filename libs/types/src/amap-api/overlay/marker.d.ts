@@ -171,6 +171,9 @@ declare namespace AMap {
      */
     public constructor(options?: Marker.Options);
 
+    public className: 'AMap.Marker';
+    public type: 'AMap.Marker';
+
     public getAnchor: Required<Accessor.Anchor>['getAnchor'];
     public setAnchor: Required<Accessor.Anchor>['setAnchor'];
 

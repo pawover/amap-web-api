@@ -93,6 +93,9 @@ declare namespace AMap {
      */
     public constructor(options?: InfoWindow.Options);
 
+    public className: 'AMap.DOMOverlay';
+    public type: 'AMap.InfoWindow';
+
     public getMap: Required<Accessor.Map>['getMap'];
     public setMap: Required<Accessor.Map>['setMap'];
 

@@ -75,6 +75,9 @@ declare namespace AMap {
      */
     public constructor(options?: BezierCurve.Options);
 
+    public className: 'Overlay.BezierCurve';
+    public type: 'AMap.Overlay';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCursor: Required<Accessor.Cursor>['getCursor'];

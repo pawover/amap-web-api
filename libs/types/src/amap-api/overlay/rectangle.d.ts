@@ -52,6 +52,9 @@ declare namespace AMap {
      */
     public constructor(options?: Rectangle.Options);
 
+    public className: 'Overlay.Rectangle';
+    public type: 'AMap.Overlay';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
     public setBounds: Required<Accessor.Bounds>['setBounds'];
 

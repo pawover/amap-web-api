@@ -50,6 +50,9 @@ declare namespace AMap {
      */
     public constructor(options?: Polyline.Options);
 
+    public className: 'Overlay.Polyline';
+    public type: 'AMap.Overlay';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCursor: Required<Accessor.Cursor>['getCursor'];

@@ -54,6 +54,9 @@ declare namespace AMap {
      */
     public constructor(options?: Polygon.Options);
 
+    public className: 'Overlay.Polygon';
+    public type: 'AMap.Overlay';
+
     public getBounds: Required<Accessor.Bounds>['getBounds'];
 
     public getCursor: Required<Accessor.Cursor>['getCursor'];
