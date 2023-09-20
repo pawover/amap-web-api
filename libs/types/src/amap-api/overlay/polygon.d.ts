@@ -54,6 +54,8 @@ declare namespace AMap {
      */
     public constructor(options?: Polygon.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.Polygon';
     public className: 'Overlay.Polygon';
     public type: 'AMap.Overlay';
 

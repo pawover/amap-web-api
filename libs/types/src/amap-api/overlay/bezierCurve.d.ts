@@ -75,6 +75,8 @@ declare namespace AMap {
      */
     public constructor(options?: BezierCurve.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.BezierCurve';
     public className: 'Overlay.BezierCurve';
     public type: 'AMap.Overlay';
 
@@ -119,7 +121,7 @@ declare namespace AMap {
      * 返回构成曲线的所有控制点信息
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    public getInterpolateLngLats(): ControlPoint[];
+    public getInterpolateLngLats(): PointLike<'controlPoint'>[];
     /**
      * 将 曲线 以格式如 `[[lng, lat, lng, lat]]` 的 JSON 形式返回
      * @deprecated AMap Web API 2.x 中已废弃
@@ -127,12 +129,7 @@ declare namespace AMap {
     public getSerializedPath(): number[] | number[][];
 
     /** 获取路径的节点数组 */
-    public getPath(): [number, number] | [number, number][];
-    /**
-     * 获取路径的节点数组
-     * @deprecated AMap Web API 2.x 中已废弃
-     */
-    public getPath(): ControlPath[];
+    public getPath(): PointLike<'vector'>[];
     /** 设置组成该折线的节点数组 */
     public setPath(path: LngLatLike[] | LngLatLike[][]): void;
   }

@@ -1,7 +1,13 @@
+declare interface PType {
+  controlPoint: AMap.ControlPoint;
+  lnglat: AMap.LngLat;
+  vector: AMap.Vector;
+}
+
 declare namespace AMap {
   type Vector = [number, number];
-  type PointLike = LngLat | ControlPoint;
-  type LngLatLike = PointLike | Vector;
+  type PointLike<K extends keyof PType = 'lnglat'> = PType[K];
+  type LngLatLike<K extends keyof PType = 'lnglat'> = PType[K] | Vector;
   type SizeLike = Size | Vector;
   type PixelLike = Pixel | Vector;
   type BoundsLike = Bounds | number[];

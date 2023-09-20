@@ -49,6 +49,8 @@ declare namespace AMap {
      */
     public constructor(options?: Ellipse.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.Ellipse';
     public className: 'Overlay.Ellipse';
     public type: 'AMap.Overlay';
 
@@ -96,11 +98,8 @@ declare namespace AMap {
     public getArea(): number;
     /** 设置圆中心点和半径 */
     public setCenterAndRadius(center: LngLatLike, radius: number): void;
-    /**
-     * 获取路径的节点数组
-     * @deprecated AMap Web API 2.x 中已废弃
-     */
-    public getPath(): ControlPath[];
+    /** 获取路径的节点数组 */
+    public getPath(): PointLike[];
     /**
      * 设置组成该折线的节点数组
      * @deprecated AMap Web API 2.x 中已废弃

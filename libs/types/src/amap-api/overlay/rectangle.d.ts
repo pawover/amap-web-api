@@ -52,6 +52,8 @@ declare namespace AMap {
      */
     public constructor(options?: Rectangle.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.Rectangle';
     public className: 'Overlay.Rectangle';
     public type: 'AMap.Overlay';
 
@@ -94,11 +96,8 @@ declare namespace AMap {
      */
     public getArea(): number;
 
-    /**
-     * 获取矩形路径
-     * @deprecated AMap Web API 2.x 中已废弃
-     */
-    public getPath(): ControlPoint[];
+    /** 获取矩形路径 */
+    public getPath(): PointLike[] | undefined;
     /**
      * 设置矩形路径
      * @deprecated AMap Web API 2.x 中已废弃

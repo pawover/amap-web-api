@@ -19,7 +19,6 @@
   "packageManager": "pnpm@8.6.5",
   "scripts": {
     "docs:dev": "turbo run docs:dev --filter=docs",
-    "dev:web": "turbo run dev --filter=web",
     "build": "turbo run build",
     "release": "turbo run release",
     "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
@@ -45,7 +44,7 @@
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
     "@handpear/tsconfig": "workspace:*",
-    "@types/node": "^20.6.2",
+    "@types/node": "^20.6.3",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
     "commitizen": "^4.3.0",

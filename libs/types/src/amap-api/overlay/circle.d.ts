@@ -62,6 +62,8 @@ declare namespace AMap {
      */
     public constructor(options?: Circle.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.Circle';
     public className: 'Overlay.Circle';
     public type: 'AMap.Overlay';
 
@@ -95,7 +97,6 @@ declare namespace AMap {
     public getDeltaCoord(): Vector;
     /** 返回 GeoJSON 形式的数据 */
     public toGeometry(): GeoJSON | undefined;
-
     /**
      * 获取圆的面积
      * @unit 平方米
@@ -104,10 +105,7 @@ declare namespace AMap {
     public getArea(): number;
     /** 设置圆中心点和半径 */
     public setCenterAndRadius(center: LngLatLike, radius: number): void;
-    /**
-     * 获取路径的节点数组
-     * @deprecated AMap Web API 2.x 中已废弃
-     */
-    public getPath(): ControlPath[];
+    /** 获取路径的节点数组 */
+    public getPath(): PointLike[];
   }
 }

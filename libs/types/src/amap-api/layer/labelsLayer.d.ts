@@ -50,7 +50,7 @@ declare namespace AMap {
     /** 清空标注层上的标注 */
     public clear(): void;
     /** 获取标注层内的所有标注对象 */
-    public getAllOverlays(): OverlayType[];
+    public getAllOverlays<R extends OverlayType = OverlayType>(): R[];
 
     /** 获取标注层是否支持内部标注避让 */
     public getCollision(): boolean;

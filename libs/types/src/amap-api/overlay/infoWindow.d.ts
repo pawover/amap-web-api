@@ -93,6 +93,8 @@ declare namespace AMap {
      */
     public constructor(options?: InfoWindow.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.InfoWindow';
     public className: 'AMap.DOMOverlay';
     public type: 'AMap.InfoWindow';
 

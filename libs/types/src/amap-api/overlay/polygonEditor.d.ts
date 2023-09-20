@@ -79,7 +79,7 @@ declare namespace AMap {
     /** 获取图标 */
     public getIcon(): Icon;
     /** 获取路径 */
-    public getPath(): [number, number][];
+    public getPath(): Vector[];
     /** 获取包含的多边形列表 */
     public getPolygons(): Polygon[];
 

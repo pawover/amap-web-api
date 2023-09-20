@@ -50,6 +50,8 @@ declare namespace AMap {
      */
     public constructor(options?: Polyline.Options);
 
+    /** @deprecated AMap Web API 2.x 中已废弃 */
+    public CLASS_NAME: 'AMap.Polyline';
     public className: 'Overlay.Polyline';
     public type: 'AMap.Overlay';
 

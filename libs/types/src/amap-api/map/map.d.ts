@@ -435,7 +435,7 @@ declare namespace AMap {
      * @param {?string} [type] 覆盖物类型，默认返回所有类型覆盖物
      * @returns {OverlayType[]} 返回结果不包含官方覆盖物等，比如定位 marker，周边搜索圆等
      */
-    public getAllOverlays(type?: string): OverlayType[];
+    public getAllOverlays<R extends OverlayType = OverlayType>(type?: string): R[];
     /**
      * 获取当前地图比例尺
      * - 当前视图一米代表实际距离多少米
