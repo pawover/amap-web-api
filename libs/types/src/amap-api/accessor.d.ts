@@ -93,7 +93,7 @@ declare namespace AMap {
     /** 自定义数据 */
     interface ExtData {
       /** 获取自定义数据 */
-      getExtData?: () => unknown;
+      getExtData?: <D>() => D;
       /** 设置自定义数据 */
       setExtData?: <D>(extraData: D) => void;
     }
