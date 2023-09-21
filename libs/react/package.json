@@ -1,6 +1,6 @@
 {
   "name": "amap-web-react",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "type": "module",
   "main": "./dist/index.cjs",
