@@ -6,11 +6,11 @@ export interface PolygonEditorProps extends AMap.PolygonEditor.Events, AMap.Poly
   /** 是否开启编辑 */
   editable?: boolean;
   /** 开启编辑 */
-  onOpen?: (event: AMap.MapsEvent<'open', AMap.PolygonEditor>) => void;
+  onOpen?: (event?: AMap.MapsEvent<'open', AMap.PolygonEditor>) => void;
   /** 关闭编辑 */
-  onClose?: (event: AMap.MapsEvent<'close', AMap.PolygonEditor>) => void;
+  onClose?: (event?: AMap.MapsEvent<'close', AMap.PolygonEditor>) => void;
 
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
 export const PolygonEditor = forwardRef<
@@ -68,5 +68,5 @@ export const PolygonEditor = forwardRef<
     }
   }, [editor, editable, onOpen, onClose]);
 
-  return cloneElement(children, { setChildComponentInstanceForEditor });
+  return children ? cloneElement(children, { setChildComponentInstanceForEditor }) : null;
 });

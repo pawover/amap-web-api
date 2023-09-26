@@ -6,11 +6,11 @@ export interface RectangleEditorProps extends AMap.RectangleEditor.Events, AMap.
   /** 是否开启编辑 */
   editable?: boolean;
   /** 开启编辑 */
-  onOpen?: (event: AMap.MapsEvent<'open', AMap.RectangleEditor>) => void;
+  onOpen?: (event?: AMap.MapsEvent<'open', AMap.RectangleEditor>) => void;
   /** 关闭编辑 */
-  onClose?: (event: AMap.MapsEvent<'close', AMap.RectangleEditor>) => void;
+  onClose?: (event?: AMap.MapsEvent<'close', AMap.RectangleEditor>) => void;
 
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
 export const RectangleEditor = forwardRef<
@@ -68,5 +68,5 @@ export const RectangleEditor = forwardRef<
     }
   }, [editor, editable, onOpen, onClose]);
 
-  return cloneElement(children, { setChildComponentInstanceForEditor });
+  return children ? cloneElement(children, { setChildComponentInstanceForEditor }) : null;
 });

@@ -215,35 +215,35 @@ declare namespace AMap {
     }
     interface Events extends Omit<EventsCommonProps<Map>, 'onHide' | 'onShow'>, EventsDragProps<Map> {
       /** 容器尺寸改变 */
-      onResize?: (event: MapsEvent<'resize', undefined>) => void;
+      onResize?: (event?: MapsEvent<'resize', undefined>) => void;
       /** 地图加载完成 */
-      onComplete?: (event: MapsEvent<'complete', undefined>) => void;
+      onComplete?: (event?: MapsEvent<'complete', undefined>) => void;
       /** 缩放开始 */
-      onZoomStart?: (event: MapsEvent<'zoomstart', Map>) => void;
+      onZoomStart?: (event?: MapsEvent<'zoomstart', Map>) => void;
       /** 缩放结束 */
-      onZoomEnd?: (event: MapsEvent<'zoomend', Map>) => void;
+      onZoomEnd?: (event?: MapsEvent<'zoomend', Map>) => void;
       /** 缩放比例变化 */
-      onZoomChange?: (event: MapsEvent<'zoomchange', Map>) => void;
+      onZoomChange?: (event?: MapsEvent<'zoomchange', Map>) => void;
       /** 鼠标滚轮缩放地图比例 */
-      onMouseWheel?: (event: MapsEvent<'mousewheel', Map>) => void;
+      onMouseWheel?: (event?: MapsEvent<'mousewheel', Map>) => void;
       /** 地图平移 */
-      onMapMove?: (event: MapsEvent<'mapmove', Map>) => void;
+      onMapMove?: (event?: MapsEvent<'mapmove', Map>) => void;
       /** 地图开始平移 */
-      onMoveStart?: (event: MapsEvent<'movestart', Map>) => void;
+      onMoveStart?: (event?: MapsEvent<'movestart', Map>) => void;
       /** 地图结束平移 */
-      onMoveEnd?: (event: MapsEvent<'moveend', Map>) => void;
+      onMoveEnd?: (event?: MapsEvent<'moveend', Map>) => void;
       /** 鼠标点击热点 */
-      onHotspotClick?: (event: MapsEvent<'hotspotclick', Map>) => void;
+      onHotspotClick?: (event?: MapsEvent<'hotspotclick', Map>) => void;
       /** 鼠标经过热点 */
-      onHotspotOver?: (event: MapsEvent<'hotspotover', Map>) => void;
+      onHotspotOver?: (event?: MapsEvent<'hotspotover', Map>) => void;
       /** 鼠标移出热点 */
-      onHotspotOut?: (event: MapsEvent<'hotspotout', Map>) => void;
+      onHotspotOut?: (event?: MapsEvent<'hotspotout', Map>) => void;
       /** 地图旋转开始 */
-      onRotateStart?: (event: MapsEvent<'rotatestart', undefined>) => void;
+      onRotateStart?: (event?: MapsEvent<'rotatestart', undefined>) => void;
       /** 地图旋转结束 */
-      onRotateEnd?: (event: MapsEvent<'rotateend', undefined>) => void;
+      onRotateEnd?: (event?: MapsEvent<'rotateend', undefined>) => void;
       /** 地图旋转角度变化 */
-      onRotateChange?: (event: MapsEvent<'rotatechange', undefined>) => void;
+      onRotateChange?: (event?: MapsEvent<'rotatechange', undefined>) => void;
     }
   }
 

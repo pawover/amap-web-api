@@ -6,11 +6,11 @@ export interface PolylineEditorProps extends AMap.PolylineEditor.Events, AMap.Po
   /** 是否开启编辑 */
   editable?: boolean;
   /** 开启编辑 */
-  onOpen?: (event: AMap.MapsEvent<'open', AMap.PolylineEditor>) => void;
+  onOpen?: (event?: AMap.MapsEvent<'open', AMap.PolylineEditor>) => void;
   /** 关闭编辑 */
-  onClose?: (event: AMap.MapsEvent<'close', AMap.PolylineEditor>) => void;
+  onClose?: (event?: AMap.MapsEvent<'close', AMap.PolylineEditor>) => void;
 
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
 export const PolylineEditor = forwardRef<
@@ -68,5 +68,5 @@ export const PolylineEditor = forwardRef<
     }
   }, [editor, editable, onOpen, onClose]);
 
-  return cloneElement(children, { setChildComponentInstanceForEditor });
+  return children ? cloneElement(children, { setChildComponentInstanceForEditor }) : null;
 });

@@ -124,7 +124,7 @@ declare namespace AMap {
        */
       onMoving?: (obj: { passedPath: PointLike[] }) => void;
       /** 标记执行 `moveTo` 或 `moveAlong` 动画结束时触发事件 */
-      onMoveEnd?: (event: MapsEvent<'moveend', Marker>) => void;
+      onMoveEnd?: (event?: MapsEvent<'moveend', Marker>) => void;
       /** 标记执行 `moveAlong` 动画一次后触发事件 */
       onMoveAlong?: () => void;
     }

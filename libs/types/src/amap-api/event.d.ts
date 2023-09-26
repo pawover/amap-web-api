@@ -131,57 +131,57 @@ declare namespace AMap {
   /** 共同部分事件定义 */
   interface EventsCommonProps<I> {
     /** 隐藏 */
-    onHide?: (event: MapsEvent<'hide', I>) => void;
+    onHide?: (event?: MapsEvent<'hide', I>) => void;
     /** 显示 */
-    onShow?: (event: MapsEvent<'show', I>) => void;
+    onShow?: (event?: MapsEvent<'show', I>) => void;
     /** 鼠标左键单击 */
-    onClick?: (event: MapsEvent<'click', I>) => void;
+    onClick?: (event?: MapsEvent<'click', I>) => void;
     /** 鼠标左键双击 */
-    onDblClick?: (event: MapsEvent<'dblclick', I>) => void;
+    onDblClick?: (event?: MapsEvent<'dblclick', I>) => void;
     /** 鼠标右键单击 */
-    onRightClick?: (event: MapsEvent<'rightclick', I>) => void;
+    onRightClick?: (event?: MapsEvent<'rightclick', I>) => void;
     /** 鼠标按下 */
-    onMouseDown?: (event: MapsEvent<'mousedown', I>) => void;
+    onMouseDown?: (event?: MapsEvent<'mousedown', I>) => void;
     /** 鼠标抬起 */
-    onMouseUp?: (event: MapsEvent<'mouseup', I>) => void;
+    onMouseUp?: (event?: MapsEvent<'mouseup', I>) => void;
     /** 鼠标经过 */
-    onMouseOver?: (event: MapsEvent<'mouseover', I>) => void;
+    onMouseOver?: (event?: MapsEvent<'mouseover', I>) => void;
     /** 鼠标移出 */
-    onMouseOut?: (event: MapsEvent<'mouseout', I>) => void;
+    onMouseOut?: (event?: MapsEvent<'mouseout', I>) => void;
     /** 鼠标移动 */
-    onMouseMove?: (event: MapsEvent<'mousemove', I>) => void;
+    onMouseMove?: (event?: MapsEvent<'mousemove', I>) => void;
     /** 触摸开始，仅移动设备 */
-    onTouchStart?: (event: MapsEvent<'touchstart', I>) => void;
+    onTouchStart?: (event?: MapsEvent<'touchstart', I>) => void;
     /** 触摸移动中，仅移动设备 */
-    onTouchMove?: (event: MapsEvent<'touchmove', I>) => void;
+    onTouchMove?: (event?: MapsEvent<'touchmove', I>) => void;
     /** 触摸结束，仅移动设备 */
-    onTouchEnd?: (event: MapsEvent<'touchend', I>) => void;
+    onTouchEnd?: (event?: MapsEvent<'touchend', I>) => void;
   }
 
   /** 编辑器事件定义 */
   interface EventsEditorProps<I> {
     /** 增加一个节点时触发此事件 */
-    onAddNode?: (event: MapsEvent<'addnode', I>) => void;
+    onAddNode?: (event?: MapsEvent<'addnode', I>) => void;
     /** 移除一个节点时触发此事件 */
-    onRemoveNode?: (event: MapsEvent<'removenode', I>) => void;
+    onRemoveNode?: (event?: MapsEvent<'removenode', I>) => void;
     /** 调整一个节点时触发此事件 */
-    onAdjust?: (event: MapsEvent<'adjust', I>) => void;
+    onAdjust?: (event?: MapsEvent<'adjust', I>) => void;
     /** 移动覆盖物时触发此事件 */
-    onMove?: (event: MapsEvent<'move', I>) => void;
+    onMove?: (event?: MapsEvent<'move', I>) => void;
     /** 创建一个覆盖物之后触发该事件，target 即为创建对象。当 editor 编辑对象为空时，调用 open 接口，再点击一次屏幕就会创建新的覆盖物对象 */
-    onAdd?: (event: MapsEvent<'add', I>) => void;
+    onAdd?: (event?: MapsEvent<'add', I>) => void;
     /** 调用 close 之后触发该事件，target 即为编辑后的覆盖物对象 */
-    onEnd?: (event: MapsEvent<'end', I>) => void;
+    onEnd?: (event?: MapsEvent<'end', I>) => void;
   }
 
   /** 拖拽事件定义 */
   interface EventsDragProps<I> {
     /** 开始拖拽 */
-    onDragStart?: (event: MapsEvent<'dragstart', I>) => void;
+    onDragStart?: (event?: MapsEvent<'dragstart', I>) => void;
     /** 拖拽停止 */
-    onDragEnd?: (event: MapsEvent<'dragend', I>) => void;
+    onDragEnd?: (event?: MapsEvent<'dragend', I>) => void;
     /** 拖拽中 */
-    onDragging?: (event: MapsEvent<'dragging', I>) => void;
+    onDragging?: (event?: MapsEvent<'dragging', I>) => void;
   }
 
   /** 信息窗体事件定义 */
@@ -190,12 +190,12 @@ declare namespace AMap {
      * 打开
      * - 注意：`open` 事件可能会触发不正确，多次触发并且没有提供回调参数，请以提供了回调参数 `{type: 'open'}` 的为准
      */
-    onOpen?: (event: MapsEvent<'open', undefined>) => void;
+    onOpen?: (event?: MapsEvent<'open', undefined>) => void;
     /**
      * 关闭
      * - 注意：`close` 事件可能会触发不正确，多次触发并且没有提供回调参数，请以提供了回调参数 `{type: 'close'}` 的为准
      */
-    onClose?: (event: MapsEvent<'close', undefined>) => void;
+    onClose?: (event?: MapsEvent<'close', undefined>) => void;
   }
 
   /**
@@ -265,12 +265,12 @@ declare namespace AMap {
      * @template T extends EventList
      * @param {I} instance 需绑定事件的实例
      * @param {T} type 事件类型
-     * @param {?(event: MapsEvent<T, I>) => void} [callback] 回调函数
+     * @param {?(event?: MapsEvent<T, I>) => void} [callback] 回调函数
      */
     public static addListener<I, T extends EventList>(
       instance: I,
       type: T,
-      callback?: (event: MapsEvent<T, I>) => void,
+      callback?: (event?: MapsEvent<T, I>) => void,
     ): void;
     /**
      * 为 DOM 元素添加事件绑定
@@ -319,27 +319,27 @@ declare namespace AMap {
      *
      * @public
      * @param {T | T[]} type 事件名称
-     * @param {(event: MapsEvent<T>) => void} callback 回调函数
+     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
      */
-    public on<I = unknown>(type: T | T[], callback: (event: MapsEvent<T, I>) => void): void;
+    public on<I = unknown>(type: T | T[], callback: (event?: MapsEvent<T, I>) => void): void;
     /**
      * 移除事件监听函数
      *
      * @public
      * @param {T | T[]} type 事件名称
-     * @param {(event: MapsEvent<T>) => void} callback 回调函数
+     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
      */
-    public off<I = unknown>(type: T | T[], callback: (event: MapsEvent<T, I>) => void): void;
+    public off<I = unknown>(type: T | T[], callback: (event?: MapsEvent<T, I>) => void): void;
     /**
      * 判断当前实例是否已经绑定了某个事件回调
      *
      * @public
      * @param {T} type 事件名称
-     * @param {(event: MapsEvent<T>) => void} callback 回调函数
+     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
      * @param {unknown} context 事件上下文
      * @returns {boolean}
      */
-    public hasEvents(type: T, callback: (event: MapsEvent<T, unknown>) => void, context?: unknown): boolean;
+    public hasEvents(type: T, callback: (event?: MapsEvent<T, unknown>) => void, context?: unknown): boolean;
     /**
      * 清除当前实例某一类型的全部事件回调
      * @param type 事件类型，如果此参数为空，清除实例上的所有绑定的事件回调

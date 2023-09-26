@@ -59,17 +59,17 @@ declare namespace AMap {
      *
      * @public
      * @param {T} type 事件名称
-     * @param {(event: MapsEvent<T>) => void} callback 回调函数
+     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
      */
-    public on(type: T, callback: (event: MapsEvent<T, unknown>) => void): void;
+    public on(type: T, callback: (event?: MapsEvent<T, unknown>) => void): void;
     /**
      * 移除事件监听函数
      *
      * @public
      * @param {T} type 事件名称
-     * @param {(event: MapsEvent<T>) => void} callback 回调函数
+     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
      */
-    public off(type: T, callback: (event: MapsEvent<T, unknown>) => void): void;
+    public off(type: T, callback: (event?: MapsEvent<T, unknown>) => void): void;
 
     /** 设置为可见 */
     public show(): void;

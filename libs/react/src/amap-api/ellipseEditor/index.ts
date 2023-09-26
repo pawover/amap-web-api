@@ -6,11 +6,11 @@ export interface EllipseEditorProps extends AMap.EllipseEditor.Events, AMap.Elli
   /** 是否开启编辑 */
   editable?: boolean;
   /** 开启编辑 */
-  onOpen?: (event: AMap.MapsEvent<'open', AMap.EllipseEditor>) => void;
+  onOpen?: (event?: AMap.MapsEvent<'open', AMap.EllipseEditor>) => void;
   /** 关闭编辑 */
-  onClose?: (event: AMap.MapsEvent<'close', AMap.EllipseEditor>) => void;
+  onClose?: (event?: AMap.MapsEvent<'close', AMap.EllipseEditor>) => void;
 
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
 export const EllipseEditor = forwardRef<
@@ -68,5 +68,5 @@ export const EllipseEditor = forwardRef<
     }
   }, [editor, editable, onOpen, onClose]);
 
-  return cloneElement(children, { setChildComponentInstanceForEditor });
+  return children ? cloneElement(children, { setChildComponentInstanceForEditor }) : null;
 });

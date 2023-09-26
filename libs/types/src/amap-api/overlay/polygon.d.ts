@@ -101,7 +101,7 @@ declare namespace AMap {
     public setExtrusionHeight(height: number): void;
 
     /** 获取多边形轮廓线节点数组 */
-    public getPath(): PointLike[] | PointLike[][];
+    public getPath<K extends keyof PType = 'lnglat'>(): (PointLike<K> | PointLike<K>[])[];
     /** 设置多边形轮廓线节点数组，当为“环”多边形时，path 为二维数组，数组元素为多边形轮廓线的节点坐标数组 */
     public setPath(path: LngLatLike[] | LngLatLike[][]): void;
   }

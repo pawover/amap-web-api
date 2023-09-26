@@ -10,9 +10,9 @@ declare namespace AMap {
     }
     interface Events {
       /** 打开 */
-      onOpen?: (event: MapsEvent<'open', undefined>) => void;
+      onOpen?: (event?: MapsEvent<'open', undefined>) => void;
       /** 关闭 */
-      onClose?: (event: MapsEvent<'close', undefined>) => void;
+      onClose?: (event?: MapsEvent<'close', undefined>) => void;
     }
   }
 

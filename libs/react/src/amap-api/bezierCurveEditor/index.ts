@@ -6,11 +6,11 @@ export interface BezierCurveEditorProps extends AMap.BezierCurveEditor.Events, A
   /** 是否开启编辑 */
   editable?: boolean;
   /** 开启编辑 */
-  onOpen?: (event: AMap.MapsEvent<'open', AMap.BezierCurveEditor>) => void;
+  onOpen?: (event?: AMap.MapsEvent<'open', AMap.BezierCurveEditor>) => void;
   /** 关闭编辑 */
-  onClose?: (event: AMap.MapsEvent<'close', AMap.BezierCurveEditor>) => void;
+  onClose?: (event?: AMap.MapsEvent<'close', AMap.BezierCurveEditor>) => void;
 
-  children: React.ReactElement;
+  children?: React.ReactElement;
 }
 
 export const BezierCurveEditor = forwardRef<
@@ -68,5 +68,5 @@ export const BezierCurveEditor = forwardRef<
     }
   }, [editor, editable, onOpen, onClose]);
 
-  return cloneElement(children, { setChildComponentInstanceForEditor });
+  return children ? cloneElement(children, { setChildComponentInstanceForEditor }) : null;
 });
