@@ -78,7 +78,7 @@ declare namespace AMap {
        *
        * @default "#000000"
        */
-      textColor?: RGB_HEX;
+      textColor?: string;
       /**
        * 文字的大小
        *

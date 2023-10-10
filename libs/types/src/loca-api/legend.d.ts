@@ -45,7 +45,7 @@ declare namespace Loca {
        *
        * @default "#ffffff"
        */
-      fontColor?: RGB_HEX;
+      fontColor?: string;
       /**
        * 标题文字粗细
        *
@@ -84,7 +84,7 @@ declare namespace Loca {
        *
        * @default "#ffffff"
        */
-      fontColor?: RGB_HEX;
+      fontColor?: string;
       /**
        * 图例的背板边角圆弧半径
        *

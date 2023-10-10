@@ -55,7 +55,7 @@ declare namespace AMap {
        *
        * @default "#00D3FC"
        */
-      strokeColor?: RGB_HEX;
+      strokeColor?: string;
       /**
        * 轮廓线透明度，取值范围 `0` ~ `1` ，`0` 表示完全透明，`1` 表示不透明
        *
@@ -95,7 +95,7 @@ declare namespace AMap {
        *
        * @default "#00B2D5"
        */
-      outlineColor?: RGB_HEX;
+      outlineColor?: string;
       /**
        * 两端线帽的绘制样式，可选值：`butt` 无头、`round` 圆头、`square` 方头
        *
@@ -119,7 +119,7 @@ declare namespace AMap {
        *
        * @default "#ffffff"
        */
-      dirColor?: RGB_HEX;
+      dirColor?: string;
       /**
        * 方向箭头图片
        */
@@ -137,7 +137,7 @@ declare namespace AMap {
        *
        * @default "#00B2D5"
        */
-      fillColor?: RGB_HEX;
+      fillColor?: string;
       /**
        * 填充透明度，取值范围 `0` ~ `1`，`0` 表示完全透明，`1` 表示不透明
        *
