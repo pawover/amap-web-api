@@ -1,18 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useMapContext } from '../index';
 import { useEventProperty, useProperty, useVisible } from '../utils';
 import type { TextProps } from './';
 
-interface UseText extends TextProps {}
+interface UseTextProps extends TextProps {}
 
-export const useText = (props: UseText) => {
-  const { visible = true, ...rest } = props;
+export const useText = (props: UseTextProps) => {
+  const { visible = true, content, children, ...rest } = props;
+  if ('text' in rest) delete rest.text;
+  const renderContent = content || children;
   const [text, setText] = useState<AMap.Text>();
+  const [wrapper, setWrapper] = useState<React.ReactPortal>();
   const { map } = useMapContext();
+  const isStrictModeRenderedRefRef = useRef(false);
 
   useVisible(text, visible);
-  useProperty<AMap.Text, UseText>(text, props);
-  useEventProperty<AMap.Text, UseText, AMap.Text.Events>(text, props, [
+  useProperty<AMap.Text, UseTextProps>(text, rest);
+  useEventProperty<AMap.Text, UseTextProps, AMap.Text.Events>(text, props, [
     'onHide',
     'onShow',
     'onClick',
@@ -35,18 +40,41 @@ export const useText = (props: UseText) => {
   ]);
 
   useEffect(() => {
-    if (AMap && map && !text) {
+    if (AMap && map && !text && !isStrictModeRenderedRefRef.current) {
       const instance = new AMap.Text(rest);
       map.add(instance);
+
+      if (renderContent) {
+        const dom = instance.getContentDom();
+        if (dom) {
+          dom.innerHTML = '';
+          const wrapper = createPortal(renderContent, dom);
+          setWrapper(wrapper);
+        }
+      }
+
       setText(instance);
+      isStrictModeRenderedRefRef.current = true;
     }
     return () => {
       if (text) {
         text.remove();
+        text.setMap(null);
         setText(undefined);
+        isStrictModeRenderedRefRef.current = false;
       }
     };
   }, [map, text]);
 
-  return { text };
+  useEffect(() => {
+    if (text && renderContent) {
+      const dom = text.getContentDom();
+      if (dom) {
+        const wrapper = createPortal(renderContent, dom);
+        setWrapper(wrapper);
+      }
+    }
+  }, [text, renderContent]);
+
+  return { text, wrapper };
 };

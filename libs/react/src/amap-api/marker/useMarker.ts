@@ -40,8 +40,7 @@ export const useMarker = (props: UseMarkerProps) => {
 
   useEffect(() => {
     if (AMap && map && !marker && !isStrictModeRenderedRefRef.current) {
-      const options: AMap.Marker.Options = rest;
-      const instance = new AMap.Marker(options);
+      const instance = new AMap.Marker(rest);
       map.add(instance);
 
       if (renderContent) {
