@@ -17,7 +17,7 @@ declare global {
     /** 地图实例 */
     map?: AMap.Map | undefined;
     /** Loca 数据可视化全局对象 */
-    Loca?: typeof Loca | undefined;
+    loca?: typeof Loca | undefined;
     /** Loca 的核心控制实例 */
     locaContainer?: Loca.Container | undefined;
   }

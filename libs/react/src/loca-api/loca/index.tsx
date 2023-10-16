@@ -35,12 +35,12 @@ export const LocaContainer = forwardRef<LocaProps, LocaProps & RenderProps>((pro
     if (typeof children === 'function') childrenFnList.push(children);
     else childrenElementList.push(children as React.ReactElement<LocaContext, React.FC<LocaContext>>);
   }
-  useEffect(() => props.map && dispatch({ map: props.map, Loca, locaContainer }), [props.map, locaContainer]);
-  useImperativeHandle(ref, () => ({ map: props.map, Loca, locaContainer }), [props.map, locaContainer]);
+  useEffect(() => props.map && dispatch({ map: props.map, locaContainer }), [props.map, locaContainer]);
+  useImperativeHandle(ref, () => ({ map: props.map, locaContainer }), [props.map, locaContainer]);
 
   return (
     <LocaCtx.Provider value={value}>
-      {locaContainer && childrenFnList.map((f) => f({ map: props.map, Loca, locaContainer }))}
+      {locaContainer && childrenFnList.map((f) => f({ map: props.map, locaContainer }))}
       {locaContainer &&
         childrenElementList.map((child, key) => {
           if (!isValidElement(child)) return null;
@@ -49,7 +49,6 @@ export const LocaContainer = forwardRef<LocaProps, LocaProps & RenderProps>((pro
             ...child.props,
             key,
             map: props.map,
-            Loca,
             locaContainer,
           });
         })}

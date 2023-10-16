@@ -21,7 +21,7 @@ export const RectangleEditor = forwardRef<
   const { map } = useMapContext();
   const [editor, setEditor] = useState<AMap.RectangleEditor>();
   const [childComponentInstanceForEditor, setChildComponentInstanceForEditor] = useState<AMap.Rectangle>();
-  const isStrictModeRenderedRefRef = useRef(false);
+  const isStrictModeRenderedRef = useRef(false);
 
   useImperativeHandle(ref, () => ({ ...props, instance: editor }));
 
@@ -36,14 +36,14 @@ export const RectangleEditor = forwardRef<
 
   useEffect(() => {
     if (AMap.RectangleEditor) {
-      if (map && !editor && childComponentInstanceForEditor && !isStrictModeRenderedRefRef.current) {
+      if (map && !editor && childComponentInstanceForEditor && !isStrictModeRenderedRef.current) {
         const instance = new AMap.RectangleEditor(map, childComponentInstanceForEditor, rest);
         setEditor(instance);
-        isStrictModeRenderedRefRef.current = true;
+        isStrictModeRenderedRef.current = true;
       }
     } else {
-      if (!isStrictModeRenderedRefRef.current) {
-        isStrictModeRenderedRefRef.current = true;
+      if (!isStrictModeRenderedRef.current) {
+        isStrictModeRenderedRef.current = true;
         console.error('Failed to load RectangleEditor: AMap plugin "AMap.RectangleEditor" is Required');
       }
     }
@@ -51,7 +51,7 @@ export const RectangleEditor = forwardRef<
     return () => {
       if (editor) {
         setEditor(undefined);
-        isStrictModeRenderedRefRef.current = false;
+        isStrictModeRenderedRef.current = false;
       }
     };
   }, [map, editor, childComponentInstanceForEditor]);

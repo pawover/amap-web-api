@@ -12,7 +12,7 @@ export const useMarker = (props: UseMarkerProps) => {
   const { map } = useMapContext();
   const [marker, setMarker] = useState<AMap.Marker>();
   const [wrapper, setWrapper] = useState<React.ReactPortal>();
-  const isStrictModeRenderedRefRef = useRef(false);
+  const isStrictModeRenderedRef = useRef(false);
 
   useVisible(marker, visible);
   useProperty<AMap.Marker, UseMarkerProps>(marker, rest);
@@ -39,7 +39,7 @@ export const useMarker = (props: UseMarkerProps) => {
   ]);
 
   useEffect(() => {
-    if (AMap && map && !marker && !isStrictModeRenderedRefRef.current) {
+    if (AMap && map && !marker && !isStrictModeRenderedRef.current) {
       const instance = new AMap.Marker(rest);
       map.add(instance);
 
@@ -53,14 +53,14 @@ export const useMarker = (props: UseMarkerProps) => {
       }
 
       setMarker(instance);
-      isStrictModeRenderedRefRef.current = true;
+      isStrictModeRenderedRef.current = true;
     }
     return () => {
       if (marker) {
         marker.stopMove();
         marker.setMap(null);
         setMarker(undefined);
-        isStrictModeRenderedRefRef.current = false;
+        isStrictModeRenderedRef.current = false;
       }
     };
   }, [map, marker]);

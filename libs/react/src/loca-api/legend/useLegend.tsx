@@ -10,7 +10,7 @@ export const useLegend = (props: UseLegend = {}) => {
 
   useEffect(() => {
     if (locaContainer && !legend) {
-      const instance = new Loca.Legend({ ...props, loca: props.loca || props.locaContainer || locaContainer });
+      const instance = new Loca.Legend({ ...props, loca: props.locaContainer || locaContainer });
       setLegend(instance);
     }
     return () => {

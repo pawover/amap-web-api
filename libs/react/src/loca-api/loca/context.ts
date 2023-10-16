@@ -1,4 +1,4 @@
-import { type Dispatch, createContext, useContext } from 'react';
+import { createContext, type Dispatch, useContext } from 'react';
 
 export interface LocaContextState extends LocaContext {
   map: MapContext['map'];
@@ -10,7 +10,7 @@ export interface LocaContextValue {
 
 export const locaContextState: LocaContextState = {
   map: undefined,
-  Loca: undefined,
+  loca: undefined,
   locaContainer: undefined,
 };
 

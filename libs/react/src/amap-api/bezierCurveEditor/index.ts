@@ -21,7 +21,7 @@ export const BezierCurveEditor = forwardRef<
   const { map } = useMapContext();
   const [editor, setEditor] = useState<AMap.BezierCurveEditor>();
   const [childComponentInstanceForEditor, setChildComponentInstanceForEditor] = useState<AMap.BezierCurve>();
-  const isStrictModeRenderedRefRef = useRef(false);
+  const isStrictModeRenderedRef = useRef(false);
 
   useImperativeHandle(ref, () => ({ ...props, instance: editor }));
 
@@ -36,14 +36,14 @@ export const BezierCurveEditor = forwardRef<
 
   useEffect(() => {
     if (AMap.BezierCurveEditor) {
-      if (map && !editor && childComponentInstanceForEditor && !isStrictModeRenderedRefRef.current) {
+      if (map && !editor && childComponentInstanceForEditor && !isStrictModeRenderedRef.current) {
         const instance = new AMap.BezierCurveEditor(map, childComponentInstanceForEditor, rest);
         setEditor(instance);
-        isStrictModeRenderedRefRef.current = true;
+        isStrictModeRenderedRef.current = true;
       }
     } else {
-      if (!isStrictModeRenderedRefRef.current) {
-        isStrictModeRenderedRefRef.current = true;
+      if (!isStrictModeRenderedRef.current) {
+        isStrictModeRenderedRef.current = true;
         console.error('Failed to load BezierCurveEditor: AMap plugin "AMap.BezierCurveEditor" is Required');
       }
     }
@@ -51,7 +51,7 @@ export const BezierCurveEditor = forwardRef<
     return () => {
       if (editor) {
         setEditor(undefined);
-        isStrictModeRenderedRefRef.current = false;
+        isStrictModeRenderedRef.current = false;
       }
     };
   }, [map, editor, childComponentInstanceForEditor]);

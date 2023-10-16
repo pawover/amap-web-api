@@ -21,7 +21,7 @@ export const PolygonEditor = forwardRef<
   const { map } = useMapContext();
   const [editor, setEditor] = useState<AMap.PolygonEditor>();
   const [childComponentInstanceForEditor, setChildComponentInstanceForEditor] = useState<AMap.Polygon>();
-  const isStrictModeRenderedRefRef = useRef(false);
+  const isStrictModeRenderedRef = useRef(false);
 
   useImperativeHandle(ref, () => ({ ...props, instance: editor }));
 
@@ -36,14 +36,14 @@ export const PolygonEditor = forwardRef<
 
   useEffect(() => {
     if (AMap.PolygonEditor) {
-      if (map && !editor && childComponentInstanceForEditor && !isStrictModeRenderedRefRef.current) {
+      if (map && !editor && childComponentInstanceForEditor && !isStrictModeRenderedRef.current) {
         const instance = new AMap.PolygonEditor(map, childComponentInstanceForEditor, rest);
         setEditor(instance);
-        isStrictModeRenderedRefRef.current = true;
+        isStrictModeRenderedRef.current = true;
       }
     } else {
-      if (!isStrictModeRenderedRefRef.current) {
-        isStrictModeRenderedRefRef.current = true;
+      if (!isStrictModeRenderedRef.current) {
+        isStrictModeRenderedRef.current = true;
         console.error('Failed to load PolygonEditor: AMap plugin "AMap.PolygonEditor" is Required');
       }
     }
@@ -51,7 +51,7 @@ export const PolygonEditor = forwardRef<
     return () => {
       if (editor) {
         setEditor(undefined);
-        isStrictModeRenderedRefRef.current = false;
+        isStrictModeRenderedRef.current = false;
       }
     };
   }, [map, editor, childComponentInstanceForEditor]);

@@ -9,7 +9,7 @@ export const useCitySearch = (props: useCitySearch) => {
   const { ip, ...rest } = props;
   const { map } = useMapContext();
   const [citySearch, setCitySearch] = useState<AMap.CitySearch>();
-  const isStrictModeRenderedRefRef = useRef(false);
+  const isStrictModeRenderedRef = useRef(false);
 
   useProperty<AMap.CitySearch, useCitySearch>(citySearch, props);
   useEventProperty<AMap.CitySearch, useCitySearch, AMap.CitySearch.Events>(citySearch, props, [
@@ -19,14 +19,14 @@ export const useCitySearch = (props: useCitySearch) => {
 
   useEffect(() => {
     if (AMap.CitySearch) {
-      if (map && !citySearch && !isStrictModeRenderedRefRef.current) {
+      if (map && !citySearch && !isStrictModeRenderedRef.current) {
         const instance = new AMap.CitySearch(rest);
         setCitySearch(instance);
-        isStrictModeRenderedRefRef.current = true;
+        isStrictModeRenderedRef.current = true;
       }
     } else {
-      if (!isStrictModeRenderedRefRef.current) {
-        isStrictModeRenderedRefRef.current = true;
+      if (!isStrictModeRenderedRef.current) {
+        isStrictModeRenderedRef.current = true;
         console.error('Failed to load CitySearch: AMap plugin "AMap.CitySearch" is Required');
       }
     }
@@ -35,7 +35,7 @@ export const useCitySearch = (props: useCitySearch) => {
       if (citySearch) {
         citySearch.clearEvents();
         setCitySearch(undefined);
-        isStrictModeRenderedRefRef.current = false;
+        isStrictModeRenderedRef.current = false;
       }
     };
   }, [map, citySearch]);

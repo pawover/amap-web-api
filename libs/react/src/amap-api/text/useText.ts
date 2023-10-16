@@ -13,7 +13,7 @@ export const useText = (props: UseTextProps) => {
   const [text, setText] = useState<AMap.Text>();
   const [wrapper, setWrapper] = useState<React.ReactPortal>();
   const { map } = useMapContext();
-  const isStrictModeRenderedRefRef = useRef(false);
+  const isStrictModeRenderedRef = useRef(false);
 
   useVisible(text, visible);
   useProperty<AMap.Text, UseTextProps>(text, rest);
@@ -40,7 +40,7 @@ export const useText = (props: UseTextProps) => {
   ]);
 
   useEffect(() => {
-    if (AMap && map && !text && !isStrictModeRenderedRefRef.current) {
+    if (AMap && map && !text && !isStrictModeRenderedRef.current) {
       const instance = new AMap.Text(rest);
       map.add(instance);
 
@@ -54,14 +54,14 @@ export const useText = (props: UseTextProps) => {
       }
 
       setText(instance);
-      isStrictModeRenderedRefRef.current = true;
+      isStrictModeRenderedRef.current = true;
     }
     return () => {
       if (text) {
         text.remove();
         text.setMap(null);
         setText(undefined);
-        isStrictModeRenderedRefRef.current = false;
+        isStrictModeRenderedRef.current = false;
       }
     };
   }, [map, text]);

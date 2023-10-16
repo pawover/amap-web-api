@@ -46,9 +46,6 @@
     "url": "https://github.com/Handpear/amap-web-api/issues"
   },
   "scripts": {},
-  "dependencies": {
-    "@amap/amap-jsapi-loader": "^1.0.1"
-  },
   "devDependencies": {
     "@handpear/shared": "workspace:*",
     "amap-web-types": "workspace:*",
