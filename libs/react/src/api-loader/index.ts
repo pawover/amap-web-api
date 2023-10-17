@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useAPILoader } from './useAPILoader';
 
 export interface APILoaderOptions {
@@ -106,6 +107,14 @@ interface LocaLoader {
 export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (props) => {
   const { children, ...rest } = props;
   const { isLoaded } = useAPILoader(rest);
+
+  useEffect(() => {
+    return () => {
+      if (window.AMap) delete (window as Recordable)['AMap'];
+      if (window.AMapUI) delete (window as Recordable)['AMapUI'];
+      if (window.Loca) delete (window as Recordable)['Loca'];
+    };
+  }, []);
 
   return isLoaded ? children : null;
 };
