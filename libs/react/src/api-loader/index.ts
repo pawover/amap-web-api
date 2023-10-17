@@ -70,7 +70,7 @@ interface AMapUILoader {
    *
    * @example ["misc/PathSimplifier", "misc/PointSimplifier"]
    */
-  plugins?: (keyof AMapUI.PluginMaps)[];
+  plugins?: (keyof AMapUI.UIPlugins)[];
   /**
    * Loader resolve 时的回调
    */

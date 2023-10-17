@@ -20,6 +20,10 @@ type RGBA_HEX = `#${string}${string}${string}${string}${string}${string}${string
 /** COLOR */
 type COLOR = RGB | RGBA | RGB_HEX | RGBA_HEX;
 
+type Replace<S extends string, F extends string, T extends string> = S extends `${infer Left}${F}${infer Right}`
+  ? `${Left}${T}${Right}`
+  : S;
+
 interface Window {
   AMap: typeof AMap;
   Loca: typeof Loca;
