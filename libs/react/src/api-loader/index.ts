@@ -105,7 +105,7 @@ interface LocaLoader {
  */
 export const APILoader: React.FC<React.PropsWithChildren<APILoaderOptions>> = (props) => {
   const { children, ...rest } = props;
-  const { isAMapLoaded } = useAPILoader(rest);
+  const { isLoaded } = useAPILoader(rest);
 
-  return isAMapLoaded ? children : null;
+  return isLoaded ? children : null;
 };

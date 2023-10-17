@@ -3,6 +3,8 @@ import type { APILoaderOptions } from './';
 
 export const useAPILoader = (props: APILoaderOptions) => {
   const [isAMapLoaded, setIsAMapLoaded] = useState(false);
+  const [isAMapUILoaded, setIsAMapUILoaded] = useState(false);
+  const [isLocaLoaded, setIsLocaLoaded] = useState(false);
   const isStrictModeRenderedRef = useRef(false);
 
   const createAMapLoadError = (options: APILoaderOptions, error: Error) => {
@@ -29,9 +31,10 @@ export const useAPILoader = (props: APILoaderOptions) => {
       tag.src = `https://webapi.amap.com/maps?v=${version}&key=${aKey}&plugin=${plugins.join(',')}`;
       tag.onload = () => {
         isStrictModeRenderedRef.current = false;
+        setIsAMapLoaded(true);
+
         if (window.AMap) {
           options.onSuccess?.(window.AMap);
-          setIsAMapLoaded(true);
           Promise.all([loadAMapUI(options), loadLoca(options)]);
           resolve(window.AMap);
         } else {
@@ -41,6 +44,8 @@ export const useAPILoader = (props: APILoaderOptions) => {
         }
       };
       tag.onerror = (event) => {
+        setIsAMapLoaded(true);
+
         document.head.removeChild(tag);
         createAMapLoadError(options, error);
         isStrictModeRenderedRef.current = false;
@@ -62,6 +67,8 @@ export const useAPILoader = (props: APILoaderOptions) => {
         tag.type = 'text/javascript';
         tag.src = `https://webapi.amap.com/ui/${v}/main.js`;
         tag.onload = () => {
+          setIsAMapUILoaded(true);
+
           if (window.AMapUI) {
             options.AMapUI?.onSuccess?.(window.AMapUI);
             resolve(window.AMapUI);
@@ -72,6 +79,8 @@ export const useAPILoader = (props: APILoaderOptions) => {
           }
         };
         tag.onerror = (event) => {
+          setIsAMapUILoaded(true);
+
           document.head.removeChild(tag);
           createAMapUILoadError(options, error);
           reject(error);
@@ -80,6 +89,7 @@ export const useAPILoader = (props: APILoaderOptions) => {
         document.head.appendChild(tag);
       } else {
         delete (window as { AMapUI?: typeof AMapUI }).AMapUI;
+        setIsAMapUILoaded(true);
         resolve(undefined);
       }
     });
@@ -95,6 +105,8 @@ export const useAPILoader = (props: APILoaderOptions) => {
         tag.type = 'text/javascript';
         tag.src = `https://webapi.amap.com/loca?v=${v}&key=${options.aKey}`;
         tag.onload = () => {
+          setIsLocaLoaded(true);
+
           if (window.Loca) {
             options.Loca?.onSuccess?.(window.Loca);
             resolve(window.Loca);
@@ -105,6 +117,8 @@ export const useAPILoader = (props: APILoaderOptions) => {
           }
         };
         tag.onerror = (event) => {
+          setIsLocaLoaded(true);
+
           document.head.removeChild(tag);
           createLocaLoadError(options, error);
           reject(error);
@@ -113,6 +127,7 @@ export const useAPILoader = (props: APILoaderOptions) => {
         document.head.appendChild(tag);
       } else {
         delete (window as { Loca?: typeof Loca }).Loca;
+        setIsLocaLoaded(true);
         resolve(undefined);
       }
     });
@@ -137,5 +152,5 @@ export const useAPILoader = (props: APILoaderOptions) => {
     }
   }, [isAMapLoaded, props]);
 
-  return { isAMapLoaded };
+  return { isLoaded: isAMapLoaded && isAMapUILoaded && isLocaLoaded };
 };
