@@ -1,12 +1,7 @@
 declare namespace Loca {
   namespace DirectionalLight {
     /** 平行光属性 */
-    interface Options extends Light.Options {
-      /** 坐标位置 */
-      position?: [number, number, number];
-      /** 光射向的目标位置 */
-      target?: [number, number, number];
-    }
+    interface Options extends Light.Options {}
   }
 
   /**

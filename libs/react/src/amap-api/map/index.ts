@@ -1,13 +1,12 @@
 import { createElement, forwardRef, useEffect, useImperativeHandle, useReducer, useState } from 'react';
 import { isArray, isFunction } from '@handpear/shared';
+import type { ChildNodeType } from '../../index';
 import { useMap } from './useMap';
 import { mapContextState, mapCtx, mapReducer } from './useMapContext';
 
 export * from './useMapContext';
 export * from './useMap';
-export type ChildNode = React.ReactNode;
-export type ChildNodeRender = () => React.ReactNode;
-export type ChildNodeType = ChildNode | ChildNodeRender;
+
 export interface MapProps extends AMap.Map.Events, AMap.Map.Options {
   /** 容器的 `id`，可用于获取容器的元素实例 */
   id?: string;
@@ -36,7 +35,7 @@ export const Map = forwardRef<MapProps & { instance: AMap.Map | undefined }, Map
 
   return createElement(
     mapCtx.Provider,
-    { value: { ...state } },
+    { value: state },
     createElement(
       'div',
       {

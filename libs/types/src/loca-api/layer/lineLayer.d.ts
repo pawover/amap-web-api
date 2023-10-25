@@ -1,34 +1,34 @@
 declare namespace Loca {
   namespace LineLayer {
     interface Options extends Layer.Options {}
-    interface StyleOptions<ExtraData extends Obj = Obj> {
+    interface StyleOptions<ExtraType = any> {
       /**
        * 线的颜色
        *
        * @default "#ffffff"
        */
-      color?: Layer.StyleRender<COLOR, GeoJSON.LineString, ExtraData>;
+      color?: Layer.StyleRender<COLOR, GeoJSON.LineString, ExtraType>;
       /**
        * 线的宽度
        */
-      lineWidth?: Layer.StyleRender<number, GeoJSON.LineString, ExtraData>;
+      lineWidth?: Layer.StyleRender<number, GeoJSON.LineString, ExtraType>;
       /**
        * 线的描边宽度
        *
        * @unit 像素
        * @unitSymbol px
        */
-      borderWidth?: Layer.StyleRender<number, GeoJSON.LineString, ExtraData>;
+      borderWidth?: Layer.StyleRender<number, GeoJSON.LineString, ExtraType>;
       /**
        * 线的描边颜色
        *
        * @default "#ffffff"
        */
-      borderColor?: Layer.StyleRender<COLOR, GeoJSON.LineString, ExtraData>;
+      borderColor?: Layer.StyleRender<COLOR, GeoJSON.LineString, ExtraType>;
       /**
        * 线的虚线配置信息，`[实线长度, 虚线长度, 实线长度, 虚线长度]`
        */
-      dash?: Layer.StyleRender<[number, number, number, number], GeoJSON.LineString, ExtraData>;
+      dash?: Layer.StyleRender<[number, number, number, number], GeoJSON.LineString, ExtraType>;
       /**
        * 海拔高度，代表棱柱的离地高度
        *
@@ -36,7 +36,7 @@ declare namespace Loca {
        * @unitSymbol m
        * @default 0
        */
-      altitude?: Layer.StyleRender<number, GeoJSON.LineString, ExtraData>;
+      altitude?: Layer.StyleRender<number, GeoJSON.LineString, ExtraType>;
     }
   }
 
@@ -44,10 +44,10 @@ declare namespace Loca {
    * 图层 - 线
    *
    * @class LineLayer
-   * @template ExtraData extends Obj = Obj
-   * @extends {Layer<LineLayer.StyleOptions<ExtraData>>} 抽象类 - 图层
+   * @template [ExtraType=any]
+   * @extends {Layer<LineLayer.StyleOptions<ExtraType>>} 抽象类 - 图层
    */
-  class LineLayer<ExtraData extends Obj = Obj> extends Layer<LineLayer.StyleOptions<ExtraData>> {
+  class LineLayer<ExtraType = any> extends Layer<LineLayer.StyleOptions<ExtraType>> {
     /**
      * 构造函数
      *

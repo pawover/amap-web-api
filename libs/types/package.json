@@ -1,6 +1,6 @@
 {
   "name": "amap-web-types",
-  "version": "1.0.0-alpha.17",
+  "version": "1.0.0-alpha.18",
   "description": "Typescript definitions for amap-web-api. 高德地图 AMap Web Api Typescript 类型定义。",
   "type": "module",
   "main": "./src/index.d.ts",

@@ -15,16 +15,17 @@ declare namespace Loca {
        */
       allowCollision?: boolean;
     }
-    interface StyleOptions extends AMap.LabelMarker.Options {}
+    interface StyleOptions<ExtraType = any> extends AMap.LabelMarker.Options {}
   }
 
   /**
-   * 图层 - 标注
+   * D图层 - 标注
    *
    * @class LabelsLayer
-   * @extends {Layer<LabelsLayer.StyleOptions>} 抽象类 - 图层
+   * @template [ExtraType=any]
+   * @extends {Layer<LabelsLayer.StyleOptions<ExtraType>>} 抽象类 - 图层
    */
-  class LabelsLayer extends Layer<LabelsLayer.StyleOptions> {
+  class LabelsLayer<ExtraType = any> extends Layer<LabelsLayer.StyleOptions<ExtraType>> {
     /**
      * 构造函数
      *

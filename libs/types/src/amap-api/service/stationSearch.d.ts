@@ -1,7 +1,7 @@
 declare namespace AMap {
   namespace StationSearch {
     interface Options {
-      /** 地图实例 */
+      /** Map 实例 */
       map?: AMap.Map;
       /**
        * 查询城市

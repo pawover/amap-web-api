@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle } from 'react';
 import { usePointLight } from './usePointLight';
 
 export * from './usePointLight';
-export interface PointLightProps extends LocaContext, Loca.PointLight.Options {}
+export interface PointLightProps extends Loca.PointLight.Options {}
 
 export const PointLight = forwardRef<PointLightProps & { instance: Loca.PointLight | undefined }, PointLightProps>(
   (props, ref) => {

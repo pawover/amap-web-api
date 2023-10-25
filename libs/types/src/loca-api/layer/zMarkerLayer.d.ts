@@ -27,8 +27,7 @@ declare namespace Loca {
       /**
        * 每个 `Marker` 的海拔高度，单位是米，可以通过函数回调对每个 `Marker` 设置不同的海拔
        * - 如果坐标数据中有第三维度的海拔值，将会自动获取坐标中的值
-       *
-       * @unit 米
+       * - 单位取决于属性 `unit` 的值
        * @default 0
        */
       altitude?: number | Fn;

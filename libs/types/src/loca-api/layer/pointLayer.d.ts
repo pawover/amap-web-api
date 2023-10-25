@@ -9,20 +9,18 @@ declare namespace Loca {
        */
       blend?: 'normal' | 'lighter';
     }
-    interface StyleOptions<ExtraData extends Obj = Obj> {
+    interface StyleOptions<ExtraType = any> {
       /**
        * 半径，支持动画过渡效果
-       *
-       * @unit 像素
-       * @unitSymbol px
+       * - 单位取决于属性 `unit` 的值
        */
-      radius?: Layer.StyleRender<number, GeoJSON.Point, ExtraData>;
+      radius?: Layer.StyleRender<number, GeoJSON.Point, ExtraType>;
       /**
        * 填充色，支持回调设置不同的颜色
        *
        * @default "#ffffff"
        */
-      color?: Layer.StyleRender<COLOR, GeoJSON.Point, ExtraData>;
+      color?: Layer.StyleRender<COLOR, GeoJSON.Point, ExtraType>;
       /**
        * 点的单位，会影响半径和边宽度
        * - `px` 像素
@@ -33,24 +31,23 @@ declare namespace Loca {
       unit?: 'px' | 'meter';
       /**
        * 边框宽度
-       *
-       * @unit 像素
-       * @unitSymbol px
+       * - 单位取决于属性 `unit` 的值
        */
-      borderWidth?: Layer.StyleRender<number, GeoJSON.Point, ExtraData>;
+      borderWidth?: Layer.StyleRender<number, GeoJSON.Point, ExtraType>;
       /**
        * 边框填充色，支持回调设置不同的颜色
        *
        * @default "#ffffff"
        */
-      borderColor?: Layer.StyleRender<COLOR, GeoJSON.Point, ExtraData>;
+      borderColor?: Layer.StyleRender<COLOR, GeoJSON.Point, ExtraType>;
       /**
        * 模糊半径，从哪个位置开始向边缘模糊
        * - 负数代表不进行模糊
+       * - 单位取决于属性 `unit` 的值
        *
        * @default -1
        */
-      blurWidth?: Layer.StyleRender<number, GeoJSON.Point, ExtraData>;
+      blurWidth?: Layer.StyleRender<number, GeoJSON.Point, ExtraType>;
     }
   }
 
@@ -61,11 +58,11 @@ declare namespace Loca {
    * - 支持对每个圆点的半径、颜色、描边信息单独设置
    *
    * @class PointLayer
-   * @template ExtraData extends Obj = Obj
-   * @extends {Layer<PointLayer.StyleOptions<ExtraData>>} 抽象类 - 图层
+   * @template [ExtraType=any]
+   * @extends {Layer<PointLayer.StyleOptions<ExtraType>>} 抽象类 - 图层
    */
 
-  class PointLayer<ExtraData extends Obj = Obj> extends Layer<PointLayer.StyleOptions<ExtraData>> {
+  class PointLayer<ExtraType = any> extends Layer<PointLayer.StyleOptions<ExtraType>> {
     /**
      * 构造函数
      *

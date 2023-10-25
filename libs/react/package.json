@@ -1,6 +1,6 @@
 {
   "name": "amap-web-react",
-  "version": "1.0.0-alpha.17",
+  "version": "1.0.0-alpha.18",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@handpear/shared": "workspace:*",
-    "@types/react": "~18.2.22",
-    "@types/react-dom": "~18.2.7",
+    "@types/react": "~18.2.31",
+    "@types/react-dom": "~18.2.14",
     "amap-web-types": "workspace:*"
   },
   "peerDependencies": {

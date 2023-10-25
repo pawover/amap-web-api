@@ -2,24 +2,24 @@ import { useEffect, useState } from 'react';
 import { useLocaContext } from '../index';
 import type { DirectionalLightProps } from './';
 
-interface UseDirectionalLight extends DirectionalLightProps {}
+interface UseDirectionalLightProps extends DirectionalLightProps {}
 
-export const useDirectionalLight = (props: UseDirectionalLight = {}) => {
-  const { locaContainer } = useLocaContext();
+export const useDirectionalLight = (props: UseDirectionalLightProps) => {
+  const { loca } = useLocaContext();
   const [directionalLight, setDirectionalLight] = useState<Loca.DirectionalLight>();
 
   useEffect(() => {
-    if (locaContainer && !directionalLight) {
-      const instance = new Loca.DirectionalLight(props, props.locaContainer || locaContainer);
+    if (loca && !directionalLight) {
+      const instance = new Loca.DirectionalLight(props, loca);
       setDirectionalLight(instance);
     }
     return () => {
       if (directionalLight) {
-        locaContainer?.removeLight(directionalLight);
+        loca?.removeLight(directionalLight);
         setDirectionalLight(undefined);
       }
     };
-  }, [locaContainer, directionalLight]);
+  }, [loca, directionalLight]);
 
   return { directionalLight };
 };

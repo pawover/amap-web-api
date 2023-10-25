@@ -4,3 +4,4 @@ export * from './legend';
 export * from './loca';
 export * from './pointLayer';
 export * from './pointLight';
+export * from './polygonLayer';

@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle } from 'react';
 import { useDirectionalLight } from './useDirectionalLight';
 
 export * from './useDirectionalLight';
-export interface DirectionalLightProps extends LocaContext, Loca.DirectionalLight.Options {}
+export interface DirectionalLightProps extends Loca.DirectionalLight.Options {}
 
 export const DirectionalLight = forwardRef<
   DirectionalLightProps & { instance: Loca.DirectionalLight | undefined },

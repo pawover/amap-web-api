@@ -39,26 +39,53 @@ declare namespace Loca {
     }
     /** 动画配置参数 */
     interface AnimateConfig {
-      /** 动画的属性 key，如 `height` */
+      /**
+       * 动画属性名称
+       * - 如 `height`
+       */
       key: string;
-      /** 动画的过渡值，范围 `[0 ~ 1]` 之间，`1` 代表真实设定的值 */
+      /**
+       * 动画过渡值
+       * - 范围 `[0 ~ 1]` 之间，`1` 代表真实设定的值
+       */
       value: number[];
-      /** 动画时长，单位毫秒 */
+      /**
+       * 动画时长
+       *
+       * @unit 毫秒
+       * @unitSymbol ms
+       */
       duration: number;
-      /** 动画过渡函数，如 'CircularOut'，[相关参考](https://redmed.github.io/chito/example/easing.html) */
+      /**
+       * 动画过渡函数
+       * - 如 `CircularOut`，[相关参考](https://redmed.github.io/chito/example/easing.html)
+       */
       easing: Animate.Easing;
-      /** 一个动画 duration 中，从哪个时间开始动画 */
+      /**
+       * 一轮动画中的开始时间
+       */
       startAt?: number;
-      /** 是否开启来回摆动 */
+      /**
+       * 是否开启来回摆动
+       */
       yoyo?: boolean;
-      /** 是否开启随机执行动画，如果开启，图层中每个要素的动画开始的时间将随机延时，适合每个数据不同时间出现的效果 */
+      /**
+       * 是否开启随机动画
+       * - 如果开启，图层中每个要素的动画开始的时间将随机延时，适合每个数据不同时间出现的效果
+       */
       random?: boolean;
-      /** 随机动画延迟的时间段，每个要素的随机延迟将会在 delay 时间段内取值，单位毫秒，random 为 true 时生效 */
+      /**
+       * 随机动画的延迟时间
+       * - 每个要素的随机延迟将会在 `delay` 时间段内取值，单位毫秒，`random` 为 `true` 时生效
+       */
       delay?: number;
-      /** 随机动画的动画执行时间，单位毫秒，random 为 true 时生效 */
+      /**
+       * 随机动画的执行时间
+       * - 每个要素的随机延迟将会在 `delay` 时间段内取值，单位毫秒，`random` 为 `true` 时生效
+       */
       transform?: number;
     }
-    type StyleRender<T, G extends GeoJSON.Geometry, O extends Obj = Obj> = T | ((index: number, item: G & O) => T);
+    type StyleRender<T, G extends GeoJSON.Geometry, O = any> = T | ((index: number, item: G & O) => T);
   }
 
   /**
@@ -87,7 +114,7 @@ declare namespace Loca {
     public opacity: number | undefined;
     public zIndex: number | undefined;
     public zooms: [number, number] | undefined;
-    public lights: Lights[];
+    public lights: LightType[];
     public styleOptions: StyleOptions;
 
     /** 从 Loca 上移除图层 */

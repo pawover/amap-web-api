@@ -4,7 +4,7 @@ declare namespace Loca {
       /** 地图实例 */
       map: AMap.Map;
     }
-    interface Lights {
+    interface LightConfigs {
       /** 环境光强度 */
       ambIntensity: number;
       /** 环境光颜色 */
@@ -40,18 +40,35 @@ declare namespace Loca {
      */
     public constructor(options?: Container.Options);
 
-    /** 地图的视角控制器，支持连续的视角动画过渡控制 */
-    public viewControl: ViewControl;
-    /** 帧控制器，控制地图渲染 */
+    /** 动画控制器 */
     public animate: Animate;
-    /** 环境光属性 */
+    /** 动画状态 */
+    public animateStatus: 'start' | 'pause' | 'stop';
+    /**
+     * 环境光属性
+     * @deprecated Please use `new Loca.AmbientLight` instead
+     */
     public ambLight: AmbientLight.Options;
-    /** 平行光属性 */
+    /**
+     * 平行光属性
+     * @deprecated Please use `new Loca.DirectionalLight` instead
+     */
     public dirLight: DirectionalLight.Options;
-    /** 点光源属性 */
+    /**
+     * 点光源属性
+     * @deprecated Please use `new Loca.PointLight` instead
+     */
     public pointLight: PointLight.Options;
     /** 所有光源对象 */
-    public lights: (AmbientLight | DirectionalLight | PointLight)[];
+    public lights: LightType[];
+    /** 所有图层对象 */
+    public layers: Loca.LayerType[];
+    /** 地图的视角控制器，支持连续的视角动画过渡控制 */
+    public viewControl: ViewControl;
+    /** 缩放等级 */
+    public zoom: number;
+    /** 缩放范围 */
+    public zooms: [number, number];
 
     /** 将一个图层添加到地图上 */
     public add(layer: Layer): void;
@@ -65,6 +82,8 @@ declare namespace Loca {
     public removeLight(light: AmbientLight | DirectionalLight | PointLight): void;
     /** 清空所有光源 */
     public clearLight(): void;
+
+    public addLayer(): void;
     /** 销毁 Loca 实例，如果希望同时销毁 Map，那么需要先销毁 Loca 实例，然后销毁 Map 实例 */
     public destroy(): void;
     /** 主动触发地图渲染 */
@@ -74,9 +93,9 @@ declare namespace Loca {
     /** 设置地图中心点 */
     public setCenter(center: AMap.LngLatLike): void;
     /** 获取控件的 dom 容器 */
-    public getControlContainer(): HTMLElement;
+    public getControlContainer<R extends HTMLElement = HTMLDivElement>(): R;
     /** 获取所有光源的配置参数 */
-    public getLights(): Container.Lights;
+    public getLights(): Container.LightConfigs;
     /** 获取最高点 */
     public getPitch(): number;
     /** 设置最高点 */

@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { useLocaContext } from '../index';
 import type { LegendProps } from './';
 
-interface UseLegend extends LegendProps {}
+interface UseLegendProps extends LegendProps {}
 
-export const useLegend = (props: UseLegend = {}) => {
-  const { locaContainer } = useLocaContext();
+export const useLegend = (props: UseLegendProps) => {
+  const { loca } = useLocaContext();
   const [legend, setLegend] = useState<Loca.Legend>();
 
   useEffect(() => {
-    if (locaContainer && !legend) {
-      const instance = new Loca.Legend({ ...props, loca: props.locaContainer || locaContainer });
+    if (loca && !legend) {
+      const instance = new Loca.Legend({ ...props, loca });
       setLegend(instance);
     }
     return () => {
@@ -19,7 +19,7 @@ export const useLegend = (props: UseLegend = {}) => {
         setLegend(undefined);
       }
     };
-  }, [locaContainer, legend]);
+  }, [loca, legend]);
 
   return { legend };
 };

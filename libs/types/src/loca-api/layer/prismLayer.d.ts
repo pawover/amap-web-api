@@ -35,14 +35,12 @@ declare namespace Loca {
        */
       labelsLayerOptions?: AMap.LabelsLayer.Options;
     }
-    interface StyleOptions<ExtraData extends Obj = Obj> {
+    interface StyleOptions<ExtraType = any> {
       /**
        * 半径，支持动画过渡效果
-       *
-       * @unit 像素
-       * @unitSymbol px
+       * - 单位取决于属性 `unit` 的值
        */
-      radius?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraData>;
+      radius?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 点的单位，会影响半径和边宽度
        * - `px` 像素
@@ -57,60 +55,60 @@ declare namespace Loca {
        *
        * @default 3
        */
-      sideNumber?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraData>;
+      sideNumber?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 每个棱柱的旋转角度，取值范围 `[0 ~ 360]`，可以支持动画效果
        *
        * @default 0
        */
-      rotation?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraData>;
+      rotation?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 海拔高度，代表棱柱的离地高度
-       * - 单位是 `unit` 的值
        * - 支持动画过渡效果
+       * - 单位取决于属性 `unit` 的值
        *
        * @default 0
        */
-      altitude?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraData>;
+      altitude?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 棱柱的高度
-       * - 单位是 `unit` 的值
        * - 支持动画过渡效果
+       * - 单位取决于属性 `unit` 的值
        *
        * @default 100
        */
-      height?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraData>;
+      height?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 棱柱的顶面颜色值
        *
-       * @default '#fff''
+       * @default "#fff"
        */
-      topColor?: Layer.StyleRender<COLOR, GeoJSON.MultiPolygon, ExtraData>;
+      topColor?: Layer.StyleRender<COLOR, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 棱柱的侧面顶部颜色值
        *
-       * @default '#fff''
+       * @default "#fff"
        */
-      sideTopColor?: Layer.StyleRender<COLOR, GeoJSON.MultiPolygon, ExtraData>;
+      sideTopColor?: Layer.StyleRender<COLOR, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 棱柱的侧面底部颜色值
        *
-       * @default '#fff''
+       * @default "#fff"
        */
-      sideBottomColor?: Layer.StyleRender<COLOR, GeoJSON.MultiPolygon, ExtraData>;
+      sideBottomColor?: Layer.StyleRender<COLOR, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 棱柱中心位置的文字标注
        *
        * @default undefined
        */
-      label?: Layer.StyleRender<AMap.LabelMarker.Options, GeoJSON.MultiPolygon, ExtraData>;
+      label?: Layer.StyleRender<AMap.LabelMarker.Options, GeoJSON.MultiPolygon, ExtraType>;
       /**
        * 文字标注相对于顶面的海拔高度
-       * - 单位是 `unit` 的值
+       * - 单位取决于属性 `unit` 的值
        *
        * @default 0
        */
-      labelAltitude?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraData>;
+      labelAltitude?: Layer.StyleRender<number, GeoJSON.MultiPolygon, ExtraType>;
     }
   }
 
@@ -123,7 +121,7 @@ declare namespace Loca {
    * @class PrismLayer
    * @extends {Layer<PrismLayer.StyleOptions>} 抽象类 - 图层
    */
-  class PrismLayer<ExtraData extends Obj = Obj> extends Layer<PrismLayer.StyleOptions<ExtraData>> {
+  class PrismLayer<ExtraType = any> extends Layer<PrismLayer.StyleOptions<ExtraType>> {
     /**
      * 构造函数
      *

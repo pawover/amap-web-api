@@ -1,7 +1,7 @@
 declare namespace Loca {
   namespace IconLayer {
     interface Options extends Layer.Options {}
-    interface StyleOptions {
+    interface StyleOptions<ExtraType = any> {
       /**
        * 图标资源，接受三种值 `Svg` `Image` `Url`，可通过回调函数对每个点进行设置
        *
@@ -11,6 +11,7 @@ declare namespace Loca {
       icon?: string | Fn;
       /**
        * 图标大小，影响宽高。支持动画过渡效果，动画 `key` 字段名称为 `iconSize`
+       * - 单位取决于属性 `unit` 的值
        *
        * @default [20,20]
        */
@@ -38,7 +39,7 @@ declare namespace Loca {
       opacity?: number | Fn;
       /**
        * 图标偏移的位置大小，右上方为正方向
-       * - 单位取决于 `unit` 的值
+       * - 单位取决于属性 `unit` 的值
        *
        * @default [0,0]
        */
@@ -52,7 +53,15 @@ declare namespace Loca {
    * @class IconLayer
    * @extends {Layer<IconLayer.StyleOptions>} 抽象类 - 图层
    */
-  class IconLayer extends Layer<IconLayer.StyleOptions> {
+
+  /**
+   * 图层 - 图标
+   *
+   * @class IconLayer
+   * @template [ExtraType=any]
+   * @extends {Layer<IconLayer.StyleOptions<ExtraType>>} 抽象类 - 图层
+   */
+  class IconLayer<ExtraType = any> extends Layer<IconLayer.StyleOptions<ExtraType>> {
     /**
      * 构造函数
      *

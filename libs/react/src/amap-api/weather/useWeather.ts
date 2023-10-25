@@ -4,7 +4,7 @@ import type { WeatherProps } from './';
 
 interface UseWeather extends WeatherProps {}
 
-export const useWeather = (props: UseWeather = {}) => {
+export const useWeather = (props: UseWeather) => {
   const { city = '', type = 'live', onComplete, onError } = props;
   const { map } = useMapContext();
   const [weather, setWeather] = useState<AMap.Weather>();

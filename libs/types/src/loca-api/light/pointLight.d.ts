@@ -1,12 +1,7 @@
 declare namespace Loca {
   namespace PointLight {
     /** 点光源属性 */
-    interface Options extends Light.Options {
-      /** 坐标位置 */
-      position?: [number, number, number];
-      /** 光源能照射的最远距离（从光源到光照强度为 0 的位置，0 就是光不会消失） */
-      distance?: number;
-    }
+    interface Options extends Light.Options {}
   }
 
   /**

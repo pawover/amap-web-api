@@ -2,7 +2,7 @@ import { forwardRef, useImperativeHandle } from 'react';
 import { useAmbientLight } from './useAmbientLight';
 
 export * from './useAmbientLight';
-export interface AmbientLightProps extends LocaContext, Loca.AmbientLight.Options {}
+export interface AmbientLightProps extends Loca.AmbientLight.Options {}
 
 export const AmbientLight = forwardRef<
   AmbientLightProps & { instance: Loca.AmbientLight | undefined },
