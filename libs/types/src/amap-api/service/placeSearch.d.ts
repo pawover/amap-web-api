@@ -65,12 +65,6 @@ declare namespace AMap {
        */
       renderStyle?: 'newpc' | 'default';
     }
-    /** 回调函数 */
-    interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
-    }
     interface Result {
       /** 查询的成功状态说明 */
       info: string;
@@ -149,7 +143,9 @@ declare namespace AMap {
      * @param {string} keyword 关键字
      * @param {?PlaceSearch.Callback} [callback] 回调函数
      */
-    public search(keyword: string, callback?: PlaceSearch.Callback): void;
+    public search(keyword: string, callback: (status: 'complete', result: PlaceSearch.Result) => void): void;
+    public search(keyword: string, callback: (status: 'error', result: string) => void): void;
+    public search(keyword: string, callback: (status: 'no_data', result: Obj) => void): void;
     /**
      * 通过关键字和范围查询
      *
@@ -158,7 +154,21 @@ declare namespace AMap {
      * @param {BoundsLike} bounds 范围
      * @param {?PlaceSearch.Callback} [callback] 回调函数
      */
-    public searchInBounds(keyword: string, bounds: BoundsLike, callback?: PlaceSearch.Callback): void;
+    public searchInBounds(
+      keyword: string,
+      bounds: BoundsLike,
+      callback?: (status: 'complete', result: PlaceSearch.Result) => void,
+    ): void;
+    public searchInBounds(
+      keyword: string,
+      bounds: BoundsLike,
+      callback?: (status: 'error', result: string) => void,
+    ): void;
+    public searchInBounds(
+      keyword: string,
+      bounds: BoundsLike,
+      callback?: (status: 'no_data', result: Obj) => void,
+    ): void;
     /**
      * 通过关键字、中心点经纬度、半径进行范围查询
      *
@@ -168,7 +178,24 @@ declare namespace AMap {
      * @param {number} radius 半径，单位：米，取值范围 `0` ~ `50000`，超过取值范围按 3000 处理
      * @param {?PlaceSearch.Callback} [callback] 回调函数
      */
-    public searchNearBy(keyword: string, center: LngLatLike, radius: number, callback?: PlaceSearch.Callback): void;
+    public searchNearBy(
+      keyword: string,
+      center: LngLatLike,
+      radius: number,
+      callback?: (status: 'complete', result: PlaceSearch.Result) => void,
+    ): void;
+    public searchNearBy(
+      keyword: string,
+      center: LngLatLike,
+      radius: number,
+      callback?: (status: 'error', result: string) => void,
+    ): void;
+    public searchNearBy(
+      keyword: string,
+      center: LngLatLike,
+      radius: number,
+      callback?: (status: 'no_data', result: Obj) => void,
+    ): void;
     /**
      * 根据 POI ID 查询详细信息
      *
@@ -176,7 +203,9 @@ declare namespace AMap {
      * @param {string} id POI ID
      * @param {?PlaceSearch.Callback} [callback] 回调函数
      */
-    public getDetails(id: string, callback?: PlaceSearch.Callback): void;
+    public getDetails(id: string, callback: (status: 'complete', result: PlaceSearch.Result) => void): void;
+    public getDetails(id: string, callback: (status: 'error', result: string) => void): void;
+    public getDetails(id: string, callback: (status: 'no_data', result: Obj) => void): void;
     /**
      * 设置查询的 POI 类型
      *
