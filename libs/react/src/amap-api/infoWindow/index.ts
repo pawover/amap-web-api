@@ -6,7 +6,7 @@ export * from './useInfoWindow';
 export interface InfoWindowProps
   extends ContextProps,
     AMap.InfoWindow.Events,
-    Omit<AMap.InfoWindow.Options, 'content'> {
+    Omit<AMap.InfoWindow.Options, 'content' | 'isCustom' | 'size'> {
   /**
    * 是否显示
    *

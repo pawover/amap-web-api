@@ -6,8 +6,8 @@ import type { InfoWindowProps } from './';
 
 interface UseInfoWindowProps extends InfoWindowProps {}
 
-const contentBoxClassName = '.amap-info-content';
-const contentBoxCloseClassName = '.amap-info-close';
+const shadowContainerClassName = '.amap-info-shadowContainer';
+const contentContainerClassName = '.amap-info-contentContainer';
 
 export const useInfoWindow = (props: UseInfoWindowProps) => {
   const { visible = true, content, children, ...rest } = props;
@@ -17,11 +17,13 @@ export const useInfoWindow = (props: UseInfoWindowProps) => {
 
   const createWrapper = (infoWindow: AMap.InfoWindow) => {
     const dom = infoWindow.getContentDom();
+
     if (dom) {
-      const contentBox = dom.querySelector(contentBoxClassName);
-      const contentBoxClose = dom.querySelector(contentBoxCloseClassName);
-      if (contentBoxClose) contentBoxClose.remove();
-      const wrapper = createPortal(content || children, contentBox || dom);
+      const contentContainer = dom.querySelector(contentContainerClassName);
+      const shadowContainer = dom.querySelector(shadowContainerClassName);
+      if (contentContainer) contentContainer.remove();
+      if (shadowContainer) shadowContainer.remove();
+      const wrapper = createPortal(content || children, dom);
       setWrapper(wrapper);
     }
   };
@@ -34,7 +36,7 @@ export const useInfoWindow = (props: UseInfoWindowProps) => {
 
   useEffect(() => {
     if (AMap && map && !infoWindow) {
-      const instance = new AMap.InfoWindow(rest);
+      const instance = new AMap.InfoWindow({ ...rest, isCustom: true });
       if (content || children) createWrapper(instance);
       setInfoWindow(instance);
     }
