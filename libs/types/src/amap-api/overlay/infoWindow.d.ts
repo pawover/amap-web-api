@@ -59,7 +59,7 @@ declare namespace AMap {
 
   /**
    * 信息窗体
-   * - 用于在地图上弹出一个详细信息展示窗体，地图上只允许同时展示 1 个信息窗体
+   * - 用于在地图上弹出一个详细信息展示窗体，地图上只允许同时展示 `1` 个信息窗体
    *
    * @class InfoWindow
    * @extends {Event<'open' | 'close'>}
