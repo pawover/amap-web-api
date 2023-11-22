@@ -5,7 +5,7 @@ declare namespace AMap {
      *
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    const CLASS_NAME: 'AMap.GeometryUtil';
+    const CLASS_NAME: "AMap.GeometryUtil";
     /**
      * 计算 `点P1` 和 `点P2` 间的实际距离
      *
@@ -271,6 +271,6 @@ declare namespace AMap {
      *
      * @version AMap Web API 2.x
      */
-    function typePolygon(polygon: LngLatLike | LngLatLike[] | LngLatLike[][]): 'Polygon' | 'MultiPolygon' | 'never';
+    function typePolygon(polygon: LngLatLike | LngLatLike[] | LngLatLike[][]): "Polygon" | "MultiPolygon" | "never";
   }
 }

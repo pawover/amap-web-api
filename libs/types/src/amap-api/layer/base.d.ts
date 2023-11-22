@@ -39,7 +39,7 @@ declare namespace AMap {
    * @implements {Accessor.ZIndex} 叠加层级
    * @implements {Accessor.Zooms} 显示级别范围
    */
-  abstract class Layer<O extends Layer.Options, E extends MapEventList | OverlayEventList = 'complete'>
+  abstract class Layer<O extends Layer.Options, E extends MapEventList | OverlayEventList = "complete">
     extends Event<E>
     implements Accessor.Map, Accessor.Opacity, Accessor.ZIndex, Accessor.Zooms
   {
@@ -56,17 +56,17 @@ declare namespace AMap {
     public _zIndex: number;
     public _opts: unknown;
 
-    public getMap: Required<Accessor.Map>['getMap'];
-    public setMap: Required<Accessor.Map>['setMap'];
+    public getMap: Required<Accessor.Map>["getMap"];
+    public setMap: Required<Accessor.Map>["setMap"];
 
-    public getOpacity: Required<Accessor.Opacity>['getOpacity'];
-    public setOpacity: Required<Accessor.Opacity>['setOpacity'];
+    public getOpacity: Required<Accessor.Opacity>["getOpacity"];
+    public setOpacity: Required<Accessor.Opacity>["setOpacity"];
 
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
-    public getZooms: Required<Accessor.Zooms>['getZooms'];
-    public setZooms: Required<Accessor.Zooms>['setZooms'];
+    public getZooms: Required<Accessor.Zooms>["getZooms"];
+    public setZooms: Required<Accessor.Zooms>["setZooms"];
 
     /** 获取构造参数 */
     public getLayerConfig(): O;

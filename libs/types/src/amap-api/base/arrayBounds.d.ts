@@ -20,7 +20,7 @@ declare namespace AMap {
     public constructor(bounds: BoundsLike[]);
 
     /** 类标识 */
-    public CLASS_NAME: 'AMap.ArrayBounds';
+    public CLASS_NAME: "AMap.ArrayBounds";
 
     public Td: unknown[];
     /** 经纬度路径 */

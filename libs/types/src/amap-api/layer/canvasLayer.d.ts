@@ -6,7 +6,7 @@ declare namespace AMap {
     }
     interface Events {
       /** 加载完成事件 */
-      onComplete?: (event: { type: 'complete' }) => void;
+      onComplete?: (event: { type: "complete" }) => void;
     }
   }
 
@@ -32,14 +32,14 @@ declare namespace AMap {
      */
     public constructor(options?: CanvasLayer.Options);
 
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
-    public setBounds: Required<Accessor.Bounds>['setBounds'];
+    public getBounds: Required<Accessor.Bounds>["getBounds"];
+    public setBounds: Required<Accessor.Bounds>["setBounds"];
 
     /**
      * 获取图层配置参数
      * - 相比 `getLayerConfig` 更完整
      */
-    public getOptions: Required<Accessor.Options<CanvasLayer.Options>>['getOptions'];
+    public getOptions: Required<Accessor.Options<CanvasLayer.Options>>["getOptions"];
 
     /** 获取图层构造参数 */
     public getLayerConfig(): CanvasLayer.Options;

@@ -58,6 +58,6 @@ declare namespace Loca {
     public constructor(options?: LineLayer.Options);
 
     /** 获取初始动画状态 */
-    public getInitialAnimateState(): Record<'altitude' | 'lineWidth', Record<'time' | 'type' | 'value', number[]>>;
+    public getInitialAnimateState(): Record<"altitude" | "lineWidth", Record<"time" | "type" | "value", number[]>>;
   }
 }

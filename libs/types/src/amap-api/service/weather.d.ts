@@ -2,15 +2,15 @@ declare namespace AMap {
   namespace Weather {
     /** 回调函数 */
     interface LiveCallback {
-      (status: 'complete', result: LiveResult): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: LiveResult): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     /** 回调函数 */
     interface ForecastCallback {
-      (status: 'complete', result: ForecastResult): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: ForecastResult): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     /** 实时天气查询结果说明 */
     interface LiveResult {

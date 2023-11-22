@@ -25,7 +25,7 @@ declare namespace AMap {
     }
     interface Events {
       /** 加载完成事件 */
-      onComplete?: (event: { type: 'complete' }) => void;
+      onComplete?: (event: { type: "complete" }) => void;
     }
   }
 

@@ -85,7 +85,7 @@ declare namespace AMap {
       /** 文字是否折行（`6` 个字一折行） */
       fold?: boolean;
     }
-    interface Events extends Omit<EventsCommonProps<LabelMarker>, 'onHide' | 'onShow'> {}
+    interface Events extends Omit<EventsCommonProps<LabelMarker>, "onHide" | "onShow"> {}
   }
 
   /**
@@ -129,32 +129,32 @@ declare namespace AMap {
     public constructor(options?: LabelMarker.Options);
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public CLASS_NAME: 'AMap.LabelMarker';
-    public className: 'AMap.LabelMarker';
-    public type: 'AMap.LabelMarker';
+    public CLASS_NAME: "AMap.LabelMarker";
+    public className: "AMap.LabelMarker";
+    public type: "AMap.LabelMarker";
 
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
+    public getBounds: Required<Accessor.Bounds>["getBounds"];
 
-    public getCursor: Required<Accessor.Cursor>['getCursor'];
-    public setCursor: Required<Accessor.Cursor>['setCursor'];
+    public getCursor: Required<Accessor.Cursor>["getCursor"];
+    public setCursor: Required<Accessor.Cursor>["setCursor"];
 
-    public getDraggable: Required<Accessor.Draggable>['getDraggable'];
+    public getDraggable: Required<Accessor.Draggable>["getDraggable"];
 
-    public getExtData: Required<Accessor.ExtData>['getExtData'];
+    public getExtData: Required<Accessor.ExtData>["getExtData"];
 
-    public getOpacity: Required<Accessor.Opacity>['getOpacity'];
-    public setOpacity: Required<Accessor.Opacity>['setOpacity'];
+    public getOpacity: Required<Accessor.Opacity>["getOpacity"];
+    public setOpacity: Required<Accessor.Opacity>["setOpacity"];
 
-    public getOptions: Required<Accessor.Options<LabelMarker.Options>>['getOptions'];
+    public getOptions: Required<Accessor.Options<LabelMarker.Options>>["getOptions"];
 
-    public getPosition: Required<Accessor.Position>['getPosition'];
-    public setPosition: Required<Accessor.Position>['setPosition'];
+    public getPosition: Required<Accessor.Position>["getPosition"];
+    public setPosition: Required<Accessor.Position>["setPosition"];
 
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
-    public getZooms: Required<Accessor.Zooms>['getZooms'];
-    public setZooms: Required<Accessor.Zooms>['setZooms'];
+    public getZooms: Required<Accessor.Zooms>["getZooms"];
+    public setZooms: Required<Accessor.Zooms>["setZooms"];
 
     public startMove(): void;
     public stopMove(): void;

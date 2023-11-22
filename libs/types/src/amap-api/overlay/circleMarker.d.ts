@@ -53,33 +53,33 @@ declare namespace AMap {
     public constructor(options?: CircleMarker.Options);
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public CLASS_NAME: 'AMap.CircleMarker';
-    public className: 'Overlay.CircleMarker';
-    public type: 'AMap.Overlay';
+    public CLASS_NAME: "AMap.CircleMarker";
+    public className: "Overlay.CircleMarker";
+    public type: "AMap.Overlay";
 
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
+    public getBounds: Required<Accessor.Bounds>["getBounds"];
 
-    public getCenter: Required<Accessor.MapCenter>['getCenter'];
-    public setCenter: Required<Accessor.MapCenter>['setCenter'];
+    public getCenter: Required<Accessor.MapCenter>["getCenter"];
+    public setCenter: Required<Accessor.MapCenter>["setCenter"];
 
-    public getCursor: Required<Accessor.Cursor>['getCursor'];
+    public getCursor: Required<Accessor.Cursor>["getCursor"];
 
-    public getDraggable: Required<Accessor.Draggable>['getDraggable'];
-    public setDraggable: Required<Accessor.Draggable>['setDraggable'];
+    public getDraggable: Required<Accessor.Draggable>["getDraggable"];
+    public setDraggable: Required<Accessor.Draggable>["setDraggable"];
 
-    public getExtData: Required<Accessor.ExtData>['getExtData'];
-    public setExtData: Required<Accessor.ExtData>['setExtData'];
+    public getExtData: Required<Accessor.ExtData>["getExtData"];
+    public setExtData: Required<Accessor.ExtData>["setExtData"];
 
-    public getOptions: Required<Accessor.Options<CircleMarker.Options>>['getOptions'];
-    public setOptions: Required<Accessor.Options<CircleMarker.Options>>['setOptions'];
+    public getOptions: Required<Accessor.Options<CircleMarker.Options>>["getOptions"];
+    public setOptions: Required<Accessor.Options<CircleMarker.Options>>["setOptions"];
 
-    public getRadius: Required<Accessor.Radius>['getRadius'];
-    public setRadius: Required<Accessor.Radius>['setRadius'];
+    public getRadius: Required<Accessor.Radius>["getRadius"];
+    public setRadius: Required<Accessor.Radius>["setRadius"];
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;
@@ -92,6 +92,6 @@ declare namespace AMap {
      * 获取路径的节点数组
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    public getPath(): PointLike<'controlPoint'>[];
+    public getPath(): PointLike<"controlPoint">[];
   }
 }

@@ -9,7 +9,7 @@ declare namespace Loca {
        *
        * @default "px"
        */
-      unit?: 'px' | 'meter';
+      unit?: "px" | "meter";
       /**
        * `Marker` 的旋转角度，以正北方向为起点，顺时的针角度
        * - 可以通过回调为每个点设置不同的旋转角
@@ -59,7 +59,7 @@ declare namespace Loca {
     /** 获取图层基础设置 */
     public getLayerOptions(): { opacity: number; zooms: [number, number]; visible: boolean; zIndex: number };
     /** 获取初始动画状态 */
-    public getInitialAnimateState(): Record<'altitude' | 'rotation', Record<'time' | 'type' | 'value', number[]>>;
+    public getInitialAnimateState(): Record<"altitude" | "rotation", Record<"time" | "type" | "value", number[]>>;
     /** 清除图层动画效果，恢复初始状态 */
     public clearAnimate(): void;
   }

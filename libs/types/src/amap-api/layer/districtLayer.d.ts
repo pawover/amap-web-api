@@ -3,26 +3,26 @@ declare namespace AMap {
     /** 县境线类型 */
     interface CountyStrokeType {
       /** 类别 */
-      type: 'County_Border_China';
+      type: "County_Border_China";
     }
     /** 市境线类型 */
     interface CityStrokeType {
       /** 类别 */
-      type: 'City_Border_China';
+      type: "City_Border_China";
     }
     /** 省境线类型 */
     interface ProvinceStrokeType {
       /** 类别 */
-      type: 'Province_Border_China' | 'Province_Border_Foreign';
+      type: "Province_Border_China" | "Province_Border_Foreign";
     }
     /** 国境线类型 */
     interface NationStrokeType {
       /** 类别 */
-      type: 'Nation_Border_China' | 'Nation_Border_Foreign';
+      type: "Nation_Border_China" | "Nation_Border_Foreign";
     }
     /** 海岸线类型 */
     interface CoastlineStrokeType {
-      type: 'Coastline_China' | 'Coastline_Foreign';
+      type: "Coastline_China" | "Coastline_Foreign";
     }
     interface DistrictCenter {
       /** 行政区中心点经度 */
@@ -85,17 +85,17 @@ declare namespace AMap {
        */
       styles?: {
         fill?: string | ((props: FillProps) => string);
-        'stroke-width'?: number | ((...args: any[]) => number);
+        "stroke-width"?: number | ((...args: any[]) => number);
         /** 县境线 */
-        'county-stroke'?: string | ((props: District & CountyStrokeType) => string);
+        "county-stroke"?: string | ((props: District & CountyStrokeType) => string);
         /** 市境线 */
-        'city-stroke'?: string | ((props: District & CityStrokeType) => string);
+        "city-stroke"?: string | ((props: District & CityStrokeType) => string);
         /** 省境线 */
-        'province-stroke'?: string | ((props: District & ProvinceStrokeType) => string);
+        "province-stroke"?: string | ((props: District & ProvinceStrokeType) => string);
         /** 国境线 */
-        'nation-stroke'?: string | ((props: District & NationStrokeType) => string);
+        "nation-stroke"?: string | ((props: District & NationStrokeType) => string);
         /** 海岸线 */
-        'coastline-stroke'?: string | ((props: District & CoastlineStrokeType) => string);
+        "coastline-stroke"?: string | ((props: District & CoastlineStrokeType) => string);
       };
     }
 
@@ -108,7 +108,7 @@ declare namespace AMap {
 
     interface Events {
       /** 加载完成事件 */
-      onComplete?: (event: { type: 'complete' }) => void;
+      onComplete?: (event: { type: "complete" }) => void;
     }
   }
 
@@ -160,8 +160,8 @@ declare namespace AMap {
     public setDistricts(adcode: string | number | (string | number)[]): void;
 
     /** 获取样式信息 */
-    public getStyle(): DistrictLayer.Options['styles'];
+    public getStyle(): DistrictLayer.Options["styles"];
     /** 设置样式信息 */
-    public setStyles(styles: DistrictLayer.Options['styles']): void;
+    public setStyles(styles: DistrictLayer.Options["styles"]): void;
   }
 }

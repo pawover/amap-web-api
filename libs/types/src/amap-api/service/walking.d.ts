@@ -37,7 +37,7 @@ declare namespace AMap {
        *
        * @default "base"
        */
-      extensions?: 'base' | 'all';
+      extensions?: "base" | "all";
       /**
        * 结果列表的 DOM 容器 id 或 DOM 容器
        * - 结果列表将在此容器中进行展示
@@ -53,9 +53,9 @@ declare namespace AMap {
     interface SearchKeyword extends Driving.SearchKeyword {}
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result extends Service.ResultBase {
       /** 查询的结果数量 */

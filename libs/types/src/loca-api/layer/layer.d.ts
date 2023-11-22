@@ -97,7 +97,7 @@ declare namespace Loca {
    * @template StyleOptions extends Obj = Obj
    * @extends {AMap.Event<'add'>}
    */
-  abstract class Layer<StyleOptions extends Obj = Obj> extends AMap.Event<'add'> {
+  abstract class Layer<StyleOptions extends Obj = Obj> extends AMap.Event<"add"> {
     /**
      * 构造函数
      *

@@ -10,9 +10,9 @@ declare namespace AMap {
     }
     interface Events {
       /** 打开 */
-      onOpen?: (event?: MapsEvent<'open', undefined>) => void;
+      onOpen?: (event?: MapsEvent<"open", undefined>) => void;
       /** 关闭 */
-      onClose?: (event?: MapsEvent<'close', undefined>) => void;
+      onClose?: (event?: MapsEvent<"close", undefined>) => void;
     }
   }
 
@@ -22,7 +22,7 @@ declare namespace AMap {
    * @class ContextMenu
    * @extends {Event<'open' | 'close'>}
    */
-  class ContextMenu extends Event<'open' | 'close'> {
+  class ContextMenu extends Event<"open" | "close"> {
     /**
      * 构造函数
      *
@@ -32,8 +32,8 @@ declare namespace AMap {
      */
     public constructor(options?: ContextMenu.Options);
 
-    public className: 'AMap.ContextMenu';
-    public type: 'AMap.ContextMenu';
+    public className: "AMap.ContextMenu";
+    public type: "AMap.ContextMenu";
 
     /** 打开右键菜单 */
     public open(map: Map, position: LngLatLike): void;

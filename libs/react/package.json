@@ -1,6 +1,6 @@
 {
   "name": "amap-web-react",
-  "version": "1.0.0-alpha.19",
+  "version": "1.0.0-beta.1",
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -26,6 +26,46 @@
       "types": "./dist/*.d.ts",
       "import": "./dist/*.mjs",
       "require": "./dist/*.cjs"
+    },
+    "./loader": {
+      "types": "./dist/loader/index.d.ts",
+      "import": "./dist/loader/index.mjs",
+      "require": "./dist/loader/index.cjs"
+    },
+    "./dist/loader": {
+      "types": "./dist/loader/index.d.ts",
+      "import": "./dist/loader/index.mjs",
+      "require": "./dist/loader/index.cjs"
+    },
+    "./amap": {
+      "types": "./dist/amap/index.d.ts",
+      "import": "./dist/amap/index.mjs",
+      "require": "./dist/amap/index.cjs"
+    },
+    "./dist/amap": {
+      "types": "./dist/amap/index.d.ts",
+      "import": "./dist/amap/index.mjs",
+      "require": "./dist/amap/index.cjs"
+    },
+    "./amapUI": {
+      "types": "./dist/amapUI/index.d.ts",
+      "import": "./dist/amapUI/index.mjs",
+      "require": "./dist/amapUI/index.cjs"
+    },
+    "./dist/amapUI": {
+      "types": "./dist/amapUI/index.d.ts",
+      "import": "./dist/amapUI/index.mjs",
+      "require": "./dist/amapUI/index.cjs"
+    },
+    "./loca": {
+      "types": "./dist/loca/index.d.ts",
+      "import": "./dist/loca/index.mjs",
+      "require": "./dist/loca/index.cjs"
+    },
+    "./dist/loca": {
+      "types": "./dist/loca/index.d.ts",
+      "import": "./dist/loca/index.mjs",
+      "require": "./dist/loca/index.cjs"
     }
   },
   "license": "MIT",
@@ -51,8 +91,8 @@
   },
   "devDependencies": {
     "@handpear/shared": "workspace:*",
-    "@types/react": "~18.2.31",
-    "@types/react-dom": "~18.2.14",
+    "@types/react": "~18.2.38",
+    "@types/react-dom": "~18.2.17",
     "amap-web-types": "workspace:*"
   },
   "peerDependencies": {

@@ -11,7 +11,7 @@ declare namespace AMap {
     /**
      * 平台类型，如：'windows'、'mac'、'ios'、'android'、'other'
      */
-    const plat: 'windows' | 'mac' | 'ios' | 'android' | 'other';
+    const plat: "windows" | "mac" | "ios" | "android" | "other";
     /**
      * 是否 mac 设备
      */

@@ -24,7 +24,7 @@ declare namespace AMap {
     public constructor(lng: number, lat: number, noFix?: boolean);
 
     /** 类标识 */
-    public className: 'AMap.LngLat';
+    public className: "AMap.LngLat";
     /** 地理经度 */
     public lng: number;
     /** 地理纬度 */

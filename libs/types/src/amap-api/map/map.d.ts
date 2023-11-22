@@ -117,7 +117,7 @@ declare namespace AMap {
        *
        * @default "2D"
        */
-      viewMode?: '2D' | '3D';
+      viewMode?: "2D" | "3D";
       /**
        * 地图显示的元素种类
        * - bg: 地图背景
@@ -127,7 +127,7 @@ declare namespace AMap {
        *
        * @default ['bg','point','road','building']
        */
-      features?: ('bg' | 'point' | 'road' | 'building')[];
+      features?: ("bg" | "point" | "road" | "building")[];
       /**
        * 地图显示的图层数组，可以是图层中的一个或多个，默认为普通二维图层
        * - 当叠加多个图层时，普通二维图层需通过实例化一个 `TileLayer` 类实现
@@ -213,37 +213,37 @@ declare namespace AMap {
         z: number;
       };
     }
-    interface Events extends Omit<EventsCommonProps<Map>, 'onHide' | 'onShow'>, EventsDragProps<Map> {
+    interface Events extends Omit<EventsCommonProps<Map>, "onHide" | "onShow">, EventsDragProps<Map> {
       /** 容器尺寸改变 */
-      onResize?: (event?: MapsEvent<'resize', undefined>) => void;
+      onResize?: (event?: MapsEvent<"resize", undefined>) => void;
       /** 地图加载完成 */
-      onComplete?: (event?: MapsEvent<'complete', undefined>) => void;
+      onComplete?: (event?: MapsEvent<"complete", undefined>) => void;
       /** 缩放开始 */
-      onZoomStart?: (event?: MapsEvent<'zoomstart', Map>) => void;
+      onZoomStart?: (event?: MapsEvent<"zoomstart", Map>) => void;
       /** 缩放结束 */
-      onZoomEnd?: (event?: MapsEvent<'zoomend', Map>) => void;
+      onZoomEnd?: (event?: MapsEvent<"zoomend", Map>) => void;
       /** 缩放比例变化 */
-      onZoomChange?: (event?: MapsEvent<'zoomchange', Map>) => void;
+      onZoomChange?: (event?: MapsEvent<"zoomchange", Map>) => void;
       /** 鼠标滚轮缩放地图比例 */
-      onMouseWheel?: (event?: MapsEvent<'mousewheel', Map>) => void;
+      onMouseWheel?: (event?: MapsEvent<"mousewheel", Map>) => void;
       /** 地图平移 */
-      onMapMove?: (event?: MapsEvent<'mapmove', Map>) => void;
+      onMapMove?: (event?: MapsEvent<"mapmove", Map>) => void;
       /** 地图开始平移 */
-      onMoveStart?: (event?: MapsEvent<'movestart', Map>) => void;
+      onMoveStart?: (event?: MapsEvent<"movestart", Map>) => void;
       /** 地图结束平移 */
-      onMoveEnd?: (event?: MapsEvent<'moveend', Map>) => void;
+      onMoveEnd?: (event?: MapsEvent<"moveend", Map>) => void;
       /** 鼠标点击热点 */
-      onHotspotClick?: (event?: MapsEvent<'hotspotclick', Map>) => void;
+      onHotspotClick?: (event?: MapsEvent<"hotspotclick", Map>) => void;
       /** 鼠标经过热点 */
-      onHotspotOver?: (event?: MapsEvent<'hotspotover', Map>) => void;
+      onHotspotOver?: (event?: MapsEvent<"hotspotover", Map>) => void;
       /** 鼠标移出热点 */
-      onHotspotOut?: (event?: MapsEvent<'hotspotout', Map>) => void;
+      onHotspotOut?: (event?: MapsEvent<"hotspotout", Map>) => void;
       /** 地图旋转开始 */
-      onRotateStart?: (event?: MapsEvent<'rotatestart', undefined>) => void;
+      onRotateStart?: (event?: MapsEvent<"rotatestart", undefined>) => void;
       /** 地图旋转结束 */
-      onRotateEnd?: (event?: MapsEvent<'rotateend', undefined>) => void;
+      onRotateEnd?: (event?: MapsEvent<"rotateend", undefined>) => void;
       /** 地图旋转角度变化 */
-      onRotateChange?: (event?: MapsEvent<'rotatechange', undefined>) => void;
+      onRotateChange?: (event?: MapsEvent<"rotatechange", undefined>) => void;
     }
   }
 
@@ -299,47 +299,47 @@ declare namespace AMap {
     public labelMarkersLayer: { add: Fn };
 
     /** 获取当前地图视图范围/可视区域 */
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
+    public getBounds: Required<Accessor.Bounds>["getBounds"];
     /** 设置当前地图视图范围/可视区域 */
-    public setBounds: Required<Accessor.Bounds>['setBounds'];
+    public setBounds: Required<Accessor.Bounds>["setBounds"];
 
-    public getCity: Required<Accessor.City>['getCity'];
-    public setCity: Required<Accessor.City>['setCity'];
+    public getCity: Required<Accessor.City>["getCity"];
+    public setCity: Required<Accessor.City>["setCity"];
 
-    public setCursor: Required<Accessor.Cursor>['setCursor'];
+    public setCursor: Required<Accessor.Cursor>["setCursor"];
 
-    public getDefaultCursor: Required<Accessor.DefaultCursor>['getDefaultCursor'];
-    public setDefaultCursor: Required<Accessor.DefaultCursor>['setDefaultCursor'];
+    public getDefaultCursor: Required<Accessor.DefaultCursor>["getDefaultCursor"];
+    public setDefaultCursor: Required<Accessor.DefaultCursor>["setDefaultCursor"];
 
-    public getFeatures: Required<Accessor.MapFeatures>['getFeatures'];
-    public setFeatures: Required<Accessor.MapFeatures>['setFeatures'];
+    public getFeatures: Required<Accessor.MapFeatures>["getFeatures"];
+    public setFeatures: Required<Accessor.MapFeatures>["setFeatures"];
 
-    public getCenter: Required<Accessor.MapCenter>['getCenter'];
-    public setCenter: Required<Accessor.MapCenter>['setCenter'];
+    public getCenter: Required<Accessor.MapCenter>["getCenter"];
+    public setCenter: Required<Accessor.MapCenter>["setCenter"];
 
-    public getMask: Required<Accessor.MapMask>['getMask'];
-    public setMask: Required<Accessor.MapMask>['setMask'];
+    public getMask: Required<Accessor.MapMask>["getMask"];
+    public setMask: Required<Accessor.MapMask>["setMask"];
 
-    public getLayers: Required<Accessor.MapLayers>['getLayers'];
-    public setLayers: Required<Accessor.MapLayers>['setLayers'];
+    public getLayers: Required<Accessor.MapLayers>["getLayers"];
+    public setLayers: Required<Accessor.MapLayers>["setLayers"];
 
-    public getStatus: Required<Accessor.MapStatus>['getStatus'];
-    public setStatus: Required<Accessor.MapStatus>['setStatus'];
+    public getStatus: Required<Accessor.MapStatus>["getStatus"];
+    public setStatus: Required<Accessor.MapStatus>["setStatus"];
 
-    public getMapStyle: Required<Accessor.MapStyle>['getMapStyle'];
-    public setMapStyle: Required<Accessor.MapStyle>['setMapStyle'];
+    public getMapStyle: Required<Accessor.MapStyle>["getMapStyle"];
+    public setMapStyle: Required<Accessor.MapStyle>["setMapStyle"];
 
-    public getPitch: Required<Accessor.MapPitch>['getPitch'];
-    public setPitch: Required<Accessor.MapPitch>['setPitch'];
+    public getPitch: Required<Accessor.MapPitch>["getPitch"];
+    public setPitch: Required<Accessor.MapPitch>["setPitch"];
 
-    public getRotation: Required<Accessor.MapRotation>['getRotation'];
-    public setRotation: Required<Accessor.MapRotation>['setRotation'];
+    public getRotation: Required<Accessor.MapRotation>["getRotation"];
+    public setRotation: Required<Accessor.MapRotation>["setRotation"];
 
-    public getZoom: Required<Accessor.Zoom>['getZoom'];
-    public setZoom: Required<Accessor.Zoom>['setZoom'];
+    public getZoom: Required<Accessor.Zoom>["getZoom"];
+    public setZoom: Required<Accessor.Zoom>["setZoom"];
 
-    public getZooms: Required<Accessor.Zooms>['getZooms'];
-    public setZooms: Required<Accessor.Zooms>['setZooms'];
+    public getZooms: Required<Accessor.Zooms>["getZooms"];
+    public setZooms: Required<Accessor.Zooms>["setZooms"];
 
     /** 添加图片 */
     public addImage(text: string, options: { url: string; callback: Fn }): void;
@@ -376,7 +376,7 @@ declare namespace AMap {
     public getOutseaDataType(): string;
     public getOutseaState(): boolean;
     /** 获取地图显示模式 */
-    public getView(): Record<'type', '2D' | '3D'>;
+    public getView(): Record<"type", "2D" | "3D">;
     public isDOMMode(): boolean;
     public isDOMRender(): boolean;
     public loadData(): string;
@@ -423,8 +423,8 @@ declare namespace AMap {
     /** 获取楼块图层的颜色配置 */
     public getBuildingColor(): {
       buildingColor: string | string[] | undefined;
-      roofColor: BuildingLayer.Options['roofColor'];
-      wallColor: BuildingLayer.Options['wallColor'];
+      roofColor: BuildingLayer.Options["roofColor"];
+      wallColor: BuildingLayer.Options["wallColor"];
     };
     /** 获取地图内部状态 */
     public getMapState(): Map.States;

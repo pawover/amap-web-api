@@ -15,7 +15,7 @@ declare namespace AMap {
        * - `poly` : 多边形
        * - `rect` : 矩形
        */
-      type?: 'circle' | 'poly' | 'rect';
+      type?: "circle" | "poly" | "rect";
     }
   }
 

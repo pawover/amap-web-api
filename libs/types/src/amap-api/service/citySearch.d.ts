@@ -4,8 +4,8 @@ declare namespace AMap {
     interface Options {}
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
     }
     /** 查询成功的结果 */
     interface Result {
@@ -24,7 +24,7 @@ declare namespace AMap {
       /** 格式如 `lng,lat;lng,lat` 的 字符串 */
       rectangle: string;
       /** 查询状态 `"1"` 成功， `"0"` 失败 */
-      status: '0' | '1';
+      status: "0" | "1";
     }
     interface Events {
       /** 查询成功时的触发事件 */

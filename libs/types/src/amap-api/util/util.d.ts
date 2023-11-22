@@ -5,7 +5,7 @@ declare namespace AMap {
      *
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    const CLASS_NAME: 'AMap.Util';
+    const CLASS_NAME: "AMap.Util";
     /**
      * 将颜色名转换为 16进制6位 的 RGB 颜色值
      * - 例如将 `red` 转换为 `#ff0000`
@@ -34,14 +34,14 @@ declare namespace AMap {
     function color2Rgba<
       C extends `#${string}` | string | [number, number, number] | [number, number, number, number],
       R extends C extends `#${string}`
-        ? C['length'] extends 7 | 9
+        ? C["length"] extends 7 | 9
           ? RGBA
           : never
         : C extends string
-        ? C['length'] extends 6 | 8
-          ? RGBA
-          : never
-        : RGBA,
+          ? C["length"] extends 6 | 8
+            ? RGBA
+            : never
+          : RGBA,
     >(color: C): R;
     /**
      * 将 16进制的 RGB 颜色值转为 rgba(R,G,B,A) 对应值
@@ -62,14 +62,14 @@ declare namespace AMap {
     function color2RgbaArray<
       C extends `#${string}` | string | [number, number, number] | [number, number, number, number],
       R extends C extends `#${string}`
-        ? C['length'] extends 7 | 9
+        ? C["length"] extends 7 | 9
           ? RGBA
           : never
         : C extends string
-        ? C['length'] extends 6 | 8
-          ? RGBA
-          : never
-        : [number, number, number, number],
+          ? C["length"] extends 6 | 8
+            ? RGBA
+            : never
+          : [number, number, number, number],
     >(color: C): R;
     /**
      * 将 16进制6位 的 RGB 颜色值转为 rgba(R,G,B,A)
@@ -83,7 +83,7 @@ declare namespace AMap {
      */
     function rgbHex2Rgba<
       HEX extends string,
-      R extends HEX extends `#${string}` ? never : HEX['length'] extends 6 ? RGBA : `rgba(${string})`,
+      R extends HEX extends `#${string}` ? never : HEX["length"] extends 6 ? RGBA : `rgba(${string})`,
     >(hex: HEX): R;
     /**
      * 将 16进制8位 的 RGB 颜色值转为 rgba(R,G,B,A)
@@ -98,7 +98,7 @@ declare namespace AMap {
      */
     function argbHex2Rgba<
       HEX extends string,
-      R extends HEX extends `#${string}` ? never : HEX['length'] extends 8 ? RGBA : `rgba(${string})`,
+      R extends HEX extends `#${string}` ? never : HEX["length"] extends 8 ? RGBA : `rgba(${string})`,
     >(hex: HEX): R;
     /**
      * 判断对象或数组是否为空

@@ -74,7 +74,7 @@ declare namespace Loca {
        *
        * @default "px"
        */
-      unit?: 'px' | 'meter';
+      unit?: "px" | "meter";
       /**
        * 带有高度的时候，侧面的贴图纹理，目前仅支持侧面
        * - 如果需要纹理在侧面重复贴图，需要图片的宽高是 2 的 n 次方像素值，比如 `256 x 256`，`64 x 1024`
@@ -119,6 +119,6 @@ declare namespace Loca {
     public constructor(options?: PolygonLayer.Options);
 
     /** 获取初始动画状态 */
-    public getInitialAnimateState(): Record<'altitude' | 'height', Record<'time' | 'type' | 'value', number[]>>;
+    public getInitialAnimateState(): Record<"altitude" | "height", Record<"time" | "type" | "value", number[]>>;
   }
 }

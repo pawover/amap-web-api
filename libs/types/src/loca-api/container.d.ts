@@ -43,7 +43,7 @@ declare namespace Loca {
     /** 动画控制器 */
     public animate: Animate;
     /** 动画状态 */
-    public animateStatus: 'start' | 'pause' | 'stop';
+    public animateStatus: "start" | "pause" | "stop";
     /**
      * 环境光属性
      * @deprecated Please use `new Loca.AmbientLight` instead

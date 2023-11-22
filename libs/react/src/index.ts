@@ -1,9 +1,6 @@
 /// <reference types="amap-web-types" />
 
-export * from './api-loader';
-export * from './amap-api';
-export * from './amapUI-api';
-export * from './loca-api';
+export * from "./loader";
 
 export type ChildNode = React.ReactNode;
 export type ChildNodeRender = () => React.ReactNode;

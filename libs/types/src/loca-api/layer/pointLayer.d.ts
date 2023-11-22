@@ -7,7 +7,7 @@ declare namespace Loca {
        * @type {?('normal'|'lighter')} `normal`: 正常透明度叠加，`lighter`: 叠加后可能更加明亮
        * @default "normal"
        */
-      blend?: 'normal' | 'lighter';
+      blend?: "normal" | "lighter";
     }
     interface StyleOptions<ExtraType = any> {
       /**
@@ -28,7 +28,7 @@ declare namespace Loca {
        *
        * @default "px"
        */
-      unit?: 'px' | 'meter';
+      unit?: "px" | "meter";
       /**
        * 边框宽度
        * - 单位取决于属性 `unit` 的值
@@ -73,6 +73,6 @@ declare namespace Loca {
     public constructor(options?: PointLayer.Options);
 
     /** 获取初始动画状态 */
-    public getInitialAnimateState(): Record<'radius', Record<'time' | 'type' | 'value', number[]>>;
+    public getInitialAnimateState(): Record<"radius", Record<"time" | "type" | "value", number[]>>;
   }
 }

@@ -76,27 +76,27 @@ declare namespace AMap {
     public constructor(options?: BezierCurve.Options);
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public CLASS_NAME: 'AMap.BezierCurve';
-    public className: 'Overlay.BezierCurve';
-    public type: 'AMap.Overlay';
+    public CLASS_NAME: "AMap.BezierCurve";
+    public className: "Overlay.BezierCurve";
+    public type: "AMap.Overlay";
 
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
+    public getBounds: Required<Accessor.Bounds>["getBounds"];
 
-    public getCursor: Required<Accessor.Cursor>['getCursor'];
+    public getCursor: Required<Accessor.Cursor>["getCursor"];
 
-    public getDraggable: Required<Accessor.Draggable>['getDraggable'];
-    public setDraggable: Required<Accessor.Draggable>['setDraggable'];
+    public getDraggable: Required<Accessor.Draggable>["getDraggable"];
+    public setDraggable: Required<Accessor.Draggable>["setDraggable"];
 
-    public getExtData: Required<Accessor.ExtData>['getExtData'];
-    public setExtData: Required<Accessor.ExtData>['setExtData'];
+    public getExtData: Required<Accessor.ExtData>["getExtData"];
+    public setExtData: Required<Accessor.ExtData>["setExtData"];
 
-    public getOptions: Required<Accessor.Options<BezierCurve.Options>>['getOptions'];
-    public setOptions: Required<Accessor.Options<BezierCurve.Options>>['setOptions'];
+    public getOptions: Required<Accessor.Options<BezierCurve.Options>>["getOptions"];
+    public setOptions: Required<Accessor.Options<BezierCurve.Options>>["setOptions"];
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
     /** 判断坐标是否在覆盖范围内 */
     public contains(point: LngLatLike): boolean;
@@ -121,7 +121,7 @@ declare namespace AMap {
      * 返回构成曲线的所有控制点信息
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    public getInterpolateLngLats(): PointLike<'controlPoint'>[];
+    public getInterpolateLngLats(): PointLike<"controlPoint">[];
     /**
      * 将 曲线 以格式如 `[[lng, lat, lng, lat]]` 的 JSON 形式返回
      * @deprecated AMap Web API 2.x 中已废弃
@@ -129,7 +129,7 @@ declare namespace AMap {
     public getSerializedPath(): number[] | number[][];
 
     /** 获取路径的节点数组 */
-    public getPath(): PointLike<'vector'>[];
+    public getPath(): PointLike<"vector">[];
     /** 设置组成该折线的节点数组 */
     public setPath(path: LngLatLike[] | LngLatLike[][]): void;
   }

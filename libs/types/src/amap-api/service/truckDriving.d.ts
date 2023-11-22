@@ -65,7 +65,7 @@ declare namespace AMap {
        *
        * @default "v4"
        */
-      apiVersion?: 'v4' | 'v5';
+      apiVersion?: "v4" | "v5";
       /**
        * 可指定具体返回的字段，仅支持 `v5` 版本货车接口
        * - `"toll_gate"` 收费站信息
@@ -73,7 +73,7 @@ declare namespace AMap {
        * - `"general"` 交通设施信息
        * - `"incident"` 交通事件信息
        */
-      showFields?: 'toll_gate' | 'cameras' | 'general' | 'incident';
+      showFields?: "toll_gate" | "cameras" | "general" | "incident";
       /** 自定义参数 */
       customParams?: Recordable;
     }
@@ -81,18 +81,18 @@ declare namespace AMap {
       /** 位置 */
       lnglat: LngLatLike[];
       /** POI 唯一标识 */
-      pid?: Geocoder.Poi.Base['id'];
+      pid?: Geocoder.Poi.Base["id"];
       /** POI 类型 */
-      type?: Geocoder.Poi.Base['type'];
+      type?: Geocoder.Poi.Base["type"];
     }
     interface SearchKeyword extends Driving.SearchKeyword {}
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
-    interface Result extends Omit<Driving.Result, 'taxi_cost'> {}
+    interface Result extends Omit<Driving.Result, "taxi_cost"> {}
     interface Events {
       /** 查询成功时的触发事件 */
       onComplete?: (result: Result) => void;

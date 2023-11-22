@@ -36,6 +36,6 @@ declare namespace AMap {
     public setText(text: string): void;
 
     /** 设置标记样式信息 */
-    public setStyle(style: Text.Options['style']): void;
+    public setStyle(style: Text.Options["style"]): void;
   }
 }

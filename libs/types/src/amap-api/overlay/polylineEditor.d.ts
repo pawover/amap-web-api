@@ -38,7 +38,7 @@ declare namespace AMap {
     /** 编辑器的属性配置 */
     public _customStyle: Polyline.Options;
     /** 编辑器的默认样式 */
-    public _defaultStyle: PolylineEditor.Options['editOptions'];
+    public _defaultStyle: PolylineEditor.Options["editOptions"];
     /** 当前正在编辑的折线 */
     public _poly: Polyline;
 

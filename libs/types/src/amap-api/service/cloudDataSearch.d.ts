@@ -58,9 +58,9 @@ declare namespace AMap {
     }
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -155,13 +155,13 @@ declare namespace AMap {
      * @public
      * @param {CloudDataSearch.Options['pageIndex']} pageIndex 当前页
      */
-    public setPageIndex(pageIndex: CloudDataSearch.Options['pageIndex']): void;
+    public setPageIndex(pageIndex: CloudDataSearch.Options["pageIndex"]): void;
     /**
      * 设置分页条数
      *
      * @public
      * @param {CloudDataSearch.Options['pageSize']} pageSize 分页条数
      */
-    public setPageSize(pageSize: CloudDataSearch.Options['pageSize']): void;
+    public setPageSize(pageSize: CloudDataSearch.Options["pageSize"]): void;
   }
 }

@@ -6,7 +6,7 @@ declare namespace AMap {
        *
        * @default "country"
        */
-      level?: 'country' | 'province' | 'city' | 'district' | 'biz_area';
+      level?: "country" | "province" | "city" | "district" | "biz_area";
       /**
        * 是否显示商圈
        * - 为了能够精准的定位到街道，特别是在快递、物流、送餐等场景下，强烈建议将此设置为 `false`
@@ -21,7 +21,7 @@ declare namespace AMap {
        *
        * @default "base"
        */
-      extensions?: 'base' | 'all';
+      extensions?: "base" | "all";
       /**
        * 显示下级行政区级数
        * - 行政区级别包括：国家、省/直辖市、市、区/县，4个级别，商圈为 区/县 的下一级
@@ -36,9 +36,9 @@ declare namespace AMap {
     }
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -59,7 +59,7 @@ declare namespace AMap {
       /** 行政区中心点 */
       center: PointLike;
       /** 行政区级别 */
-      level: 'country' | 'province' | 'city' | 'district' | 'biz_area';
+      level: "country" | "province" | "city" | "district" | "biz_area";
       /** 行政区范围 */
       boundaries: LngLat[][];
     }
@@ -101,20 +101,20 @@ declare namespace AMap {
      * @public
      * @param {DistrictSearch.Options['extensions']} extensions 行政区信息的详细程度
      */
-    public setExtensions(extensions: 'base' | 'all'): void;
+    public setExtensions(extensions: "base" | "all"): void;
     /**
      * 设置行政区级别
      *
      * @public
      * @param {DistrictSearch.Options['level']} extensions 行政区级别
      */
-    public setLevel(extensions: DistrictSearch.Options['level']): void;
+    public setLevel(extensions: DistrictSearch.Options["level"]): void;
     /**
      * 设置显示下级行政区级数
      *
      * @public
      * @param {DistrictSearch.Options['subdistrict']} subdistrict 显示下级行政区级数
      */
-    public setSubdistrict(subdistrict: DistrictSearch.Options['subdistrict']): void;
+    public setSubdistrict(subdistrict: DistrictSearch.Options["subdistrict"]): void;
   }
 }

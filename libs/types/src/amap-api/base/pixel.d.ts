@@ -22,7 +22,7 @@ declare namespace AMap {
     public constructor(x: number, y: number, round?: boolean);
 
     /** 类标识 */
-    public className: 'AMap.Pixel';
+    public className: "AMap.Pixel";
     /** 像素横坐标 */
     public x: number;
     /** 像素纵坐标 */

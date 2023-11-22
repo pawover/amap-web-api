@@ -13,8 +13,8 @@ declare namespace AMap {
 
   /** 坐标转换方法 */
   namespace ConvertFrom {
-    type Type = 'gps' | 'baidu' | 'mapbar';
-    type SearchStatus = 'complete' | 'error';
+    type Type = "gps" | "baidu" | "mapbar";
+    type SearchStatus = "complete" | "error";
     interface Result {
       /** 查询的成功状态说明 */
       info: string;

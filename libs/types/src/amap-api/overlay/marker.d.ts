@@ -124,7 +124,7 @@ declare namespace AMap {
        */
       onMoving?: (obj: { passedPath: PointLike[] }) => void;
       /** 标记执行 `moveTo` 或 `moveAlong` 动画结束时触发事件 */
-      onMoveEnd?: (event?: MapsEvent<'moveend', Marker>) => void;
+      onMoveEnd?: (event?: MapsEvent<"moveend", Marker>) => void;
       /** 标记执行 `moveAlong` 动画一次后触发事件 */
       onMoveAlong?: () => void;
     }
@@ -172,38 +172,38 @@ declare namespace AMap {
     public constructor(options?: Marker.Options);
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public CLASS_NAME: 'AMap.Marker';
-    public className: 'AMap.Marker';
-    public type: 'AMap.Marker';
+    public CLASS_NAME: "AMap.Marker";
+    public className: "AMap.Marker";
+    public type: "AMap.Marker";
 
-    public getAnchor: Required<Accessor.Anchor>['getAnchor'];
-    public setAnchor: Required<Accessor.Anchor>['setAnchor'];
+    public getAnchor: Required<Accessor.Anchor>["getAnchor"];
+    public setAnchor: Required<Accessor.Anchor>["setAnchor"];
 
-    public getBounds: Required<Accessor.Bounds>['getBounds'];
+    public getBounds: Required<Accessor.Bounds>["getBounds"];
 
-    public getCursor: Required<Accessor.Cursor>['getCursor'];
-    public setCursor: Required<Accessor.Cursor>['setCursor'];
+    public getCursor: Required<Accessor.Cursor>["getCursor"];
+    public setCursor: Required<Accessor.Cursor>["setCursor"];
 
-    public getClickable: Required<Accessor.Clickable>['getClickable'];
-    public setClickable: Required<Accessor.Clickable>['setClickable'];
+    public getClickable: Required<Accessor.Clickable>["getClickable"];
+    public setClickable: Required<Accessor.Clickable>["setClickable"];
 
-    public getDraggable: Required<Accessor.Draggable>['getDraggable'];
-    public setDraggable: Required<Accessor.Draggable>['setDraggable'];
+    public getDraggable: Required<Accessor.Draggable>["getDraggable"];
+    public setDraggable: Required<Accessor.Draggable>["setDraggable"];
 
-    public getExtData: Required<Accessor.ExtData>['getExtData'];
-    public setExtData: Required<Accessor.ExtData>['setExtData'];
+    public getExtData: Required<Accessor.ExtData>["getExtData"];
+    public setExtData: Required<Accessor.ExtData>["setExtData"];
 
-    public getOffset: Required<Accessor.Offset>['getOffset'];
-    public setOffset: Required<Accessor.Offset>['setOffset'];
+    public getOffset: Required<Accessor.Offset>["getOffset"];
+    public setOffset: Required<Accessor.Offset>["setOffset"];
 
-    public getOptions: Required<Accessor.Options<Marker.Options>>['getOptions'];
-    public setOptions: Required<Accessor.Options<Marker.Options>>['setOptions'];
+    public getOptions: Required<Accessor.Options<Marker.Options>>["getOptions"];
+    public setOptions: Required<Accessor.Options<Marker.Options>>["setOptions"];
 
-    public getPosition: Required<Accessor.Position>['getPosition'];
-    public setPosition: Required<Accessor.Position>['setPosition'];
+    public getPosition: Required<Accessor.Position>["getPosition"];
+    public setPosition: Required<Accessor.Position>["setPosition"];
 
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
     public startMove(): void;
     public stopMove(): void;
@@ -255,7 +255,7 @@ declare namespace AMap {
      * 唤起高德地图客户端标注页
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    public markOnAMAP(params: Recordable<'position', LngLatLike>): void;
+    public markOnAMAP(params: Recordable<"position", LngLatLike>): void;
     /** 获取 DOM 容器 */
     public getContentDom(): HTMLDivElement | undefined;
     /**

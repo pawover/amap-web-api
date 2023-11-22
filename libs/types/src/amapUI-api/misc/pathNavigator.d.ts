@@ -16,7 +16,7 @@ declare namespace AMapUI {
       /**
        * 巡航器的样式
        */
-      pathNavigatorStyle?: PathSimplifier.RenderOptions<unknown>['pathNavigatorStyle'];
+      pathNavigatorStyle?: PathSimplifier.RenderOptions<unknown>["pathNavigatorStyle"];
       /**
        * 动画触发的间隔，单位：毫秒
        * - 该值只是建议性质，较大的间隔有助于降低资源消耗，但同时也会降低动画的流畅度，通常情况下保持原值即可
@@ -98,7 +98,7 @@ declare namespace AMapUI {
      * @public
      * @returns {('stop' | 'moving' | 'pause')} 巡航状态
      */
-    public getNaviStatus(): 'stop' | 'moving' | 'pause';
+    public getNaviStatus(): "stop" | "moving" | "pause";
     /**
      * 获取巡航路径的轨迹索引
      * - 即创建（createPathNavigator）时 传入的第一个参数

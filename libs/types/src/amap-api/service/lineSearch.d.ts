@@ -8,13 +8,13 @@ declare namespace AMap {
        *
        * @default "base"
        */
-      extensions?: 'base' | 'all';
+      extensions?: "base" | "all";
     }
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -122,20 +122,20 @@ declare namespace AMap {
      * @public
      * @param {LineSearch.Options['city']} city 城市名称/区域编码
      */
-    public setCity(city: LineSearch.Options['city']): void;
+    public setCity(city: LineSearch.Options["city"]): void;
     /**
      * 设置当前页
      *
      * @public
      * @param {LineSearch.Options['pageIndex']} pageIndex 当前页
      */
-    public setPageIndex(pageIndex: LineSearch.Options['pageIndex']): void;
+    public setPageIndex(pageIndex: LineSearch.Options["pageIndex"]): void;
     /**
      * 设置分页条数
      *
      * @public
      * @param {LineSearch.Options['pageSize']} pageSize 分页条数
      */
-    public setPageSize(pageSize: LineSearch.Options['pageSize']): void;
+    public setPageSize(pageSize: LineSearch.Options["pageSize"]): void;
   }
 }

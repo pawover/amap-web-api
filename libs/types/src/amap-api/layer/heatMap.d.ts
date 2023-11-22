@@ -6,7 +6,7 @@ declare namespace AMap {
   }
 
   namespace Heatmap {
-    interface Options extends Omit<Layer.Options, 'opacity'> {
+    interface Options extends Omit<Layer.Options, "opacity"> {
       /**
        * 热力图中单个点的半径
        *
@@ -34,7 +34,7 @@ declare namespace AMap {
        */
       opacity?: [number, number];
       /** 3D 热力图属性 */
-      '3d'?: Heatmap3DOptions;
+      "3d"?: Heatmap3DOptions;
     }
     /** 热力图数据集 */
     interface DataSet {
@@ -110,11 +110,11 @@ declare namespace AMap {
      */
     public constructor(map: Map, options: Heatmap.Options);
 
-    public getMap: Required<Accessor.Map>['getMap'];
-    public setMap: Required<Accessor.Map>['setMap'];
+    public getMap: Required<Accessor.Map>["getMap"];
+    public setMap: Required<Accessor.Map>["setMap"];
 
-    public getOptions: Required<Accessor.Options<Heatmap.Options>>['getOptions'];
-    public setOptions: Required<Accessor.Options<Heatmap.Options>>['setOptions'];
+    public getOptions: Required<Accessor.Options<Heatmap.Options>>["getOptions"];
+    public setOptions: Required<Accessor.Options<Heatmap.Options>>["setOptions"];
 
     /** 获取是否 3D 模式 */
     public is3DMode(): boolean;

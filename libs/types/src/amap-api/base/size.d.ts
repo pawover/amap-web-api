@@ -21,7 +21,7 @@ declare namespace AMap {
     public constructor(width: number, height: number, round?: boolean);
 
     /** 类标识 */
-    public className: 'AMap.Size';
+    public className: "AMap.Size";
     /** 像素宽度 */
     public width: number;
     /** 像素高度 */

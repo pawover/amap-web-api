@@ -9,7 +9,7 @@ declare namespace Loca {
        *
        * @default 'back'
        */
-      cullface?: 'back' | 'front' | 'none';
+      cullface?: "back" | "front" | "none";
       /**
        * 立体网格的粗糙度，值越高，说明表面越粗糙
        *
@@ -48,7 +48,7 @@ declare namespace Loca {
        *
        * @default "px"
        */
-      unit?: 'px' | 'meter';
+      unit?: "px" | "meter";
       /**
        * 棱柱的边数
        * - 如果希望做成圆柱体效果，可以尝试此字段设置一个较大的值
@@ -133,8 +133,8 @@ declare namespace Loca {
 
     /** 获取初始动画状态 */
     public getInitialAnimateState(): Record<
-      'altitude' | 'height' | 'radius' | 'rotation',
-      Record<'time' | 'type' | 'value', number[]>
+      "altitude" | "height" | "radius" | "rotation",
+      Record<"time" | "type" | "value", number[]>
     >;
   }
 }

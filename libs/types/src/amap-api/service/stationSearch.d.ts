@@ -27,9 +27,9 @@ declare namespace AMap {
     }
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -53,7 +53,7 @@ declare namespace AMap {
       buslines: BusLine[];
     }
     /** 公交线路信息 */
-    interface BusLine extends Omit<LineSearch.LineBase, 'path' | 'type' | 'citycode'> {
+    interface BusLine extends Omit<LineSearch.LineBase, "path" | "type" | "citycode"> {
       /** 站点位置 */
       location: PointLike;
     }
@@ -103,20 +103,20 @@ declare namespace AMap {
      * @public
      * @param {StationSearch.Options['city']} city 城市名称/区域编码
      */
-    public setCity(city: StationSearch.Options['city']): void;
+    public setCity(city: StationSearch.Options["city"]): void;
     /**
      * 设置当前页
      *
      * @public
      * @param {StationSearch.Options['pageIndex']} pageIndex 当前页
      */
-    public setPageIndex(pageIndex: StationSearch.Options['pageIndex']): void;
+    public setPageIndex(pageIndex: StationSearch.Options["pageIndex"]): void;
     /**
      * 设置分页条数
      *
      * @public
      * @param {StationSearch.Options['pageSize']} pageSize 分页条数
      */
-    public setPageSize(pageSize: StationSearch.Options['pageSize']): void;
+    public setPageSize(pageSize: StationSearch.Options["pageSize"]): void;
   }
 }

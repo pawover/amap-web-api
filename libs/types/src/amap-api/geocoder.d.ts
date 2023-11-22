@@ -23,7 +23,7 @@ declare namespace AMap {
        *
        * @default "zh_cn"
        */
-      lang?: 'zh_cn' | 'en';
+      lang?: "zh_cn" | "en";
       /**
        * 是否批量查询
        * - batch 设置为 `false` 时，只返回第一条记录
@@ -36,17 +36,17 @@ declare namespace AMap {
        *
        * @default "base"
        */
-      extensions?: 'base' | 'all';
+      extensions?: "base" | "all";
     }
     /** 地理编码回调函数 */
-    type GeocoderCallback = <S extends 'complete' | 'error' | 'no_data'>(
+    type GeocoderCallback = <S extends "complete" | "error" | "no_data">(
       status: S,
-      result: S extends 'complete' ? Geocoder.GeocoderResult : S extends 'error' ? Geocoder.Error : Obj,
+      result: S extends "complete" ? Geocoder.GeocoderResult : S extends "error" ? Geocoder.Error : Obj,
     ) => void;
     /** 逆地理编码回调函数 */
-    type ReGeocoderCallback = <S extends 'complete' | 'error' | 'no_data'>(
+    type ReGeocoderCallback = <S extends "complete" | "error" | "no_data">(
       status: S,
-      result: S extends 'complete' ? Geocoder.GeocoderResult : S extends 'error' ? Geocoder.Error : Obj,
+      result: S extends "complete" ? Geocoder.GeocoderResult : S extends "error" ? Geocoder.Error : Obj,
     ) => void;
     type Error = string;
     interface GeocoderResult {
@@ -98,21 +98,21 @@ declare namespace AMap {
       location: PointLike;
       /** 匹配级别 */
       level:
-        | '国家'
-        | '省'
-        | '市'
-        | '区县'
-        | '开发区'
-        | '乡镇'
-        | '村庄'
-        | '热点商圈'
-        | '兴趣点'
-        | '门牌号'
-        | '单元号'
-        | '道路'
-        | '道路交叉路口'
-        | '公交站台、地铁站'
-        | '未知';
+        | "国家"
+        | "省"
+        | "市"
+        | "区县"
+        | "开发区"
+        | "乡镇"
+        | "村庄"
+        | "热点商圈"
+        | "兴趣点"
+        | "门牌号"
+        | "单元号"
+        | "道路"
+        | "道路交叉路口"
+        | "公交站台、地铁站"
+        | "未知";
     }
     /** 逆地理编码信息列表 */
     interface ReGeocode {
@@ -360,11 +360,11 @@ declare namespace AMap {
      * @public
      * @param {Autocomplete.Options['city']} city 城市名称/区域编码
      */
-    public setCity(city: Autocomplete.Options['city']): void;
+    public setCity(city: Autocomplete.Options["city"]): void;
 
     /** 获取检索语言类型 */
-    public getLang(): 'zh_cn' | 'en';
+    public getLang(): "zh_cn" | "en";
     /** 设置检索语言类型 */
-    public setLang(lang: 'zh_cn' | 'en'): void;
+    public setLang(lang: "zh_cn" | "en"): void;
   }
 }

@@ -74,7 +74,7 @@ declare namespace AMap {
        *
        * @default "solid"
        */
-      strokeStyle?: 'solid' | 'dashed';
+      strokeStyle?: "solid" | "dashed";
       /**
        * 勾勒形状轮廓的虚线和间隙的样式，此属性在 strokeStyle 为 `dashed` 时有效，此属性在 IE9 及以上版本浏览器有效
        * - 实线：[0,0,0]
@@ -101,13 +101,13 @@ declare namespace AMap {
        *
        * @default "butt"
        */
-      lineCap?: 'butt' | 'round' | 'square';
+      lineCap?: "butt" | "round" | "square";
       /**
        * 拐点的绘制样式，可选值：`miter` 尖角、`round` 圆角、`bevel` 斜角
        *
        * @default "miter"
        */
-      lineJoin?: 'miter' | 'round' | 'bevel';
+      lineJoin?: "miter" | "round" | "bevel";
       /**
        * 是否延路径显示白色方向箭头，建议线宽度大于 6 时使用
        *
@@ -155,13 +155,13 @@ declare namespace AMap {
    * @extends {Event<OverlayEventList>} 类 - 地图事件
    */
   abstract class Overlay extends Event<OverlayEventList> implements Accessor.Map, Accessor.Height {
-    public getMap: Required<Accessor.Map>['getMap'];
-    public setMap: Required<Accessor.Map>['setMap'];
+    public getMap: Required<Accessor.Map>["getMap"];
+    public setMap: Required<Accessor.Map>["setMap"];
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public getHeight: Required<Accessor.Height>['getHeight'];
+    public getHeight: Required<Accessor.Height>["getHeight"];
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public setHeight: Required<Accessor.Height>['setHeight'];
+    public setHeight: Required<Accessor.Height>["setHeight"];
 
     /**
      * 重置覆盖物

@@ -12,9 +12,9 @@ declare namespace AMap {
     interface SearchKeyword extends Driving.SearchKeyword {}
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result {
       /** 规划路线列表 */

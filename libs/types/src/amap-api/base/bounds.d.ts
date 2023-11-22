@@ -27,7 +27,7 @@ declare namespace AMap {
     public constructor(southWest: LngLatLike, northEast: LngLatLike);
 
     /** 类标识 */
-    public className: 'AMap.Bounds';
+    public className: "AMap.Bounds";
     /** 西南角经纬度 */
     public northEast: PointLike;
     /** 东北角经纬度 */

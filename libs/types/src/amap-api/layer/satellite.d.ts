@@ -3,7 +3,7 @@ declare namespace AMap {
     interface Options extends TileLayer.Options {}
     interface Events {
       /** 加载完成事件 */
-      onComplete?: (event: { type: 'complete' }) => void;
+      onComplete?: (event: { type: "complete" }) => void;
     }
   }
 

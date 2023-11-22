@@ -21,7 +21,7 @@ declare namespace AMap {
     /** 群组中的覆盖物列表 */
     public _overlays: OverlayType[];
 
-    public setMap: Required<Accessor.Map>['setMap'];
+    public setMap: Required<Accessor.Map>["setMap"];
 
     /** 添加单个覆盖物到集合中，不支持添加重复的覆盖物 */
     public addOverlay(overlay: OverlayType): void;

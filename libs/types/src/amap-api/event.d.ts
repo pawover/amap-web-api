@@ -2,89 +2,89 @@ declare namespace AMap {
   /** 地图事件名称列表 */
   type MapEventList =
     // 地图容器尺寸改变，Map 的 resizeEnable 开启时该事件才会正确触发
-    | 'resize'
+    | "resize"
     // 地图加载完成
-    | 'complete'
+    | "complete"
     // 地图缩放等级改变
-    | 'zoomchange'
-    | 'zoomstart'
-    | 'zoomend'
+    | "zoomchange"
+    | "zoomstart"
+    | "zoomend"
     // 地图中心点移动
-    | 'mapmove'
-    | 'movestart'
-    | 'moveend'
+    | "mapmove"
+    | "movestart"
+    | "moveend"
     // 鼠标点击事件
-    | 'click'
-    | 'dblclick'
-    | 'rightclick'
+    | "click"
+    | "dblclick"
+    | "rightclick"
     // 鼠标移动事件
-    | 'mousemove'
-    | 'mouseover'
-    | 'mouseout'
-    | 'mouseup'
-    | 'mousedown'
-    | 'mousewheel'
+    | "mousemove"
+    | "mouseover"
+    | "mouseout"
+    | "mouseup"
+    | "mousedown"
+    | "mousewheel"
     // 热点事件
-    | 'hotspotclick'
-    | 'hotspotover'
-    | 'hotspotout'
+    | "hotspotclick"
+    | "hotspotover"
+    | "hotspotout"
     // 拖拽事件
-    | 'dragstart'
-    | 'dragend'
-    | 'dragging'
+    | "dragstart"
+    | "dragend"
+    | "dragging"
     // 旋转事件
-    | 'rotatechange'
-    | 'rotatestart'
-    | 'rotateend'
+    | "rotatechange"
+    | "rotatestart"
+    | "rotateend"
     // 触屏点击
-    | 'touchstart'
-    | 'touchmove'
-    | 'touchend';
+    | "touchstart"
+    | "touchmove"
+    | "touchend";
 
   /** 覆盖物事件名称列表 */
   type OverlayEventList =
     // Marker、Text 类对象发生移动
-    | 'moving'
-    | 'moveend'
-    | 'movealong'
+    | "moving"
+    | "moveend"
+    | "movealong"
     // 矢量图形显示、隐藏
-    | 'hide'
-    | 'show'
+    | "hide"
+    | "show"
     // 鼠标按下及移动等
-    | 'click'
-    | 'dblclick'
-    | 'rightclick'
-    | 'mousemove'
-    | 'mouseover'
-    | 'mouseout'
-    | 'mouseup'
-    | 'mousedown'
-    | 'mousewheel'
+    | "click"
+    | "dblclick"
+    | "rightclick"
+    | "mousemove"
+    | "mouseover"
+    | "mouseout"
+    | "mouseup"
+    | "mousedown"
+    | "mousewheel"
     // 拖拽事件
-    | 'dragstart'
-    | 'dragend'
-    | 'dragging'
+    | "dragstart"
+    | "dragend"
+    | "dragging"
     // 触屏点击
-    | 'touchstart'
-    | 'touchmove'
-    | 'touchend';
+    | "touchstart"
+    | "touchmove"
+    | "touchend";
 
   /** 服务事件名称列表 */
   type ServiceEventList =
-    | 'choose'
-    | 'select'
-    | 'complete'
-    | 'error'
-    | 'selectChanged'
-    | 'listElementClick'
-    | 'markerClick';
+    | "choose"
+    | "select"
+    | "complete"
+    | "error"
+    | "selectChanged"
+    | "listElementClick"
+    | "markerClick";
 
   /** 编辑器事件名称列表 */
-  type EditorEventList = 'adjust' | 'move' | 'addnode' | 'removenode' | 'add' | 'end';
+  type EditorEventList = "adjust" | "move" | "addnode" | "removenode" | "add" | "end";
   /** 右键菜单事件名称列表 */
-  type ContextMenuEventList = 'open' | 'close';
+  type ContextMenuEventList = "open" | "close";
   /** 工具事件名称列表 */
-  type ToolEventList = 'draw';
+  type ToolEventList = "draw";
   /** 事件名称列表 */
   type EventList =
     | MapEventList
@@ -111,7 +111,7 @@ declare namespace AMap {
     /** 事件类型 */
     type: T;
     /** 触发事件的目标对象 */
-    target?: T extends 'draw' ? never : I;
+    target?: T extends "draw" ? never : I;
     /** 发生事件时光标所在处的经纬度坐标 */
     lnglat?: PointLike;
     /** 发生事件时光标所在处的像素坐标 */
@@ -125,63 +125,63 @@ declare namespace AMap {
     /** 数据 */
     data?: unknown;
     /** 鼠标工具创建的对象 */
-    obj?: T extends 'draw' ? I : never;
+    obj?: T extends "draw" ? I : never;
   }
 
   /** 共同部分事件定义 */
   interface EventsCommonProps<I> {
     /** 隐藏 */
-    onHide?: (event?: MapsEvent<'hide', I>) => void;
+    onHide?: (event?: MapsEvent<"hide", I>) => void;
     /** 显示 */
-    onShow?: (event?: MapsEvent<'show', I>) => void;
+    onShow?: (event?: MapsEvent<"show", I>) => void;
     /** 鼠标左键单击 */
-    onClick?: (event?: MapsEvent<'click', I>) => void;
+    onClick?: (event?: MapsEvent<"click", I>) => void;
     /** 鼠标左键双击 */
-    onDblClick?: (event?: MapsEvent<'dblclick', I>) => void;
+    onDblClick?: (event?: MapsEvent<"dblclick", I>) => void;
     /** 鼠标右键单击 */
-    onRightClick?: (event?: MapsEvent<'rightclick', I>) => void;
+    onRightClick?: (event?: MapsEvent<"rightclick", I>) => void;
     /** 鼠标按下 */
-    onMouseDown?: (event?: MapsEvent<'mousedown', I>) => void;
+    onMouseDown?: (event?: MapsEvent<"mousedown", I>) => void;
     /** 鼠标抬起 */
-    onMouseUp?: (event?: MapsEvent<'mouseup', I>) => void;
+    onMouseUp?: (event?: MapsEvent<"mouseup", I>) => void;
     /** 鼠标经过 */
-    onMouseOver?: (event?: MapsEvent<'mouseover', I>) => void;
+    onMouseOver?: (event?: MapsEvent<"mouseover", I>) => void;
     /** 鼠标移出 */
-    onMouseOut?: (event?: MapsEvent<'mouseout', I>) => void;
+    onMouseOut?: (event?: MapsEvent<"mouseout", I>) => void;
     /** 鼠标移动 */
-    onMouseMove?: (event?: MapsEvent<'mousemove', I>) => void;
+    onMouseMove?: (event?: MapsEvent<"mousemove", I>) => void;
     /** 触摸开始，仅移动设备 */
-    onTouchStart?: (event?: MapsEvent<'touchstart', I>) => void;
+    onTouchStart?: (event?: MapsEvent<"touchstart", I>) => void;
     /** 触摸移动中，仅移动设备 */
-    onTouchMove?: (event?: MapsEvent<'touchmove', I>) => void;
+    onTouchMove?: (event?: MapsEvent<"touchmove", I>) => void;
     /** 触摸结束，仅移动设备 */
-    onTouchEnd?: (event?: MapsEvent<'touchend', I>) => void;
+    onTouchEnd?: (event?: MapsEvent<"touchend", I>) => void;
   }
 
   /** 编辑器事件定义 */
   interface EventsEditorProps<I> {
     /** 增加一个节点时触发此事件 */
-    onAddNode?: (event?: MapsEvent<'addnode', I>) => void;
+    onAddNode?: (event?: MapsEvent<"addnode", I>) => void;
     /** 移除一个节点时触发此事件 */
-    onRemoveNode?: (event?: MapsEvent<'removenode', I>) => void;
+    onRemoveNode?: (event?: MapsEvent<"removenode", I>) => void;
     /** 调整一个节点时触发此事件 */
-    onAdjust?: (event?: MapsEvent<'adjust', I>) => void;
+    onAdjust?: (event?: MapsEvent<"adjust", I>) => void;
     /** 移动覆盖物时触发此事件 */
-    onMove?: (event?: MapsEvent<'move', I>) => void;
+    onMove?: (event?: MapsEvent<"move", I>) => void;
     /** 创建一个覆盖物之后触发该事件，target 即为创建对象。当 editor 编辑对象为空时，调用 open 接口，再点击一次屏幕就会创建新的覆盖物对象 */
-    onAdd?: (event?: MapsEvent<'add', I>) => void;
+    onAdd?: (event?: MapsEvent<"add", I>) => void;
     /** 调用 close 之后触发该事件，target 即为编辑后的覆盖物对象 */
-    onEnd?: (event?: MapsEvent<'end', I>) => void;
+    onEnd?: (event?: MapsEvent<"end", I>) => void;
   }
 
   /** 拖拽事件定义 */
   interface EventsDragProps<I> {
     /** 开始拖拽 */
-    onDragStart?: (event?: MapsEvent<'dragstart', I>) => void;
+    onDragStart?: (event?: MapsEvent<"dragstart", I>) => void;
     /** 拖拽停止 */
-    onDragEnd?: (event?: MapsEvent<'dragend', I>) => void;
+    onDragEnd?: (event?: MapsEvent<"dragend", I>) => void;
     /** 拖拽中 */
-    onDragging?: (event?: MapsEvent<'dragging', I>) => void;
+    onDragging?: (event?: MapsEvent<"dragging", I>) => void;
   }
 
   /** 信息窗体事件定义 */
@@ -190,12 +190,12 @@ declare namespace AMap {
      * 打开
      * - 注意：`open` 事件可能会触发不正确，多次触发并且没有提供回调参数，请以提供了回调参数 `{type: 'open'}` 的为准
      */
-    onOpen?: (event?: MapsEvent<'open', undefined>) => void;
+    onOpen?: (event?: MapsEvent<"open", undefined>) => void;
     /**
      * 关闭
      * - 注意：`close` 事件可能会触发不正确，多次触发并且没有提供回调参数，请以提供了回调参数 `{type: 'close'}` 的为准
      */
-    onClose?: (event?: MapsEvent<'close', undefined>) => void;
+    onClose?: (event?: MapsEvent<"close", undefined>) => void;
   }
 
   /**
@@ -237,7 +237,7 @@ declare namespace AMap {
      * @param {?C} [context] 事件上下文
      * @returns {this}
      */
-    public off<C = this>(type: string, callback: ((this: C, event: unknown) => void) | 'mv', context?: C): this;
+    public off<C = this>(type: string, callback: ((this: C, event: unknown) => void) | "mv", context?: C): this;
     /**
      * 触发事件
      *

@@ -175,12 +175,12 @@ declare namespace AMapUI {
         /** 巡航器经过的路径的样式 */
         pathLinePassedStyle?: PathLineStyle;
         /** 巡航器的内容 */
-        content: 'defaultPathNavigator' | 'circle' | 'none' | PointSimplifier.RenderFunction;
+        content: "defaultPathNavigator" | "circle" | "none" | PointSimplifier.RenderFunction;
       };
       /** 鼠标悬浮时显示的 title 样式 */
       hoverTitleStyle?: {
         /** title 的位置，`left` 或者 `top` */
-        position: 'left' | 'top';
+        position: "left" | "top";
         /** title 所用的 DOM 节点上的 classNames，多个用空格分开，可借此调整 DOM 节点的样式 */
         classNames: string;
         /** title 的 DOM 节点相对于定位点的偏移 */
@@ -374,8 +374,8 @@ declare namespace AMapUI {
       // | `${E} ${E} ${E} ${E} ${E}`
       // | `${E} ${E} ${E} ${E} ${E} ${E}`,
       callback: (
-        e: { type: E; target: AMap.Map; originalEvent: AMap.MapsEvent<'click' | 'mousemove', AMap.Map> },
-        info: { type: 'path' | 'point'; pointIndex?: number; pathIndex: number; pathData: DataItem },
+        e: { type: E; target: AMap.Map; originalEvent: AMap.MapsEvent<"click" | "mousemove", AMap.Map> },
+        info: { type: "path" | "point"; pointIndex?: number; pathIndex: number; pathData: DataItem },
       ) => void,
     ): void;
     /**

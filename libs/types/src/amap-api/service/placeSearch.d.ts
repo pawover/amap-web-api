@@ -32,14 +32,14 @@ declare namespace AMap {
        *
        * @default "base"
        */
-      extensions?: 'base' | 'all';
+      extensions?: "base" | "all";
       /**
        * 设置检索语言类型
        * 可选值：zh_cn（中文）、en（英文）
        *
        * @default "zh_cn"
        */
-      lang?: 'zh_cn' | 'en';
+      lang?: "zh_cn" | "en";
       /**
        * 是否在地点查询结束后自动调整地图视野
        *
@@ -63,7 +63,7 @@ declare namespace AMap {
        *
        * @default "newpc"
        */
-      renderStyle?: 'newpc' | 'default';
+      renderStyle?: "newpc" | "default";
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -143,9 +143,9 @@ declare namespace AMap {
      * @param {string} keyword 关键字
      * @param {?PlaceSearch.Callback} [callback] 回调函数
      */
-    public search(keyword: string, callback: (status: 'complete', result: PlaceSearch.Result) => void): void;
-    public search(keyword: string, callback: (status: 'error', result: string) => void): void;
-    public search(keyword: string, callback: (status: 'no_data', result: Obj) => void): void;
+    public search(keyword: string, callback: (status: "complete", result: PlaceSearch.Result) => void): void;
+    public search(keyword: string, callback: (status: "error", result: string) => void): void;
+    public search(keyword: string, callback: (status: "no_data", result: Obj) => void): void;
     /**
      * 通过关键字和范围查询
      *
@@ -157,17 +157,17 @@ declare namespace AMap {
     public searchInBounds(
       keyword: string,
       bounds: BoundsLike,
-      callback?: (status: 'complete', result: PlaceSearch.Result) => void,
+      callback?: (status: "complete", result: PlaceSearch.Result) => void,
     ): void;
     public searchInBounds(
       keyword: string,
       bounds: BoundsLike,
-      callback?: (status: 'error', result: string) => void,
+      callback?: (status: "error", result: string) => void,
     ): void;
     public searchInBounds(
       keyword: string,
       bounds: BoundsLike,
-      callback?: (status: 'no_data', result: Obj) => void,
+      callback?: (status: "no_data", result: Obj) => void,
     ): void;
     /**
      * 通过关键字、中心点经纬度、半径进行范围查询
@@ -182,19 +182,19 @@ declare namespace AMap {
       keyword: string,
       center: LngLatLike,
       radius: number,
-      callback?: (status: 'complete', result: PlaceSearch.Result) => void,
+      callback?: (status: "complete", result: PlaceSearch.Result) => void,
     ): void;
     public searchNearBy(
       keyword: string,
       center: LngLatLike,
       radius: number,
-      callback?: (status: 'error', result: string) => void,
+      callback?: (status: "error", result: string) => void,
     ): void;
     public searchNearBy(
       keyword: string,
       center: LngLatLike,
       radius: number,
-      callback?: (status: 'no_data', result: Obj) => void,
+      callback?: (status: "no_data", result: Obj) => void,
     ): void;
     /**
      * 根据 POI ID 查询详细信息
@@ -203,44 +203,44 @@ declare namespace AMap {
      * @param {string} id POI ID
      * @param {?PlaceSearch.Callback} [callback] 回调函数
      */
-    public getDetails(id: string, callback: (status: 'complete', result: PlaceSearch.Result) => void): void;
-    public getDetails(id: string, callback: (status: 'error', result: string) => void): void;
-    public getDetails(id: string, callback: (status: 'no_data', result: Obj) => void): void;
+    public getDetails(id: string, callback: (status: "complete", result: PlaceSearch.Result) => void): void;
+    public getDetails(id: string, callback: (status: "error", result: string) => void): void;
+    public getDetails(id: string, callback: (status: "no_data", result: Obj) => void): void;
     /**
      * 设置查询的 POI 类型
      *
      * @public
      * @param {PlaceSearch.Options['type']} type POI 类型
      */
-    public setType(type: PlaceSearch.Options['type']): void;
+    public setType(type: PlaceSearch.Options["type"]): void;
     /**
      * 设置当前页
      *
      * @public
      * @param {PlaceSearch.Options['pageIndex']} pageIndex 当前页
      */
-    public setPageIndex(pageIndex: PlaceSearch.Options['pageIndex']): void;
+    public setPageIndex(pageIndex: PlaceSearch.Options["pageIndex"]): void;
     /**
      * 设置分页条数
      *
      * @public
      * @param {PlaceSearch.Options['pageSize']} pageSize 分页条数
      */
-    public setPageSize(pageSize: PlaceSearch.Options['pageSize']): void;
+    public setPageSize(pageSize: PlaceSearch.Options["pageSize"]): void;
     /**
      * 设置查询城市
      *
      * @public
      * @param {PlaceSearch.Options['city']} city 城市名称/区域编码
      */
-    public setCity(city: PlaceSearch.Options['city']): void;
+    public setCity(city: PlaceSearch.Options["city"]): void;
     /**
      * 设置是否强制限制在设置的城市内搜索
      *
      * @public
      * @param {PlaceSearch.Options['citylimit']} citylimit 是否强制限制在设置的城市内搜索
      */
-    public setCityLimit(citylimit: PlaceSearch.Options['citylimit']): void;
+    public setCityLimit(citylimit: PlaceSearch.Options["citylimit"]): void;
     /**
      * 唤起高德地图客户端 POI Marker 页
      *
@@ -254,14 +254,14 @@ declare namespace AMap {
      * @public
      * @param {Omit<PlaceSearch.OnPoiParams, 'address'>} param 必要参数
      */
-    public detailOnAMAP(param: Omit<PlaceSearch.OnPoiParams, 'address'>): void;
+    public detailOnAMAP(param: Omit<PlaceSearch.OnPoiParams, "address">): void;
 
     /** 清除搜索结果 */
     public clear(): void;
 
     /** 获取检索语言类型 */
-    public getLang(): 'zh_cn' | 'en';
+    public getLang(): "zh_cn" | "en";
     /** 设置检索语言类型 */
-    public setLang(lang: 'zh_cn' | 'en'): void;
+    public setLang(lang: "zh_cn" | "en"): void;
   }
 }

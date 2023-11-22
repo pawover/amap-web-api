@@ -50,9 +50,9 @@ declare namespace AMap {
        */
       zIndex?: number;
     }
-    interface Events extends Omit<EventsCommonProps<MassMarks>, 'onHide' | 'onShow' | 'onRightClick' | 'onTouchMove'> {
+    interface Events extends Omit<EventsCommonProps<MassMarks>, "onHide" | "onShow" | "onRightClick" | "onTouchMove"> {
       /** 加载完成事件 */
-      onComplete?: (event: { type: 'complete' }) => void;
+      onComplete?: (event: { type: "complete" }) => void;
     }
   }
 
@@ -77,16 +77,16 @@ declare namespace AMap {
      */
     public constructor(data: MassMarks.DataOptions[], options?: MassMarks.Options | MassMarks.Options[]);
 
-    public getCursor: Required<Accessor.Cursor>['getCursor'];
+    public getCursor: Required<Accessor.Cursor>["getCursor"];
 
-    public getOpacity: Required<Accessor.Opacity>['getOpacity'];
-    public setOpacity: Required<Accessor.Opacity>['setOpacity'];
+    public getOpacity: Required<Accessor.Opacity>["getOpacity"];
+    public setOpacity: Required<Accessor.Opacity>["setOpacity"];
 
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
-    public getZooms: Required<Accessor.Zooms>['getZooms'];
-    public setZooms: Required<Accessor.Zooms>['setZooms'];
+    public getZooms: Required<Accessor.Zooms>["getZooms"];
+    public setZooms: Required<Accessor.Zooms>["setZooms"];
 
     /** 清除海量点 */
     public clear(): void;

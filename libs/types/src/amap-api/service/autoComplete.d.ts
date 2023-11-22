@@ -78,13 +78,13 @@ declare namespace AMap {
        *
        * @default "zh_cn"
        */
-      lang?: 'zh_cn' | 'en';
+      lang?: "zh_cn" | "en";
     }
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result {
       /** 查询的成功状态说明 */
@@ -112,7 +112,7 @@ declare namespace AMap {
       /** 城市 */
       city: unknown[];
     }
-    interface EventsCallback extends Omit<Tip, 'address' | 'typecode' | 'city'> {
+    interface EventsCallback extends Omit<Tip, "address" | "typecode" | "city"> {
       /** POI 类型 */
       type: string;
     }
@@ -168,25 +168,25 @@ declare namespace AMap {
      * @public
      * @param {Autocomplete.Options['type']} type POI 类型
      */
-    public setType(type: Autocomplete.Options['type']): void;
+    public setType(type: Autocomplete.Options["type"]): void;
     /**
      * 设置查询城市
      *
      * @public
      * @param {Autocomplete.Options['city']} city 城市名称/区域编码
      */
-    public setCity(city: Autocomplete.Options['city']): void;
+    public setCity(city: Autocomplete.Options["city"]): void;
     /**
      * 设置是否强制限制在设置的城市内搜索
      *
      * @public
      * @param {Autocomplete.Options['citylimit']} citylimit 是否强制限制在设置的城市内搜索
      */
-    public setCityLimit(citylimit: Autocomplete.Options['citylimit']): void;
+    public setCityLimit(citylimit: Autocomplete.Options["citylimit"]): void;
 
     /** 获取检索语言类型 */
-    public getLang(): 'zh_cn' | 'en';
+    public getLang(): "zh_cn" | "en";
     /** 设置检索语言类型 */
-    public setLang(lang: 'zh_cn' | 'en'): void;
+    public setLang(lang: "zh_cn" | "en"): void;
   }
 }

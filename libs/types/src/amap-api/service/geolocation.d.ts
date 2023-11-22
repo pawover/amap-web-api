@@ -108,14 +108,14 @@ declare namespace AMap {
        *
        * @default "base"
        */
-      extensions?: 'base' | 'all';
+      extensions?: "base" | "all";
       /**
        * 定位按钮的停靠位置
        *
        * @deprecated AMap Web API 2.x 中已废弃
        * @default "RB"
        */
-      buttonPosition?: 'RT' | 'RB' | 'LT' | 'LB';
+      buttonPosition?: "RT" | "RB" | "LT" | "LB";
       /**
        * 定位按钮与设置的停靠位置的偏移量
        *
@@ -146,7 +146,7 @@ declare namespace AMap {
     /** 定位成功的结果 */
     interface Result {
       /** 所在国家 */
-      country: '中华人民共和国' | string;
+      country: "中华人民共和国" | string;
       /** 所在省 */
       province: string;
       /** 所在城市 */
@@ -173,13 +173,13 @@ declare namespace AMap {
        *   - `"ipcity"`
        *   - `"sdk"`
        */
-      location_type: 'html5' | 'h5' | 'ip' | 'ipcity' | 'sdk';
+      location_type: "html5" | "h5" | "ip" | "ipcity" | "sdk";
       /** 是否已转换为高德坐标 */
       isConverted: boolean;
       /** 定位过程的信息，用于排查定位失败原因 */
       message: string;
       /** 状态信息 "SUCCESS" */
-      info: 'SUCCESS' | 'PERMISSION_DENIED' | 'TIME_OUT' | 'POSITION_UNAVAILABLE';
+      info: "SUCCESS" | "PERMISSION_DENIED" | "TIME_OUT" | "POSITION_UNAVAILABLE";
       code: number;
       status: number;
       /**
@@ -209,7 +209,7 @@ declare namespace AMap {
       crosses?: Geocoder.Roadinter[];
     }
     /** 地理定位回调函数 */
-    type Callback = <S extends 'complete' | 'error'>(status: S, result: S extends 'complete' ? Result : Error) => void;
+    type Callback = <S extends "complete" | "error">(status: S, result: S extends "complete" ? Result : Error) => void;
 
     interface Events {
       /** 查询成功时的触发事件 */

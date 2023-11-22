@@ -73,7 +73,7 @@ declare namespace AMap {
    * @implements {Accessor.ZIndex} 叠加层级
    */
   class InfoWindow
-    extends Event<'open' | 'close'>
+    extends Event<"open" | "close">
     implements
       Accessor.Anchor,
       Accessor.Draggable,
@@ -94,33 +94,33 @@ declare namespace AMap {
     public constructor(options?: InfoWindow.Options);
 
     /** @deprecated AMap Web API 2.x 中已废弃 */
-    public CLASS_NAME: 'AMap.InfoWindow';
-    public className: 'AMap.DOMOverlay';
-    public type: 'AMap.InfoWindow';
+    public CLASS_NAME: "AMap.InfoWindow";
+    public className: "AMap.DOMOverlay";
+    public type: "AMap.InfoWindow";
 
-    public getMap: Required<Accessor.Map>['getMap'];
-    public setMap: Required<Accessor.Map>['setMap'];
+    public getMap: Required<Accessor.Map>["getMap"];
+    public setMap: Required<Accessor.Map>["setMap"];
 
-    public getAnchor: Required<Accessor.Anchor>['getAnchor'];
-    public setAnchor: Required<Accessor.Anchor>['setAnchor'];
+    public getAnchor: Required<Accessor.Anchor>["getAnchor"];
+    public setAnchor: Required<Accessor.Anchor>["setAnchor"];
 
-    public getExtData: Required<Accessor.ExtData>['getExtData'];
-    public setExtData: Required<Accessor.ExtData>['setExtData'];
+    public getExtData: Required<Accessor.ExtData>["getExtData"];
+    public setExtData: Required<Accessor.ExtData>["setExtData"];
 
-    public getOptions: Required<Accessor.Options<InfoWindow.Options>>['getOptions'];
-    public setOptions: Required<Accessor.Options<InfoWindow.Options>>['setOptions'];
+    public getOptions: Required<Accessor.Options<InfoWindow.Options>>["getOptions"];
+    public setOptions: Required<Accessor.Options<InfoWindow.Options>>["setOptions"];
 
-    public getPosition: Required<Accessor.Position>['getPosition'];
-    public setPosition: Required<Accessor.Position>['setPosition'];
+    public getPosition: Required<Accessor.Position>["getPosition"];
+    public setPosition: Required<Accessor.Position>["setPosition"];
 
-    public getOffset: Required<Accessor.Offset>['getOffset'];
-    public setOffset: Required<Accessor.Offset>['setOffset'];
+    public getOffset: Required<Accessor.Offset>["getOffset"];
+    public setOffset: Required<Accessor.Offset>["setOffset"];
 
-    public getDraggable: Required<Accessor.Draggable>['getDraggable'];
-    public setDraggable: Required<Accessor.Draggable>['setDraggable'];
+    public getDraggable: Required<Accessor.Draggable>["getDraggable"];
+    public setDraggable: Required<Accessor.Draggable>["setDraggable"];
 
-    public getzIndex: Required<Accessor.ZIndex>['getzIndex'];
-    public setzIndex: Required<Accessor.ZIndex>['setzIndex'];
+    public getzIndex: Required<Accessor.ZIndex>["getzIndex"];
+    public setzIndex: Required<Accessor.ZIndex>["setzIndex"];
 
     /** 销毁覆盖物 */
     public destroy(): void;

@@ -1,6 +1,6 @@
 /// <reference types="amap-web-types" />
 
-export * from './amap-api';
+export * from "./amap-api";
 
 declare global {
   /** AMap 地图上下文对象 */

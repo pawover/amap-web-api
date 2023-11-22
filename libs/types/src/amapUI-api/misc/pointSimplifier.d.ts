@@ -95,9 +95,9 @@ declare namespace AMapUI {
        * - `drawQuadTree` 开启时有效
        */
       quadTreeStyle?: {
-        fillStyle?: PointStyle['fillStyle'];
-        lineWidth?: PointStyle['lineWidth'];
-        strokeStyle?: PointStyle['strokeStyle'];
+        fillStyle?: PointStyle["fillStyle"];
+        lineWidth?: PointStyle["lineWidth"];
+        strokeStyle?: PointStyle["strokeStyle"];
       };
       /**
        * 是否绘制位置点
@@ -151,7 +151,7 @@ declare namespace AMapUI {
       /** 鼠标悬浮时显示的 title 样式 */
       hoverTitleStyle?: {
         /** title 的位置，`left` 或者 `top` */
-        position: 'left' | 'top';
+        position: "left" | "top";
         /** title 所用的 DOM 节点上的 classNames，多个用空格分开，可借此调整 DOM 节点的样式 */
         classNames: string;
         /** title 的 DOM 节点相对于定位点的偏移 */
@@ -219,7 +219,7 @@ declare namespace AMapUI {
     /** 绘制属性 */
     interface PointStyle {
       /** 绘制方式 */
-      content?: 'rect' | 'circle' | 'none' | RenderFunction;
+      content?: "rect" | "circle" | "none" | RenderFunction;
       /** 绘制区域宽度 */
       width?: number;
       /** 绘制区域高度 */
@@ -275,7 +275,7 @@ declare namespace AMapUI {
           imageSrc: string,
           onLoad?: Fn,
           onError?: Fn,
-        ) => NonNullable<PointSimplifier.PointStyle['content']>;
+        ) => NonNullable<PointSimplifier.PointStyle["content"]>;
       };
     };
 
@@ -358,7 +358,7 @@ declare namespace AMapUI {
     public on<E extends PointEventList>(
       eventName: E | `${E} ${E}` | `${E} ${E} ${E}`,
       callback: (
-        e: { type: E; target: AMap.Map; originalEvent: AMap.MapsEvent<'click' | 'mousemove', AMap.Map> },
+        e: { type: E; target: AMap.Map; originalEvent: AMap.MapsEvent<"click" | "mousemove", AMap.Map> },
         info: { index: number; data: DataItem },
       ) => void,
     ): void;

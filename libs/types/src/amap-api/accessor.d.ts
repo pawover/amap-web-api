@@ -264,7 +264,7 @@ declare namespace AMap {
        *
        * @returns {(('bg' | 'point' | 'road' | 'building')[])} 元素种类集合
        */
-      getFeatures: () => ('bg' | 'point' | 'road' | 'building')[];
+      getFeatures: () => ("bg" | "point" | "road" | "building")[];
       /**
        * 设置地图显示元素种类
        * - bg: 地图背景
@@ -274,7 +274,7 @@ declare namespace AMap {
        *
        * @param {(('bg' | 'point' | 'road' | 'building')[])} features 元素种类集合
        */
-      setFeatures: (features: ('bg' | 'point' | 'road' | 'building')[]) => void;
+      setFeatures: (features: ("bg" | "point" | "road" | "building")[]) => void;
     }
 
     /** 地图显示样式 */

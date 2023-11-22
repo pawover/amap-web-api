@@ -5,7 +5,7 @@ declare namespace AMap {
      *
      * @deprecated AMap Web API 2.x 中已废弃
      */
-    const CLASS_NAME: 'AMap.DomUtil';
+    const CLASS_NAME: "AMap.DomUtil";
     /**
      * 获取 DOM 元素的样式 key 的值
      *
@@ -42,7 +42,7 @@ declare namespace AMap {
           tagName: K,
           parent?: HTMLElement,
           className?: string,
-          position?: 'after' | 'before',
+          position?: "after" | "before",
         ) => HTMLElementTagNameMap[K]);
     /**
      * 为 DOM 元素添加类名

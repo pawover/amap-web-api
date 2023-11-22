@@ -72,17 +72,17 @@ declare namespace AMap {
       /** 关键字 */
       keyword: string;
       /** 城市 */
-      city?: Geocoder.Geocode['city'];
+      city?: Geocoder.Geocode["city"];
     }
     /** 回调函数 */
     interface Callback {
-      (status: 'complete', result: Result): void;
-      (status: 'error', result: string): void;
-      (status: 'no_data', result: Obj): void;
+      (status: "complete", result: Result): void;
+      (status: "error", result: string): void;
+      (status: "no_data", result: Obj): void;
     }
     interface Result extends Service.ResultBase {
       /** 规划途经点 */
-      waypoints: ((Service.RoutePoint<'waypoint'> & { isWaypoint: boolean }) | Poi)[];
+      waypoints: ((Service.RoutePoint<"waypoint"> & { isWaypoint: boolean }) | Poi)[];
       /** 规划路线列表 */
       routes: Route[];
       /** 打车费用，单位：元 */
@@ -168,7 +168,7 @@ declare namespace AMap {
       /** 此路段距离，单位：米 */
       distance: number;
       /** 此路段的交通情况 */
-      status: '未知' | '畅通' | '缓行' | '拥堵' | '严重拥堵';
+      status: "未知" | "畅通" | "缓行" | "拥堵" | "严重拥堵";
       /** 此路段坐标信息列表 */
       path: PointLike[];
       /**
@@ -181,7 +181,7 @@ declare namespace AMap {
       /** 此路段坐标信息列表 */
       path: PointLike[];
       /** 此路段的交通情况 */
-      status: '未知' | '畅通' | '缓行' | '拥堵' | '严重拥堵';
+      status: "未知" | "畅通" | "缓行" | "拥堵" | "严重拥堵";
       /** 此路段距离，单位：米 */
       distance: number;
     }

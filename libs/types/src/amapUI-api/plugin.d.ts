@@ -1,31 +1,31 @@
 declare namespace AMapUI {
   interface LibPlugins {
-    'lib/$': Obj;
-    'lib/utils': AMapUI.Utils;
+    "lib/$": Obj;
+    "lib/utils": AMapUI.Utils;
   }
   interface UIPlugins {
-    'control/BasicControl': Obj;
-    'geo/DistrictCluster': Obj;
-    'geo/DistrictExplorer': Obj;
-    'misc/MarkerList': Obj;
-    'misc/MobiCityPicker': Obj;
-    'misc/PathSimplifier': typeof AMapUI.PathSimplifier;
-    'misc/PoiPicker': Obj;
-    'misc/PointSimplifier': typeof AMapUI.PointSimplifier;
-    'misc/PointSimplifr': Obj;
-    'misc/PositionPicker': Obj;
-    'overlay/AwesomeMarker': Obj;
-    'overlay/SimpleInfoWindow': Obj;
-    'overlay/SimpleMarker': Obj;
-    'overlay/SvgMarker': Obj;
+    "control/BasicControl": Obj;
+    "geo/DistrictCluster": Obj;
+    "geo/DistrictExplorer": Obj;
+    "misc/MarkerList": Obj;
+    "misc/MobiCityPicker": Obj;
+    "misc/PathSimplifier": typeof AMapUI.PathSimplifier;
+    "misc/PoiPicker": Obj;
+    "misc/PointSimplifier": typeof AMapUI.PointSimplifier;
+    "misc/PointSimplifr": Obj;
+    "misc/PositionPicker": Obj;
+    "overlay/AwesomeMarker": Obj;
+    "overlay/SimpleInfoWindow": Obj;
+    "overlay/SimpleMarker": Obj;
+    "overlay/SvgMarker": Obj;
   }
 
   /** UI 组件列表 */
-  const uiMods: (keyof Omit<UIPlugins, 'lib/$'>)[];
+  const uiMods: (keyof Omit<UIPlugins, "lib/$">)[];
   /** AMapUI API 版本号 */
   const version: string;
   /** 协议类型 */
-  const docProtocol: 'http:' | 'https:';
+  const docProtocol: "http:" | "https:";
   /**
    * 加载 AMapUI UI 模块
    *
@@ -44,7 +44,7 @@ declare namespace AMapUI {
    */
   function load<P extends `ui/${keyof UIPlugins}` | keyof LibPlugins>(
     plugin: P[],
-    callback?: (...args: (UIPlugins & LibPlugins)[Replace<P, 'ui/', ''>][]) => void,
+    callback?: (...args: (UIPlugins & LibPlugins)[Replace<P, "ui/", "">][]) => void,
     Options?: unknown,
   ): void;
 }

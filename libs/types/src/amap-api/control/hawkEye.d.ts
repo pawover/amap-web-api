@@ -1,6 +1,6 @@
 declare namespace AMap {
   namespace HawkEye {
-    interface Options extends Omit<Control.Options, 'position'> {
+    interface Options extends Omit<Control.Options, "position"> {
       /**
        * 是否随主图视口变化移动
        *

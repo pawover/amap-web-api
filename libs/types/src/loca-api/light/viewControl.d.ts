@@ -3,7 +3,7 @@ declare namespace Loca {
     /** 镜头动画配置参数 */
     interface AnimatesConfigs {
       /** 地图中心点动画 */
-      center?: Omit<Animate.Options<AMap.LngLatLike>, 'control'> & {
+      center?: Omit<Animate.Options<AMap.LngLatLike>, "control"> & {
         /** 过渡中的轨迹控制点，地图上的经纬度 */
         control: AMap.LngLatLike[];
       };

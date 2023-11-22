@@ -5,7 +5,7 @@ declare namespace GeoJSON {
    * The valid values for the 'type' property of GeoJSON geometry objects.
    * https://tools.ietf.org/html/rfc7946#section-1.4
    */
-  type GeometryTypes = Geometry['type'];
+  type GeometryTypes = Geometry["type"];
 
   /**
    * Types
@@ -13,7 +13,7 @@ declare namespace GeoJSON {
    * The value values for the 'type' property of GeoJSON Objects.
    * https://tools.ietf.org/html/rfc7946#section-1.4
    */
-  type Types = GeoJSON['type'];
+  type Types = GeoJSON["type"];
 
   /**
    * Bounding box
@@ -95,7 +95,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.2
    */
   interface Point extends GeoJSONObject {
-    type: 'Point';
+    type: "Point";
     coordinates: Position;
   }
 
@@ -105,7 +105,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.3
    */
   interface MultiPoint extends GeoJSONObject {
-    type: 'MultiPoint';
+    type: "MultiPoint";
     coordinates: Position[];
   }
 
@@ -115,7 +115,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.4
    */
   interface LineString extends GeoJSONObject {
-    type: 'LineString';
+    type: "LineString";
     coordinates: Position[];
   }
 
@@ -125,7 +125,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.5
    */
   interface MultiLineString extends GeoJSONObject {
-    type: 'MultiLineString';
+    type: "MultiLineString";
     coordinates: Position[][];
   }
 
@@ -135,7 +135,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.6
    */
   interface Polygon extends GeoJSONObject {
-    type: 'Polygon';
+    type: "Polygon";
     coordinates: Position[][];
   }
 
@@ -145,7 +145,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.7
    */
   interface MultiPolygon extends GeoJSONObject {
-    type: 'MultiPolygon';
+    type: "MultiPolygon";
     coordinates: Position[][][];
   }
 
@@ -159,7 +159,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.1.8
    */
   interface GeometryCollection<G extends Geometry = Geometry> extends GeoJSONObject {
-    type: 'GeometryCollection';
+    type: "GeometryCollection";
     geometries: G[];
   }
 
@@ -171,7 +171,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.2
    */
   interface Feature<G extends Geometry | null = Geometry, P = Properties> extends GeoJSONObject {
-    type: 'Feature';
+    type: "Feature";
     /**
      * The feature's geometry
      */
@@ -197,7 +197,7 @@ declare namespace GeoJSON {
    * https://tools.ietf.org/html/rfc7946#section-3.3
    */
   interface FeatureCollection<G extends Geometry | null = Geometry, P = Properties> extends GeoJSONObject {
-    type: 'FeatureCollection';
+    type: "FeatureCollection";
     features: Feature<G, P>[];
   }
 }
