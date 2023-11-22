@@ -13,7 +13,10 @@ Map 组件会给所有的子组件注入三个属性 `AMap`、`map` 和 `contain
 ## 基本用法
 
 ```jsx
-import { APILoader, Map, Marker } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map, Marker } from "amap-web-react/dist/amap";
+import { Map, Marker } from "amap-web-react/amap";
 
 const App = () => (
   <Map
@@ -27,7 +30,7 @@ const App = () => (
   </Map>
 );
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <App />
   </APILoader>,
@@ -39,8 +42,9 @@ createRoot(document.getElementById('root')).render(
 一个无需为每层组件手动注入 `AMap`、`map` 和 `container` ，就能在组件树间进行传递的 hook，由 `React.Context` 实现。
 
 ```jsx
-import { useState } from 'react';
-import { APILoader, Map, useMapContext } from 'amap-web-react';
+import { useState } from "react";
+import { APILoader } from "amap-web-react";
+import { Map, useMapContext } from "amap-web-react/amap";
 
 const MyComponent = () => {
   const { AMap, map, container } = useMapContext();
@@ -54,7 +58,7 @@ const MyComponent = () => {
   );
 };
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <Map style={{ height: 300 }}>
       <MyComponent />
@@ -68,16 +72,17 @@ createRoot(document.getElementById('root')).render(
 可以通过 `React.useRef` 获取地图实例对象，也可以在 `Map` 组件加载完毕后使用 `useMapContext` 获取地图实例对象。
 
 ```jsx
-import { useRef } from 'react';
-import { APILoader, Map } from 'amap-web-react';
+import { useRef } from "react";
+import { APILoader } from "amap-web-react";
+import { Map } from "amap-web-react/amap";
 
 const mapRef = useRef(null);
 
 useEffect(() => {
-  console.log('🆑 => mapRef', mapRef);
+  console.log("🆑 => mapRef", mapRef);
 }, [mapRef.current]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <Map
       ref={mapRef}

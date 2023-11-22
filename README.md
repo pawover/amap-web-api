@@ -28,19 +28,22 @@ pnpm add -D amap-web-react
 ### 基本用法
 
 ```jsx
-import { APILoader, Map } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map } from "amap-web-react/dist/amap";
+import { Map } from "amap-web-react/amap";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader
     aKey="您的密钥"
     onSuccess={(amap) => {
-      console.log('🆑 => onSuccess =>', amap);
+      console.log("🆑 => onSuccess =>", amap);
     }}
     onError={(error) => {
-      console.log('🆑 => onError =>', error);
+      console.log("🆑 => onError =>", error);
     }}
     onFinally={() => {
-      console.log('🆑 => onFinally => finally');
+      console.log("🆑 => onFinally => finally");
     }}
   >
     <Map style={{ height: 300 }} />
@@ -51,7 +54,10 @@ createRoot(document.getElementById('root')).render(
 ### 子组件渲染
 
 ```jsx
-import { APILoader, Map, Marker } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map, Marker } from "amap-web-react/dist/amap";
+import { Map, Marker } from "amap-web-react/amap";
 
 const App = () => (
   <Map
@@ -65,7 +71,7 @@ const App = () => (
   </Map>
 );
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <App />
   </APILoader>,
@@ -73,9 +79,12 @@ createRoot(document.getElementById('root')).render(
 ```
 
 ```jsx
-import { APILoader, Map, Marker } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map, Marker } from "amap-web-react/dist/amap";
+import { Map, Marker } from "amap-web-react/amap";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <button>button</button>
     <Map style={{ height: 300 }}>

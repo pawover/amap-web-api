@@ -13,19 +13,22 @@ APILoader 高德地图加载器
 ## 基本用法
 
 ```jsx
-import { APILoader, Map } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map } from "amap-web-react/dist/amap";
+import { Map } from "amap-web-react/amap";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader
     aKey="您的密钥"
     onSuccess={(amap) => {
-      console.log('🆑 => onSuccess =>', amap);
+      console.log("🆑 => onSuccess =>", amap);
     }}
     onError={(error) => {
-      console.log('🆑 => onError =>', error);
+      console.log("🆑 => onError =>", error);
     }}
     onFinally={() => {
-      console.log('🆑 => onFinally => finally');
+      console.log("🆑 => onFinally => finally");
     }}
   >
     <Map style={{ height: 300 }} />
@@ -36,7 +39,10 @@ createRoot(document.getElementById('root')).render(
 ## 子组件渲染
 
 ```jsx
-import { APILoader, Map, Marker } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map, Marker } from "amap-web-react/dist/amap";
+import { Map, Marker } from "amap-web-react/amap";
 
 const App = () => (
   <Map
@@ -50,7 +56,7 @@ const App = () => (
   </Map>
 );
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <App />
   </APILoader>,
@@ -58,9 +64,12 @@ createRoot(document.getElementById('root')).render(
 ```
 
 ```jsx
-import { APILoader, Map, Marker } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map, Marker } from "amap-web-react/dist/amap";
+import { Map, Marker } from "amap-web-react/amap";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <button>button</button>
     <Map style={{ height: 300 }}>
@@ -87,9 +96,12 @@ createRoot(document.getElementById('root')).render(
 ## 多个地图
 
 ```jsx
-import { APILoader, Map } from 'amap-web-react';
+import { APILoader } from "amap-web-react";
+// moduleResolution: Node
+// import { Map } from "amap-web-react/dist/amap";
+import { Map } from "amap-web-react/amap";
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <APILoader aKey="您的密钥">
     <Map style={{ height: 300, marginBottom: 10 }} />
     <Map style={{ height: 300 }} />
@@ -123,7 +135,7 @@ interface AMapUILoader {
    * - 设置为 `"auto"` 根据 AMap Web API 版本加载，也可以指定 AMapUI API 版本号。
    * - AMap Web API 2.x 版本需要使用 AMapUI API 1.1 以上版本。
    */
-  version: 'auto' | `${string}.${string}`;
+  version: "auto" | `${string}.${string}`;
   /**
    * 预加载一个或者多个 AMapUI 插件
    *
@@ -143,6 +155,6 @@ interface LocaLoader {
    * - Loca API 2.x 版本和 Loca API 1.3.x 版本不兼容，它们是针对不同的 AMap Web API 版本进行的封装。
    * - 如果您需要使用 AMap Web API 1.4.x，那么只能使用 Loca API 1.3.x；如果您需要使用 AMap Web API 2.x，那么只能使用 Loca API 2.x。
    */
-  version: 'auto' | `${string}.${string}`;
+  version: "auto" | `${string}.${string}`;
 }
 ```

@@ -9,6 +9,6 @@
   },
   "devDependencies": {
     "vite-plugin-vitepress-auto-sidebar": "^1.6.1",
-    "vitepress": "1.0.0-rc.24"
+    "vitepress": "1.0.0-rc.29"
   }
 }
