@@ -2,24 +2,25 @@ import { useEffect, useState } from "react";
 import { useLocaContext } from "../index";
 import type { LinkLayerProps } from "./";
 
-interface UseLinkLayerProps<ExtraType = any> extends LinkLayerProps<ExtraType> {}
+interface UseLinkLayerProps<G extends GeoJSON = GeoJSON, E = any> extends LinkLayerProps<G, E> {}
 
-export const useLinkLayer = <ExtraType = any>(props: UseLinkLayerProps<ExtraType>) => {
-  const { source = {}, styles, ...rest } = props;
+export const useLinkLayer = <G extends GeoJSON = GeoJSON, E = any>(props: UseLinkLayerProps<G, E>) => {
+  const { source, styles, animate, ...rest } = props;
   const { map, loca } = useLocaContext();
-  const [linkLayer, setLinkLayer] = useState<Loca.LinkLayer>();
+  const [linkLayer, setLinkLayer] = useState<Loca.LinkLayer<G, E>>();
 
   useEffect(() => {
     if (map && loca && !linkLayer) {
-      const instance = new Loca.LinkLayer({ ...rest, loca });
+      const instance = new Loca.LinkLayer<G, E>({ loca, ...rest });
 
-      if (source.data || source.url) {
-        const data = new Loca.GeoJSONSource(source);
-        instance.setSource(data);
+      if (source?.data || source?.url) {
+        const dataSource = new Loca.GeoJSONSource(source);
+        instance.setSource(dataSource, styles);
       }
 
-      if (styles) {
-        instance.setStyle(styles);
+      if (animate) {
+        const [enabled, ...params] = animate;
+        enabled && instance.addAnimate(...params);
       }
 
       setLinkLayer(instance);
@@ -33,9 +34,9 @@ export const useLinkLayer = <ExtraType = any>(props: UseLinkLayerProps<ExtraType
   }, [loca, linkLayer]);
 
   useEffect(() => {
-    if (linkLayer && (source.data || source.url)) {
-      const data = new Loca.GeoJSONSource(source);
-      linkLayer.setSource(data);
+    if (linkLayer && (source?.data || source?.url)) {
+      const dataSource = new Loca.GeoJSONSource(source);
+      linkLayer.setSource(dataSource);
     }
   }, [linkLayer, source]);
 
@@ -44,6 +45,18 @@ export const useLinkLayer = <ExtraType = any>(props: UseLinkLayerProps<ExtraType
       linkLayer.setStyle(styles);
     }
   }, [linkLayer, styles]);
+
+  useEffect(() => {
+    if (linkLayer && animate) {
+      const [enabled, ...params] = animate;
+
+      if (enabled) {
+        linkLayer.addAnimate(...params);
+      } else {
+        linkLayer.clearAnimate();
+      }
+    }
+  }, [linkLayer, animate]);
 
   return { linkLayer };
 };

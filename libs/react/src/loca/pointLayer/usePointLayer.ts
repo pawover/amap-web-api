@@ -2,24 +2,25 @@ import { useEffect, useState } from "react";
 import { useLocaContext } from "../index";
 import type { PointLayerProps } from "./";
 
-interface UsePointLayerProps<ExtraType = any> extends PointLayerProps<ExtraType> {}
+interface UsePointLayerProps<G extends GeoJSON = GeoJSON, E = any> extends PointLayerProps<G, E> {}
 
-export const usePointLayer = <ExtraType = any>(props: UsePointLayerProps<ExtraType>) => {
-  const { source = {}, styles, ...rest } = props;
+export const usePointLayer = <G extends GeoJSON = GeoJSON, E = any>(props: UsePointLayerProps<G, E>) => {
+  const { source, styles, animate, ...rest } = props;
   const { map, loca } = useLocaContext();
-  const [pointLayer, setPointLayer] = useState<Loca.PointLayer>();
+  const [pointLayer, setPointLayer] = useState<Loca.PointLayer<G, E>>();
 
   useEffect(() => {
     if (map && loca && !pointLayer) {
-      const instance = new Loca.PointLayer({ ...rest, loca });
+      const instance = new Loca.PointLayer<G, E>({ loca, ...rest });
 
-      if (source.data || source.url) {
-        const data = new Loca.GeoJSONSource(source);
-        instance.setSource(data);
+      if (source?.data || source?.url) {
+        const dataSource = new Loca.GeoJSONSource(source);
+        instance.setSource(dataSource, styles);
       }
 
-      if (styles) {
-        instance.setStyle(styles);
+      if (animate) {
+        const [enabled, ...params] = animate;
+        enabled && instance.addAnimate(...params);
       }
 
       setPointLayer(instance);
@@ -33,9 +34,9 @@ export const usePointLayer = <ExtraType = any>(props: UsePointLayerProps<ExtraTy
   }, [loca, pointLayer]);
 
   useEffect(() => {
-    if (pointLayer && (source.data || source.url)) {
-      const data = new Loca.GeoJSONSource(source);
-      pointLayer.setSource(data);
+    if (pointLayer && (source?.data || source?.url)) {
+      const dataSource = new Loca.GeoJSONSource(source);
+      pointLayer.setSource(dataSource);
     }
   }, [pointLayer, source]);
 
@@ -44,6 +45,18 @@ export const usePointLayer = <ExtraType = any>(props: UsePointLayerProps<ExtraTy
       pointLayer.setStyle(styles);
     }
   }, [pointLayer, styles]);
+
+  useEffect(() => {
+    if (pointLayer && animate) {
+      const [enabled, ...params] = animate;
+
+      if (enabled) {
+        pointLayer.addAnimate(...params);
+      } else {
+        pointLayer.clearAnimate();
+      }
+    }
+  }, [pointLayer, animate]);
 
   return { pointLayer };
 };

@@ -2,24 +2,25 @@ import { useEffect, useState } from "react";
 import { useLocaContext } from "../index";
 import type { IconLayerProps } from "./";
 
-interface UseIconLayerProps<ExtraType = any> extends IconLayerProps<ExtraType> {}
+interface UseIconLayerProps<G extends GeoJSON = GeoJSON> extends IconLayerProps<G> {}
 
-export const useIconLayer = <ExtraType = any>(props: UseIconLayerProps<ExtraType>) => {
-  const { source = {}, styles, ...rest } = props;
+export const useIconLayer = <G extends GeoJSON = GeoJSON>(props: UseIconLayerProps<G>) => {
+  const { source, styles, animate, ...rest } = props;
   const { map, loca } = useLocaContext();
-  const [iconLayer, setIconLayer] = useState<Loca.IconLayer>();
+  const [iconLayer, setIconLayer] = useState<Loca.IconLayer<G>>();
 
   useEffect(() => {
     if (map && loca && !iconLayer) {
-      const instance = new Loca.IconLayer({ ...rest, loca });
+      const instance = new Loca.IconLayer<G>({ loca, ...rest });
 
-      if (source.data || source.url) {
-        const data = new Loca.GeoJSONSource(source);
-        instance.setSource(data);
+      if (source?.data || source?.url) {
+        const dataSource = new Loca.GeoJSONSource(source);
+        instance.setSource(dataSource, styles);
       }
 
-      if (styles) {
-        instance.setStyle(styles);
+      if (animate) {
+        const [enabled, ...params] = animate;
+        enabled && instance.addAnimate(...params);
       }
 
       setIconLayer(instance);
@@ -33,9 +34,9 @@ export const useIconLayer = <ExtraType = any>(props: UseIconLayerProps<ExtraType
   }, [loca, iconLayer]);
 
   useEffect(() => {
-    if (iconLayer && (source.data || source.url)) {
-      const data = new Loca.GeoJSONSource(source);
-      iconLayer.setSource(data);
+    if (iconLayer && (source?.data || source?.url)) {
+      const dataSource = new Loca.GeoJSONSource(source);
+      iconLayer.setSource(dataSource);
     }
   }, [iconLayer, source]);
 
@@ -44,6 +45,18 @@ export const useIconLayer = <ExtraType = any>(props: UseIconLayerProps<ExtraType
       iconLayer.setStyle(styles);
     }
   }, [iconLayer, styles]);
+
+  useEffect(() => {
+    if (iconLayer && animate) {
+      const [enabled, ...params] = animate;
+
+      if (enabled) {
+        iconLayer.addAnimate(...params);
+      } else {
+        iconLayer.clearAnimate();
+      }
+    }
+  }, [iconLayer, animate]);
 
   return { iconLayer };
 };

@@ -100,7 +100,7 @@ export const useProperty = <I extends Obj | AMap.Accessor.Options<unknown>, P ex
  * @param {P} props props
  * @param {Extract<keyof P, keyof E extends `on${string}` ? keyof E : never>[]} eventList 可受控事件名称列表
  */
-export const useEventProperty = <I extends AMap.Event<AMap.EventList>, P extends Obj, E extends Partial<P>>(
+export const useEventProperty = <I extends AMap.Event<AMap.EventType>, P extends Obj, E extends Partial<P>>(
   instance: I | undefined,
   props: P,
   eventList: Extract<keyof P, keyof E extends `on${string}` ? keyof E : never>[],
@@ -108,7 +108,7 @@ export const useEventProperty = <I extends AMap.Event<AMap.EventList>, P extends
   useEffect(() => {
     eventList.forEach((event) => {
       if (instance && event in props && props[event]) {
-        const eName = event.toLowerCase().slice(2) as AMap.EventList;
+        const eName = event.toLowerCase().slice(2) as AMap.EventType;
         const hasEvent = instance.hasEvents(eName, props[event]);
         !hasEvent && instance.on(eName, props[event]);
       }
@@ -117,7 +117,7 @@ export const useEventProperty = <I extends AMap.Event<AMap.EventList>, P extends
     return () => {
       eventList.forEach((event) => {
         if (instance && event in props && props[event]) {
-          const eName = event.toLowerCase().slice(2) as AMap.EventList;
+          const eName = event.toLowerCase().slice(2) as AMap.EventType;
           const hasEvent = instance.hasEvents(eName, props[event]);
           hasEvent && instance.off(eName, props[event]);
         }
