@@ -18,7 +18,7 @@ type RGB_HEX = `#${string}${string}${string}${string}${string}${string}`;
 /** 十六进制 RGBA 色 */
 type RGBA_HEX = `#${string}${string}${string}${string}${string}${string}${string}${string}`;
 /** COLOR */
-type COLOR = RGB | RGBA | RGB_HEX | RGBA_HEX;
+type COLOR = string;
 
 type Replace<S extends string, F extends string, T extends string> = S extends `${infer Left}${F}${infer Right}`
   ? `${Left}${T}${Right}`
