@@ -3,3 +3,4 @@
 /// <reference path="./misc/pointSimplifier.ts" />
 /// <reference path="./event.ts" />
 /// <reference path="./plugin.ts" />
+/// <reference path="./utils.ts" />
