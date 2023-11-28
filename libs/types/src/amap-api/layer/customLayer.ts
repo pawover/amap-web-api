@@ -9,13 +9,25 @@ declare namespace AMap {
       alwaysRender?: boolean;
       /**
        * 自定义 canvas 绘制函数
-       * - 初始化完成时候，开发者需要给该图层设定 render 方法，该方法需要实现图层的绘制，API 会在合适的时机自动调用该方法
+       * - 初始化完成后，需要给该图层设定 render 方法，该方法需要实现图层的绘制，API 会在合适的时机自动调用该方法
+       * @param webGL 基于 OpenGL ES 2.0 的绘图上下文
+       * @param amapContext amap 上下文
+       * @param amapOptions amap 配置项
+       * @param e WebGL 配置项
        */
-      render?: Fn;
+      render: (
+        webGL: WebGLRenderingContext,
+        amapContext: AmapContext,
+        amapOptions: Map.Options,
+        e: { gl: WebGLRenderingContext } & Obj,
+      ) => void;
     }
     interface Events {
       /** 加载完成事件 */
       onComplete?: (event: { type: "complete" }) => void;
+    }
+    interface AmapContext extends Map {
+      map: Map;
     }
   }
 

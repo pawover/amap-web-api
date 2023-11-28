@@ -1,8 +1,11 @@
 declare namespace AMap {
   namespace GLCustomLayer {
     interface Options extends Omit<CustomLayer.Options, "alwaysRender "> {
-      /** 初始化的时候，开发者可以在这个函数参数里面获取 gl 上下文，进行一些初始化的操作 */
-      init: (gl: unknown) => void;
+      /**
+       * 初始化函数
+       * @param webGL 基于 OpenGL ES 2.0 的绘图上下文
+       */
+      init: (webGL: WebGLRenderingContext) => void;
     }
     interface Events {
       /** 加载完成事件 */
