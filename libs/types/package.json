@@ -34,7 +34,7 @@
   "homepage": "https://github.com/Handpear/amap-web-api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Handpear/amap-web-api"
+    "url": "https://github.com/Handpear/amap-web-api/tree/main/libs/types"
   },
   "bugs": {
     "url": "https://github.com/Handpear/amap-web-api/issues"
