@@ -48,7 +48,6 @@
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "commitizen": "^4.3.0",
-    "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.0.0",
     "eslint": "^8.56.0",
     "eslint-config-pawover": "^0.0.0",
@@ -69,6 +68,9 @@
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "commitlint.cz.cjs"
     }
   },
   "lint-staged": {
