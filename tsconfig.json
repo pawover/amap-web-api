@@ -1,5 +1,5 @@
 {
-  "extends": "@handpear/tsconfig/base.json",
+  "extends": "@pawover/tsconfig/base.json",
   "include": [],
   "references": [
     { "path": "./tsconfig.packages.json" },

@@ -1,16 +1,10 @@
 {
   "root": true,
-  "extends": ["handpear", "handpear/typescript", "turbo"],
-  "ignorePatterns": "dist",
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "extends": ["pawover", "pawover/typescript"],
   "overrides": [
     {
       "files": ["libs/react/**"],
-      "extends": ["handpear", "handpear/typescript", "handpear/react", "plugin:react-hooks/recommended"],
+      "extends": ["pawover", "pawover/typescript", "pawover/react", "plugin:react-hooks/recommended"],
       "parserOptions": {
         "project": "./tsconfig.react.json"
       },
@@ -26,7 +20,7 @@
     },
     {
       "files": ["libs/vue/**"],
-      "extends": ["handpear", "handpear/typescript", "handpear/vue"],
+      "extends": ["pawover", "pawover/typescript", "pawover/vue"],
       "parser": "vue-eslint-parser",
       "parserOptions": {
         "parser": {
@@ -40,7 +34,7 @@
     },
     {
       "files": ["libs/types/**"],
-      "extends": ["handpear", "handpear/typescript"],
+      "extends": ["pawover", "pawover/typescript"],
       "parserOptions": {
         "project": "./tsconfig.types.json"
       },
@@ -52,7 +46,7 @@
     },
     {
       "files": ["packages/**/**"],
-      "extends": ["handpear", "handpear/typescript"],
+      "extends": ["pawover", "pawover/typescript"],
       "parserOptions": {
         "project": "./tsconfig.packages.json"
       }

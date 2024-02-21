@@ -3,10 +3,13 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-    "source.organizeImports.sortImports": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always",
+    "source.organizeImports": "always"
+  },
+  "files.associations": {
+    "*.css": "postcss"
   },
   "editor.quickSuggestions": {
     "strings": "on"
@@ -14,12 +17,82 @@
   "prettier.printWidth": 120,
   "prettier.singleAttributePerLine": true,
   "prettier.vueIndentScriptAndStyle": true,
-  "tsImportSorter.configuration.emptyLinesBetweenGroups": 0,
-  "tsImportSorter.configuration.wrappingStyle": "prettier",
+  "better-comments.tags": [
+    {
+      "tag": "! ",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "? ",
+      "color": "#60a5fa",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "& ",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "* ",
+      "color": "#84cc16",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "~ ",
+      "color": "#22d3ee",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "@ ",
+      "color": "#34d399",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "$ ",
+      "color": "#a78bfa",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "% ",
+      "color": "#e879f9",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
   "markdownlint.config": {
     "default": true,
     "MD033": false
   },
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "eslint.workingDirectories": ["libs/**", "packages/**"]
 }

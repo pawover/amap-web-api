@@ -1,5 +1,5 @@
+import { isFunction } from "@pawover/shared";
 import { useEffect, useRef, useState } from "react";
-import { isFunction } from "@handpear/shared";
 
 /**
  * 获取上一轮的 props 或 state

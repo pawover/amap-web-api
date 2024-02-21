@@ -1,4 +1,4 @@
 module.exports = {
-  ignores: [(commit) => commit.includes("init")],
-  extends: ["cz"],
+  ignores: [(commit) => commit === "project init"],
+  extends: ["@commitlint/config-conventional"],
 };

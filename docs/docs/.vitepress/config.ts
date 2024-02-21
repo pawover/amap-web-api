@@ -16,14 +16,14 @@ export default defineConfig({
         ],
       },
     ],
-    socialLinks: [{ icon: "github", link: "https://github.com/handpear" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/pawover" }],
     logo: "/favicon.ico",
     outlineTitle: "目录",
     lastUpdatedText: "更新日期",
     docFooter: { prev: "上一页", next: "下一页" },
     footer: {
       message: "高德地图 AMap Web Api 文档",
-      copyright: "Copyright ©2023 Created by Handpear",
+      copyright: "Copyright ©2023 Created by pawover",
     },
   },
   vite: {

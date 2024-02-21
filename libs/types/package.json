@@ -31,13 +31,13 @@
     "高德",
     "地图"
   ],
-  "homepage": "https://github.com/Handpear/amap-web-api",
+  "homepage": "https://github.com/pawover/amap-web-api",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Handpear/amap-web-api/tree/main/libs/types"
+    "url": "https://github.com/pawover/amap-web-api/tree/main/libs/types"
   },
   "bugs": {
-    "url": "https://github.com/Handpear/amap-web-api/issues"
+    "url": "https://github.com/pawover/amap-web-api/issues"
   },
   "scripts": {
     "release": "pnpm publish --no-git-checks",

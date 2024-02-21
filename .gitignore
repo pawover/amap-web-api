@@ -28,9 +28,7 @@ esm
 
 
 # Editor
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json
+.vscode
 .idea
 
 # Directories and files

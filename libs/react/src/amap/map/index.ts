@@ -1,11 +1,11 @@
+import { isArray, isFunction } from "@pawover/shared";
 import { createElement, forwardRef, useEffect, useImperativeHandle, useReducer, useState } from "react";
-import { isArray, isFunction } from "@handpear/shared";
 import type { ChildNodeType } from "../../index";
 import { useMap } from "./useMap";
 import { mapContextState, mapCtx, mapReducer } from "./useMapContext";
 
-export { useMapContext } from "./useMapContext";
 export type { ContextProps } from "./useMap";
+export { useMapContext } from "./useMapContext";
 
 export interface MapProps extends AMap.Map.Events, AMap.Map.Options {
   /** 容器的 `id`，可用于获取容器的元素实例 */

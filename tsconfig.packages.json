@@ -1,5 +1,5 @@
 {
-  "extends": "@handpear/tsconfig/base.json",
+  "extends": "@pawover/tsconfig/base.json",
   "compilerOptions": {
     "composite": true
   },

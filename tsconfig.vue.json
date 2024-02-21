@@ -1,5 +1,5 @@
 {
-  "extends": "@handpear/tsconfig/vue-app.json",
+  "extends": "@pawover/tsconfig/vue-app.json",
   "compilerOptions": {
     "composite": true
   },

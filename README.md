@@ -105,6 +105,6 @@ createRoot(document.getElementById("root")).render(
 
 ## License
 
-[MIT](https://github.com/Handpear/amap-web-api/blob/main/LICENSE)
+[MIT](https://github.com/pawover/amap-web-api/blob/main/LICENSE)
 
-Copyright (c) 2023-present, Handpear
+Copyright (c) 2023-present, pawover
