@@ -1,34 +1,32 @@
 {
   "root": true,
   "extends": ["pawover", "pawover/typescript"],
+  "parserOptions": {
+    "project": "./tsconfig.common.json"
+  },
+  "rules": {
+    "@typescript-eslint/no-require-imports": "off"
+  },
   "overrides": [
     {
       "files": ["libs/react/**"],
-      "extends": ["pawover", "pawover/typescript", "pawover/react", "plugin:react-hooks/recommended"],
+      "extends": ["pawover", "pawover/typescript", "pawover/react"],
       "parserOptions": {
         "project": "./tsconfig.react.json"
       },
       "rules": {
-        "no-case-declarations": ["off"],
-        // typescript
-        "@typescript-eslint/no-explicit-any": ["off"],
         // react
-        "react-refresh/only-export-components": ["off"],
-        "react/no-unknown-property": ["off"],
-        "react/no-unstable-nested-components": ["off"]
+        "react-refresh/only-export-components": "off",
+        "react/no-unknown-property": "off",
+        "react/no-unstable-nested-components": "off",
+        // typescript
+        "@typescript-eslint/no-explicit-any": "off"
       }
     },
     {
       "files": ["libs/vue/**"],
       "extends": ["pawover", "pawover/typescript", "pawover/vue"],
-      "parser": "vue-eslint-parser",
       "parserOptions": {
-        "parser": {
-          "js": "@babel/eslint-parser",
-          "jsx": "@babel/eslint-parser",
-          "ts": "@typescript-eslint/parser",
-          "tsx": "@typescript-eslint/parser"
-        },
         "project": "./tsconfig.vue.json"
       }
     },
@@ -39,9 +37,9 @@
         "project": "./tsconfig.types.json"
       },
       "rules": {
-        "@typescript-eslint/no-explicit-any": ["off"],
-        "@typescript-eslint/no-unused-vars": ["off"],
-        "@typescript-eslint/triple-slash-reference": ["off"]
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/triple-slash-reference": "off"
       }
     },
     {

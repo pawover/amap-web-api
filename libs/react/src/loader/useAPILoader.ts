@@ -37,7 +37,7 @@ export const useAPILoader = (props: APILoaderOptions) => {
             resolve(window.AMap);
           })
           .catch((reason) => {
-            reject(reason);
+            reject(new Error(reason));
           })
           .finally(() => {
             setIsLoaded(true);

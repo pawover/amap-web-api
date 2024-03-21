@@ -2,6 +2,7 @@
   "extends": "@pawover/tsconfig/base.json",
   "include": [],
   "references": [
+    { "path": "./tsconfig.common.json" },
     { "path": "./tsconfig.packages.json" },
     { "path": "./tsconfig.types.json" },
     { "path": "./tsconfig.react.json" },

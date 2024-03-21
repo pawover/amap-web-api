@@ -8,7 +8,7 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
-    "vite-plugin-vitepress-auto-sidebar": "^1.6.2",
+    "vite-plugin-vitepress-auto-sidebar": "^1.6.3",
     "vitepress": "1.0.0-rc.29"
   }
 }

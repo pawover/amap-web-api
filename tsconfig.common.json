@@ -1,0 +1,8 @@
+{
+  "extends": "@pawover/tsconfig/base.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"]
+  },
+  "include": ["./*.cjs"]
+}
