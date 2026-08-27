@@ -23,7 +23,6 @@
       public static include (bounds: BoundsLike): void;
     }
   }
-
 }
 
 export {};

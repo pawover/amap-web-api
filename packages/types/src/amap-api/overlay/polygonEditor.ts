@@ -2,11 +2,11 @@
   namespace AMap {
     namespace PolygonEditor {
       interface Options {
-      /**
-       * 是否开启编辑时吸附
-       *
-       * @default true
-       */
+        /**
+         * 是否开启编辑时吸附
+         *
+         * @default true
+         */
         adsorb?: boolean;
         /** 新建对象构造参数 */
         createOptions?: Polygon.Options;
@@ -23,21 +23,21 @@
     }
 
     /**
-   * 矢量图形编辑器 - 多边形
-   *
-   * @class PolygonEditor
-   * @extends {Event<EditorEventType>} 类 - 地图事件
-   */
-    class PolygonEditor extends Event<EditorEventType> {
-    /**
-     * 构造函数
+     * 矢量图形编辑器 - 多边形
      *
-     * @constructor
-     * @public
-     * @param {AMap.Map} map 地图实例
-     * @param {Polygon} polygon 多边形实例
-     * @param {?PolygonEditor.Options} [options] 构造参数
+     * @class PolygonEditor
+     * @extends {Event<EditorEventType>} 类 - 地图事件
      */
+    class PolygonEditor extends Event<EditorEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {AMap.Map} map 地图实例
+       * @param {Polygon} polygon 多边形实例
+       * @param {?PolygonEditor.Options} [options] 构造参数
+       */
       public constructor (map: AMap.Map, polygon: Polygon, options?: PolygonEditor.Options);
 
       /** 编辑器的编辑状态 */
@@ -101,7 +101,6 @@
       public removeAdsorbPolygons (overlay: Polygon | Polygon[]): void;
     }
   }
-
 }
 
 export {};

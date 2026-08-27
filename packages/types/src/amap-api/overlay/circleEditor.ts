@@ -2,7 +2,7 @@
   namespace AMap {
     namespace CircleEditor {
       interface Options {
-      /** 新建对象构造参数 */
+        /** 新建对象构造参数 */
         createOptions?: Circle.Options;
         /** 编辑对象样式 */
         editOptions?: Circle.Options & Overlay.Options & Overlay.PlaneGeometryOptions & Overlay.LineGeometryOptions;
@@ -19,21 +19,21 @@
     }
 
     /**
-   * 矢量图形编辑器 - 圆形
-   *
-   * @class CircleEditor
-   * @extends {Event<EditorEventType>} 类 - 地图事件
-   */
-    class CircleEditor extends Event<EditorEventType> {
-    /**
-     * 构造函数
+     * 矢量图形编辑器 - 圆形
      *
-     * @constructor
-     * @public
-     * @param {AMap.Map} map 地图实例
-     * @param {Circle} circle 圆形实例
-     * @param {?CircleEditor.Options} [options] 构造参数
+     * @class CircleEditor
+     * @extends {Event<EditorEventType>} 类 - 地图事件
      */
+    class CircleEditor extends Event<EditorEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {AMap.Map} map 地图实例
+       * @param {Circle} circle 圆形实例
+       * @param {?CircleEditor.Options} [options] 构造参数
+       */
       public constructor (map: AMap.Map, circle: Circle, options?: CircleEditor.Options);
 
       /** 编辑器的编辑状态 */
@@ -52,7 +52,6 @@
       public setTarget (overlay?: Circle | undefined): void;
     }
   }
-
 }
 
 export {};

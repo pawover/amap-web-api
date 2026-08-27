@@ -4,26 +4,26 @@ declare global {
   namespace AMap {
     namespace Transfer {
       interface Options extends Walking.Options {
-      /**
-       * 查询城市
-       * - 可选值：城市名（中文或中文全拼）、citycode、adcode
-       */
+        /**
+         * 查询城市
+         * - 可选值：城市名（中文或中文全拼）、citycode、adcode
+         */
         city: string;
         /**
-       * 公交路线规划策略
-       * - `0` 最快捷模式
-       * - `1` 最经济模式
-       * - `2` 最少换乘模式
-       * - `3` 最少步行模式
-       * - `4` 最舒适模式
-       * - `5` 不乘地铁模式
-       */
+         * 公交路线规划策略
+         * - `0` 最快捷模式
+         * - `1` 最经济模式
+         * - `2` 最少换乘模式
+         * - `3` 最少步行模式
+         * - `4` 最舒适模式
+         * - `5` 不乘地铁模式
+         */
         policy?: TransferPolicy | number;
         /**
-       * 是否计算夜班车
-       *
-       * @default false
-       */
+         * 是否计算夜班车
+         *
+         * @default false
+         */
         nightflag?: boolean;
       }
       interface SearchKeyword extends Driving.SearchKeyword {}
@@ -34,7 +34,7 @@ declare global {
         (status: "no_data", result: PlainObject): void;
       }
       interface Result extends Service.ResultBase {
-      /** 查询的结果数量 */
+        /** 查询的结果数量 */
         count: number;
         /** 规划路线列表 */
         plans: Plane[];
@@ -43,7 +43,7 @@ declare global {
       }
       /** 公交规划路线 */
       interface Plane {
-      /** 此换乘方案价格，单位：元 */
+        /** 此换乘方案价格，单位：元 */
         cost: number;
         /** 此换乘方案预期时间，单位：秒 */
         distance: number;
@@ -66,7 +66,7 @@ declare global {
       }
       /** 换乘路段 */
       interface Segment {
-      /** 此路段距离，单位：米 */
+        /** 此路段距离，单位：米 */
         distance: number;
         /** 导航指示 */
         instruction: string;
@@ -79,7 +79,7 @@ declare global {
       }
       /** 换乘方案 */
       interface Transit {
-      /** 起点坐标 */
+        /** 起点坐标 */
         origin: PointLike;
         /** 终点坐标 */
         destination: PointLike;
@@ -90,7 +90,7 @@ declare global {
       }
       /** 路段导航信息 */
       interface Step {
-      /** 导航指示 */
+        /** 导航指示 */
         instruction: string;
         /** 道路名称 */
         road: string;
@@ -106,7 +106,7 @@ declare global {
         assist_action: string;
       }
       interface Events {
-      /** 查询成功时的触发事件 */
+        /** 查询成功时的触发事件 */
         onComplete?: (result: Result) => void;
         /** 查询失败时的触发事件 */
         onError?: (result: string) => void;
@@ -114,41 +114,41 @@ declare global {
     }
 
     /**
-   * 服务 - 公交路线规划
-   *
-   * @class Transfer
-   * @extends {Event<ServiceEventType>} 类 - 地图事件
-   */
-    class Transfer extends Event<ServiceEventType> {
-    /**
-     * 构造函数
+     * 服务 - 公交路线规划
      *
-     * @constructor
-     * @public
-     * @param {Transfer.Options} options 构造参数
+     * @class Transfer
+     * @extends {Event<ServiceEventType>} 类 - 地图事件
      */
+    class Transfer extends Event<ServiceEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {Transfer.Options} options 构造参数
+       */
       public constructor (options?: Transfer.Options);
 
       /** API URL */
       public url: string;
 
       /**
-     * 通过起点、终点、途经点坐标规划公交路线
-     *
-     * @public
-     * @param {LngLatLike} origin 起点
-     * @param {LngLatLike} destination 终点
-     * @param {?Transfer.Callback} [callback] 回调函数
-     */
+       * 通过起点、终点、途经点坐标规划公交路线
+       *
+       * @public
+       * @param {LngLatLike} origin 起点
+       * @param {LngLatLike} destination 终点
+       * @param {?Transfer.Callback} [callback] 回调函数
+       */
       public search (origin: LngLatLike, destination: LngLatLike, callback?: Transfer.Callback): void;
       /**
-     * 通过起点、终点、途经点名称规划公交路线
-     * - 数组第一项将作为起点，最后一项将作为终点，其它项将作为途经点
-     *
-     * @public
-     * @param {Transfer.SearchKeyword[]} options 关键字参数
-     * @param {?Transfer.Callback} [callback] 回调函数
-     */
+       * 通过起点、终点、途经点名称规划公交路线
+       * - 数组第一项将作为起点，最后一项将作为终点，其它项将作为途经点
+       *
+       * @public
+       * @param {Transfer.SearchKeyword[]} options 关键字参数
+       * @param {?Transfer.Callback} [callback] 回调函数
+       */
       public search (options: Transfer.SearchKeyword[], callback?: Transfer.Callback): void;
       /** 清除规划结果 */
       public clear (): void;
@@ -162,8 +162,6 @@ declare global {
       public setCityd (destination: string): void;
     }
   }
-
 }
 
 export {};
-

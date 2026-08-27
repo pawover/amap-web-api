@@ -8,107 +8,107 @@
 
     namespace Heatmap {
       interface Options extends Omit<Layer.Options, "opacity"> {
-      /**
-       * 热力图中单个点的半径
-       *
-       * @unit 像素
-       * @unitSymbol px
-       * @default 30
-       */
+        /**
+         * 热力图中单个点的半径
+         *
+         * @unit 像素
+         * @unitSymbol px
+         * @default 30
+         */
         "radius"?: number;
         /**
-       * 热力图中单个点的模糊程度
-       * - 越小越平滑，越大越模糊，取值范围 `0` ~ `1`
-       */
+         * 热力图中单个点的模糊程度
+         * - 越小越平滑，越大越模糊，取值范围 `0` ~ `1`
+         */
         "blur"?: number;
         /**
-       * 热力图渐变区间
-       * - 热力图按照设置的颜色及间隔显示热力图，例 `{0.4: 'rgb(0, 255, 255)', 0.85: 'rgb(100, 0, 255)'}` 其中 key 表示间隔位置，取值范围： [0,1]，value 为颜色值
-       * - 默认 heatmap.js 标准配色方案
-       */
+         * 热力图渐变区间
+         * - 热力图按照设置的颜色及间隔显示热力图，例 `{0.4: 'rgb(0, 255, 255)', 0.85: 'rgb(100, 0, 255)'}` 其中 key 表示间隔位置，取值范围： [0,1]，value 为颜色值
+         * - 默认 heatmap.js 标准配色方案
+         */
         "gradient"?: Record<number, string>;
         /**
-       * 热力图透明度
-       * - 分别对应 heatmap.js 的 `minOpacity` 和 `maxOpacity`
-       *
-       * @default [0,1]
-       */
+         * 热力图透明度
+         * - 分别对应 heatmap.js 的 `minOpacity` 和 `maxOpacity`
+         *
+         * @default [0,1]
+         */
         "opacity"?: [number, number];
         /** 3D 热力图属性 */
         "3d"?: Heatmap3DOptions;
       }
       /** 热力图数据集 */
       interface DataSet {
-      /**
-       * 坐标数据集
-       *
-       */
+        /**
+         * 坐标数据集
+         *
+         */
         data: `http://${string}` | `https://${string}` | LngLatLike[] | { lng: number; lat: number; count: number }[];
         /**
-       * 权重的最大值
-       * - 不填则取数据集 `count` 最大值
-       */
+         * 权重的最大值
+         * - 不填则取数据集 `count` 最大值
+         */
         max?: number;
         /**
-       * 数据格式转换函数
-       * - 当 jsonp 返回结果和官方结构不一致的时候，可以传递一个函数用来进行数据格式转换
-       */
+         * 数据格式转换函数
+         * - 当 jsonp 返回结果和官方结构不一致的时候，可以传递一个函数用来进行数据格式转换
+         */
         dataParser?: (
           data: LngLatLike[] | { lng: number; lat: number; count: number },
         ) => LngLatLike[] | { lng: number; lat: number; count: number };
       }
       interface Heatmap3DOptions {
-      /**
-       * 高度缩放因子，表示在单位高度上的缩放比例
-       *
-       * @default 1
-       */
+        /**
+         * 高度缩放因子，表示在单位高度上的缩放比例
+         *
+         * @default 1
+         */
         heightScale?: number;
         /**
-       * 影响高度平滑度的贝塞尔曲线因子
-       *
-       * @default [0.5,0,1,0.5]
-       */
+         * 影响高度平滑度的贝塞尔曲线因子
+         *
+         * @default [0.5,0,1,0.5]
+         */
         heightBezier?: number[];
         /**
-       * 取样精度，越小越平滑，越大性能越高
-       *
-       * @default 4
-       */
+         * 取样精度，越小越平滑，越大性能越高
+         *
+         * @default 4
+         */
         gridSize?: number;
         /**
-       * 是否绘制网格线
-       *
-       * @default false
-       */
+         * 是否绘制网格线
+         *
+         * @default false
+         */
         drawGridLine?: boolean;
       }
     }
 
     /**
-   * 图层 - 热力图
-   *
-   * @class HeatMap
-   * @extends {Heatmap} 图层 - 热力图
-   */
+     * 图层 - 热力图
+     *
+     * @class HeatMap
+     * @extends {Heatmap} 图层 - 热力图
+     */
     class HeatMap extends Heatmap {}
     /**
-   * 图层 - 热力图
-   *
-   * @deprecated AMap Web API 2.x 中已废弃
-   * @class Heatmap
-   * @implements {Accessor.Map} 所属地图
-   * @implements {Accessor.Options<Heatmap.Options>} 属性配置
-   */
-    class Heatmap implements Accessor.Map, Accessor.Options<Heatmap.Options> {
-    /**
-     * 构造函数
+     * 图层 - 热力图
      *
-     * @constructor
-     * @public
-     * @param {Map} map 地图实例
-     * @param {Heatmap.Options} options 构造参数
+     * @deprecated AMap Web API 2.x 中已废弃
+     * @class Heatmap
+     * @implements {Accessor.Map} 所属地图
+     * @implements {Accessor.Options<Heatmap.Options>} 属性配置
      */
+    class Heatmap implements Accessor.Map, Accessor.Options<Heatmap.Options> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {Map} map 地图实例
+       * @param {Heatmap.Options} options 构造参数
+       */
       public constructor (map: Map, options: Heatmap.Options);
 
       public getMap: Required<Accessor.Map>["getMap"];
@@ -140,7 +140,6 @@
       public hide (): void;
     }
   }
-
 }
 
 export {};

@@ -2,7 +2,7 @@
   namespace AMap {
     namespace RectangleEditor {
       interface Options {
-      /** 新建对象构造参数 */
+        /** 新建对象构造参数 */
         createOptions?: Rectangle.Options;
         /** 编辑对象样式 */
         editOptions?: Rectangle.Options & Overlay.Options & Overlay.PlaneGeometryOptions & Overlay.LineGeometryOptions;
@@ -15,21 +15,21 @@
     }
 
     /**
-   * 矢量图形编辑器 - 矩形
-   *
-   * @class RectangleEditor
-   * @extends {Event<EditorEventType>} 类 - 地图事件
-   */
-    class RectangleEditor extends Event<EditorEventType> {
-    /**
-     * 构造函数
+     * 矢量图形编辑器 - 矩形
      *
-     * @constructor
-     * @public
-     * @param {AMap.Map} map 地图实例
-     * @param {Rectangle} rectangle 矩形实例
-     * @param {?RectangleEditor.Options} [options] 构造参数
+     * @class RectangleEditor
+     * @extends {Event<EditorEventType>} 类 - 地图事件
      */
+    class RectangleEditor extends Event<EditorEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {AMap.Map} map 地图实例
+       * @param {Rectangle} rectangle 矩形实例
+       * @param {?RectangleEditor.Options} [options] 构造参数
+       */
       public constructor (map: AMap.Map, rectangle: Rectangle, options?: RectangleEditor.Options);
 
       /** 开始编辑对象，如果当前编辑对象不存在，则开启新建编辑对象 */
@@ -45,7 +45,6 @@
       public setTarget (overlay?: Rectangle | undefined): void;
     }
   }
-
 }
 
 export {};

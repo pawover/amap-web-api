@@ -4,41 +4,41 @@ declare global {
   namespace AMap {
     namespace Geocoder {
       interface Options {
-      /**
-       * 地理编码时地址描述所在的城市
-       * - 可选值：城市名（中文或中文全拼）、citycode、adcode
-       *
-       * @default "全国"
-       */
+        /**
+         * 地理编码时地址描述所在的城市
+         * - 可选值：城市名（中文或中文全拼）、citycode、adcode
+         *
+         * @default "全国"
+         */
         city?: string;
         /**
-       * 逆地理编码时，以给定坐标为中心点
-       * 取值范围：0 - 3000
-       *
-       * @unit 米
-       * @unitSymbol m
-       * @default 1000
-       */
+         * 逆地理编码时，以给定坐标为中心点
+         * 取值范围：0 - 3000
+         *
+         * @unit 米
+         * @unitSymbol m
+         * @default 1000
+         */
         radius?: number;
         /**
-       * 设置检索语言类型
-       * 可选值：zh_cn（中文）、en（英文）
-       *
-       * @default "zh_cn"
-       */
+         * 设置检索语言类型
+         * 可选值：zh_cn（中文）、en（英文）
+         *
+         * @default "zh_cn"
+         */
         lang?: "zh_cn" | "en";
         /**
-       * 是否批量查询
-       * - batch 设置为 `false` 时，只返回第一条记录
-       */
+         * 是否批量查询
+         * - batch 设置为 `false` 时，只返回第一条记录
+         */
         batch?: boolean;
         /**
-       * 逆地理编码返回信息的详细程度
-       * - `base` 基本地址信息
-       * - `all` 基本地址信息及附近 POI、道路、道路交叉口等信息
-       *
-       * @default "base"
-       */
+         * 逆地理编码返回信息的详细程度
+         * - `base` 基本地址信息
+         * - `all` 基本地址信息及附近 POI、道路、道路交叉口等信息
+         *
+         * @default "base"
+         */
         extensions?: "base" | "all";
       }
       /** 地理编码回调函数 */
@@ -53,32 +53,32 @@ declare global {
       ) => void;
       type Error = string;
       interface GeocoderResult {
-      /** 查询的成功状态说明 */
+        /** 查询的成功状态说明 */
         info: string;
         /** 查询的结果数量 */
         count: number;
         /**
-       * 查询的结果状态值
-       * - 0 表示请求失败；1 表示请求成功
-       */
+         * 查询的结果状态值
+         * - 0 表示请求失败；1 表示请求成功
+         */
         status: 0 | 1;
         /** 地理编码信息列表 */
         geocodes: Geocode[];
       }
       interface ReGeocoderResult {
-      /** 查询的成功状态说明 */
+        /** 查询的成功状态说明 */
         info: string;
         /**
-       * 查询的结果状态值
-       * - 0 表示请求失败；1 表示请求成功
-       */
+         * 查询的结果状态值
+         * - 0 表示请求失败；1 表示请求成功
+         */
         status: 0 | 1;
         /** 地理编码信息列表 */
         regeocodes: ReGeocode[];
       }
       /** 行政区（省，市，区/县） */
       interface District {
-      /** 省份 */
+        /** 省份 */
         province: string;
         /** 城市 */
         city: string;
@@ -89,7 +89,7 @@ declare global {
       }
       /** 地理编码信息列表 */
       interface Geocode extends District {
-      /** 国家 */
+        /** 国家 */
         country: string;
         /** 行政区编码 */
         adcode: `${number}`;
@@ -119,7 +119,7 @@ declare global {
       }
       /** 逆地理编码信息列表 */
       interface ReGeocode {
-      /** 地址元素 */
+        /** 地址元素 */
         addressComponent: AddressComponent[];
         /** 道路信息 */
         roads: Road[];
@@ -132,7 +132,7 @@ declare global {
       }
       /** 地址元素 */
       interface AddressComponent extends District {
-      /** 行政区编码 */
+        /** 行政区编码 */
         adcode: `${number}`;
         /** 坐标点所在乡镇/街道（此街道为社区街道，不是道路信息） */
         township: string;
@@ -151,21 +151,21 @@ declare global {
       }
       /** 社区信息列表 */
       interface Neighborhood {
-      /** 社区名称 */
+        /** 社区名称 */
         name: string;
         /** POI 类型 */
         type: string;
       }
       /** 楼栋信息列表 */
       interface Building {
-      /** 建筑名称 */
+        /** 建筑名称 */
         name: string;
         /** 建筑类型 */
         type: string;
       }
       /** 门牌信息列表 */
       interface StreetNumber {
-      /** 街道名称 */
+        /** 街道名称 */
         street: string;
         /** 门牌号 */
         number: string;
@@ -178,7 +178,7 @@ declare global {
       }
       /** 经纬度所属商圈 */
       interface BusinessArea {
-      /** 商圈信息 */
+        /** 商圈信息 */
         businessArea: string;
         /** 商圈中心点坐标 */
         location: PointLike;
@@ -189,7 +189,7 @@ declare global {
       }
       /** 道路信息 */
       interface Road {
-      /** 道路 ID */
+        /** 道路 ID */
         id: string;
         /** 道路名称 */
         name: string;
@@ -202,7 +202,7 @@ declare global {
       }
       /** 道路交叉口信息 */
       interface Roadinter {
-      /** 交叉口到坐标的距离，单位：米 */
+        /** 交叉口到坐标的距离，单位：米 */
         distance: number;
         /** 与坐标的相对方位 */
         direction: string;
@@ -220,7 +220,7 @@ declare global {
       /** 兴趣点 */
       namespace Poi {
         interface Base {
-        /** POI 唯一标识 */
+          /** POI 唯一标识 */
           id: string;
           /** 名称 */
           name: string;
@@ -238,7 +238,7 @@ declare global {
           tel?: string;
         }
         interface Detail {
-        /** 电话 */
+          /** 电话 */
           tel: string;
           /** 网址 */
           website: string;
@@ -271,16 +271,16 @@ declare global {
           /** 评级 */
           rating: string;
           /**
-         * 是否有团购
-         *
-         * @deprecated 已废弃
-         */
+           * 是否有团购
+           *
+           * @deprecated 已废弃
+           */
           groupbuy: boolean;
           /**
-         * 是否有优惠
-         *
-         * @deprecated 已废弃
-         */
+           * 是否有优惠
+           *
+           * @deprecated 已废弃
+           */
           discount: boolean;
         }
         interface Indoordata {
@@ -295,7 +295,7 @@ declare global {
       }
       /** 兴趣区 */
       interface Aoi {
-      /** AOI ID */
+        /** AOI ID */
         id: string;
         /** 名称 */
         name: string;
@@ -311,7 +311,7 @@ declare global {
         type: string;
       }
       interface Events {
-      /** 查询成功时的触发事件 */
+        /** 查询成功时的触发事件 */
         onComplete?: (result: GeocoderResult | ReGeocoderResult) => void;
         /** 查询失败时的触发事件 */
         onError?: (result: string) => void;
@@ -322,47 +322,47 @@ declare global {
     interface Poi extends Geocoder.Poi.Base, Partial<Geocoder.Poi.Detail> {}
 
     /**
-   * 地理编码与逆地理编码
-   * - 用于地址描述与经纬度坐标之间的转换
-   * - 用户可以通过回调函数获取查询结果
-   *
-   * @class Geocoder
-   * @extends {Event<ServiceEventType>} 类 - 地图事件
-   */
-    class Geocoder extends Event<ServiceEventType> {
-    /**
-     * 构造函数
+     * 地理编码与逆地理编码
+     * - 用于地址描述与经纬度坐标之间的转换
+     * - 用户可以通过回调函数获取查询结果
      *
-     * @constructor
-     * @public
-     * @param {?Geocoder.Options} [options] 构造参数
+     * @class Geocoder
+     * @extends {Event<ServiceEventType>} 类 - 地图事件
      */
+    class Geocoder extends Event<ServiceEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {?Geocoder.Options} [options] 构造参数
+       */
       public constructor (options?: Geocoder.Options);
 
       /**
-     * 地理编码
-     * - 将地址信息转化为高德经纬度坐标信息
-     *
-     * @public
-     * @param {string} keyword 关键字
-     * @param {?Geocoder.GeocoderCallback} [callback] 回调函数
-     */
+       * 地理编码
+       * - 将地址信息转化为高德经纬度坐标信息
+       *
+       * @public
+       * @param {string} keyword 关键字
+       * @param {?Geocoder.GeocoderCallback} [callback] 回调函数
+       */
       public getLocation (keyword: string, callback?: Geocoder.GeocoderCallback): void;
       /**
-     * 逆地理编码
-     * - 将高德经纬度坐标信息转化为地址信息
-     *
-     * @public
-     * @param {(LngLatLike | LngLatLike[])} location 坐标
-     * @param {?Geocoder.ReGeocoderCallback} [callback] 回调函数
-     */
+       * 逆地理编码
+       * - 将高德经纬度坐标信息转化为地址信息
+       *
+       * @public
+       * @param {(LngLatLike | LngLatLike[])} location 坐标
+       * @param {?Geocoder.ReGeocoderCallback} [callback] 回调函数
+       */
       public getAddress (location: LngLatLike | LngLatLike[], callback?: Geocoder.ReGeocoderCallback): void;
       /**
-     * 设置地理编码时地址描述所在城市
-     *
-     * @public
-     * @param {Autocomplete.Options['city']} city 城市名称/区域编码
-     */
+       * 设置地理编码时地址描述所在城市
+       *
+       * @public
+       * @param {Autocomplete.Options['city']} city 城市名称/区域编码
+       */
       public setCity (city: Autocomplete.Options["city"]): void;
 
       /** 获取检索语言类型 */
@@ -371,8 +371,6 @@ declare global {
       public setLang (lang: "zh_cn" | "en"): void;
     }
   }
-
 }
 
 export {};
-

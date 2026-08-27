@@ -1,6 +1,6 @@
 ﻿declare global {
   namespace AMap {
-  /**
+    /**
    * AMap Web API - 基础类 - 像素尺寸
    * - 像素尺寸由 `width` 和 `height` 两个分量构成，通常用来描述具有一定大小的对象，比如地图的尺寸，图标的尺寸等
    *
@@ -10,15 +10,15 @@
    * ```
    */
     class Size {
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {number} width 宽度
-     * @param {number} height 高度
-     * @param {?boolean} [round] 是否将结果通过四舍五入取整，默认 `false`
-     */
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {number} width 宽度
+       * @param {number} height 高度
+       * @param {?boolean} [round] 是否将结果通过四舍五入取整，默认 `false`
+       */
       public constructor (width: number, height: number, round?: boolean);
 
       /** 类标识 */
@@ -38,7 +38,6 @@
       public toString (): string;
     }
   }
-
 }
 
 export {};

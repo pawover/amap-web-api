@@ -2,11 +2,11 @@
   namespace Loca {
     namespace Container {
       interface Options {
-      /** 地图实例 */
+        /** 地图实例 */
         map: AMap.Map;
       }
       interface LightConfigs {
-      /** 环境光强度 */
+        /** 环境光强度 */
         ambIntensity: number;
         /** 环境光颜色 */
         ambLightColor: number[];
@@ -26,19 +26,19 @@
     }
 
     /**
-   * Loca 实例
-   * - Loca 的核心控制类，可以控制光源、视角变换、图层渲染等
-   *
-   * @class Container
-   */
-    class Container {
-    /**
-     * 构造函数
+     * Loca 实例
+     * - Loca 的核心控制类，可以控制光源、视角变换、图层渲染等
      *
-     * @constructor
-     * @public
-     * @param {Container.Options} options 数据可视化组件初始化参数
+     * @class Container
      */
+    class Container {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {Container.Options} options 数据可视化组件初始化参数
+       */
       public constructor (options?: Container.Options);
 
       /** 动画控制器 */
@@ -46,19 +46,19 @@
       /** 动画状态 */
       public animateStatus: "start" | "pause" | "stop";
       /**
-     * 环境光属性
-     * @deprecated Please use `new Loca.AmbientLight` instead
-     */
+       * 环境光属性
+       * @deprecated Please use `new Loca.AmbientLight` instead
+       */
       public ambLight: AmbientLight.Options;
       /**
-     * 平行光属性
-     * @deprecated Please use `new Loca.DirectionalLight` instead
-     */
+       * 平行光属性
+       * @deprecated Please use `new Loca.DirectionalLight` instead
+       */
       public dirLight: DirectionalLight.Options;
       /**
-     * 点光源属性
-     * @deprecated Please use `new Loca.PointLight` instead
-     */
+       * 点光源属性
+       * @deprecated Please use `new Loca.PointLight` instead
+       */
       public pointLight: PointLight.Options;
       /** 所有光源对象 */
       public lights: Loca.LightType[];
@@ -111,7 +111,6 @@
       public setZoom (zoom: number): void;
     }
   }
-
 }
 
 export {};

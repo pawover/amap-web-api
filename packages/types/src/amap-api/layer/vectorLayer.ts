@@ -5,21 +5,21 @@
     }
 
     /**
-   * 图层 - 矢量覆盖物
-   * - 可添加/删除/查询矢量覆盖物的图层
-   *
-   * @class VectorLayer
-   * @template VectorOverlay extends OverlayType
-   * @extends {Layer<VectorLayer.Options>} 抽象类 - 图层
-   */
-    class VectorLayer extends Layer<VectorLayer.Options> {
-    /**
-     * 构造函数
+     * 图层 - 矢量覆盖物
+     * - 可添加/删除/查询矢量覆盖物的图层
      *
-     * @constructor
-     * @public
-     * @param {?VectorLayer.Options} [options] 构造参数
+     * @class VectorLayer
+     * @template VectorOverlay extends OverlayType
+     * @extends {Layer<VectorLayer.Options>} 抽象类 - 图层
      */
+    class VectorLayer extends Layer<VectorLayer.Options> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {?VectorLayer.Options} [options] 构造参数
+       */
       public constructor (options?: VectorLayer.Options);
 
       /** 添加矢量覆盖物到集合中，不支持添加重复的覆盖物 */
@@ -36,7 +36,6 @@
       public getBounds (): Bounds;
     }
   }
-
 }
 
 export {};

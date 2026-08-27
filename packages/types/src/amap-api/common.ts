@@ -99,7 +99,6 @@
       | "zoom-in"
       | "zoom-out";
   }
-
 }
 
 export {};

@@ -1,20 +1,20 @@
 ﻿declare global {
   namespace AMap {
-  /**
-   * 群组 - 覆盖物
-   *
-   * @class OverlayGroup
-   * @template T extends OverlayEventList
-   * @implements {Accessor.Map} 所属地图
-   */
-    class OverlayGroup<T extends OverlayEventType> implements Accessor.Map {
     /**
-     * 构造函数
+     * 群组 - 覆盖物
      *
-     * @constructor
-     * @public
-     * @param {OverlayType[]} overlays 覆盖物集合
+     * @class OverlayGroup
+     * @template T extends OverlayEventList
+     * @implements {Accessor.Map} 所属地图
      */
+    class OverlayGroup<T extends OverlayEventType> implements Accessor.Map {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {OverlayType[]} overlays 覆盖物集合
+       */
       public constructor (overlays: OverlayType[]);
 
       /** 要显示群组的地图实例 */
@@ -41,13 +41,13 @@
       /** 清空集合 */
       public clearOverlays (): this;
       /**
-     * 对集合中的覆盖物做迭代操作
-     *
-     * @public
-     * @template C = O
-     * @param {(this: C, overlay: OverlayType, index: number, overlays: OverlayType[]) => void} iterator 迭代回调
-     * @param {?C} [context] 执行上下文
-     */
+       * 对集合中的覆盖物做迭代操作
+       *
+       * @public
+       * @template C = O
+       * @param {(this: C, overlay: OverlayType, index: number, overlays: OverlayType[]) => void} iterator 迭代回调
+       * @param {?C} [context] 执行上下文
+       */
       public eachOverlay<C = OverlayType> (
         iterator: (this: C, overlay: OverlayType, index: number, overlays: OverlayType[]) => void,
         context?: C,
@@ -56,20 +56,20 @@
       public setOptions (options: OverlayType[]): void;
 
       /**
-     * 添加事件监听函数
-     *
-     * @public
-     * @param {T} type 事件名称
-     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
-     */
+       * 添加事件监听函数
+       *
+       * @public
+       * @param {T} type 事件名称
+       * @param {(event?: MapsEvent<T>) => void} callback 回调函数
+       */
       public on (type: T, callback: (event?: MapsEvent<T, unknown>) => void): void;
       /**
-     * 移除事件监听函数
-     *
-     * @public
-     * @param {T} type 事件名称
-     * @param {(event?: MapsEvent<T>) => void} callback 回调函数
-     */
+       * 移除事件监听函数
+       *
+       * @public
+       * @param {T} type 事件名称
+       * @param {(event?: MapsEvent<T>) => void} callback 回调函数
+       */
       public off (type: T, callback: (event?: MapsEvent<T, unknown>) => void): void;
 
       /** 设置为可见 */
@@ -78,7 +78,6 @@
       public hide (): void;
     }
   }
-
 }
 
 export {};

@@ -2,7 +2,7 @@
   namespace AMap {
     namespace PolylineEditor {
       interface Options {
-      /** 新建对象构造参数 */
+        /** 新建对象构造参数 */
         createOptions?: Polyline.Options;
         /** 编辑对象样式 */
         editOptions?: Polyline.Options & Overlay.Options & Overlay.PlaneGeometryOptions & Overlay.LineGeometryOptions;
@@ -15,21 +15,21 @@
     }
 
     /**
-   * 矢量图形编辑器 - 折线
-   *
-   * @class PolylineEditor
-   * @extends {Event<EditorEventType>} 类 - 地图事件
-   */
-    class PolylineEditor extends Event<EditorEventType> {
-    /**
-     * 构造函数
+     * 矢量图形编辑器 - 折线
      *
-     * @constructor
-     * @public
-     * @param {AMap.Map} map 地图实例
-     * @param {Polyline} polyline 折线实例
-     * @param {?PolylineEditor.Options} [options] 构造参数
+     * @class PolylineEditor
+     * @extends {Event<EditorEventType>} 类 - 地图事件
      */
+    class PolylineEditor extends Event<EditorEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {AMap.Map} map 地图实例
+       * @param {Polyline} polyline 折线实例
+       * @param {?PolylineEditor.Options} [options] 构造参数
+       */
       public constructor (map: AMap.Map, polyline: Polyline, options?: PolylineEditor.Options);
 
       /** 要显示编辑器的地图实例 */
@@ -56,7 +56,6 @@
       public setTarget (overlay?: Polyline | undefined): void;
     }
   }
-
 }
 
 export {};

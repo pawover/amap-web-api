@@ -1,8 +1,8 @@
 ﻿declare global {
-// TODO: DragRoute and GraspRoad
+  // TODO: DragRoute and GraspRoad
   namespace AMap {
     namespace Service {
-    /** 导航主要动作 */
+      /** 导航主要动作 */
       type Action =
         | "无基本导航动作"
         | "左转"
@@ -103,7 +103,7 @@
         | "火车硬卧下铺";
       /** 基础规划结果 */
       interface ResultBase {
-      /** 查询的成功状态说明 */
+        /** 查询的成功状态说明 */
         info: string;
         /** 规划起点坐标 */
         origin: PointLike;
@@ -128,7 +128,7 @@
 
     /** 驾车路线规划策略 */
     const enum DrivingPolicy {
-    /** 速度优先 */
+      /** 速度优先 */
       LEAST_TIME = 0,
       /** 费用优先 */
       LEAST_FEE = 1,
@@ -149,7 +149,7 @@
     }
     /** 公交路线规划策略 */
     const enum TransferPolicy {
-    /** 最快捷模式 */
+      /** 最快捷模式 */
       LEAST_TIME,
       /** 最经济模式 */
       LEAST_FEE,
@@ -164,7 +164,7 @@
     }
     /** 骑行路线规划策略 */
     const enum RidingPolicy {
-    /** 推荐路线及最快路线综合 */
+      /** 推荐路线及最快路线综合 */
       DEFAULT,
       /** 推荐路线 */
       RECOMMENDED,
@@ -172,7 +172,6 @@
       FASTEST,
     }
   }
-
 }
 
 export {};

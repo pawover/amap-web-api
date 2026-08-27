@@ -4,54 +4,54 @@ declare global {
   namespace AMap {
     namespace Layer {
       interface Options {
-      /**
-       * 透明度
-       *
-       * @default 1
-       */
+        /**
+         * 透明度
+         *
+         * @default 1
+         */
         opacity?: number;
         /**
-       * 是否显示
-       *
-       * @default true
-       */
+         * 是否显示
+         *
+         * @default true
+         */
         visible?: boolean;
         /**
-       * 显示层级
-       */
+         * 显示层级
+         */
         zIndex?: number;
         /**
-       * 支持的缩放级别范围
-       *
-       * @default [2,30]
-       */
+         * 支持的缩放级别范围
+         *
+         * @default [2,30]
+         */
         zooms?: [number, number];
       }
     }
 
     /**
-   * 抽象类 - 图层
-   *
-   * @abstract
-   * @class Layer
-   * @template O extends Layer.Options
-   * @template E extends MapEventList | OverlayEventList = 'complete'
-   * @extends {Event<E>} 类 - 地图事件
-   * @implements {Accessor.Map} 所属地图
-   * @implements {Accessor.Opacity} 透明度
-   * @implements {Accessor.ZIndex} 叠加层级
-   * @implements {Accessor.Zooms} 显示级别范围
-   */
+     * 抽象类 - 图层
+     *
+     * @abstract
+     * @class Layer
+     * @template O extends Layer.Options
+     * @template E extends MapEventList | OverlayEventList = 'complete'
+     * @extends {Event<E>} 类 - 地图事件
+     * @implements {Accessor.Map} 所属地图
+     * @implements {Accessor.Opacity} 透明度
+     * @implements {Accessor.ZIndex} 叠加层级
+     * @implements {Accessor.Zooms} 显示级别范围
+     */
     abstract class Layer<O extends Layer.Options, E extends MapEventType | OverlayEventType = "complete">
       extends Event<E>
       implements Accessor.Map, Accessor.Opacity, Accessor.ZIndex, Accessor.Zooms {
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {?Layer.Options} [options] 构造参数
-     */
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {?Layer.Options} [options] 构造参数
+       */
       public constructor (options?: Layer.Options);
 
       public CLASS_NAME: string;
@@ -98,27 +98,25 @@ declare global {
 
     namespace MediaLayer {
       interface Options extends Layer.Options {
-      /** 显示范围 */
+        /** 显示范围 */
         bounds?: BoundsLike;
       }
     }
 
     /**
-   * 抽象类 - 媒体图层
-   *
-   * @abstract
-   * @class MediaLayer
-   * @template O extends Layer.Options
-   * @template E extends HTMLElement
-   * @extends {Layer<O>} 抽象类 - 图层
-   */
+     * 抽象类 - 媒体图层
+     *
+     * @abstract
+     * @class MediaLayer
+     * @template O extends Layer.Options
+     * @template E extends HTMLElement
+     * @extends {Layer<O>} 抽象类 - 图层
+     */
     abstract class MediaLayer<O extends Layer.Options, E extends HTMLElement> extends Layer<O> {
-    /** 获取元素 */
+      /** 获取元素 */
       public getElement (): E | null;
     }
   }
-
 }
 
 export {};
-

@@ -1,11 +1,11 @@
 ﻿declare global {
   namespace Loca {
     namespace ViewControl {
-    /** 镜头动画配置参数 */
+      /** 镜头动画配置参数 */
       interface AnimatesConfigs {
-      /** 地图中心点动画 */
+        /** 地图中心点动画 */
         center?: Omit<Animate.Options<AMap.LngLatLike>, "control"> & {
-        /** 过渡中的轨迹控制点，地图上的经纬度 */
+          /** 过渡中的轨迹控制点，地图上的经纬度 */
           control: AMap.LngLatLike[];
         };
         /** 俯仰角动画 */
@@ -17,7 +17,7 @@
       }
       /** 轨迹动画配置参数 */
       interface TrackAnimateConfigs {
-      /** 动画轨迹 */
+        /** 动画轨迹 */
         path?: AMap.LngLatLike[];
         /** 在拐弯处每秒旋转多少度 */
         rotationSpeed?: number;
@@ -29,32 +29,32 @@
     }
 
     /**
-   * 视角控制器
-   * - 支持连续的视角动画过渡控制
-   * - 和 loca 一起初始化，会在 loca.viewControl 属性上挂载，不需要使用者主动创建
-   * - 如有需要，请直接使用 loca 实例上的 `viewControl` 属性
-   *
-   * @class ViewControl
-   */
-    class ViewControl {
-    /**
-     * 添加镜头动画
-     * - 如果传入了多个镜头动画配置，那么动画会按次序依次执行
-     * - `timing` 时间字段和 `control` 控制点代表的贝塞尔曲线
-     * - [参考](https://cubic-bezier.com)
+     * 视角控制器
+     * - 支持连续的视角动画过渡控制
+     * - 和 loca 一起初始化，会在 loca.viewControl 属性上挂载，不需要使用者主动创建
+     * - 如有需要，请直接使用 loca 实例上的 `viewControl` 属性
      *
-     * @public
-     * @param {?ViewControl.AnimatesConfigs[]} [configs] 镜头动画配置
-     * @param {?() => void} [callback] 所有动画完成后的回调函数
+     * @class ViewControl
      */
+    class ViewControl {
+      /**
+       * 添加镜头动画
+       * - 如果传入了多个镜头动画配置，那么动画会按次序依次执行
+       * - `timing` 时间字段和 `control` 控制点代表的贝塞尔曲线
+       * - [参考](https://cubic-bezier.com)
+       *
+       * @public
+       * @param {?ViewControl.AnimatesConfigs[]} [configs] 镜头动画配置
+       * @param {?() => void} [callback] 所有动画完成后的回调函数
+       */
       public addAnimates (configs?: ViewControl.AnimatesConfigs[], callback?: () => void): void;
       /**
-     * 添加一个镜头轨迹动画，镜头会按照指定的路径进行追踪
-     *
-     * @public
-     * @param {?ViewControl.TrackAnimateConfigs} [configs] 轨迹动画配置
-     * @param {?() => void} [callback] 动画完成后的回调函数
-     */
+       * 添加一个镜头轨迹动画，镜头会按照指定的路径进行追踪
+       *
+       * @public
+       * @param {?ViewControl.TrackAnimateConfigs} [configs] 轨迹动画配置
+       * @param {?() => void} [callback] 动画完成后的回调函数
+       */
       public addTrackAnimate (configs?: ViewControl.TrackAnimateConfigs, callback?: () => void): void;
       /** 清除所有动画 */
       public clearAnimates (): void;
@@ -64,7 +64,6 @@
       public resumeAnimate (): void;
     }
   }
-
 }
 
 export {};

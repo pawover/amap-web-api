@@ -2,7 +2,7 @@
   namespace AMap {
     namespace EllipseEditor {
       interface Options {
-      /** 新建对象构造参数 */
+        /** 新建对象构造参数 */
         createOptions?: Ellipse.Options;
         /** 编辑对象样式 */
         editOptions?: Ellipse.Options & Overlay.Options & Overlay.PlaneGeometryOptions & Overlay.LineGeometryOptions;
@@ -17,21 +17,21 @@
     }
 
     /**
-   * 矢量图形编辑器 - 椭圆形
-   *
-   * @class EllipseEditor
-   * @extends {Event<EditorEventType>} 类 - 地图事件
-   */
-    class EllipseEditor extends Event<EditorEventType> {
-    /**
-     * 构造函数
+     * 矢量图形编辑器 - 椭圆形
      *
-     * @constructor
-     * @public
-     * @param {AMap.Map} map 地图实例
-     * @param {Ellipse} ellipse 椭圆形实例
-     * @param {?EllipseEditor.Options} [options] 构造参数
+     * @class EllipseEditor
+     * @extends {Event<EditorEventType>} 类 - 地图事件
      */
+    class EllipseEditor extends Event<EditorEventType> {
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {AMap.Map} map 地图实例
+       * @param {Ellipse} ellipse 椭圆形实例
+       * @param {?EllipseEditor.Options} [options] 构造参数
+       */
       public constructor (map: AMap.Map, ellipse: Ellipse, options?: EllipseEditor.Options);
 
       /** 开始编辑对象，如果当前编辑对象不存在，则开启新建编辑对象 */
@@ -47,7 +47,6 @@
       public setTarget (overlay?: Ellipse | undefined): void;
     }
   }
-
 }
 
 export {};

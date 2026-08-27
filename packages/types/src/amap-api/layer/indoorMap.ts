@@ -4,23 +4,23 @@ declare global {
   namespace AMap {
     namespace IndoorMap {
       interface Options extends Layer.Options {
-      /**
-       * 指定鼠标悬停到店铺面时的鼠标样式
-       */
+        /**
+         * 指定鼠标悬停到店铺面时的鼠标样式
+         */
         cursor?: CursorStyle;
         /**
-       * 标题
-       */
+         * 标题
+         */
         createTile?: string;
         /**
-       * 是否隐藏楼层切换控件
-       *
-       * @default false
-       */
+         * 是否隐藏楼层切换控件
+         *
+         * @default false
+         */
         hideFloorBar?: boolean;
       }
       interface Events {
-      /** 加载完成事件 */
+        /** 加载完成事件 */
         onComplete?: (event: { type: "complete" }) => void;
       }
     }
@@ -42,23 +42,23 @@ declare global {
    * ```
    */
     class IndoorMap extends Layer<IndoorMap.Options> {
-    /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {IndoorMap.Options} options 构造参数
-     */
+      /**
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {IndoorMap.Options} options 构造参数
+       */
       public constructor (options?: IndoorMap.Options);
 
       /**
-     * 显示指定 POI 的室内地图
-     *
-     * @public
-     * @param {number | string} indoorId 建筑物 POI ID
-     * @param {?number} [floor] 楼层
-     * @param {?number} [shopId] 商铺 ID
-     */
+       * 显示指定 POI 的室内地图
+       *
+       * @public
+       * @param {number | string} indoorId 建筑物 POI ID
+       * @param {?number} [floor] 楼层
+       * @param {?number} [shopId] 商铺 ID
+       */
       public showIndoorMap (indoorId: number | string, floor?: number, shopId?: number): void;
       /** 显示指定的楼层 */
       public showFloor (floor: number): void;
@@ -88,8 +88,6 @@ declare global {
       public getSelectedBuildingId (): void;
     }
   }
-
 }
 
 export {};
-

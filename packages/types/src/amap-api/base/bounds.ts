@@ -1,6 +1,6 @@
 ﻿declare global {
   namespace AMap {
-  /**
+    /**
    * AMap Web API - 基础类 - 经纬度矩形边界
    *
    * @example
@@ -18,13 +18,13 @@
       public static fromMultiPolygon (originPath?: LngLatLike[][][]): Bounds | undefined;
 
       /**
-     * 构造函数
-     *
-     * @constructor
-     * @public
-     * @param {LngLatLike} southWest 西南角经纬度
-     * @param {LngLatLike} northEast 东北角经纬度值
-     */
+       * 构造函数
+       *
+       * @constructor
+       * @public
+       * @param {LngLatLike} southWest 西南角经纬度
+       * @param {LngLatLike} northEast 东北角经纬度值
+       */
       public constructor (southWest: LngLatLike, northEast: LngLatLike);
 
       /** 类标识 */
@@ -64,7 +64,6 @@
       public toString (): string;
     }
   }
-
 }
 
 export {};

@@ -1,6 +1,6 @@
 ﻿declare global {
   namespace AMap {
-  /** 高德地图 AMap Web API 插件类型 */
+    /** 高德地图 AMap Web API 插件类型 */
     type Plugin =
       | "AMap.Adaptor"
       | "AMap.AdvancedInfoWindow"
@@ -48,14 +48,13 @@
       | "AMap.Weather";
 
     /**
-   * 加载插件
-   *
-   * @param {(Plugin | Plugin[])} plugin 插件名称
-   * @param {?() => void} [callback] 回调函数
-   */
+     * 加载插件
+     *
+     * @param {(Plugin | Plugin[])} plugin 插件名称
+     * @param {?() => void} [callback] 回调函数
+     */
     function plugin (plugin: Plugin | Plugin[], callback?: () => void): void;
   }
-
 }
 
 export {};

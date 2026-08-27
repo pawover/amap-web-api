@@ -81,6 +81,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "type-fest": "^5.8.0"
+  },
   "devDependencies": {
     "@pawover/kit-types": "^0.0.4",
     "amap-web-internal": "workspace:*"
