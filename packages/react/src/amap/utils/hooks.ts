@@ -1,4 +1,4 @@
-import type { AnyObject } from "@pawover/kit-types";
+import type { AnyFunction, AnyObject } from "@pawover/kit-types";
 import { TypeUtil } from "@pawover/kit-utils";
 import { useEffect, useState } from "react";
 
@@ -26,7 +26,11 @@ export function usePrevious<T> (value: T) {
  * @param {P} props
  * @param {N} propList 可受控属性名称列表
  */
-export function useSetStatus<I extends AMap.Map, P extends AnyObject, N extends string[] = string[]> (instance: I | undefined, props: P, propList: N) {
+export function useSetStatus<I extends AMap.Map, P extends AnyObject, N extends string[] = string[]> (
+  instance: I | undefined,
+  props: P,
+  propList: N,
+) {
   useEffect(() => {
     propList.forEach((prop) => {
       if (instance && prop in props) {
@@ -44,12 +48,14 @@ export function useSetStatus<I extends AMap.Map, P extends AnyObject, N extends 
  * @param {I} instance 实例对象
  * @param {boolean} visible 显示状态
  */
-export function useVisible<I extends { show: () => void; hide: () => void }> (instance: I | undefined, visible: boolean) {
+export function useVisible<I extends { show: () => void; hide: () => void }> (
+  instance: I | undefined,
+  visible: boolean,
+) {
   const [isShow, setIsShow] = useState<boolean>(visible);
 
   useEffect(() => {
     if (instance) {
-
       visible ? instance.show?.() : instance.hide?.();
       // eslint-disable-next-line react/set-state-in-effect -- 实例依赖 context 的 map，只能在 effect 中创建
       visible !== isShow && setIsShow(visible);
@@ -65,7 +71,10 @@ export function useVisible<I extends { show: () => void; hide: () => void }> (in
  * @param {I} instance 实例对象
  * @param {P} props props
  */
-export function useProperty<I extends AnyObject | AMap.Accessor.Options<unknown>, P extends AnyObject> (instance: I | undefined, props: P) {
+export function useProperty<I extends AnyObject | AMap.Accessor.Options<unknown>, P extends AnyObject> (
+  instance: I | undefined,
+  props: P,
+) {
   const prevProps = usePrevious(props);
 
   useEffect(() => {
@@ -74,7 +83,7 @@ export function useProperty<I extends AnyObject | AMap.Accessor.Options<unknown>
         const fnName = `set${prop.charAt(0).toUpperCase()}${prop.slice(1)}` as keyof I;
 
         if (prop in props && TypeUtil.isFunction(instance[fnName])) {
-          (instance[fnName] as Fn)?.(props[prop]);
+          (instance[fnName] as AnyFunction)?.(props[prop]);
         } else if ("getOptions" in instance && "setOptions" in instance) {
           const options = instance.getOptions?.();
           if (options) {
@@ -96,7 +105,11 @@ export function useProperty<I extends AnyObject | AMap.Accessor.Options<unknown>
  * @param {P} props props
  * @param {Extract<keyof P, keyof E extends `on${string}` ? keyof E : never>[]} eventList 可受控事件名称列表
  */
-export function useEventProperty<I extends AMap.Event<AMap.EventType>, P extends AnyObject, E extends Partial<P>> (instance: I | undefined, props: P, eventList: Extract<keyof P, keyof E extends `on${string}` ? keyof E : never>[]) {
+export function useEventProperty<I extends AMap.Event<AMap.EventType>, P extends AnyObject, E extends Partial<P>> (
+  instance: I | undefined,
+  props: P,
+  eventList: Extract<keyof P, keyof E extends `on${string}` ? keyof E : never>[],
+) {
   useEffect(() => {
     eventList.forEach((event) => {
       if (instance && event in props && props[event]) {

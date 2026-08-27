@@ -1,3 +1,4 @@
+import type { AnyFunction } from "@pawover/kit-types";
 import "amap-web-types";
 import { useEffect } from "react";
 import { useAPILoader } from "./useAPILoader";
@@ -58,7 +59,7 @@ export interface APILoaderOptions {
   /**
    * Loader 执行完成时的回调
    */
-  onFinally?: Fn;
+  onFinally?: AnyFunction;
 }
 interface AMapUILoader {
   /**

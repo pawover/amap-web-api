@@ -1,3 +1,4 @@
+import type { AnyFunction } from "@pawover/kit-types";
 import { useEffect, useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import { useEllipse } from "./useEllipse";
@@ -9,7 +10,7 @@ export interface EllipseProps extends ContextProps, AMap.Ellipse.Events, AMap.El
    * @default true
    */
   visible?: boolean;
-  setChildComponentInstanceForEditor?: Fn;
+  setChildComponentInstanceForEditor?: AnyFunction;
 }
 
 export function Ellipse (props: EllipseProps & { ref?: Ref<EllipseProps & { instance: AMap.Ellipse | undefined }> }) {

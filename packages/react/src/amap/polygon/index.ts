@@ -1,3 +1,4 @@
+import type { AnyFunction } from "@pawover/kit-types";
 import { useEffect, useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import { usePolygon } from "./usePolygon";
@@ -9,7 +10,7 @@ export interface PolygonProps extends ContextProps, AMap.Polygon.Events, AMap.Po
    * @default true
    */
   visible?: boolean;
-  setChildComponentInstanceForEditor?: Fn;
+  setChildComponentInstanceForEditor?: AnyFunction;
 }
 
 export function Polygon (props: PolygonProps & { ref?: Ref<PolygonProps & { instance: AMap.Polygon | undefined }> }) {

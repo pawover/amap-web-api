@@ -1,3 +1,4 @@
+import type { AnyFunction } from "@pawover/kit-types";
 import { useEffect, useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import { useRectangle } from "./useRectangle";
@@ -9,7 +10,7 @@ export interface RectangleProps extends ContextProps, AMap.Rectangle.Events, AMa
    * @default true
    */
   visible?: boolean;
-  setChildComponentInstanceForEditor?: Fn;
+  setChildComponentInstanceForEditor?: AnyFunction;
 }
 
 export function Rectangle (props: RectangleProps & { ref?: Ref<RectangleProps & { instance: AMap.Rectangle | undefined }> }) {

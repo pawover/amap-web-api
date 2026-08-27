@@ -1,3 +1,4 @@
+import type { AnyFunction } from "@pawover/kit-types";
 import { useEffect, useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import { usePolyline } from "./usePolyline";
@@ -9,7 +10,7 @@ export interface PolylineProps extends ContextProps, AMap.Polyline.Events, AMap.
    * @default true
    */
   visible?: boolean;
-  setChildComponentInstanceForEditor?: Fn;
+  setChildComponentInstanceForEditor?: AnyFunction;
 }
 
 export function Polyline (props: PolylineProps & { ref?: Ref<PolylineProps & { instance: AMap.Polyline | undefined }> }) {

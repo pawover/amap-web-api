@@ -2,10 +2,7 @@ import { useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import { useInfoWindow } from "./useInfoWindow";
 
-export interface InfoWindowProps
-  extends ContextProps,
-  AMap.InfoWindow.Events,
-  Omit<AMap.InfoWindow.Options, "content" | "isCustom" | "size"> {
+export interface InfoWindowProps extends ContextProps, AMap.InfoWindow.Events, Omit<AMap.InfoWindow.Options, "content" | "isCustom" | "size"> {
   /**
    * 是否显示
    *

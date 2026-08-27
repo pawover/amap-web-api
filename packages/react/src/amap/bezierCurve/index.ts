@@ -1,3 +1,4 @@
+import type { AnyFunction } from "@pawover/kit-types";
 import { useEffect, useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import { useBezierCurve } from "./useBezierCurve";
@@ -9,7 +10,7 @@ export interface BezierCurveProps extends ContextProps, AMap.BezierCurve.Events,
    * @default true
    */
   visible?: boolean;
-  setChildComponentInstanceForEditor?: Fn;
+  setChildComponentInstanceForEditor?: AnyFunction;
 }
 
 export function BezierCurve (props: BezierCurveProps & { ref?: Ref<BezierCurveProps & { instance: AMap.BezierCurve | undefined }> }) {

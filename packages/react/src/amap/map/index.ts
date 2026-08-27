@@ -1,5 +1,5 @@
 import { TypeUtil } from "@pawover/kit-utils";
-import { createElement, useEffect, useImperativeHandle, useReducer, useState, type Ref } from "react";
+import { createElement, useCallback, useEffect, useImperativeHandle, useMemo, useReducer, useState, type Ref } from "react";
 import type { ChildNodeType } from "../../index";
 import { useMap } from "./useMap";
 import { mapContextState, MapContext, mapReducer } from "./useMapContext";
@@ -19,7 +19,6 @@ export function Map (props: MapProps & { ref?: Ref<MapProps & { instance: AMap.M
   const { children, id, className, style, ...rest } = props;
   const [state, dispatch] = useReducer(mapReducer, mapContextState);
   const [container, setContainer] = useState<HTMLDivElement>();
-  const [childNodeList, setChildNodeList] = useState<ChildNodeType[]>([]);
   const { map } = useMap({ container, ...rest });
 
   useImperativeHandle(props.ref, () => ({ ...props, instance: map }), [props, map]);
@@ -28,15 +27,14 @@ export function Map (props: MapProps & { ref?: Ref<MapProps & { instance: AMap.M
     dispatch({ map });
   }, [map]);
 
-  useEffect(() => {
-    if (TypeUtil.isArray(children)) {
-      // eslint-disable-next-line react/set-state-in-effect -- 实例依赖 context 的 map，只能在 effect 中创建
-      setChildNodeList(children);
-    } else {
-      // eslint-disable-next-line react/set-state-in-effect -- 实例依赖 context 的 map，只能在 effect 中创建
-      setChildNodeList([children]);
-    }
-  }, [children]);
+  const setContainerRef = useCallback((element: HTMLDivElement | null) => {
+    setContainer((prev) => (prev === element ? prev : element ?? undefined));
+  }, []);
+
+  const childNodeList = useMemo<ChildNodeType[]>(
+    () => (children ? (TypeUtil.isArray(children) ? children : [children]) : []),
+    [children],
+  );
 
   return createElement(
     MapContext.Provider,
@@ -44,9 +42,7 @@ export function Map (props: MapProps & { ref?: Ref<MapProps & { instance: AMap.M
     createElement(
       "div",
       {
-        ref: (element: HTMLDivElement | undefined) => {
-          element && setContainer(element);
-        },
+        ref: setContainerRef,
         id,
         className,
         style: { width: "100%", height: "100%", ...style },

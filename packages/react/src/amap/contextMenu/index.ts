@@ -1,12 +1,4 @@
-import {
-  Children,
-  cloneElement,
-  createElement,
-  Fragment,
-  isValidElement,
-  useImperativeHandle,
-  type Ref,
-} from "react";
+import { Children, cloneElement, createElement, Fragment, isValidElement, useImperativeHandle, type Ref } from "react";
 import type { ContextProps } from "../map";
 import MenuItem from "./MenuItem";
 import { useContextMenu } from "./useContextMenu";

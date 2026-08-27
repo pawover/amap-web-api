@@ -13,7 +13,7 @@ export default defineConfig({
   dts: { cjsReexport: true },
   target: "es2022",
   platform: "neutral",
-  external: ["amap-web-types"],
+  deps: { neverBundle: ["amap-web-types"] },
   tsconfig: true,
   plugins: tsdownVisualizerPlugins(),
   hooks: {
