@@ -1,14 +1,15 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# dependencies
+node_modules
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Misc
+.idea
+.vscode
+.zed
+
+# output
+dist
+dist-ssr
+*.tgz
 
 # Logs
 logs
@@ -19,40 +20,26 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Output
-build
-dist
-dist-ssr
-cjs
-esm
+# typescript
+*.tsbuildinfo
 
-
-# Editor
-.vscode
-.idea
-
-# Directories and files
-node_modules
-.pnp
-.pnp.js
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# local
 *.local
-*.tgz
-package.local.json
 
-# misc
-.DS_Store
-*.pem
-
-# testing
-coverage
+# cache
+.cache
+*.cache.json
 
 # turbo
 .turbo
 
+# changesets
+.changeset/status.json
+.changeset/pre.json
+
 # vitepress
-docs/**/.vitepress/cache
+**/.vitepress/cache
+**/.vitepress/dist
+
+# playground
+playground/.env

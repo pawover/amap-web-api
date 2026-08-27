@@ -1,7 +1,0 @@
-{
-  "extends": "@pawover/tsconfig/vue-app.json",
-  "compilerOptions": {
-    "composite": true
-  },
-  "include": ["packages", "libs/types", "libs/vue"]
-}
