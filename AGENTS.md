@@ -1,6 +1,6 @@
 # amap-web-api
 
-pnpm 单体仓库（pnpm 11 / Node >= 22）。Turborepo 构建。2 个发布包 + 1 个内部包在 `packages/*` 下。
+pnpm 单体仓库（pnpm 11 / Node >= 22）。Turborepo 构建。3 个发布包 + 1 个内部包在 `packages/*` 下。
 
 ## 命令
 
@@ -30,6 +30,7 @@ pnpm 单体仓库（pnpm 11 / Node >= 22）。Turborepo 构建。2 个发布包 
 
 - **`amap-web-react`** (`packages/react/`) — 基于 React 封装的高德地图组件。入口：`src/index.ts`，子路径：`.`（聚合）、`./loader`（APILoader）、`./amap`（地图组件 40+）、`./amapUI`（UI 组件）、`./loca`（可视化组件）。
 - **`amap-web-types`** (`packages/types/`) — 纯类型声明包（`declare namespace AMap/AMapUI/Loca/GeoJSON`）。入口：`src/index.ts`，子路径：`.`、`./amap`、`./amapUI`、`./loca`。
+- **`amap-web-loader`** (`packages/loader/`) — 高德地图 JS API 独立加载器（AMap / AMapUI / Loca 模块级单例）。提供 `Loader.load(options)` / `Loader.reset()`、引用计数清理与 AMap/Loca 大版本对应校验、`___onAPILoaded` 全局类型声明。入口：`src/index.ts`（仅 `.` 子路径）。被 `amap-web-react` 的 `APILoader` / `useAPILoader` 作为桥接层复用；构建顺序位于 `amap-web-types` 之后、`amap-web-react` 之前。
 - **`amap-web-internal`** (`packages/internal/`) — 内部工具包（`private`，不发布）：`tsdownFixCtsStubs`（tsdown CJS `.d.cts` 存根修复）、`tsdownVisualizerPlugins`（`VISUALIZER=1` 时启用 rollup-plugin-visualizer 构建分析）。**纯源码包**：`exports` 直接指向 `./src/index.ts`（Node 24 type stripping 直跑，无需构建产物）。各包 `tsdown.config.ts` 经包名导入；子包 tsconfig 开 `preserveSymlinks: true` 使 IDE/tsc 以 node_modules 路径直查其源码。**约定：内部包代码不允许出现在消费端**——仅构建期使用，禁止从发布包 `src` 导入 internal。
 
 ## 构建流水线
