@@ -3,7 +3,6 @@ packages:
   - playground
 allowBuilds:
   esbuild: true
-  vue-demi: set this to true or false
 minimumReleaseAgeExclude:
   - "@changesets/apply-release-plan@8.0.0"
   - "@changesets/assemble-release-plan@7.0.0"

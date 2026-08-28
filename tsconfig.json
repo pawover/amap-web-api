@@ -18,6 +18,7 @@
       "amap-web-react/amap": ["./packages/react/src/amap/index.ts"],
       "amap-web-react/amapUI": ["./packages/react/src/amapUI/index.ts"],
       "amap-web-react/loca": ["./packages/react/src/loca/index.ts"],
+      "amap-web-loader": ["./packages/loader/src/index.ts"],
       "amap-web-internal": ["./packages/internal/src/index.ts"]
     }
   },

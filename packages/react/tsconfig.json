@@ -2,11 +2,7 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "rootDir": ".",
-    "preserveSymlinks": true,
-    "lib": ["ES2022", "DOM"],
     "jsx": "react-jsx",
-    "types": ["node"]
-  },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist"]
+    "preserveSymlinks": true
+  }
 }

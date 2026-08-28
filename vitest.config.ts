@@ -15,6 +15,7 @@ export default defineConfig({
       { find: "amap-web-types/amapUI", replacement: resolve("packages/types/src/amapUI-api/index.ts") },
       { find: "amap-web-types/loca", replacement: resolve("packages/types/src/loca-api/index.ts") },
       { find: "amap-web-types", replacement: resolve("packages/types/src/index.ts") },
+      { find: "amap-web-loader", replacement: resolve("packages/loader/src/index.ts") },
       { find: "amap-web-internal", replacement: resolve("packages/internal/src/index.ts") },
     ],
   },

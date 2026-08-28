@@ -1,8 +1,21 @@
 {
-  "extends": "../../tsconfig.build.json",
   "compilerOptions": {
+    "skipLibCheck": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "allowImportingTsExtensions": true,
+    "lib": ["ES2022"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": ["node"],
     "rootDir": ".",
-    "preserveSymlinks": true,
-    "allowImportingTsExtensions": true
+    "noEmit": true
   }
 }
