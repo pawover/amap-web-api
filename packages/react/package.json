@@ -6,7 +6,7 @@
     "url": "https://github.com/pawover"
   },
   "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0",
   "type": "module",
   "keywords": [
     "amap",
