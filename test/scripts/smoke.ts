@@ -11,6 +11,7 @@ const targets = [
   { label: "amap-web-types/amap", path: "packages/types/dist/index.js" },
   { label: "amap-web-types/amapUI", path: "packages/types/dist/index.js" },
   { label: "amap-web-types/loca", path: "packages/types/dist/index.js" },
+  { label: "amap-web-loader/index", path: "packages/loader/dist/index.js" },
   { label: "amap-web-react/index", path: "packages/react/dist/index.js" },
   { label: "amap-web-react/loader", path: "packages/react/dist/loader.js" },
   { label: "amap-web-react/amap", path: "packages/react/dist/amap.js" },
