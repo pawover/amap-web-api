@@ -7,6 +7,7 @@
       securityJsCode: string | undefined;
       serviceHost: `http${string}://${string}/_AMapService` | undefined;
     };
+    ___onAPILoaded?: (err?: string) => void;
   }
 }
 

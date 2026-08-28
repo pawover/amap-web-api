@@ -14,15 +14,12 @@
     "amap-react",
     "amap-web-react",
     "高德",
-    "高德地图"
+    "地图"
   ],
-  "homepage": "https://github.com/pawover/amap-web-api",
+  "homepage": "https://github.com/pawover/amap-web-api/packages/react",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pawover/amap-web-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pawover/amap-web-api/issues"
   },
   "license": "MIT",
   "main": "./dist/index.cjs",
@@ -94,7 +91,8 @@
   },
   "dependencies": {
     "@pawover/kit-types": "^0.0.4",
-    "@pawover/kit-utils": "^1.0.0"
+    "@pawover/kit-utils": "^1.0.0",
+    "amap-web-loader": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",

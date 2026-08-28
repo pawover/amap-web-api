@@ -19,6 +19,7 @@ module.exports = {
   })),
   scopes: [
     { name: "amap-react（React 组件包 packages/react/）", value: "amap-react" },
+    { name: "amap-loader（独立加载器包 packages/loader/）", value: "amap-loader" },
     { name: "amap-types（类型定义包 packages/types/）", value: "amap-types" },
     { name: "internal（内部包 packages/internal/）", value: "internal" },
     { name: "release（发布流程：scripts 发布脚本、.changeset/、release.yml）", value: "release" },

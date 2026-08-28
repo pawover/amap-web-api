@@ -15,13 +15,10 @@
     "高德",
     "地图"
   ],
-  "homepage": "https://github.com/pawover/amap-web-api",
+  "homepage": "https://github.com/pawover/amap-web-api/packages/types",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pawover/amap-web-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pawover/amap-web-api/issues"
   },
   "license": "MIT",
   "main": "./dist/index.cjs",

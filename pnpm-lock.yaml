@@ -120,6 +120,19 @@ importers:
         specifier: ^7.1.1
         version: 7.1.1(rolldown@1.2.5)(rollup@4.62.4)
 
+  packages/loader:
+    dependencies:
+      '@pawover/kit-types':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/react@19.2.18)(react@19.2.8)
+    devDependencies:
+      amap-web-internal:
+        specifier: workspace:*
+        version: link:../internal
+      amap-web-types:
+        specifier: workspace:*
+        version: link:../types
+
   packages/react:
     dependencies:
       '@pawover/kit-types':
@@ -128,6 +141,9 @@ importers:
       '@pawover/kit-utils':
         specifier: ^1.0.0
         version: 1.0.0(@types/react@19.2.18)(react@19.2.8)(vite@8.2.2(@types/node@26.3.0)(jiti@2.7.0)(yaml@2.9.0))
+      amap-web-loader:
+        specifier: workspace:*
+        version: link:../loader
     devDependencies:
       '@types/react':
         specifier: ^19.2.18
