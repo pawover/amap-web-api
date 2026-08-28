@@ -125,13 +125,13 @@ importers:
       '@pawover/kit-types':
         specifier: ^0.0.4
         version: 0.0.4(@types/react@19.2.18)(react@19.2.8)
+      amap-web-types:
+        specifier: workspace:*
+        version: link:../types
     devDependencies:
       amap-web-internal:
         specifier: workspace:*
         version: link:../internal
-      amap-web-types:
-        specifier: workspace:*
-        version: link:../types
 
   packages/react:
     dependencies:
@@ -144,6 +144,9 @@ importers:
       amap-web-loader:
         specifier: workspace:*
         version: link:../loader
+      amap-web-types:
+        specifier: workspace:*
+        version: link:../types
     devDependencies:
       '@types/react':
         specifier: ^19.2.18
@@ -154,9 +157,6 @@ importers:
       amap-web-internal:
         specifier: workspace:*
         version: link:../internal
-      amap-web-types:
-        specifier: workspace:*
-        version: link:../types
       react:
         specifier: ^19.2.8
         version: 19.2.8
@@ -166,6 +166,9 @@ importers:
 
   packages/types:
     dependencies:
+      '@pawover/kit-types':
+        specifier: ^0.0.4
+        version: 0.0.4(@types/react@19.2.18)(react@19.2.8)
       type-fest:
         specifier: ^5.8.0
         version: 5.8.0
@@ -173,9 +176,6 @@ importers:
         specifier: ^5.9.3 || ^6.0.0
         version: 6.0.3
     devDependencies:
-      '@pawover/kit-types':
-        specifier: ^0.0.4
-        version: 0.0.4(@types/react@19.2.18)(react@19.2.8)
       amap-web-internal:
         specifier: workspace:*
         version: link:../internal

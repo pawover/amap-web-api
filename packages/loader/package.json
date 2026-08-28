@@ -49,10 +49,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@pawover/kit-types": "^0.0.4"
+    "@pawover/kit-types": "^0.0.4",
+    "amap-web-types": "workspace:*"
   },
   "devDependencies": {
-    "amap-web-internal": "workspace:*",
-    "amap-web-types": "workspace:*"
+    "amap-web-internal": "workspace:*"
   }
 }

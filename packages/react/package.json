@@ -92,13 +92,13 @@
   "dependencies": {
     "@pawover/kit-types": "^0.0.4",
     "@pawover/kit-utils": "^1.0.0",
-    "amap-web-loader": "workspace:*"
+    "amap-web-loader": "workspace:*",
+    "amap-web-types": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.5",
     "amap-web-internal": "workspace:*",
-    "amap-web-types": "workspace:*",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
