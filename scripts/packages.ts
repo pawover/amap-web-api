@@ -1,7 +1,7 @@
 /**
  * 发布流程共享的包清单（单一事实来源）。
  *
- * amap-web-api 的 2 个发布包：
+ * amap-web-api 的 3 个发布包：
  *  - SUB_PACKAGES：`[目录, 包名]` 数组（目录不带 packages/ 前缀）；
  *  - SUB_PACKAGE_DIRS：`packages/<目录>` 数组；
  *  - SUB_PACKAGE_NAMES：包名数组；
@@ -13,6 +13,7 @@
 export const SUB_PACKAGES = [
   ["react", "amap-web-react"],
   ["types", "amap-web-types"],
+  ["loader", "amap-web-loader"],
 ] as const;
 
 export const SUB_PACKAGE_DIRS = SUB_PACKAGES.map(([dir]) => `packages/${dir}`);
