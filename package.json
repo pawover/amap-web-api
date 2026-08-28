@@ -35,7 +35,7 @@
     "test:integration": "vitest run test/integration",
     "test:types": "tsc -p test/tsconfig.json --noEmit",
     "test:smoke": "node test/scripts/smoke.ts",
-    "test:ci": "pnpm test:types && pnpm test && pnpm build && pnpm test:smoke && pnpm check:pack",
+    "test:ci": "pnpm build && pnpm test:types && pnpm test && pnpm test:smoke && pnpm check:pack",
     "build": "turbo build",
     "build:analyze": "cross-env VISUALIZER=1 turbo build",
     "build:force": "turbo build --force",

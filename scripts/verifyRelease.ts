@@ -27,6 +27,10 @@ function worktreeVersion (pkgPath: string) {
 
 const rootOld = gitShowVersion("package.json");
 const rootNew = worktreeVersion("package.json");
+if (rootOld === undefined || rootNew === undefined) {
+  console.log("✔ 根包无 version（不发布），跳过发布顺序校验");
+  process.exit(0);
+}
 const changedSubs = SUB_PACKAGE_DIRS.filter((pkgPath) => {
   const file = `${pkgPath}/package.json`;
 

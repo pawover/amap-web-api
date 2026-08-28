@@ -92,6 +92,10 @@ function bumpVersion (version: string, type: string, preTag: string | null, preC
 }
 
 const rootPackage = JSON.parse(readFileSync("package.json", "utf8"));
+if (!rootPackage.version) {
+  console.log("✔ 根包 amap-web-api 无 version（不发布），跳过根包版本同步");
+  process.exit(0);
+}
 const rootOld = readGitVersion("package.json");
 
 let changedType = "none";
