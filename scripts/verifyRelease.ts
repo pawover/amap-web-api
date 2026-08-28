@@ -13,13 +13,7 @@
 
 import { execSync } from "node:child_process";
 import { readFileSync } from "node:fs";
-import { SUB_PACKAGES } from "./packages.ts";
-
-const DIRECT_DEPENDENCY_BUMP_RULES = [
-  ["types", "loader"],
-  ["types", "react"],
-  ["loader", "react"],
-] as const;
+import { DIRECT_DEPENDENCY_BUMP_RULES, SUB_PACKAGES } from "./packages.ts";
 
 function gitShowVersion (pkgPath: string) {
   const out = execSync(`git show HEAD:${pkgPath}`, { encoding: "utf8" });

@@ -20,6 +20,16 @@ export const SUB_PACKAGE_DIRS = SUB_PACKAGES.map(([dir]) => `packages/${dir}`);
 
 export const SUB_PACKAGE_NAMES = SUB_PACKAGES.map(([, name]) => name);
 
+/**
+ * 子包直接依赖联动关系：
+ * - 当 dependency 版本变化时，dependent 必须同步发版。
+ */
+export const DIRECT_DEPENDENCY_BUMP_RULES = [
+  ["types", "loader"],
+  ["types", "react"],
+  ["loader", "react"],
+] as const;
+
 export const PACKAGE_FILES = ["package.json", ...SUB_PACKAGES.map(([dir]) => `packages/${dir}/package.json`)];
 
 export const VERSION_FILES = new Set([
