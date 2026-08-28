@@ -1,8 +1,0 @@
-{
-  "extends": "@pawover/tsconfig/base.json",
-  "compilerOptions": {
-    "composite": true,
-    "skipLibCheck": false
-  },
-  "include": ["packages", "libs/types"]
-}

@@ -1,0 +1,57 @@
+﻿name: CI
+
+on:
+  push:
+    branches: [ main, feature ]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Materialize base branch for changesets
+        run: |
+          if git show-ref --verify --quiet refs/remotes/origin/main; then
+            git update-ref refs/heads/main refs/remotes/origin/main
+          fi
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Cache turbo
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.cache/turbo
+          key: turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            turbo-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Test, build and check packages
+        run: pnpm test:ci
+        env:
+          HUSKY: "0"
+
+      - name: Verify release plan (changesets cover unreleased package changes)
+        if: github.event_name == 'push'
+        run: node scripts/verifyReleasePlan.ts

@@ -1,11 +1,27 @@
 {
-  "extends": "@pawover/tsconfig/base.json",
-  "include": [],
-  "references": [
-    { "path": "./tsconfig.common.json" },
-    { "path": "./tsconfig.packages.json" },
-    { "path": "./tsconfig.types.json" },
-    { "path": "./tsconfig.react.json" },
-    { "path": "./tsconfig.vue.json" }
-  ]
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "types": ["node"],
+    "noEmit": true,
+    "paths": {
+      "amap-web-types": ["./packages/types/src/index.ts"],
+      "amap-web-types/amap": ["./packages/types/src/amap-api/index.ts"],
+      "amap-web-types/amapUI": ["./packages/types/src/amapUI-api/index.ts"],
+      "amap-web-types/loca": ["./packages/types/src/loca-api/index.ts"],
+      "amap-web-react": ["./packages/react/src/index.ts"],
+      "amap-web-react/loader": ["./packages/react/src/loader/index.ts"],
+      "amap-web-react/amap": ["./packages/react/src/amap/index.ts"],
+      "amap-web-react/amapUI": ["./packages/react/src/amapUI/index.ts"],
+      "amap-web-react/loca": ["./packages/react/src/loca/index.ts"],
+      "amap-web-loader": ["./packages/loader/src/index.ts"],
+      "amap-web-internal": ["./packages/internal/src/index.ts"]
+    }
+  },
+  "include": ["packages/*/src/**/*.ts", "packages/*/*.ts", "scripts/**/*.ts", "*.ts", "*.js", "*.cjs"],
+  "exclude": ["**/node_modules", "**/dist"]
 }

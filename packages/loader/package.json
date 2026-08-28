@@ -1,0 +1,58 @@
+{
+  "name": "amap-web-loader",
+  "author": {
+    "name": "pawover",
+    "email": "pawover@outlook.com",
+    "url": "https://github.com/pawover"
+  },
+  "description": "高德地图 JS API 加载器。AMap / AMapUI / Loca 模块级单例加载器，支持 callback 就绪判定、版本校验与引用计数清理。AMap JS API module-level singleton loader.",
+  "version": "0.0.1-alpha.0",
+  "type": "module",
+  "keywords": [
+    "amap",
+    "amap-loader",
+    "amap-web-loader",
+    "高德",
+    "地图"
+  ],
+  "homepage": "https://github.com/pawover/amap-web-api/packages/loader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawover/amap-web-api.git"
+  },
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build:source": "tsdown",
+    "package": "pnpm pack",
+    "public": "pnpm publish --access public --tag alpha",
+    "check:pack": "pnpm dlx @arethetypeswrong/cli --pack . --profile node16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@pawover/kit-types": "^0.0.4",
+    "amap-web-types": "workspace:*"
+  },
+  "devDependencies": {
+    "amap-web-internal": "workspace:*"
+  }
+}

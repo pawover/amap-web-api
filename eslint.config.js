@@ -1,0 +1,95 @@
+// @ts-nocheck
+import { defineConfig } from "eslint/config";
+
+import eslintPluginReact from "@eslint-react/eslint-plugin";
+import eslintPluginStylistic from "@stylistic/eslint-plugin";
+import eslintPluginAntfu from "eslint-plugin-antfu";
+import eslintPluginImports from "eslint-plugin-import-lite";
+import eslintPluginReactHooks from "eslint-plugin-react-hooks";
+import eslintTs from "typescript-eslint";
+
+import eslintRules from "@pawover/kit-eslint-rules";
+
+const plugins = {
+  typescript: {
+    ts: eslintTs.plugin,
+  },
+  stylistic: {
+    stylistic: eslintPluginStylistic,
+  },
+  antfu: {
+    antfu: eslintPluginAntfu,
+  },
+  imports: {
+    imports: eslintPluginImports.configs.all.plugins["import-lite"],
+  },
+  react: {
+    "react": eslintPluginReact,
+    "react-hooks": eslintPluginReactHooks,
+  },
+};
+
+export default defineConfig([
+  {
+    ignores: [...eslintRules.GLOB_EXCLUDE, "**/.cache", "site/**", "docs/**"],
+  },
+  {
+    files: ["**/*.{js,cjs,mjs,jsx,ts,tsx}"],
+    languageOptions: {
+      parser: eslintTs.parser,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+        sourceType: "module",
+        ecmaVersion: 2022,
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+    plugins: {
+      ...plugins.typescript,
+      ...plugins.stylistic,
+      ...plugins.antfu,
+      ...plugins.imports,
+      ...plugins.react,
+    },
+    rules: {
+      ...eslintRules.javascript,
+      ...eslintRules.typescript,
+      ...eslintRules.stylistic,
+      ...eslintRules.antfu,
+      ...eslintRules.imports,
+      ...eslintRules.react,
+      ...eslintRules.reactHooks,
+      "antfu/no-import-dist": 0,
+      "ts/no-empty-object-type": 0,
+      "ts/no-explicit-any": 0,
+      "stylistic/no-multiple-empty-lines": [2, { max: 1, maxEOF: 1, maxBOF: 0 }],
+      "react/no-clone-element": 0,
+    },
+  },
+  {
+    files: ["**/*.test.{js,jsx,ts,tsx}", "**/*.test.type.ts"],
+    languageOptions: {
+      parserOptions: {
+        projectService: false,
+      },
+    },
+    rules: {
+      ...Object.keys({
+        ...eslintRules.javascript,
+        ...eslintRules.typescript,
+        ...eslintRules.stylistic,
+        ...eslintRules.antfu,
+        ...eslintRules.imports,
+        ...eslintRules.react,
+        ...eslintRules.reactHooks,
+      }).reduce((acc, key) => {
+        acc[key] = 0;
+
+        return acc;
+      }, {}),
+    },
+  },
+]);

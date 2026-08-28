@@ -1,7 +1,0 @@
-{
-  "extends": "@pawover/tsconfig/react-app.json",
-  "compilerOptions": {
-    "composite": true
-  },
-  "include": ["packages", "libs/types", "libs/react"]
-}

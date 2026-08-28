@@ -1,31 +1,20 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "docs:dev": {
-      "cache": false,
-      "persistent": true
+  "$schema": "https://turborepo.dev/schema.json",
+  "tasks": {
+    "build:source": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build:source"],
+      "env": ["VISUALIZER"]
     },
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build:source"]
     },
-    "release": {
-      "cache": false
+    "package": {
+      "outputs": ["*.tgz"],
+      "dependsOn": ["build"]
     },
-    "lint": {
-      "outputs": []
-    },
-    "lint:eslint": {
-      "outputs": []
-    },
-    "lint:prettier": {
-      "outputs": []
-    },
-    "type:check": {
-      "outputs": []
+    "build:package": {
+      "dependsOn": ["build", "package"]
     }
   }
 }

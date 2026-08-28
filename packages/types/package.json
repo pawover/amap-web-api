@@ -1,0 +1,91 @@
+{
+  "name": "amap-web-types",
+  "author": {
+    "name": "pawover",
+    "email": "pawover@outlook.com",
+    "url": "https://github.com/pawover"
+  },
+  "description": "TypeScript definitions for AMap Web API. 高德地图 AMap Web API TypeScript 类型定义。",
+  "version": "1.0.0-alpha.5",
+  "type": "module",
+  "keywords": [
+    "amap",
+    "amap-types",
+    "amap-web-types",
+    "高德",
+    "地图"
+  ],
+  "homepage": "https://github.com/pawover/amap-web-api/packages/types",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawover/amap-web-api.git"
+  },
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./amap": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./amapUI": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./loca": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build:source": "tsdown",
+    "package": "pnpm pack",
+    "public": "pnpm publish --access public --tag alpha",
+    "check:pack": "pnpm dlx @arethetypeswrong/cli --pack . --profile node16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@pawover/kit-types": "^0.0.4",
+    "type-fest": "^5.8.0"
+  },
+  "devDependencies": {
+    "amap-web-internal": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3 || ^6.0.0"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "name": "amap-web-react",
+  "author": {
+    "name": "pawover",
+    "email": "pawover@outlook.com",
+    "url": "https://github.com/pawover"
+  },
+  "description": "基于 React 封装的高德地图组件。AMap Component Based On React.",
+  "version": "1.0.0-alpha.5",
+  "type": "module",
+  "keywords": [
+    "amap",
+    "amap-web",
+    "amap-react",
+    "amap-web-react",
+    "高德",
+    "地图"
+  ],
+  "homepage": "https://github.com/pawover/amap-web-api/packages/react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pawover/amap-web-api.git"
+  },
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./loader": {
+      "import": {
+        "types": "./dist/loader.d.ts",
+        "default": "./dist/loader.js"
+      },
+      "require": {
+        "types": "./dist/loader.d.cts",
+        "default": "./dist/loader.cjs"
+      }
+    },
+    "./amap": {
+      "import": {
+        "types": "./dist/amap.d.ts",
+        "default": "./dist/amap.js"
+      },
+      "require": {
+        "types": "./dist/amap.d.cts",
+        "default": "./dist/amap.cjs"
+      }
+    },
+    "./amapUI": {
+      "import": {
+        "types": "./dist/amapUI.d.ts",
+        "default": "./dist/amapUI.js"
+      },
+      "require": {
+        "types": "./dist/amapUI.d.cts",
+        "default": "./dist/amapUI.cjs"
+      }
+    },
+    "./loca": {
+      "import": {
+        "types": "./dist/loca.d.ts",
+        "default": "./dist/loca.js"
+      },
+      "require": {
+        "types": "./dist/loca.d.cts",
+        "default": "./dist/loca.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build:source": "tsdown",
+    "package": "pnpm pack",
+    "public": "pnpm publish --access public --tag alpha",
+    "check:pack": "pnpm dlx @arethetypeswrong/cli --pack . --profile node16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@pawover/kit-types": "^0.0.4",
+    "@pawover/kit-utils": "^1.0.0",
+    "amap-web-loader": "workspace:*",
+    "amap-web-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "amap-web-internal": "workspace:*",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  }
+}

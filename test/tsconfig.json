@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "noUncheckedIndexedAccess": false,
+    "erasableSyntaxOnly": false,
+    "noEmit": true
+  },
+  "include": ["./**/*.ts", "./**/*.tsx", "../packages/**/src/**/*.ts", "../packages/**/src/**/*.tsx"]
+}
