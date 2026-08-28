@@ -6,7 +6,7 @@
     "url": "https://github.com/pawover"
   },
   "description": "高德地图 JS API 加载器。AMap / AMapUI / Loca 模块级单例加载器，支持 callback 就绪判定、版本校验与引用计数清理。AMap JS API module-level singleton loader.",
-  "version": "0.1.0-alpha.0",
+  "version": "0.0.1-alpha.0",
   "type": "module",
   "keywords": [
     "amap",
