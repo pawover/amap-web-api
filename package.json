@@ -43,7 +43,7 @@
     "build:package:force": "turbo build:package --force && pnpm package",
     "package": "pnpm -r run package",
     "changeset": "changeset",
-    "ci:version": "pnpm changeset version && node scripts/bumpRoot.ts && node scripts/verifyRelease.ts && pnpm install",
+    "ci:version": "pnpm changeset version && node scripts/bumpDependents.ts && node scripts/bumpRoot.ts && node scripts/verifyRelease.ts && pnpm install",
     "pre:enter-alpha": "pnpm changeset pre enter alpha",
     "pre:exit": "pnpm changeset pre exit",
     "release:merge": "node scripts/releaseMerge.ts",
